@@ -18,6 +18,8 @@ uint32_t GUI_GetXButtonSize(void);
 uint32_t GUI_GetYButtonSize(void);
 
 void GUI_DrawButtons(void);
-void GUI_DrawTouch(TS_StateTypeDef*);
+void GUI_HandleTouch(TS_StateTypeDef *tsState, void (*handleButtonTouch)(int));
+
+int GUI_GetButtonNumber(int, int);
 
 #endif //EMBEDDED_PLAYER_GUI_H

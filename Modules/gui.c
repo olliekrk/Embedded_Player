@@ -3,6 +3,7 @@
 //
 
 #include <stm32746g_discovery_ts.h>
+#include <term_io.h>
 #include "gui.h"
 #include "stm32746g_discovery_lcd.h"
 
@@ -34,12 +35,28 @@ void GUI_DrawButtons(void) {
     }
 }
 
-void GUI_DrawTouch(TS_StateTypeDef *tsState) {
+void GUI_HandleTouch(TS_StateTypeDef *tsState, void (*handleButtonTouch)(int)) {
     int touchesDetected = tsState->touchDetected;
     int touchesToHandle = touchesDetected > GUI_max_touches ? GUI_max_touches : touchesDetected;
+    int x;
+    int y;
 
     BSP_LCD_SetTextColor(LCD_COLOR_LIGHTGREEN);
     for (int i = 0; i < touchesToHandle; i++) {
-        BSP_LCD_FillCircle(tsState->touchX[i], tsState->touchY[i], GUI_touch_radius);
+        x = tsState->touchX[i];
+        y = tsState->touchY[i];
+        BSP_LCD_FillCircle(x, y, GUI_touch_radius);
+        (*handleButtonTouch)(GUI_GetButtonNumber(x, y)); // callback function
     }
+}
+
+int GUI_GetButtonNumber(int x, int y) {
+    // todo: verify this
+
+    uint32_t xNumber = (x - GUI_margin) / GUI_GetXButtonSize();
+    uint32_t yNumber = (y - GUI_margin) / GUI_GetYButtonSize();
+
+    if (xNumber < 0 || yNumber < 0 || xNumber >= GUI_buttons_in_row || yNumber >= GUI_button_rows) return -1;
+
+    return (int) (xNumber + yNumber * GUI_buttons_in_row);
 }

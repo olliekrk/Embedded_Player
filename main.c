@@ -84,6 +84,7 @@
 
 /* Modules imports */
 #include "Modules/gui.h"
+#include "Modules/controls.h"
 
 
 /* USER CODE END Includes */
@@ -1568,18 +1569,18 @@ void StartDefaultTask(void const *argument) {
     LCD_Initialize_Screen();
     LCD_Draw_GUI();
 
-    xprintf("waiting for USB mass storage\n\r");
+    xprintf("waiting for USB mass storage\r\n");
 
     do {
         xprintf(".");
         vTaskDelay(250);
     } while (Appli_state != APPLICATION_READY);
 
-    xprintf("initializing audio codec...\n\r");
+    xprintf("initializing audio codec...\r\n");
     if (BSP_AUDIO_OUT_Init(OUTPUT_DEVICE_HEADPHONE1, 60, AUDIO_FREQUENCY_44K) == 0) {
-        xprintf("audio init OK\n\r");
+        xprintf("audio init OK\r\n");
     } else {
-        xprintf("audio init ERROR\n\r");
+        xprintf("audio init ERROR\r\n");
     }
     BSP_AUDIO_OUT_SetAudioFrameSlot(CODEC_AUDIOFRAME_SLOT_02);
 
@@ -1670,7 +1671,7 @@ void StartTouchscreenTask(void const *argument) {
     for (;;) {
         vTaskDelay(60);
         BSP_TS_GetState(&TS_State);
-        GUI_DrawTouch(&TS_State);
+        GUI_HandleTouch(&TS_State, CON_HandleButtonTouched);
     }
 }
 
