@@ -85,6 +85,7 @@
 /* Modules imports */
 #include "Modules/gui.h"
 #include "Modules/controls.h"
+#include "Modules/audio_loader.h"
 
 
 /* USER CODE END Includes */
@@ -196,27 +197,34 @@ void StartTouchscreenTask(void const *argument);
 
 void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 
-
-/* USER CODE BEGIN PFP */
-/* Private function prototypes -----------------------------------------------*/
-
-/* USER CODE END PFP */
-
-/* USER CODE BEGIN 0 */
-void mainTask(void *p);
-
-osThreadId netconn_thread_handle;
+#define AUDIO_OUT_BUFFER_SIZE                      8192
+#define MASS_STORAGE_BUF_SIZE        ( 1024 * 1024 )
 
 #define LCD_X_SIZE      RK043FN48H_WIDTH
 #define LCD_Y_SIZE      RK043FN48H_HEIGHT
-static uint32_t lcd_image_fg[LCD_Y_SIZE][LCD_X_SIZE] __attribute__((section(".sdram"))) __attribute__((unused));
-static uint32_t lcd_image_bg[LCD_Y_SIZE][LCD_X_SIZE] __attribute__((section(".sdram"))) __attribute__((unused));
-
-#define MASS_STORAGE_BUF_SIZE        ( 1024 * 1024 )
-static uint32_t mass_storage_buf[MASS_STORAGE_BUF_SIZE] __attribute__((section(".sdram"))) __attribute__((unused));
 
 #define PRINTF_USES_HAL_TX    0
-#define ENABLE_NETWORK        0
+
+#define THREAD_STACK_SIZE 4096
+
+enum {
+    BUFFER_OFFSET_NONE = 0,
+    BUFFER_OFFSET_HALF,
+    BUFFER_OFFSET_FULL,
+};
+
+static FIL testFile;
+extern ApplicationTypeDef Appli_state;
+static uint8_t player_state = 0;
+static uint8_t buf_offs = BUFFER_OFFSET_NONE;
+static uint32_t fpos = 0;
+
+uint8_t buff[AUDIO_OUT_BUFFER_SIZE];
+static uint32_t lcd_image_fg[LCD_Y_SIZE][LCD_X_SIZE] __attribute__((section(".sdram"))) __attribute__((unused));
+static uint32_t lcd_image_bg[LCD_Y_SIZE][LCD_X_SIZE] __attribute__((section(".sdram"))) __attribute__((unused));
+static uint32_t mass_storage_buf[MASS_STORAGE_BUF_SIZE] __attribute__((section(".sdram"))) __attribute__((unused));
+
+static TS_StateTypeDef TS_State;
 
 int __io_putchar(int ch) {
     uint8_t data = ch;
@@ -239,9 +247,13 @@ char inkey(void) {
         return 0;
 }
 
-static TS_StateTypeDef TS_State;
+static int TS_Initialize_Touchscreen(void) {
+    uint8_t status = 0;
+    status = BSP_TS_Init(BSP_LCD_GetXSize(), BSP_LCD_GetYSize());
+    if (status != TS_OK) return -1;
+    return 0;
+}
 
-//partially based on available code examples
 static void LCD_Initialize_Screen(void) {
     /* LCD Initialization */
     BSP_LCD_Init();
@@ -276,15 +288,8 @@ static void LCD_Initialize_Screen(void) {
     BSP_LCD_SetTransparency(1, 255);
 }
 
-static void LCD_Draw_GUI(void){
+static void LCD_Draw_GUI(void) {
     GUI_DrawButtons();
-}
-
-static int TS_Initialize_Touchscreen(void) {
-    uint8_t status = 0;
-    status = BSP_TS_Init(BSP_LCD_GetXSize(), BSP_LCD_GetYSize());
-    if (status != TS_OK) return -1;
-    return 0;
 }
 
 /* USER CODE END 0 */
@@ -346,7 +351,7 @@ int main(void) {
     xprintf(ANSI_FG_GREEN
             "STM32F746 Discovery Project"
             ANSI_FG_DEFAULT
-            "\n");
+            "\r\n");
 
     LCD_Initialize_Screen();
     TS_Initialize_Touchscreen();
@@ -367,8 +372,8 @@ int main(void) {
 
     /* Create the thread(s) */
     /* definition and creation of defaultTask */
-    osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 4096);
-    osThreadDef(touchscreenTask, StartTouchscreenTask, osPriorityNormal, 0, 4096);
+    osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 1, THREAD_STACK_SIZE);
+    osThreadDef(touchscreenTask, StartTouchscreenTask, osPriorityHigh, 1, THREAD_STACK_SIZE);
     defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
     touchscreenTaskHandle = osThreadCreate(osThread(touchscreenTask), NULL);
 
@@ -385,10 +390,122 @@ int main(void) {
     osKernelStart();
 
     /* We should never get here as control is now taken by the scheduler */
-
     /* Infinite loop */
     while (1) {}
+}
 
+void StartDefaultTask(void const *argument) {
+    /* init code for FATFS */
+    MX_FATFS_Init();
+
+    /* init code for USB_HOST */
+    MX_USB_HOST_Init();
+
+    vTaskDelay(1000);
+    xprintf("Waiting for USB mass storage.\r\n");
+
+    do {
+        vTaskDelay(250);
+    } while (Appli_state != APPLICATION_READY);
+
+    xprintf("Initializing audio codec.\r\n");
+    if (BSP_AUDIO_OUT_Init(OUTPUT_DEVICE_HEADPHONE1, 60, AUDIO_FREQUENCY_44K) == 0) {
+        xprintf("Audio codec initialized successfully.\r\n");
+    } else {
+        xprintf("Audio codec initialized with errors.\r\n");
+    }
+    BSP_AUDIO_OUT_SetAudioFrameSlot(CODEC_AUDIOFRAME_SLOT_02);
+
+    LCD_Initialize_Screen(); // todo: redundant?
+    LCD_Draw_GUI();
+    AUDIO_L_PerformScan();
+
+    /* Infinite loop */
+    for (;;) {
+        char key = inkey();
+
+        switch (key) {
+            case 0:
+                break;
+            case 'a': {
+                xprintf("Odebrano polecenie a\n");
+                break;
+            }
+
+            case 'p': {
+                xprintf("play command...\n");
+                if (player_state) {
+                    xprintf("already playing\n");
+                    break;
+                }
+
+                FRESULT res;
+                res = f_open(&testFile, "1:/testwave.wav", FA_READ);
+                if (res == FR_OK) {
+                    xprintf("wave file open OK\n");
+                } else {
+                    xprintf("wave file open ERROR, res = %d\n", res);
+                }
+                player_state = 1;
+                BSP_AUDIO_OUT_Play((uint16_t *) &buff[0], AUDIO_OUT_BUFFER_SIZE);
+                fpos = 0;
+                buf_offs = BUFFER_OFFSET_NONE;
+                break;
+            }
+            default: {
+                xprintf("Nie rozpoznane polecenie: %c = %02X\n", key, key);
+                break;
+            }
+        }
+
+        if (player_state) {
+            uint32_t br;
+
+            if (buf_offs == BUFFER_OFFSET_HALF) {
+                if (f_read(&testFile,
+                           &buff[0],
+                           AUDIO_OUT_BUFFER_SIZE / 2,
+                           (void *) &br) != FR_OK) {
+                    BSP_AUDIO_OUT_Stop(CODEC_PDWN_SW);
+                    xprintf("f_read error on half\n");
+                }
+                buf_offs = BUFFER_OFFSET_NONE;
+                fpos += br;
+
+            }
+
+            if (buf_offs == BUFFER_OFFSET_FULL) {
+                if (f_read(&testFile,
+                           &buff[AUDIO_OUT_BUFFER_SIZE / 2],
+                           AUDIO_OUT_BUFFER_SIZE / 2,
+                           (void *) &br) != FR_OK) {
+                    BSP_AUDIO_OUT_Stop(CODEC_PDWN_SW);
+                    xprintf("f_read error on full\n");
+                }
+
+                buf_offs = BUFFER_OFFSET_NONE;
+                fpos += br;
+            }
+
+            if ((br < AUDIO_OUT_BUFFER_SIZE / 2) && fpos) {
+                xprintf("stop at eof\n");
+                BSP_AUDIO_OUT_Stop(CODEC_PDWN_SW);
+                f_close(&testFile);
+                player_state = 0;
+                fpos = 0;
+                buf_offs = BUFFER_OFFSET_NONE;
+            }
+        }
+        vTaskDelay(60);
+    }
+}
+
+void StartTouchscreenTask(void const *argument) {
+    while (1) {
+        vTaskDelay(60);
+        BSP_TS_GetState(&TS_State);
+        GUI_HandleTouch(&TS_State, CON_HandleButtonTouched);
+    }
 }
 
 /**
@@ -1415,264 +1532,12 @@ static void MX_GPIO_Init(void) {
 
 }
 
-/* USER CODE BEGIN 4 */
-#if ENABLE_NETWORK
-
-static char response[500];
-
-//based on available code examples
-static void http_server_serve(struct netconn *conn) 
-{
-  struct netbuf *inbuf;
-  err_t recv_err;
-  char* buf;
-  u16_t buflen;
-  
-  /* Read the data from the port, blocking if nothing yet there. 
-   We assume the request (the part we care about) is in one netbuf */
-  recv_err = netconn_recv(conn, &inbuf);
-  
-  if (recv_err == ERR_OK)
-  {
-    if (netconn_err(conn) == ERR_OK) 
-    {
-      netbuf_data(inbuf, (void**)&buf, &buflen);
-    
-      /* Is this an HTTP GET command? (only check the first 5 chars, since
-      there are other formats for GET, and we're keeping it very simple )*/
-      if ((buflen >=5) && (strncmp(buf, "GET /", 5) == 0))
-      {
-      response[0] = 0;
-
-      strcpy(response, "HTTP/1.1 200 OK\r\n\
-        Content-Type: text/html\r\n\
-        Connnection: close\r\n\r\n\
-        <!DOCTYPE HTML>\r\n");
-
-#if 0
-      strcat(response,"<html>\r\n\
-      <meta http-equiv=\"refresh\" content=\"10\">");
-#endif
-
-      strcat(response,"<title>Prosta strona WWW</title>");
-      strcat(response,"<h1>H1 Header</h1>");
-
-      strcat(response,"A to jest tekst na stronie");
-          netconn_write(conn, response, sizeof(response), NETCONN_NOCOPY);
-      }
-    }
-  }
-  /* Close the connection (server closes in HTTP) */
-  netconn_close(conn);
-  
-  /* Delete the buffer (netconn_recv gives us ownership,
-   so we have to make sure to deallocate the buffer) */
-  netbuf_delete(inbuf);
-}
-
-
-//based on available code examples
-static void http_server_netconn_thread(void const *arg)
-{ 
-  struct netconn *conn, *newconn;
-  err_t err, accept_err;
-  
-  xprintf("http_server_netconn_thread\n");
-  
-  /* Create a new TCP connection handle */
-  conn = netconn_new(NETCONN_TCP);
-  
-  if (conn!= NULL)
-  {
-    /* Bind to port 80 (HTTP) with default IP address */
-    err = netconn_bind(conn, NULL, 80);
-    
-    if (err == ERR_OK)
-    {
-      /* Put the connection into LISTEN state */
-      netconn_listen(conn);
-  
-      while(1) 
-      {
-        /* accept any icoming connection */
-        accept_err = netconn_accept(conn, &newconn);
-        if(accept_err == ERR_OK)
-        {
-          /* serve connection */
-          http_server_serve(newconn);
-
-          /* delete connection */
-          netconn_delete(newconn);
-        }
-      }
-    }
-  }
-}
-
-#endif //ENABLE_NETWORK
-
-#define AUDIO_OUT_BUFFER_SIZE                      8192
-enum {
-    BUFFER_OFFSET_NONE = 0,
-    BUFFER_OFFSET_HALF,
-    BUFFER_OFFSET_FULL,
-};
-
-uint8_t buff[AUDIO_OUT_BUFFER_SIZE];
-static FIL file;
-extern ApplicationTypeDef Appli_state;
-static uint8_t player_state = 0;
-static uint8_t buf_offs = BUFFER_OFFSET_NONE;
-static uint32_t fpos = 0;
-
-
 void BSP_AUDIO_OUT_TransferComplete_CallBack(void) {
     buf_offs = BUFFER_OFFSET_FULL;
 }
 
 void BSP_AUDIO_OUT_HalfTransfer_CallBack(void) {
     buf_offs = BUFFER_OFFSET_HALF;
-}
-
-
-
-
-/* USER CODE END 4 */
-
-/* USER CODE BEGIN Header_StartDefaultTask */
-/**
-  * @brief  Function implementing the defaultTask thread.
-  * @param  argument: Not used 
-  * @retval None
-  */
-/* USER CODE END Header_StartDefaultTask */
-void StartDefaultTask(void const *argument) {
-    /* init code for FATFS */
-    MX_FATFS_Init();
-
-    /* init code for USB_HOST */
-    MX_USB_HOST_Init();
-
-    /* init code for LWIP */
-#if ENABLE_NETWORK
-    MX_LWIP_Init();
-#endif
-
-    /* USER CODE BEGIN 5 */
-#if ENABLE_NETWORK
-    osThreadDef(netconn_thread, http_server_netconn_thread, osPriorityNormal, 0, 1024);
-    netconn_thread_handle = osThreadCreate(osThread(netconn_thread), NULL);
-#endif
-
-    vTaskDelay(1000);
-
-    LCD_Initialize_Screen();
-    LCD_Draw_GUI();
-
-    xprintf("waiting for USB mass storage\r\n");
-
-    do {
-        xprintf(".");
-        vTaskDelay(250);
-    } while (Appli_state != APPLICATION_READY);
-
-    xprintf("initializing audio codec...\r\n");
-    if (BSP_AUDIO_OUT_Init(OUTPUT_DEVICE_HEADPHONE1, 60, AUDIO_FREQUENCY_44K) == 0) {
-        xprintf("audio init OK\r\n");
-    } else {
-        xprintf("audio init ERROR\r\n");
-    }
-    BSP_AUDIO_OUT_SetAudioFrameSlot(CODEC_AUDIOFRAME_SLOT_02);
-
-    /* Infinite loop */
-    for (;;) {
-        char key = inkey();
-
-        switch (key) {
-            case 0:
-                break;
-            case 'a': {
-                xprintf("Odebrano polecenie a\n");
-                break;
-            }
-
-            case 'p': {
-                xprintf("play command...\n");
-                if (player_state) {
-                    xprintf("already playing\n");
-                    break;
-                }
-
-                FRESULT res;
-                res = f_open(&file, "1:/testwave.wav", FA_READ);
-                if (res == FR_OK) {
-                    xprintf("wave file open OK\n");
-                } else {
-                    xprintf("wave file open ERROR, res = %d\n", res);
-                }
-                player_state = 1;
-                BSP_AUDIO_OUT_Play((uint16_t *) &buff[0], AUDIO_OUT_BUFFER_SIZE);
-                fpos = 0;
-                buf_offs = BUFFER_OFFSET_NONE;
-                break;
-            }
-            default: {
-                xprintf("Nie rozpoznane polecenie: %c = %02X\n", key, key);
-                break;
-            }
-        }
-
-        if (player_state) {
-            uint32_t br;
-
-            if (buf_offs == BUFFER_OFFSET_HALF) {
-                if (f_read(&file,
-                           &buff[0],
-                           AUDIO_OUT_BUFFER_SIZE / 2,
-                           (void *) &br) != FR_OK) {
-                    BSP_AUDIO_OUT_Stop(CODEC_PDWN_SW);
-                    xprintf("f_read error on half\n");
-                }
-                buf_offs = BUFFER_OFFSET_NONE;
-                fpos += br;
-
-            }
-
-            if (buf_offs == BUFFER_OFFSET_FULL) {
-                if (f_read(&file,
-                           &buff[AUDIO_OUT_BUFFER_SIZE / 2],
-                           AUDIO_OUT_BUFFER_SIZE / 2,
-                           (void *) &br) != FR_OK) {
-                    BSP_AUDIO_OUT_Stop(CODEC_PDWN_SW);
-                    xprintf("f_read error on full\n");
-                }
-
-                buf_offs = BUFFER_OFFSET_NONE;
-                fpos += br;
-            }
-
-            if ((br < AUDIO_OUT_BUFFER_SIZE / 2) && fpos) {
-                xprintf("stop at eof\n");
-                BSP_AUDIO_OUT_Stop(CODEC_PDWN_SW);
-                f_close(&file);
-                player_state = 0;
-                fpos = 0;
-                buf_offs = BUFFER_OFFSET_NONE;
-            }
-        }  //if(player_state)
-
-
-        vTaskDelay(60);
-    }
-    /* USER CODE END 5 */
-}
-
-void StartTouchscreenTask(void const *argument) {
-    for (;;) {
-        vTaskDelay(60);
-        BSP_TS_GetState(&TS_State);
-        GUI_HandleTouch(&TS_State, CON_HandleButtonTouched);
-    }
 }
 
 /**
