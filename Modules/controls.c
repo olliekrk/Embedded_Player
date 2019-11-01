@@ -21,3 +21,7 @@ void CON_HandleButtonTouched(int buttonNumber) {
             xprintf("Button touched is: %d\r\n", buttonNumber);
     }
 }
+
+void CON_PlayLoadedSound(int trackNumber) {
+
+}

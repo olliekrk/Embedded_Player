@@ -205,7 +205,7 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 
 #define PRINTF_USES_HAL_TX    0
 
-#define THREAD_STACK_SIZE 4096
+#define ALL_THREADS_STACK_SIZE 4096
 
 enum {
     BUFFER_OFFSET_NONE = 0,
@@ -219,7 +219,7 @@ static uint8_t player_state = 0;
 static uint8_t buf_offs = BUFFER_OFFSET_NONE;
 static uint32_t fpos = 0;
 
-uint8_t buff[AUDIO_OUT_BUFFER_SIZE];
+uint8_t  buff[AUDIO_OUT_BUFFER_SIZE];
 static uint32_t lcd_image_fg[LCD_Y_SIZE][LCD_X_SIZE] __attribute__((section(".sdram"))) __attribute__((unused));
 static uint32_t lcd_image_bg[LCD_Y_SIZE][LCD_X_SIZE] __attribute__((section(".sdram"))) __attribute__((unused));
 static uint32_t mass_storage_buf[MASS_STORAGE_BUF_SIZE] __attribute__((section(".sdram"))) __attribute__((unused));
@@ -289,7 +289,7 @@ static void LCD_Initialize_Screen(void) {
 }
 
 static void LCD_Draw_GUI(void) {
-    GUI_DrawButtons();
+    GUI_DrawAllButtons();
 }
 
 /* USER CODE END 0 */
@@ -372,8 +372,8 @@ int main(void) {
 
     /* Create the thread(s) */
     /* definition and creation of defaultTask */
-    osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 1, THREAD_STACK_SIZE);
-    osThreadDef(touchscreenTask, StartTouchscreenTask, osPriorityHigh, 1, THREAD_STACK_SIZE);
+    osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 1, ALL_THREADS_STACK_SIZE/2);
+    osThreadDef(touchscreenTask, StartTouchscreenTask, osPriorityHigh, 1, ALL_THREADS_STACK_SIZE/2);
     defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
     touchscreenTaskHandle = osThreadCreate(osThread(touchscreenTask), NULL);
 
@@ -496,15 +496,18 @@ void StartDefaultTask(void const *argument) {
                 buf_offs = BUFFER_OFFSET_NONE;
             }
         }
-        vTaskDelay(60);
+        vTaskDelay(100);
     }
 }
 
 void StartTouchscreenTask(void const *argument) {
     while (1) {
-        vTaskDelay(60);
+        vTaskDelay(100);
         BSP_TS_GetState(&TS_State);
-        GUI_HandleTouch(&TS_State, CON_HandleButtonTouched);
+        if(TS_State.touchDetected > 0){
+            GUI_DrawAllButtons();
+            GUI_HandleTouch(&TS_State, CON_HandleButtonTouched);
+        }
     }
 }
 

@@ -15,9 +15,13 @@
 #define GUI_max_touches 6
 
 uint32_t GUI_GetXButtonSize(void);
+
 uint32_t GUI_GetYButtonSize(void);
 
-void GUI_DrawButtons(void);
+void GUI_DrawButton(uint32_t, uint32_t, int, int, int, int, char*);
+
+void GUI_DrawAllButtons(void);
+
 void GUI_HandleTouch(TS_StateTypeDef *tsState, void (*handleButtonTouch)(int));
 
 int GUI_GetButtonNumber(int, int);
