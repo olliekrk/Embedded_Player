@@ -3,6 +3,7 @@
 //
 
 #include <term_io.h>
+#include <stdbool.h>
 #include "controls.h"
 #include "gui.h"
 
@@ -29,6 +30,27 @@ void CON_HandleButtonTouched(int buttonNumber) {
             xprintf("Button touched is: %d\r\n", buttonNumber);
     }
 }
+
+void CON_HandleOptionsTouch(int x, int y) {
+    /* todo: map (x,y) to OptionControl & add handlers:
+     * - for next/back track: change selected track
+     * - for selected track: highlight
+     * - for effects: highlight
+     * - if sound & option highlighted: trigger play with effect
+     * */
+
+    int selectedOption = 0;
+    switch (selectedOption) {
+        case NEXT_TRACK:
+        case BACK_TRACK:
+        case SELECTED_TRACK:
+        case EFFECT_1:
+        case EFFECT_2:
+        default:
+            xprintf("Option button touched\r\n;");
+    }
+}
+
 
 void CON_PlayLoadedSound(int buttonNumber) {
 

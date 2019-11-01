@@ -18,7 +18,17 @@ enum MainControls {
     CON_BUTTON_7 = 7,
 };
 
+enum OptionControl {
+    NEXT_TRACK = 8,
+    BACK_TRACK = 9,
+    SELECTED_TRACK = 10,
+    EFFECT_1 = 11,
+    EFFECT_2 = 12
+};
+
 void CON_HandleButtonTouched(int);
+
+void CON_HandleOptionsTouch(int, int);
 
 void CON_PlayLoadedSound(int);
 

@@ -6,6 +6,7 @@
 #include "stm32746g_discovery_lcd.h"
 #include "gui.h"
 #include "gui_colors.h"
+#include "controls.h"
 
 uint32_t GUI_GetXButtonSize() {
     return (BSP_LCD_GetXSize() - GUI_margin) / GUI_buttons_in_row;
@@ -89,7 +90,11 @@ void GUI_HandleTouch(TS_StateTypeDef *tsState, void (*handleButtonTouch)(int)) {
         x = tsState->touchX[i];
         y = tsState->touchY[i];
         BSP_LCD_FillCircle(x, y, GUI_touch_radius);
-        (*handleButtonTouch)(GUI_GetButtonNumber(x, y)); // callback function
+        if (GUI_IsSoundButtonTouched(y)) {
+            (*handleButtonTouch)(GUI_GetButtonNumber(x, y)); // callback function
+        } else {
+            CON_HandleOptionsTouch(x, y);
+        }
     }
 }
 
@@ -115,4 +120,8 @@ int GUI_GetButtonNumber(int x, int y) {
     if (xNumber < 0 || yNumber < 0 || xNumber >= GUI_buttons_in_row || yNumber >= GUI_button_rows) return -1;
 
     return (int) (xNumber + yNumber * GUI_buttons_in_row);
+}
+
+int GUI_IsSoundButtonTouched(int y) {
+    return y < GUI_margin + GUI_button_rows * GUI_GetYButtonSize();
 }

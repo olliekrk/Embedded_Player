@@ -22,10 +22,12 @@ void GUI_DrawButton(uint32_t, uint32_t, int, int, int, int, char *);
 
 void GUI_DrawAllButtons(void);
 
-void GUI_HandleTouch(TS_StateTypeDef *tsState, void (*handleButtonTouch)(int));
+void GUI_HandleTouch(TS_StateTypeDef *, void (*handleButtonTouch)(int));
 
 void GUI_HighlightSoundButton(int);
 
 int GUI_GetButtonNumber(int, int);
+
+int GUI_IsSoundButtonTouched(int);
 
 #endif //EMBEDDED_PLAYER_GUI_H
