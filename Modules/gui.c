@@ -3,9 +3,9 @@
 //
 
 #include <stm32746g_discovery_ts.h>
-#include <term_io.h>
-#include "gui.h"
 #include "stm32746g_discovery_lcd.h"
+#include "gui.h"
+#include "gui_colors.h"
 
 uint32_t GUI_GetXButtonSize() {
     return (BSP_LCD_GetXSize() - GUI_margin) / GUI_buttons_in_row;
@@ -17,7 +17,7 @@ uint32_t GUI_GetYButtonSize() {
 
 void GUI_DrawTextAtCenter(int x, int y, int ySize, char *text) {
     BSP_LCD_SetFont(&Font12);
-    BSP_LCD_DisplayStringAt(x + GUI_margin * 2, y + ySize + GUI_margin, (uint8_t*) text, CENTER_MODE);
+    BSP_LCD_DisplayStringAt(x + GUI_margin * 2, y + ySize + GUI_margin, (uint8_t *) text, CENTER_MODE);
 }
 
 void GUI_DrawButton(uint32_t backgroundColor, uint32_t frameColor, int x, int y, int xSize, int ySize, char *text) {
@@ -31,31 +31,31 @@ void GUI_DrawButton(uint32_t backgroundColor, uint32_t frameColor, int x, int y,
 }
 
 void GUI_DrawAllButtons(void) {
-    BSP_LCD_Clear(LCD_COLOR_LIGHTGRAY);
-
     uint32_t bigButtonXSize = GUI_GetXButtonSize();
     uint32_t bigButtonYSize = GUI_GetYButtonSize();
     uint32_t smallButtonYSize = GUI_GetYButtonSize() / 2;
+
+    BSP_LCD_Clear(COLOR_DEFAULT);
 
     // Sound buttons
     for (int row = 0; row < GUI_button_rows; row++) {
         for (int col = 0; col < GUI_buttons_in_row; col++) {
             int x = GUI_margin + col * bigButtonXSize;
             int y = GUI_margin + row * bigButtonYSize;
-            GUI_DrawButton(LCD_COLOR_DARKGRAY, LCD_COLOR_BLACK, x, y, bigButtonXSize, bigButtonYSize, "");
+            GUI_DrawButton(COLOR_PRIMARY_DEFAULT, COLOR_ACCENT_DEFAULT, x, y, bigButtonXSize, bigButtonYSize, "");
         }
     }
 
     // Switch track to be loaded buttons
     uint32_t trackButtonY = GUI_margin + GUI_button_rows * bigButtonYSize;
     GUI_DrawButton(
-            LCD_COLOR_DARKGREEN, LCD_COLOR_BLACK,
+            COLOR_PRIMARY_OPTION, COLOR_ACCENT_OPTION,
             GUI_margin, trackButtonY,
             bigButtonXSize, smallButtonYSize,
             "NEXT"
     );
     GUI_DrawButton(
-            LCD_COLOR_DARKGREEN, LCD_COLOR_BLACK,
+            COLOR_PRIMARY_OPTION, COLOR_ACCENT_OPTION,
             GUI_margin, trackButtonY + smallButtonYSize,
             bigButtonXSize, smallButtonYSize,
             "BACK"
@@ -65,13 +65,13 @@ void GUI_DrawAllButtons(void) {
     uint32_t effectButtonX = GUI_margin + (GUI_buttons_in_row - 1) * bigButtonXSize;
     uint32_t effectButtonY = GUI_margin + GUI_button_rows * bigButtonYSize;
     GUI_DrawButton(
-            LCD_COLOR_LIGHTRED, LCD_COLOR_RED,
+            COLOR_PRIMARY_OPTION, COLOR_ACCENT_OPTION,
             effectButtonX, effectButtonY,
             bigButtonXSize, smallButtonYSize,
             "E1"
     );
     GUI_DrawButton(
-            LCD_COLOR_LIGHTRED, LCD_COLOR_RED,
+            COLOR_PRIMARY_OPTION, COLOR_ACCENT_OPTION,
             effectButtonX, effectButtonY + smallButtonYSize,
             bigButtonXSize, smallButtonYSize,
             "E2"
@@ -84,13 +84,28 @@ void GUI_HandleTouch(TS_StateTypeDef *tsState, void (*handleButtonTouch)(int)) {
     int x;
     int y;
 
-    BSP_LCD_SetTextColor(LCD_COLOR_LIGHTGREEN);
+    BSP_LCD_SetTextColor(COLOR_PRIMARY_SELECTED);
     for (int i = 0; i < touchesToHandle; i++) {
         x = tsState->touchX[i];
         y = tsState->touchY[i];
         BSP_LCD_FillCircle(x, y, GUI_touch_radius);
         (*handleButtonTouch)(GUI_GetButtonNumber(x, y)); // callback function
     }
+}
+
+void GUI_HighlightSoundButton(int buttonNumber) {
+    int xSize = GUI_GetXButtonSize();
+    int ySize = GUI_GetYButtonSize();
+
+    int x = GUI_margin + (buttonNumber % GUI_buttons_in_row) * xSize;
+    int y = GUI_margin + (buttonNumber / GUI_buttons_in_row) * ySize;
+
+    GUI_DrawButton(
+            COLOR_PRIMARY_DEFAULT, COLOR_ACCENT_SELECTED,
+            x, y,
+            xSize, ySize,
+            "SELECTED"
+    );
 }
 
 int GUI_GetButtonNumber(int x, int y) {

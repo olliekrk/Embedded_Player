@@ -5,6 +5,8 @@
 #ifndef EMBEDDED_PLAYER_CONTROLS_H
 #define EMBEDDED_PLAYER_CONTROLS_H
 
+static int SELECTED_BUTTON = -1;
+
 enum MainControls {
     CON_BUTTON_0 = 0,
     CON_BUTTON_1 = 1,
@@ -17,5 +19,7 @@ enum MainControls {
 };
 
 void CON_HandleButtonTouched(int);
+
+void CON_PlayLoadedSound(int);
 
 #endif //EMBEDDED_PLAYER_CONTROLS_H
