@@ -13,8 +13,82 @@ uint32_t GUI_GetXButtonSize() {
 }
 
 uint32_t GUI_GetYButtonSize() {
-    return (BSP_LCD_GetYSize() - GUI_margin) / (GUI_button_rows + 1); // 1/N of screen is for player information
+    return (BSP_LCD_GetYSize() - GUI_margin) / (GUI_sound_rows + 1); // 1/N of screen is for player information
 }
+
+int GUI_GetButtonForCoords(int x, int y) {
+    uint8_t column = (x - GUI_margin) / GUI_GetXButtonSize();
+    uint8_t row = (y - GUI_margin) / GUI_GetYButtonSize();
+
+    if (column >= 0 && column < GUI_buttons_in_row && row >= 0 && row < GUI_sound_rows) {
+        return (SoundControl) (column + row * GUI_buttons_in_row);
+    } else {
+        int rowUpperSection = y <= GUI_margin + 2.5 * GUI_GetYButtonSize();
+
+        if (column == 0) {
+            return rowUpperSection ? NEXT_TRACK : BACK_TRACK;
+        } else if (column == 3) {
+            return rowUpperSection ? EFFECT_1 : EFFECT_2;
+        } else {
+            return SELECTED_TRACK;
+        }
+    }
+}
+
+int GUI_GetCoordsForButton(int buttonNumber, int *xOutput, int *yOutput) {
+    if (buttonNumber < 0 || buttonNumber >= NUMBER_OF_CONTROLS) {
+        return -1;
+    }
+
+    if (buttonNumber < NUMBER_OF_SOUND_CONTROLS) {
+        *xOutput = GUI_margin + (buttonNumber % GUI_buttons_in_row) * GUI_GetXButtonSize();
+        *yOutput = GUI_margin + (buttonNumber / GUI_buttons_in_row) * GUI_GetYButtonSize();
+    } else if (buttonNumber == NEXT_TRACK || buttonNumber == BACK_TRACK) {
+        *xOutput = GUI_margin;
+        *yOutput = GUI_margin + (buttonNumber == NEXT_TRACK ? 2 : 2.5) * GUI_GetYButtonSize();
+    } else if (buttonNumber == SELECTED_TRACK) {
+        *xOutput = GUI_margin + GUI_GetXButtonSize();
+        *yOutput = GUI_margin + 2 * GUI_GetYButtonSize();
+    } else {
+        *xOutput = GUI_margin + 3 * GUI_GetXButtonSize();
+        *yOutput = GUI_margin + (buttonNumber == EFFECT_1 ? 2 : 2.5) * GUI_GetYButtonSize();
+    }
+
+    return 0;
+}
+
+void GUI_GetSizeForButton(int buttonNumber, int *xSizeOutput, int *ySizeOutput) {
+    if (buttonNumber > 0 && buttonNumber < NUMBER_OF_SOUND_CONTROLS) {
+        *xSizeOutput = GUI_GetXButtonSize();
+        *ySizeOutput = GUI_GetYButtonSize();
+    } else if (buttonNumber == SELECTED_TRACK) {
+        *xSizeOutput = (int) (2 * GUI_GetXButtonSize());
+        *ySizeOutput = GUI_GetYButtonSize();
+    } else {
+        *xSizeOutput = GUI_GetXButtonSize();
+        *ySizeOutput = (int) (0.5 * GUI_GetYButtonSize());
+    }
+}
+
+void GUI_GetColorsForButton(int buttonNumber, uint32_t *primaryOutput, uint32_t *accentOutput) {
+    switch (buttonNumber) {
+        case SELECTED_TRACK:
+            *primaryOutput = COLOR_PRIMARY_SELECTED;
+            *accentOutput = COLOR_ACCENT_SELECTED;
+            break;
+        case EFFECT_1:
+        case EFFECT_2:
+        case NEXT_TRACK:
+        case BACK_TRACK:
+            *primaryOutput = COLOR_PRIMARY_OPTION;
+            *accentOutput = COLOR_ACCENT_OPTION;
+            break;
+        default:
+            *primaryOutput = COLOR_PRIMARY_DEFAULT;
+            *accentOutput = COLOR_ACCENT_DEFAULT;
+    }
+}
+
 
 void GUI_DrawTextAtCenter(int x, int y, int ySize, char *text) {
     BSP_LCD_SetFont(&Font12);
@@ -39,7 +113,7 @@ void GUI_DrawAllButtons(void) {
     BSP_LCD_Clear(COLOR_DEFAULT);
 
     // Sound buttons
-    for (int row = 0; row < GUI_button_rows; row++) {
+    for (int row = 0; row < GUI_sound_rows; row++) {
         for (int col = 0; col < GUI_buttons_in_row; col++) {
             int x = GUI_margin + col * bigButtonXSize;
             int y = GUI_margin + row * bigButtonYSize;
@@ -48,7 +122,7 @@ void GUI_DrawAllButtons(void) {
     }
 
     // Switch track to be loaded buttons
-    uint32_t trackButtonY = GUI_margin + GUI_button_rows * bigButtonYSize;
+    uint32_t trackButtonY = GUI_margin + GUI_sound_rows * bigButtonYSize;
     GUI_DrawButton(
             COLOR_PRIMARY_OPTION, COLOR_ACCENT_OPTION,
             GUI_margin, trackButtonY,
@@ -64,7 +138,7 @@ void GUI_DrawAllButtons(void) {
 
     // Effects buttons
     uint32_t effectButtonX = GUI_margin + (GUI_buttons_in_row - 1) * bigButtonXSize;
-    uint32_t effectButtonY = GUI_margin + GUI_button_rows * bigButtonYSize;
+    uint32_t effectButtonY = GUI_margin + GUI_sound_rows * bigButtonYSize;
     GUI_DrawButton(
             COLOR_PRIMARY_OPTION, COLOR_ACCENT_OPTION,
             effectButtonX, effectButtonY,
@@ -79,6 +153,17 @@ void GUI_DrawAllButtons(void) {
     );
 }
 
+void GUI_HighlightButton(int buttonNumber) {
+    int x, y, xSize, ySize;
+    uint32_t primaryColor, accentColor;
+    GUI_GetCoordsForButton(buttonNumber, &x, &y);
+    GUI_GetSizeForButton(buttonNumber, &xSize, &ySize);
+    GUI_GetColorsForButton(buttonNumber, &primaryColor, &accentColor);
+
+    GUI_DrawButton(primaryColor, COLOR_HIGHLIGHTED, x, y, xSize, ySize, "");
+}
+
+
 void GUI_HandleTouch(TS_StateTypeDef *tsState, void (*handleButtonTouch)(int)) {
     int touchesDetected = tsState->touchDetected;
     int touchesToHandle = touchesDetected > GUI_max_touches ? GUI_max_touches : touchesDetected;
@@ -90,38 +175,6 @@ void GUI_HandleTouch(TS_StateTypeDef *tsState, void (*handleButtonTouch)(int)) {
         x = tsState->touchX[i];
         y = tsState->touchY[i];
         BSP_LCD_FillCircle(x, y, GUI_touch_radius);
-        if (GUI_IsSoundButtonTouched(y)) {
-            (*handleButtonTouch)(GUI_GetButtonNumber(x, y)); // callback function
-        } else {
-            CON_HandleOptionsTouch(x, y);
-        }
+        (*handleButtonTouch)(GUI_GetButtonForCoords(x, y)); // callback function
     }
-}
-
-void GUI_HighlightSoundButton(int buttonNumber) {
-    int xSize = GUI_GetXButtonSize();
-    int ySize = GUI_GetYButtonSize();
-
-    int x = GUI_margin + (buttonNumber % GUI_buttons_in_row) * xSize;
-    int y = GUI_margin + (buttonNumber / GUI_buttons_in_row) * ySize;
-
-    GUI_DrawButton(
-            COLOR_PRIMARY_DEFAULT, COLOR_ACCENT_SELECTED,
-            x, y,
-            xSize, ySize,
-            "SELECTED"
-    );
-}
-
-int GUI_GetButtonNumber(int x, int y) {
-    uint32_t xNumber = (x - GUI_margin) / GUI_GetXButtonSize();
-    uint32_t yNumber = (y - GUI_margin) / GUI_GetYButtonSize();
-
-    if (xNumber < 0 || yNumber < 0 || xNumber >= GUI_buttons_in_row || yNumber >= GUI_button_rows) return -1;
-
-    return (int) (xNumber + yNumber * GUI_buttons_in_row);
-}
-
-int GUI_IsSoundButtonTouched(int y) {
-    return y < GUI_margin + GUI_button_rows * GUI_GetYButtonSize();
 }

@@ -197,7 +197,11 @@ Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c \
 Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_ts.c \
 Drivers/BSP/STM32746G-Discovery/stm32746g_discovery.c \
 Drivers/BSP/Components/wm8994/wm8994.c \
-Drivers/BSP/Components/ft5336/ft5336.c
+Drivers/BSP/Components/ft5336/ft5336.c \
+Modules/audio_loader.c \
+Modules/controls.c \
+Modules/gui.c
+
 PROJECT_SRC += Src/sd_diskio_dma_rtos.c
 PROJECT_SRC += Src/stm32f7_board_sd.c
 

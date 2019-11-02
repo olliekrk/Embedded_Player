@@ -632,4 +632,4 @@ add_executable(Embedded_Player
     Utilities/Log/lcd_log.c
     Utilities/Log/lcd_log.h
     Utilities/Log/lcd_log_conf_template.h
-    main.c Modules/gui.c Modules/gui.h Modules/controls.c Modules/controls.h Modules/audio_loader.c Modules/audio_loader.h Modules/gui_colors.h)
+    main.c Modules/gui.c Modules/gui.h Modules/controls.c Modules/controls.h Modules/audio_loader.c Modules/audio_loader.h Modules/gui_colors.h main.h)
