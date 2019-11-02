@@ -1,0 +1,519 @@
+ARM GAS  C:\Users\Student\AppData\Local\Temp\cchLNvBG.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"audio_loader.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.AUDIO_L_CreateAudioDirectory,"ax",%progbits
+  18              		.align	1
+  19              		.global	AUDIO_L_CreateAudioDirectory
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  23              		.fpu fpv5-sp-d16
+  25              	AUDIO_L_CreateAudioDirectory:
+  26              	.LFB141:
+  27              		.file 1 "Modules/audio_loader.c"
+   1:Modules/audio_loader.c **** //
+   2:Modules/audio_loader.c **** // Created by olliekrk on 24.10.2019.
+   3:Modules/audio_loader.c **** //
+   4:Modules/audio_loader.c **** 
+   5:Modules/audio_loader.c **** #include <ff.h>
+   6:Modules/audio_loader.c **** 
+   7:Modules/audio_loader.c **** 
+   8:Modules/audio_loader.c **** 
+   9:Modules/audio_loader.c **** #include <term_io.h>
+  10:Modules/audio_loader.c **** #include "audio_loader.h"
+  11:Modules/audio_loader.c **** #include "string.h"
+  12:Modules/audio_loader.c **** 
+  13:Modules/audio_loader.c **** FRESULT AUDIO_L_CreateAudioDirectory(void) {
+  28              		.loc 1 13 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 10B5     		push	{r4, lr}
+  33              	.LCFI0:
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 4, -8
+  36              		.cfi_offset 14, -4
+  14:Modules/audio_loader.c ****     FRESULT result = f_mkdir(AUDIO_DIRECTORY_PATH);
+  37              		.loc 1 14 0
+  38 0002 0648     		ldr	r0, .L5
+  39 0004 FFF7FEFF 		bl	f_mkdir
+  40              	.LVL0:
+  41 0008 0446     		mov	r4, r0
+  42              	.LVL1:
+  15:Modules/audio_loader.c ****     if (result == FR_EXIST){
+  43              		.loc 1 15 0
+ARM GAS  C:\Users\Student\AppData\Local\Temp\cchLNvBG.s 			page 2
+
+
+  44 000a 0828     		cmp	r0, #8
+  45 000c 01D0     		beq	.L4
+  46              	.LVL2:
+  47              	.L2:
+  16:Modules/audio_loader.c ****         xprintf("Audio directory already exists.\r\n");
+  17:Modules/audio_loader.c ****     }
+  18:Modules/audio_loader.c ****     return result;
+  19:Modules/audio_loader.c **** }
+  48              		.loc 1 19 0
+  49 000e 2046     		mov	r0, r4
+  50 0010 10BD     		pop	{r4, pc}
+  51              	.LVL3:
+  52              	.L4:
+  16:Modules/audio_loader.c ****         xprintf("Audio directory already exists.\r\n");
+  53              		.loc 1 16 0
+  54 0012 0348     		ldr	r0, .L5+4
+  55              	.LVL4:
+  56 0014 FFF7FEFF 		bl	xprintf
+  57              	.LVL5:
+  58 0018 F9E7     		b	.L2
+  59              	.L6:
+  60 001a 00BF     		.align	2
+  61              	.L5:
+  62 001c 00000000 		.word	.LC0
+  63 0020 14000000 		.word	.LC1
+  64              		.cfi_endproc
+  65              	.LFE141:
+  67              		.section	.text.AUDIO_L_ScanAudioDirectory,"ax",%progbits
+  68              		.align	1
+  69              		.global	AUDIO_L_ScanAudioDirectory
+  70              		.syntax unified
+  71              		.thumb
+  72              		.thumb_func
+  73              		.fpu fpv5-sp-d16
+  75              	AUDIO_L_ScanAudioDirectory:
+  76              	.LFB142:
+  20:Modules/audio_loader.c **** 
+  21:Modules/audio_loader.c **** int AUDIO_L_ScanAudioDirectory(char **audioFilesNames) {
+  77              		.loc 1 21 0
+  78              		.cfi_startproc
+  79              		@ args = 0, pretend = 0, frame = 336
+  80              		@ frame_needed = 0, uses_anonymous_args = 0
+  81              	.LVL6:
+  82 0000 30B5     		push	{r4, r5, lr}
+  83              	.LCFI1:
+  84              		.cfi_def_cfa_offset 12
+  85              		.cfi_offset 4, -12
+  86              		.cfi_offset 5, -8
+  87              		.cfi_offset 14, -4
+  88 0002 D5B0     		sub	sp, sp, #340
+  89              	.LCFI2:
+  90              		.cfi_def_cfa_offset 352
+  91 0004 0546     		mov	r5, r0
+  92              	.LVL7:
+  22:Modules/audio_loader.c ****     DIR audioDirectory;
+  23:Modules/audio_loader.c ****     FRESULT result;
+  24:Modules/audio_loader.c ****     FILINFO fileInfo;
+ARM GAS  C:\Users\Student\AppData\Local\Temp\cchLNvBG.s 			page 3
+
+
+  25:Modules/audio_loader.c ****     int count = 0;
+  26:Modules/audio_loader.c **** 	
+  27:Modules/audio_loader.c ****     result = f_findfirst(&audioDirectory, &fileInfo, AUDIO_DIRECTORY_PATH, "*.wav");
+  93              		.loc 1 27 0
+  94 0006 214B     		ldr	r3, .L22
+  95 0008 214A     		ldr	r2, .L22+4
+  96 000a 6946     		mov	r1, sp
+  97 000c 46A8     		add	r0, sp, #280
+  98              	.LVL8:
+  99 000e FFF7FEFF 		bl	f_findfirst
+ 100              	.LVL9:
+  28:Modules/audio_loader.c ****     if (result == FR_OK) {
+ 101              		.loc 1 28 0
+ 102 0012 0346     		mov	r3, r0
+ 103 0014 28B3     		cbz	r0, .L14
+  29:Modules/audio_loader.c ****         while (result == FR_OK && strlen(fileInfo.fname) > 0 && count < AUDIO_FILES_LIMIT) {
+  30:Modules/audio_loader.c **** 			audioFilesNames[count] = malloc(strlen(fileInfo.fname) * sizeof(char));
+  31:Modules/audio_loader.c **** 			audioFilesNames[count] = strcpy(audioFilesNames[count], fileInfo.fname);
+  32:Modules/audio_loader.c ****             count++;
+  33:Modules/audio_loader.c **** 			result = f_findnext(&audioDirectory, &fileInfo);
+  34:Modules/audio_loader.c ****         }
+  35:Modules/audio_loader.c ****         f_closedir(&audioDirectory);
+  36:Modules/audio_loader.c ****     } else if (result == FR_NO_PATH) {
+ 104              		.loc 1 36 0
+ 105 0016 0528     		cmp	r0, #5
+ 106 0018 25D0     		beq	.L19
+  37:Modules/audio_loader.c ****         xprintf("Empty audio directory will be created.\r\n");
+  38:Modules/audio_loader.c ****         result = AUDIO_L_CreateAudioDirectory();
+  39:Modules/audio_loader.c ****         if (result != FR_OK) {
+  40:Modules/audio_loader.c ****             xprintf("Creation of audio directory has failed.\r\n");
+  41:Modules/audio_loader.c ****             return -1;
+  42:Modules/audio_loader.c ****         }
+  43:Modules/audio_loader.c ****     } else if (result == FR_NO_FILE) {
+ 107              		.loc 1 43 0
+ 108 001a 0428     		cmp	r0, #4
+ 109 001c 31D0     		beq	.L20
+  25:Modules/audio_loader.c **** 	
+ 110              		.loc 1 25 0
+ 111 001e 0024     		movs	r4, #0
+ 112 0020 1CE0     		b	.L7
+ 113              	.LVL10:
+ 114              	.L11:
+  30:Modules/audio_loader.c **** 			audioFilesNames[count] = strcpy(audioFilesNames[count], fileInfo.fname);
+ 115              		.loc 1 30 0
+ 116 0022 0DF11600 		add	r0, sp, #22
+ 117 0026 FFF7FEFF 		bl	strlen
+ 118              	.LVL11:
+ 119 002a FFF7FEFF 		bl	malloc
+ 120              	.LVL12:
+ 121 002e 45F82400 		str	r0, [r5, r4, lsl #2]
+  31:Modules/audio_loader.c ****             count++;
+ 122              		.loc 1 31 0
+ 123 0032 0DF11601 		add	r1, sp, #22
+ 124 0036 FFF7FEFF 		bl	strcpy
+ 125              	.LVL13:
+ 126 003a 45F82400 		str	r0, [r5, r4, lsl #2]
+  32:Modules/audio_loader.c **** 			result = f_findnext(&audioDirectory, &fileInfo);
+ARM GAS  C:\Users\Student\AppData\Local\Temp\cchLNvBG.s 			page 4
+
+
+ 127              		.loc 1 32 0
+ 128 003e 0134     		adds	r4, r4, #1
+ 129              	.LVL14:
+  33:Modules/audio_loader.c ****         }
+ 130              		.loc 1 33 0
+ 131 0040 6946     		mov	r1, sp
+ 132 0042 46A8     		add	r0, sp, #280
+ 133 0044 FFF7FEFF 		bl	f_findnext
+ 134              	.LVL15:
+ 135 0048 0346     		mov	r3, r0
+ 136              	.LVL16:
+ 137              	.L8:
+  29:Modules/audio_loader.c **** 			audioFilesNames[count] = malloc(strlen(fileInfo.fname) * sizeof(char));
+ 138              		.loc 1 29 0
+ 139 004a 23B9     		cbnz	r3, .L10
+  29:Modules/audio_loader.c **** 			audioFilesNames[count] = malloc(strlen(fileInfo.fname) * sizeof(char));
+ 140              		.loc 1 29 0 is_stmt 0 discriminator 1
+ 141 004c 9DF81630 		ldrb	r3, [sp, #22]	@ zero_extendqisi2
+ 142              	.LVL17:
+ 143 0050 0BB1     		cbz	r3, .L10
+  29:Modules/audio_loader.c **** 			audioFilesNames[count] = malloc(strlen(fileInfo.fname) * sizeof(char));
+ 144              		.loc 1 29 0 discriminator 2
+ 145 0052 092C     		cmp	r4, #9
+ 146 0054 E5DD     		ble	.L11
+ 147              	.L10:
+  35:Modules/audio_loader.c ****     } else if (result == FR_NO_PATH) {
+ 148              		.loc 1 35 0 is_stmt 1
+ 149 0056 46A8     		add	r0, sp, #280
+ 150 0058 FFF7FEFF 		bl	f_closedir
+ 151              	.LVL18:
+ 152              	.L7:
+  44:Modules/audio_loader.c ****         xprintf("Found zero WAV files.");
+  45:Modules/audio_loader.c ****     }
+  46:Modules/audio_loader.c **** 
+  47:Modules/audio_loader.c ****     return count;
+  48:Modules/audio_loader.c **** }
+ 153              		.loc 1 48 0
+ 154 005c 2046     		mov	r0, r4
+ 155 005e 55B0     		add	sp, sp, #340
+ 156              	.LCFI3:
+ 157              		.cfi_remember_state
+ 158              		.cfi_def_cfa_offset 12
+ 159              		@ sp needed
+ 160 0060 30BD     		pop	{r4, r5, pc}
+ 161              	.LVL19:
+ 162              	.L14:
+ 163              	.LCFI4:
+ 164              		.cfi_restore_state
+ 165 0062 0024     		movs	r4, #0
+ 166 0064 F1E7     		b	.L8
+ 167              	.L19:
+  37:Modules/audio_loader.c ****         result = AUDIO_L_CreateAudioDirectory();
+ 168              		.loc 1 37 0
+ 169 0066 0B48     		ldr	r0, .L22+8
+ 170              	.LVL20:
+ 171 0068 FFF7FEFF 		bl	xprintf
+ 172              	.LVL21:
+ARM GAS  C:\Users\Student\AppData\Local\Temp\cchLNvBG.s 			page 5
+
+
+  38:Modules/audio_loader.c ****         if (result != FR_OK) {
+ 173              		.loc 1 38 0
+ 174 006c FFF7FEFF 		bl	AUDIO_L_CreateAudioDirectory
+ 175              	.LVL22:
+  39:Modules/audio_loader.c ****             xprintf("Creation of audio directory has failed.\r\n");
+ 176              		.loc 1 39 0
+ 177 0070 08B9     		cbnz	r0, .L21
+  25:Modules/audio_loader.c **** 	
+ 178              		.loc 1 25 0
+ 179 0072 0024     		movs	r4, #0
+ 180 0074 F2E7     		b	.L7
+ 181              	.L21:
+  40:Modules/audio_loader.c ****             return -1;
+ 182              		.loc 1 40 0
+ 183 0076 0848     		ldr	r0, .L22+12
+ 184              	.LVL23:
+ 185 0078 FFF7FEFF 		bl	xprintf
+ 186              	.LVL24:
+  41:Modules/audio_loader.c ****         }
+ 187              		.loc 1 41 0
+ 188 007c 4FF0FF34 		mov	r4, #-1
+ 189 0080 ECE7     		b	.L7
+ 190              	.LVL25:
+ 191              	.L20:
+  44:Modules/audio_loader.c ****     }
+ 192              		.loc 1 44 0
+ 193 0082 0648     		ldr	r0, .L22+16
+ 194              	.LVL26:
+ 195 0084 FFF7FEFF 		bl	xprintf
+ 196              	.LVL27:
+  25:Modules/audio_loader.c **** 	
+ 197              		.loc 1 25 0
+ 198 0088 0024     		movs	r4, #0
+ 199 008a E7E7     		b	.L7
+ 200              	.L23:
+ 201              		.align	2
+ 202              	.L22:
+ 203 008c 00000000 		.word	.LC2
+ 204 0090 00000000 		.word	.LC0
+ 205 0094 08000000 		.word	.LC3
+ 206 0098 34000000 		.word	.LC4
+ 207 009c 60000000 		.word	.LC5
+ 208              		.cfi_endproc
+ 209              	.LFE142:
+ 211              		.section	.text.AUDIO_L_PerformScan,"ax",%progbits
+ 212              		.align	1
+ 213              		.global	AUDIO_L_PerformScan
+ 214              		.syntax unified
+ 215              		.thumb
+ 216              		.thumb_func
+ 217              		.fpu fpv5-sp-d16
+ 219              	AUDIO_L_PerformScan:
+ 220              	.LFB143:
+  49:Modules/audio_loader.c **** 
+  50:Modules/audio_loader.c **** void AUDIO_L_PerformScan(void) {
+ 221              		.loc 1 50 0
+ 222              		.cfi_startproc
+ARM GAS  C:\Users\Student\AppData\Local\Temp\cchLNvBG.s 			page 6
+
+
+ 223              		@ args = 0, pretend = 0, frame = 0
+ 224              		@ frame_needed = 0, uses_anonymous_args = 0
+ 225 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 226              	.LCFI5:
+ 227              		.cfi_def_cfa_offset 24
+ 228              		.cfi_offset 3, -24
+ 229              		.cfi_offset 4, -20
+ 230              		.cfi_offset 5, -16
+ 231              		.cfi_offset 6, -12
+ 232              		.cfi_offset 7, -8
+ 233              		.cfi_offset 14, -4
+  51:Modules/audio_loader.c ****     char **audioFilesNames = malloc(AUDIO_FILES_LIMIT * sizeof(char *));
+ 234              		.loc 1 51 0
+ 235 0002 2820     		movs	r0, #40
+ 236 0004 FFF7FEFF 		bl	malloc
+ 237              	.LVL28:
+ 238 0008 0646     		mov	r6, r0
+ 239              	.LVL29:
+  52:Modules/audio_loader.c ****     FRESULT result = AUDIO_L_CreateAudioDirectory();
+ 240              		.loc 1 52 0
+ 241 000a FFF7FEFF 		bl	AUDIO_L_CreateAudioDirectory
+ 242              	.LVL30:
+  53:Modules/audio_loader.c ****     if (result == FR_OK || result == FR_EXIST) {
+ 243              		.loc 1 53 0
+ 244 000e 0828     		cmp	r0, #8
+ 245 0010 18BF     		it	ne
+ 246 0012 0028     		cmpne	r0, #0
+ 247 0014 03D0     		beq	.L29
+ 248              	.LVL31:
+ 249              	.L25:
+  54:Modules/audio_loader.c ****         int filesFound = AUDIO_L_ScanAudioDirectory(audioFilesNames);
+  55:Modules/audio_loader.c ****         xprintf("%d WAV files were found.\r\n", filesFound);
+  56:Modules/audio_loader.c ****         for (int i = 0; i < filesFound; i++) {
+  57:Modules/audio_loader.c ****             xprintf("Found WAV file no. %d: %s\r\n", i + 1, audioFilesNames[i]);
+  58:Modules/audio_loader.c ****             free(audioFilesNames[i]);
+  59:Modules/audio_loader.c ****         }
+  60:Modules/audio_loader.c ****     }
+  61:Modules/audio_loader.c ****     free(audioFilesNames);
+ 250              		.loc 1 61 0
+ 251 0016 3046     		mov	r0, r6
+ 252 0018 FFF7FEFF 		bl	free
+ 253              	.LVL32:
+ 254 001c F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 255              	.LVL33:
+ 256              	.L29:
+ 257              	.LBB2:
+  54:Modules/audio_loader.c ****         int filesFound = AUDIO_L_ScanAudioDirectory(audioFilesNames);
+ 258              		.loc 1 54 0
+ 259 001e 3046     		mov	r0, r6
+ 260              	.LVL34:
+ 261 0020 FFF7FEFF 		bl	AUDIO_L_ScanAudioDirectory
+ 262              	.LVL35:
+ 263 0024 0746     		mov	r7, r0
+ 264              	.LVL36:
+  55:Modules/audio_loader.c ****         for (int i = 0; i < filesFound; i++) {
+ 265              		.loc 1 55 0
+ 266 0026 0146     		mov	r1, r0
+ARM GAS  C:\Users\Student\AppData\Local\Temp\cchLNvBG.s 			page 7
+
+
+ 267 0028 0948     		ldr	r0, .L30
+ 268              	.LVL37:
+ 269 002a FFF7FEFF 		bl	xprintf
+ 270              	.LVL38:
+ 271              	.LBB3:
+  56:Modules/audio_loader.c ****             xprintf("Found WAV file no. %d: %s\r\n", i + 1, audioFilesNames[i]);
+ 272              		.loc 1 56 0
+ 273 002e 0024     		movs	r4, #0
+ 274 0030 0BE0     		b	.L26
+ 275              	.LVL39:
+ 276              	.L27:
+  57:Modules/audio_loader.c ****             free(audioFilesNames[i]);
+ 277              		.loc 1 57 0 discriminator 3
+ 278 0032 651C     		adds	r5, r4, #1
+ 279 0034 56F82420 		ldr	r2, [r6, r4, lsl #2]
+ 280 0038 2946     		mov	r1, r5
+ 281 003a 0648     		ldr	r0, .L30+4
+ 282 003c FFF7FEFF 		bl	xprintf
+ 283              	.LVL40:
+  58:Modules/audio_loader.c ****         }
+ 284              		.loc 1 58 0 discriminator 3
+ 285 0040 56F82400 		ldr	r0, [r6, r4, lsl #2]
+ 286 0044 FFF7FEFF 		bl	free
+ 287              	.LVL41:
+  56:Modules/audio_loader.c ****             xprintf("Found WAV file no. %d: %s\r\n", i + 1, audioFilesNames[i]);
+ 288              		.loc 1 56 0 discriminator 3
+ 289 0048 2C46     		mov	r4, r5
+ 290              	.LVL42:
+ 291              	.L26:
+  56:Modules/audio_loader.c ****             xprintf("Found WAV file no. %d: %s\r\n", i + 1, audioFilesNames[i]);
+ 292              		.loc 1 56 0 is_stmt 0 discriminator 1
+ 293 004a BC42     		cmp	r4, r7
+ 294 004c F1DB     		blt	.L27
+ 295 004e E2E7     		b	.L25
+ 296              	.L31:
+ 297              		.align	2
+ 298              	.L30:
+ 299 0050 00000000 		.word	.LC6
+ 300 0054 1C000000 		.word	.LC7
+ 301              	.LBE3:
+ 302              	.LBE2:
+ 303              		.cfi_endproc
+ 304              	.LFE143:
+ 306              		.section	.rodata.AUDIO_L_CreateAudioDirectory.str1.4,"aMS",%progbits,1
+ 307              		.align	2
+ 308              	.LC0:
+ 309 0000 313A2F41 		.ascii	"1:/AudioDirectory\000"
+ 309      7564696F 
+ 309      44697265 
+ 309      63746F72 
+ 309      7900
+ 310 0012 0000     		.space	2
+ 311              	.LC1:
+ 312 0014 41756469 		.ascii	"Audio directory already exists.\015\012\000"
+ 312      6F206469 
+ 312      72656374 
+ 312      6F727920 
+ARM GAS  C:\Users\Student\AppData\Local\Temp\cchLNvBG.s 			page 8
+
+
+ 312      616C7265 
+ 313              		.section	.rodata.AUDIO_L_PerformScan.str1.4,"aMS",%progbits,1
+ 314              		.align	2
+ 315              	.LC6:
+ 316 0000 25642057 		.ascii	"%d WAV files were found.\015\012\000"
+ 316      41562066 
+ 316      696C6573 
+ 316      20776572 
+ 316      6520666F 
+ 317 001b 00       		.space	1
+ 318              	.LC7:
+ 319 001c 466F756E 		.ascii	"Found WAV file no. %d: %s\015\012\000"
+ 319      64205741 
+ 319      56206669 
+ 319      6C65206E 
+ 319      6F2E2025 
+ 320              		.section	.rodata.AUDIO_L_ScanAudioDirectory.str1.4,"aMS",%progbits,1
+ 321              		.align	2
+ 322              	.LC2:
+ 323 0000 2A2E7761 		.ascii	"*.wav\000"
+ 323      7600
+ 324 0006 0000     		.space	2
+ 325              	.LC3:
+ 326 0008 456D7074 		.ascii	"Empty audio directory will be created.\015\012\000"
+ 326      79206175 
+ 326      64696F20 
+ 326      64697265 
+ 326      63746F72 
+ 327 0031 000000   		.space	3
+ 328              	.LC4:
+ 329 0034 43726561 		.ascii	"Creation of audio directory has failed.\015\012\000"
+ 329      74696F6E 
+ 329      206F6620 
+ 329      61756469 
+ 329      6F206469 
+ 330 005e 0000     		.space	2
+ 331              	.LC5:
+ 332 0060 466F756E 		.ascii	"Found zero WAV files.\000"
+ 332      64207A65 
+ 332      726F2057 
+ 332      41562066 
+ 332      696C6573 
+ 333              		.text
+ 334              	.Letext0:
+ 335              		.file 2 "Middlewares/Third_Party/FatFs/src/integer.h"
+ 336              		.file 3 "c:\\gcc_toolchain\\6_2017-q1-update\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 337              		.file 4 "c:\\gcc_toolchain\\6_2017-q1-update\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 338              		.file 5 "Drivers/CMSIS/Include/core_cm7.h"
+ 339              		.file 6 "Drivers/CMSIS/Device/ST/STM32F7xx/Include/system_stm32f7xx.h"
+ 340              		.file 7 "c:\\gcc_toolchain\\6_2017-q1-update\\arm-none-eabi\\include\\sys\\lock.h"
+ 341              		.file 8 "c:\\gcc_toolchain\\6_2017-q1-update\\arm-none-eabi\\include\\sys\\_types.h"
+ 342              		.file 9 "c:\\gcc_toolchain\\6_2017-q1-update\\lib\\gcc\\arm-none-eabi\\6.3.1\\include\\stddef.h"
+ 343              		.file 10 "c:\\gcc_toolchain\\6_2017-q1-update\\arm-none-eabi\\include\\sys\\reent.h"
+ 344              		.file 11 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ 345              		.file 12 "Middlewares/Third_Party/FreeRTOS/Source/include/queue.h"
+ 346              		.file 13 "Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h"
+ 347              		.file 14 "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h"
+ARM GAS  C:\Users\Student\AppData\Local\Temp\cchLNvBG.s 			page 9
+
+
+ 348              		.file 15 "c:\\gcc_toolchain\\6_2017-q1-update\\arm-none-eabi\\include\\stdlib.h"
+ 349              		.file 16 "Middlewares/ST/STM32_USB_Host_Library/Core/Inc/usbh_def.h"
+ 350              		.file 17 "Middlewares/ST/STM32_USB_Host_Library/Core/Inc/usbh_ctlreq.h"
+ 351              		.file 18 "Middlewares/ST/STM32_USB_Host_Library/Class/MSC/Inc/usbh_msc.h"
+ 352              		.file 19 "Middlewares/Third_Party/FatFs/src/ff.h"
+ 353              		.file 20 "Inc/term_io.h"
+ 354              		.file 21 "c:\\gcc_toolchain\\6_2017-q1-update\\arm-none-eabi\\include\\string.h"
+ARM GAS  C:\Users\Student\AppData\Local\Temp\cchLNvBG.s 			page 10
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 audio_loader.c
+C:\Users\Student\AppData\Local\Temp\cchLNvBG.s:18     .text.AUDIO_L_CreateAudioDirectory:00000000 $t
+C:\Users\Student\AppData\Local\Temp\cchLNvBG.s:25     .text.AUDIO_L_CreateAudioDirectory:00000000 AUDIO_L_CreateAudioDirectory
+C:\Users\Student\AppData\Local\Temp\cchLNvBG.s:62     .text.AUDIO_L_CreateAudioDirectory:0000001c $d
+C:\Users\Student\AppData\Local\Temp\cchLNvBG.s:68     .text.AUDIO_L_ScanAudioDirectory:00000000 $t
+C:\Users\Student\AppData\Local\Temp\cchLNvBG.s:75     .text.AUDIO_L_ScanAudioDirectory:00000000 AUDIO_L_ScanAudioDirectory
+C:\Users\Student\AppData\Local\Temp\cchLNvBG.s:203    .text.AUDIO_L_ScanAudioDirectory:0000008c $d
+C:\Users\Student\AppData\Local\Temp\cchLNvBG.s:212    .text.AUDIO_L_PerformScan:00000000 $t
+C:\Users\Student\AppData\Local\Temp\cchLNvBG.s:219    .text.AUDIO_L_PerformScan:00000000 AUDIO_L_PerformScan
+C:\Users\Student\AppData\Local\Temp\cchLNvBG.s:299    .text.AUDIO_L_PerformScan:00000050 $d
+C:\Users\Student\AppData\Local\Temp\cchLNvBG.s:307    .rodata.AUDIO_L_CreateAudioDirectory.str1.4:00000000 $d
+C:\Users\Student\AppData\Local\Temp\cchLNvBG.s:314    .rodata.AUDIO_L_PerformScan.str1.4:00000000 $d
+C:\Users\Student\AppData\Local\Temp\cchLNvBG.s:321    .rodata.AUDIO_L_ScanAudioDirectory.str1.4:00000000 $d
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+f_mkdir
+xprintf
+f_findfirst
+strlen
+malloc
+strcpy
+f_findnext
+f_closedir
+free

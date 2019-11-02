@@ -3,12 +3,16 @@
 //
 
 #include <ff.h>
+
+
+
 #include <term_io.h>
 #include "audio_loader.h"
+#include "string.h"
 
 FRESULT AUDIO_L_CreateAudioDirectory(void) {
     FRESULT result = f_mkdir(AUDIO_DIRECTORY_PATH);
-    if (result == FR_EXIST) {
+    if (result == FR_EXIST){
         xprintf("Audio directory already exists.\r\n");
     }
     return result;
@@ -19,14 +23,14 @@ int AUDIO_L_ScanAudioDirectory(char **audioFilesNames) {
     FRESULT result;
     FILINFO fileInfo;
     int count = 0;
-
+	
     result = f_findfirst(&audioDirectory, &fileInfo, AUDIO_DIRECTORY_PATH, "*.wav");
     if (result == FR_OK) {
         while (result == FR_OK && strlen(fileInfo.fname) > 0 && count < AUDIO_FILES_LIMIT) {
-            audioFilesNames[count] = malloc((strlen(fileInfo.fname) + 1) * sizeof(char));
-            audioFilesNames[count] = strcpy(audioFilesNames[count], fileInfo.fname);
+			audioFilesNames[count] = malloc(strlen(fileInfo.fname) * sizeof(char));
+			audioFilesNames[count] = strcpy(audioFilesNames[count], fileInfo.fname);
             count++;
-            result = f_findnext(&audioDirectory, &fileInfo);
+			result = f_findnext(&audioDirectory, &fileInfo);
         }
         f_closedir(&audioDirectory);
     } else if (result == FR_NO_PATH) {

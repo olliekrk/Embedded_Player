@@ -1,0 +1,477 @@
+ARM GAS  C:\Users\Student\AppData\Local\Temp\cc7Poqca.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"gui.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.GUI_GetXButtonSize,"ax",%progbits
+  18              		.align	1
+  19              		.global	GUI_GetXButtonSize
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  23              		.fpu fpv5-sp-d16
+  25              	GUI_GetXButtonSize:
+  26              	.LFB136:
+  27              		.file 1 "Modules/gui.c"
+   1:Modules/gui.c **** //
+   2:Modules/gui.c **** // Created by olliekrk on 21.10.2019.
+   3:Modules/gui.c **** //
+   4:Modules/gui.c **** 
+   5:Modules/gui.c **** #include <stm32746g_discovery_ts.h>
+   6:Modules/gui.c **** #include <term_io.h>
+   7:Modules/gui.c **** #include "gui.h"
+   8:Modules/gui.c **** #include "stm32746g_discovery_lcd.h"
+   9:Modules/gui.c **** 
+  10:Modules/gui.c **** uint32_t GUI_GetXButtonSize() {
+  28              		.loc 1 10 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 08B5     		push	{r3, lr}
+  33              	.LCFI0:
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 3, -8
+  36              		.cfi_offset 14, -4
+  11:Modules/gui.c ****     return (BSP_LCD_GetXSize() - GUI_margin) / GUI_buttons_in_row;
+  37              		.loc 1 11 0
+  38 0002 FFF7FEFF 		bl	BSP_LCD_GetXSize
+  39              	.LVL0:
+  40 0006 0438     		subs	r0, r0, #4
+  12:Modules/gui.c **** }
+  41              		.loc 1 12 0
+  42 0008 8008     		lsrs	r0, r0, #2
+  43 000a 08BD     		pop	{r3, pc}
+  44              		.cfi_endproc
+  45              	.LFE136:
+  47              		.section	.text.GUI_GetYButtonSize,"ax",%progbits
+ARM GAS  C:\Users\Student\AppData\Local\Temp\cc7Poqca.s 			page 2
+
+
+  48              		.align	1
+  49              		.global	GUI_GetYButtonSize
+  50              		.syntax unified
+  51              		.thumb
+  52              		.thumb_func
+  53              		.fpu fpv5-sp-d16
+  55              	GUI_GetYButtonSize:
+  56              	.LFB137:
+  13:Modules/gui.c **** 
+  14:Modules/gui.c **** uint32_t GUI_GetYButtonSize() {
+  57              		.loc 1 14 0
+  58              		.cfi_startproc
+  59              		@ args = 0, pretend = 0, frame = 0
+  60              		@ frame_needed = 0, uses_anonymous_args = 0
+  61 0000 08B5     		push	{r3, lr}
+  62              	.LCFI1:
+  63              		.cfi_def_cfa_offset 8
+  64              		.cfi_offset 3, -8
+  65              		.cfi_offset 14, -4
+  15:Modules/gui.c ****     return (BSP_LCD_GetYSize() - GUI_margin) / (GUI_button_rows + 1); // 1/N of screen is for playe
+  66              		.loc 1 15 0
+  67 0002 FFF7FEFF 		bl	BSP_LCD_GetYSize
+  68              	.LVL1:
+  69 0006 0438     		subs	r0, r0, #4
+  70 0008 024B     		ldr	r3, .L5
+  71 000a A3FB0030 		umull	r3, r0, r3, r0
+  16:Modules/gui.c **** }
+  72              		.loc 1 16 0
+  73 000e 4008     		lsrs	r0, r0, #1
+  74 0010 08BD     		pop	{r3, pc}
+  75              	.L6:
+  76 0012 00BF     		.align	2
+  77              	.L5:
+  78 0014 ABAAAAAA 		.word	-1431655765
+  79              		.cfi_endproc
+  80              	.LFE137:
+  82              		.section	.text.GUI_DrawButtons,"ax",%progbits
+  83              		.align	1
+  84              		.global	GUI_DrawButtons
+  85              		.syntax unified
+  86              		.thumb
+  87              		.thumb_func
+  88              		.fpu fpv5-sp-d16
+  90              	GUI_DrawButtons:
+  91              	.LFB138:
+  17:Modules/gui.c **** 
+  18:Modules/gui.c **** void GUI_DrawButtons(void) {
+  92              		.loc 1 18 0
+  93              		.cfi_startproc
+  94              		@ args = 0, pretend = 0, frame = 8
+  95              		@ frame_needed = 0, uses_anonymous_args = 0
+  96 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+  97              	.LCFI2:
+  98              		.cfi_def_cfa_offset 36
+  99              		.cfi_offset 4, -36
+ 100              		.cfi_offset 5, -32
+ 101              		.cfi_offset 6, -28
+ARM GAS  C:\Users\Student\AppData\Local\Temp\cc7Poqca.s 			page 3
+
+
+ 102              		.cfi_offset 7, -24
+ 103              		.cfi_offset 8, -20
+ 104              		.cfi_offset 9, -16
+ 105              		.cfi_offset 10, -12
+ 106              		.cfi_offset 11, -8
+ 107              		.cfi_offset 14, -4
+ 108 0004 83B0     		sub	sp, sp, #12
+ 109              	.LCFI3:
+ 110              		.cfi_def_cfa_offset 48
+  19:Modules/gui.c ****     BSP_LCD_Clear(LCD_COLOR_LIGHTGRAY);
+ 111              		.loc 1 19 0
+ 112 0006 1D48     		ldr	r0, .L14
+ 113 0008 FFF7FEFF 		bl	BSP_LCD_Clear
+ 114              	.LVL2:
+  20:Modules/gui.c **** 
+  21:Modules/gui.c ****     int xSize = GUI_GetXButtonSize();
+ 115              		.loc 1 21 0
+ 116 000c FFF7FEFF 		bl	GUI_GetXButtonSize
+ 117              	.LVL3:
+ 118 0010 0090     		str	r0, [sp]
+ 119 0012 8346     		mov	fp, r0
+ 120              	.LVL4:
+  22:Modules/gui.c ****     int ySize = GUI_GetYButtonSize();
+ 121              		.loc 1 22 0
+ 122 0014 FFF7FEFF 		bl	GUI_GetYButtonSize
+ 123              	.LVL5:
+ 124 0018 0190     		str	r0, [sp, #4]
+ 125 001a 8246     		mov	r10, r0
+ 126              	.LVL6:
+ 127              	.LBB2:
+  23:Modules/gui.c **** 
+  24:Modules/gui.c ****     for (int row = 0; row < GUI_button_rows; row++) {
+ 128              		.loc 1 24 0
+ 129 001c 4FF00009 		mov	r9, #0
+ 130 0020 23E0     		b	.L8
+ 131              	.LVL7:
+ 132              	.L9:
+ 133              	.LBB3:
+ 134              	.LBB4:
+  25:Modules/gui.c ****         for (int col = 0; col < GUI_buttons_in_row; col++) {
+  26:Modules/gui.c ****             int x = GUI_margin + col * xSize;
+ 135              		.loc 1 26 0 discriminator 3
+ 136 0022 0BFB07F4 		mul	r4, fp, r7
+ 137 0026 0434     		adds	r4, r4, #4
+ 138              	.LVL8:
+  27:Modules/gui.c ****             int y = GUI_margin + row * ySize;
+ 139              		.loc 1 27 0 discriminator 3
+ 140 0028 0AFB09F5 		mul	r5, r10, r9
+ 141 002c 0435     		adds	r5, r5, #4
+ 142              	.LVL9:
+  28:Modules/gui.c **** 
+  29:Modules/gui.c ****             BSP_LCD_SetTextColor(LCD_COLOR_DARKGRAY);
+ 143              		.loc 1 29 0 discriminator 3
+ 144 002e 1448     		ldr	r0, .L14+4
+ 145 0030 FFF7FEFF 		bl	BSP_LCD_SetTextColor
+ 146              	.LVL10:
+  30:Modules/gui.c ****             BSP_LCD_FillRect(x, y, xSize, ySize);
+ARM GAS  C:\Users\Student\AppData\Local\Temp\cc7Poqca.s 			page 4
+
+
+ 147              		.loc 1 30 0 discriminator 3
+ 148 0034 A4B2     		uxth	r4, r4
+ 149              	.LVL11:
+ 150 0036 ADB2     		uxth	r5, r5
+ 151              	.LVL12:
+ 152 0038 BDF80060 		ldrh	r6, [sp]
+ 153 003c BDF80480 		ldrh	r8, [sp, #4]
+ 154 0040 4346     		mov	r3, r8
+ 155 0042 3246     		mov	r2, r6
+ 156 0044 2946     		mov	r1, r5
+ 157 0046 2046     		mov	r0, r4
+ 158 0048 FFF7FEFF 		bl	BSP_LCD_FillRect
+ 159              	.LVL13:
+  31:Modules/gui.c **** 
+  32:Modules/gui.c ****             BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
+ 160              		.loc 1 32 0 discriminator 3
+ 161 004c 4FF07F40 		mov	r0, #-16777216
+ 162 0050 FFF7FEFF 		bl	BSP_LCD_SetTextColor
+ 163              	.LVL14:
+  33:Modules/gui.c ****             BSP_LCD_DrawRect(x, y, xSize, ySize);
+ 164              		.loc 1 33 0 discriminator 3
+ 165 0054 4346     		mov	r3, r8
+ 166 0056 3246     		mov	r2, r6
+ 167 0058 2946     		mov	r1, r5
+ 168 005a 2046     		mov	r0, r4
+ 169 005c FFF7FEFF 		bl	BSP_LCD_DrawRect
+ 170              	.LVL15:
+ 171              	.LBE4:
+  25:Modules/gui.c ****             int x = GUI_margin + col * xSize;
+ 172              		.loc 1 25 0 discriminator 3
+ 173 0060 0137     		adds	r7, r7, #1
+ 174              	.LVL16:
+ 175              	.L10:
+  25:Modules/gui.c ****             int x = GUI_margin + col * xSize;
+ 176              		.loc 1 25 0 is_stmt 0 discriminator 1
+ 177 0062 032F     		cmp	r7, #3
+ 178 0064 DDDD     		ble	.L9
+ 179              	.LBE3:
+  24:Modules/gui.c ****         for (int col = 0; col < GUI_buttons_in_row; col++) {
+ 180              		.loc 1 24 0 is_stmt 1 discriminator 2
+ 181 0066 09F10109 		add	r9, r9, #1
+ 182              	.LVL17:
+ 183              	.L8:
+  24:Modules/gui.c ****         for (int col = 0; col < GUI_buttons_in_row; col++) {
+ 184              		.loc 1 24 0 is_stmt 0 discriminator 1
+ 185 006a B9F1010F 		cmp	r9, #1
+ 186 006e 01DC     		bgt	.L13
+ 187 0070 0027     		movs	r7, #0
+ 188 0072 F6E7     		b	.L10
+ 189              	.L13:
+ 190              	.LBE2:
+  34:Modules/gui.c ****         }
+  35:Modules/gui.c ****     }
+  36:Modules/gui.c **** }
+ 191              		.loc 1 36 0 is_stmt 1
+ 192 0074 03B0     		add	sp, sp, #12
+ 193              	.LCFI4:
+ARM GAS  C:\Users\Student\AppData\Local\Temp\cc7Poqca.s 			page 5
+
+
+ 194              		.cfi_def_cfa_offset 36
+ 195              		@ sp needed
+ 196 0076 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 197              	.LVL18:
+ 198              	.L15:
+ 199 007a 00BF     		.align	2
+ 200              	.L14:
+ 201 007c D3D3D3FF 		.word	-2894893
+ 202 0080 404040FF 		.word	-12566464
+ 203              		.cfi_endproc
+ 204              	.LFE138:
+ 206              		.section	.text.GUI_GetButtonNumber,"ax",%progbits
+ 207              		.align	1
+ 208              		.global	GUI_GetButtonNumber
+ 209              		.syntax unified
+ 210              		.thumb
+ 211              		.thumb_func
+ 212              		.fpu fpv5-sp-d16
+ 214              	GUI_GetButtonNumber:
+ 215              	.LFB140:
+  37:Modules/gui.c **** 
+  38:Modules/gui.c **** void GUI_HandleTouch(TS_StateTypeDef *tsState, void (*handleButtonTouch)(int)) {
+  39:Modules/gui.c ****     int touchesDetected = tsState->touchDetected;
+  40:Modules/gui.c ****     int touchesToHandle = touchesDetected > GUI_max_touches ? GUI_max_touches : touchesDetected;
+  41:Modules/gui.c ****     int x;
+  42:Modules/gui.c ****     int y;
+  43:Modules/gui.c **** 	
+  44:Modules/gui.c ****     BSP_LCD_SetTextColor(LCD_COLOR_LIGHTGREEN);
+  45:Modules/gui.c ****     for (int i = 0; i < touchesToHandle; i++) {
+  46:Modules/gui.c ****         x = tsState->touchX[i];
+  47:Modules/gui.c ****         y = tsState->touchY[i];
+  48:Modules/gui.c ****         BSP_LCD_FillCircle(x, y, GUI_touch_radius);
+  49:Modules/gui.c ****         (*handleButtonTouch)(GUI_GetButtonNumber(x, y)); // callback function
+  50:Modules/gui.c ****     }
+  51:Modules/gui.c **** }
+  52:Modules/gui.c **** 
+  53:Modules/gui.c **** int GUI_GetButtonNumber(int x, int y) {
+ 216              		.loc 1 53 0
+ 217              		.cfi_startproc
+ 218              		@ args = 0, pretend = 0, frame = 0
+ 219              		@ frame_needed = 0, uses_anonymous_args = 0
+ 220              	.LVL19:
+ 221 0000 38B5     		push	{r3, r4, r5, lr}
+ 222              	.LCFI5:
+ 223              		.cfi_def_cfa_offset 16
+ 224              		.cfi_offset 3, -16
+ 225              		.cfi_offset 4, -12
+ 226              		.cfi_offset 5, -8
+ 227              		.cfi_offset 14, -4
+ 228 0002 0D46     		mov	r5, r1
+  54:Modules/gui.c ****     // todo: verify this
+  55:Modules/gui.c **** 
+  56:Modules/gui.c ****     uint32_t xNumber = (x - GUI_margin) / GUI_GetXButtonSize();
+ 229              		.loc 1 56 0
+ 230 0004 041F     		subs	r4, r0, #4
+ 231 0006 FFF7FEFF 		bl	GUI_GetXButtonSize
+ 232              	.LVL20:
+ARM GAS  C:\Users\Student\AppData\Local\Temp\cc7Poqca.s 			page 6
+
+
+ 233 000a B4FBF0F4 		udiv	r4, r4, r0
+ 234              	.LVL21:
+  57:Modules/gui.c ****     uint32_t yNumber = (y - GUI_margin) / GUI_GetYButtonSize();
+ 235              		.loc 1 57 0
+ 236 000e 043D     		subs	r5, r5, #4
+ 237              	.LVL22:
+ 238 0010 FFF7FEFF 		bl	GUI_GetYButtonSize
+ 239              	.LVL23:
+ 240 0014 B5FBF0F0 		udiv	r0, r5, r0
+ 241              	.LVL24:
+  58:Modules/gui.c **** 
+  59:Modules/gui.c ****     if (xNumber < 0 || yNumber < 0 || xNumber >= GUI_buttons_in_row || yNumber >= GUI_button_rows) 
+ 242              		.loc 1 59 0
+ 243 0018 0128     		cmp	r0, #1
+ 244 001a 98BF     		it	ls
+ 245 001c 032C     		cmpls	r4, #3
+ 246 001e 02D8     		bhi	.L18
+  60:Modules/gui.c **** 
+  61:Modules/gui.c ****     return (int) (xNumber + yNumber * GUI_buttons_in_row);
+ 247              		.loc 1 61 0
+ 248 0020 04EB8000 		add	r0, r4, r0, lsl #2
+ 249              	.LVL25:
+ 250 0024 38BD     		pop	{r3, r4, r5, pc}
+ 251              	.LVL26:
+ 252              	.L18:
+  59:Modules/gui.c **** 
+ 253              		.loc 1 59 0
+ 254 0026 4FF0FF30 		mov	r0, #-1
+ 255              	.LVL27:
+  62:Modules/gui.c **** }
+ 256              		.loc 1 62 0
+ 257 002a 38BD     		pop	{r3, r4, r5, pc}
+ 258              		.cfi_endproc
+ 259              	.LFE140:
+ 261              		.section	.text.GUI_HandleTouch,"ax",%progbits
+ 262              		.align	1
+ 263              		.global	GUI_HandleTouch
+ 264              		.syntax unified
+ 265              		.thumb
+ 266              		.thumb_func
+ 267              		.fpu fpv5-sp-d16
+ 269              	GUI_HandleTouch:
+ 270              	.LFB139:
+  38:Modules/gui.c ****     int touchesDetected = tsState->touchDetected;
+ 271              		.loc 1 38 0
+ 272              		.cfi_startproc
+ 273              		@ args = 0, pretend = 0, frame = 0
+ 274              		@ frame_needed = 0, uses_anonymous_args = 0
+ 275              	.LVL28:
+ 276 0000 2DE9F843 		push	{r3, r4, r5, r6, r7, r8, r9, lr}
+ 277              	.LCFI6:
+ 278              		.cfi_def_cfa_offset 32
+ 279              		.cfi_offset 3, -32
+ 280              		.cfi_offset 4, -28
+ 281              		.cfi_offset 5, -24
+ 282              		.cfi_offset 6, -20
+ 283              		.cfi_offset 7, -16
+ARM GAS  C:\Users\Student\AppData\Local\Temp\cc7Poqca.s 			page 7
+
+
+ 284              		.cfi_offset 8, -12
+ 285              		.cfi_offset 9, -8
+ 286              		.cfi_offset 14, -4
+ 287 0004 0746     		mov	r7, r0
+ 288 0006 8946     		mov	r9, r1
+  39:Modules/gui.c ****     int touchesToHandle = touchesDetected > GUI_max_touches ? GUI_max_touches : touchesDetected;
+ 289              		.loc 1 39 0
+ 290 0008 90F80080 		ldrb	r8, [r0]	@ zero_extendqisi2
+ 291              	.LVL29:
+  40:Modules/gui.c ****     int x;
+ 292              		.loc 1 40 0
+ 293 000c B8F1060F 		cmp	r8, #6
+ 294 0010 A8BF     		it	ge
+ 295 0012 4FF00608 		movge	r8, #6
+ 296              	.LVL30:
+  44:Modules/gui.c ****     for (int i = 0; i < touchesToHandle; i++) {
+ 297              		.loc 1 44 0
+ 298 0016 6FF07F10 		mvn	r0, #8323199
+ 299              	.LVL31:
+ 300 001a FFF7FEFF 		bl	BSP_LCD_SetTextColor
+ 301              	.LVL32:
+ 302              	.LBB5:
+  45:Modules/gui.c ****         x = tsState->touchX[i];
+ 303              		.loc 1 45 0
+ 304 001e 0024     		movs	r4, #0
+ 305 0020 11E0     		b	.L21
+ 306              	.LVL33:
+ 307              	.L22:
+  46:Modules/gui.c ****         y = tsState->touchY[i];
+ 308              		.loc 1 46 0 discriminator 3
+ 309 0022 07EB4403 		add	r3, r7, r4, lsl #1
+ 310 0026 5D88     		ldrh	r5, [r3, #2]
+ 311              	.LVL34:
+  47:Modules/gui.c ****         BSP_LCD_FillCircle(x, y, GUI_touch_radius);
+ 312              		.loc 1 47 0 discriminator 3
+ 313 0028 231D     		adds	r3, r4, #4
+ 314 002a 07EB4303 		add	r3, r7, r3, lsl #1
+ 315 002e 9E88     		ldrh	r6, [r3, #4]
+ 316              	.LVL35:
+  48:Modules/gui.c ****         (*handleButtonTouch)(GUI_GetButtonNumber(x, y)); // callback function
+ 317              		.loc 1 48 0 discriminator 3
+ 318 0030 0A22     		movs	r2, #10
+ 319 0032 3146     		mov	r1, r6
+ 320 0034 2846     		mov	r0, r5
+ 321 0036 FFF7FEFF 		bl	BSP_LCD_FillCircle
+ 322              	.LVL36:
+  49:Modules/gui.c ****     }
+ 323              		.loc 1 49 0 discriminator 3
+ 324 003a 3146     		mov	r1, r6
+ 325 003c 2846     		mov	r0, r5
+ 326 003e FFF7FEFF 		bl	GUI_GetButtonNumber
+ 327              	.LVL37:
+ 328 0042 C847     		blx	r9
+ 329              	.LVL38:
+  45:Modules/gui.c ****         x = tsState->touchX[i];
+ 330              		.loc 1 45 0 discriminator 3
+ 331 0044 0134     		adds	r4, r4, #1
+ARM GAS  C:\Users\Student\AppData\Local\Temp\cc7Poqca.s 			page 8
+
+
+ 332              	.LVL39:
+ 333              	.L21:
+  45:Modules/gui.c ****         x = tsState->touchX[i];
+ 334              		.loc 1 45 0 is_stmt 0 discriminator 1
+ 335 0046 4445     		cmp	r4, r8
+ 336 0048 EBDB     		blt	.L22
+ 337              	.LBE5:
+  51:Modules/gui.c **** 
+ 338              		.loc 1 51 0 is_stmt 1
+ 339 004a BDE8F883 		pop	{r3, r4, r5, r6, r7, r8, r9, pc}
+ 340              		.cfi_endproc
+ 341              	.LFE139:
+ 343              		.text
+ 344              	.Letext0:
+ 345              		.file 2 "c:\\gcc_toolchain\\6_2017-q1-update\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 346              		.file 3 "c:\\gcc_toolchain\\6_2017-q1-update\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 347              		.file 4 "Drivers/CMSIS/Include/core_cm7.h"
+ 348              		.file 5 "Drivers/CMSIS/Device/ST/STM32F7xx/Include/system_stm32f7xx.h"
+ 349              		.file 6 "c:\\gcc_toolchain\\6_2017-q1-update\\arm-none-eabi\\include\\sys\\lock.h"
+ 350              		.file 7 "c:\\gcc_toolchain\\6_2017-q1-update\\arm-none-eabi\\include\\sys\\_types.h"
+ 351              		.file 8 "c:\\gcc_toolchain\\6_2017-q1-update\\lib\\gcc\\arm-none-eabi\\6.3.1\\include\\stddef.h"
+ 352              		.file 9 "c:\\gcc_toolchain\\6_2017-q1-update\\arm-none-eabi\\include\\sys\\reent.h"
+ 353              		.file 10 "Drivers/BSP/STM32746G-Discovery/../Components/ft5336/../Common/ts.h"
+ 354              		.file 11 "Drivers/BSP/STM32746G-Discovery/../Components/ft5336/ft5336.h"
+ 355              		.file 12 "Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_ts.h"
+ 356              		.file 13 "c:\\users\\student\\music\\embedded_player\\utilities\\fonts\\fonts.h"
+ 357              		.file 14 "Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_lcd.h"
+ARM GAS  C:\Users\Student\AppData\Local\Temp\cc7Poqca.s 			page 9
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 gui.c
+C:\Users\Student\AppData\Local\Temp\cc7Poqca.s:18     .text.GUI_GetXButtonSize:00000000 $t
+C:\Users\Student\AppData\Local\Temp\cc7Poqca.s:25     .text.GUI_GetXButtonSize:00000000 GUI_GetXButtonSize
+C:\Users\Student\AppData\Local\Temp\cc7Poqca.s:48     .text.GUI_GetYButtonSize:00000000 $t
+C:\Users\Student\AppData\Local\Temp\cc7Poqca.s:55     .text.GUI_GetYButtonSize:00000000 GUI_GetYButtonSize
+C:\Users\Student\AppData\Local\Temp\cc7Poqca.s:78     .text.GUI_GetYButtonSize:00000014 $d
+C:\Users\Student\AppData\Local\Temp\cc7Poqca.s:83     .text.GUI_DrawButtons:00000000 $t
+C:\Users\Student\AppData\Local\Temp\cc7Poqca.s:90     .text.GUI_DrawButtons:00000000 GUI_DrawButtons
+C:\Users\Student\AppData\Local\Temp\cc7Poqca.s:201    .text.GUI_DrawButtons:0000007c $d
+C:\Users\Student\AppData\Local\Temp\cc7Poqca.s:207    .text.GUI_GetButtonNumber:00000000 $t
+C:\Users\Student\AppData\Local\Temp\cc7Poqca.s:214    .text.GUI_GetButtonNumber:00000000 GUI_GetButtonNumber
+C:\Users\Student\AppData\Local\Temp\cc7Poqca.s:262    .text.GUI_HandleTouch:00000000 $t
+C:\Users\Student\AppData\Local\Temp\cc7Poqca.s:269    .text.GUI_HandleTouch:00000000 GUI_HandleTouch
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+BSP_LCD_GetXSize
+BSP_LCD_GetYSize
+BSP_LCD_Clear
+BSP_LCD_SetTextColor
+BSP_LCD_FillRect
+BSP_LCD_DrawRect
+BSP_LCD_FillCircle
