@@ -11,9 +11,14 @@
 typedef struct AppControlsState {
     int SELECTED_SOUND_BUTTON;
     int SELECTED_OPTION;
+	int IS_TOUCHED;
+	
+	char *SELECTED_TRACK;
+	char **AVAILABLE_TRACKS;
+	int TRACK_INDEX;
 } AppControlsState;
 
-static AppControlsState APP_STATE = {-1, -1};
+AppControlsState APP_STATE = {-1, -1, 1, "OK"};
 
 typedef enum SoundControl {
     CON_BUTTON_0 = 0,

@@ -191,9 +191,9 @@ int main(void) {
 
     /* Create the thread(s) */
     /* definition and creation of defaultTask */
-    osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 1, ALL_THREADS_STACK_SIZE / 2);
-    osThreadDef(guiTask, StartGuiTask(), osPriorityNormal, 1, ALL_THREADS_STACK_SIZE / 4);
-    osThreadDef(touchscreenTask, StartTouchscreenTask, osPriorityHigh, 1, ALL_THREADS_STACK_SIZE / 4);
+    osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 1, ALL_THREADS_STACK_SIZE / 4);
+    osThreadDef(guiTask, StartGuiTask, osPriorityHigh, 1, ALL_THREADS_STACK_SIZE / 2);
+    osThreadDef(touchscreenTask, StartTouchscreenTask, osPriorityNormal, 1, ALL_THREADS_STACK_SIZE / 4);
 
     defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
     guiTaskHandle = osThreadCreate(osThread(guiTask), NULL);
@@ -238,7 +238,7 @@ void StartDefaultTask(void const *argument) {
     }
     BSP_AUDIO_OUT_SetAudioFrameSlot(CODEC_AUDIOFRAME_SLOT_02);
 
-    LCD_Initialize_Screen(); // todo: redundant? <---
+    //LCD_Initialize_Screen(); // todo: redundant? <---
     AUDIO_L_PerformScan();
 
     /* Infinite loop */
@@ -323,9 +323,10 @@ void StartDefaultTask(void const *argument) {
 
 void StartTouchscreenTask(void const *argument) {
     for (;;) {
-        vTaskDelay(100);
+        vTaskDelay(300);
         BSP_TS_GetState(&TS_State);
         if (TS_State.touchDetected > 0) {
+			APP_STATE.IS_TOUCHED = 1;
             GUI_HandleTouch(&TS_State, CON_HandleButtonTouched);
         }
     }
@@ -333,11 +334,16 @@ void StartTouchscreenTask(void const *argument) {
 
 void StartGuiTask(void const *argument) {
     for (;;) {
-        vTaskDelay(100);
-        GUI_DrawAllButtons();
-        if (APP_STATE.SELECTED_OPTION)
-            GUI_HighlightButton(APP_STATE.SELECTED_OPTION);
-        if (APP_STATE.SELECTED_SOUND_BUTTON)
+        vTaskDelay(50);
+		if (APP_STATE.IS_TOUCHED != -1){
+			APP_STATE.IS_TOUCHED = -1;
+			GUI_DrawAllButtons();
+		}
+		
+        if (APP_STATE.SELECTED_OPTION != -1)
+			GUI_HighlightButton(APP_STATE.SELECTED_OPTION);		
+ 
+        if (APP_STATE.SELECTED_SOUND_BUTTON != -1)
             GUI_HighlightButton(APP_STATE.SELECTED_SOUND_BUTTON);
     }
 }

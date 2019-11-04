@@ -40,12 +40,13 @@ void CON_HandleSoundButtonTouched(SoundControl button) {
 
 void CON_HandleOptionButtonTouched(OptionControl option) {
     switch (option) {
-        case NEXT_TRACK:
-        case BACK_TRACK:
         case SELECTED_TRACK:
         case EFFECT_1:
         case EFFECT_2:
+		xprintf("SHOULD WORK\r\n");
             APP_STATE.SELECTED_OPTION = option;
+		case NEXT_TRACK:
+        case BACK_TRACK:
         default:
             xprintf("Option button touched is: %d\r\n", option);
     }

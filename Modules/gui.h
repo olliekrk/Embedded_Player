@@ -5,7 +5,7 @@
 #ifndef EMBEDDED_PLAYER_GUI_H
 #define EMBEDDED_PLAYER_GUI_H
 
-#include <ts.h>
+#include "stm32746g_discovery_ts.h"
 
 #define GUI_buttons_in_row 4
 #define GUI_sound_rows 2

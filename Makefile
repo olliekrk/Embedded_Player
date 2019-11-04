@@ -185,7 +185,10 @@ Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ioreq.c \
 Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_pipes.c \
 Middlewares/ST/STM32_USB_Host_Library/Class/MSC/Src/usbh_msc.c \
 Middlewares/ST/STM32_USB_Host_Library/Class/MSC/Src/usbh_msc_bot.c \
-Middlewares/ST/STM32_USB_Host_Library/Class/MSC/Src/usbh_msc_scsi.c
+Middlewares/ST/STM32_USB_Host_Library/Class/MSC/Src/usbh_msc_scsi.c \
+Modules/audio_loader.c \
+Modules/controls.c \
+Modules/gui.c
 
 
 PROJECT_SRC = \
@@ -197,10 +200,7 @@ Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c \
 Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_ts.c \
 Drivers/BSP/STM32746G-Discovery/stm32746g_discovery.c \
 Drivers/BSP/Components/wm8994/wm8994.c \
-Drivers/BSP/Components/ft5336/ft5336.c \
-Modules/audio_loader.c \
-Modules/controls.c \
-Modules/gui.c
+Drivers/BSP/Components/ft5336/ft5336.c
 
 PROJECT_SRC += Src/sd_diskio_dma_rtos.c
 PROJECT_SRC += Src/stm32f7_board_sd.c

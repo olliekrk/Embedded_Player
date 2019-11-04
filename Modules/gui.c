@@ -8,12 +8,14 @@
 #include "gui_colors.h"
 #include "controls.h"
 
+extern AppControlsState APP_STATE;
+
 uint32_t GUI_GetXButtonSize() {
-    return (BSP_LCD_GetXSize() - GUI_margin) / GUI_buttons_in_row;
+    return (BSP_LCD_GetXSize() - 2 * GUI_margin) / GUI_buttons_in_row;
 }
 
 uint32_t GUI_GetYButtonSize() {
-    return (BSP_LCD_GetYSize() - GUI_margin) / (GUI_sound_rows + 1); // 1/N of screen is for player information
+    return (BSP_LCD_GetYSize() - 2 * GUI_margin) / (GUI_sound_rows + 1); // 1/N of screen is for player information
 }
 
 int GUI_GetButtonForCoords(int x, int y) {
@@ -91,8 +93,9 @@ void GUI_GetColorsForButton(int buttonNumber, uint32_t *primaryOutput, uint32_t 
 
 
 void GUI_DrawTextAtCenter(int x, int y, int ySize, char *text) {
+	BSP_LCD_SetTextColor(COLOR_TEXT);
     BSP_LCD_SetFont(&Font12);
-    BSP_LCD_DisplayStringAt(x + GUI_margin * 2, y + ySize + GUI_margin, (uint8_t *) text, CENTER_MODE);
+    BSP_LCD_DisplayStringAt(x + GUI_margin, y + GUI_margin, (uint8_t *) text, LEFT_MODE);
 }
 
 void GUI_DrawButton(uint32_t backgroundColor, uint32_t frameColor, int x, int y, int xSize, int ySize, char *text) {
@@ -109,8 +112,6 @@ void GUI_DrawAllButtons(void) {
     uint32_t bigButtonXSize = GUI_GetXButtonSize();
     uint32_t bigButtonYSize = GUI_GetYButtonSize();
     uint32_t smallButtonYSize = GUI_GetYButtonSize() / 2;
-
-    BSP_LCD_Clear(COLOR_DEFAULT);
 
     // Sound buttons
     for (int row = 0; row < GUI_sound_rows; row++) {
@@ -150,6 +151,16 @@ void GUI_DrawAllButtons(void) {
             effectButtonX, effectButtonY + smallButtonYSize,
             bigButtonXSize, smallButtonYSize,
             "E2"
+    );
+	
+	// Selected button
+	uint32_t selectedTrackX = GUI_margin + bigButtonXSize;
+	uint32_t selectedTrackY = GUI_margin + 2 * bigButtonYSize;
+	GUI_DrawButton(
+            COLOR_PRIMARY_SELECTED, COLOR_ACCENT_SELECTED,
+            selectedTrackX, selectedTrackY,
+            2 * bigButtonXSize, bigButtonYSize,
+            APP_STATE.SELECTED_TRACK
     );
 }
 
