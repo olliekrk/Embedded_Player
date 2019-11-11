@@ -5,20 +5,21 @@
 #ifndef EMBEDDED_PLAYER_CONTROLS_H
 #define EMBEDDED_PLAYER_CONTROLS_H
 
+#include <semphr.h>
+
 #define NUMBER_OF_SOUND_CONTROLS 8
 #define NUMBER_OF_CONTROLS 13
 
 typedef struct AppControlsState {
     int SELECTED_SOUND_BUTTON;
     int SELECTED_OPTION;
-	int IS_TOUCHED;
-	
-	char *SELECTED_TRACK;
-	char **AVAILABLE_TRACKS;
-	int TRACK_INDEX;
-} AppControlsState;
+    int IS_TOUCHED;
 
-AppControlsState APP_STATE = {-1, -1, 1, "OK"};
+    char **TRACKS;
+    int TRACKS_COUNT;
+    char *SELECTED_TRACK_NAME;
+    int SELECTED_TRACK_INDEX;
+} AppControlsState;
 
 typedef enum SoundControl {
     CON_BUTTON_0 = 0,
@@ -38,6 +39,10 @@ typedef enum OptionControl {
     EFFECT_1 = 11,
     EFFECT_2 = 12
 } OptionControl;
+
+extern AppControlsState APP_STATE;
+
+extern SemaphoreHandle_t AppStateMutex;
 
 void CON_HandleButtonTouched(int);
 

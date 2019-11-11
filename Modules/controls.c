@@ -4,7 +4,18 @@
 
 #include <term_io.h>
 #include "controls.h"
-#include "gui.h"
+
+AppControlsState APP_STATE = {
+        -1,
+        -1,
+        1,
+        NULL,
+        0,
+        NULL,
+        0
+};
+
+SemaphoreHandle_t AppStateMutex;
 
 void CON_HandleButtonTouched(int buttonNumber) {
     if (buttonNumber < 0 || buttonNumber >= NUMBER_OF_CONTROLS)
@@ -43,10 +54,18 @@ void CON_HandleOptionButtonTouched(OptionControl option) {
         case SELECTED_TRACK:
         case EFFECT_1:
         case EFFECT_2:
-		xprintf("SHOULD WORK\r\n");
             APP_STATE.SELECTED_OPTION = option;
-		case NEXT_TRACK:
+            break;
+        case NEXT_TRACK:
+            if (APP_STATE.TRACKS_COUNT > 0 && APP_STATE.SELECTED_TRACK_INDEX + 1 < APP_STATE.TRACKS_COUNT) {
+                APP_STATE.SELECTED_TRACK_NAME = APP_STATE.TRACKS[++APP_STATE.SELECTED_TRACK_INDEX];
+            }
+            break;
         case BACK_TRACK:
+            if (APP_STATE.TRACKS_COUNT > 0 && APP_STATE.SELECTED_TRACK_INDEX - 1 > 0) {
+                APP_STATE.SELECTED_TRACK_NAME = APP_STATE.TRACKS[--APP_STATE.SELECTED_TRACK_INDEX];
+            }
+            break;
         default:
             xprintf("Option button touched is: %d\r\n", option);
     }

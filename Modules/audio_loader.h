@@ -15,8 +15,10 @@
 
 FRESULT AUDIO_L_CreateAudioDirectory(void);
 
-int AUDIO_L_ScanAudioDirectory(char **audioFilesNames);
+int AUDIO_L_ScanAudioDirectory(void);
 
 void AUDIO_L_PerformScan(void);
+
+void AUDIO_L_ResetState(void);
 
 #endif //EMBEDDED_PLAYER_AUDIO_LOADER_H

@@ -89,7 +89,7 @@ ARM GAS  C:\Users\Student\AppData\Local\Temp\ccwHc6hk.s 			page 1
   42 000a 04D9     		bls	.L5
   43              	.LVL1:
   44              	.L2:
-  43:Modules/controls.c ****         case SELECTED_TRACK:
+  43:Modules/controls.c ****         case SELECTED_TRACK_NAME:
   44:Modules/controls.c ****         case EFFECT_1:
   45:Modules/controls.c ****         case EFFECT_2:
   46:Modules/controls.c **** 		xprintf("SHOULD WORK\r\n");

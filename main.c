@@ -119,25 +119,11 @@ static void LCD_Initialize_Screen(void) {
   * @retval None
   */
 int main(void) {
-    /* USER CODE BEGIN 1 */
-
-    /* USER CODE END 1 */
-
-    /* MCU Configuration----------------------------------------------------------*/
-
     /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
     HAL_Init();
 
-    /* USER CODE BEGIN Init */
-
-    /* USER CODE END Init */
-
     /* Configure the system clock */
     SystemClock_Config();
-
-    /* USER CODE BEGIN SysInit */
-
-    /* USER CODE END SysInit */
 
     /* Initialize all configured peripherals */
     MX_GPIO_Init();
@@ -164,7 +150,7 @@ int main(void) {
     MX_USART1_UART_Init();
     MX_USART6_UART_Init();
     MX_TIM7_Init();
-    /* USER CODE BEGIN 2 */
+
     debug_init(&huart1);
 
     xprintf(ANSI_FG_GREEN
@@ -175,19 +161,12 @@ int main(void) {
     LCD_Initialize_Screen();
     TS_Initialize_Touchscreen();
 
-    /* USER CODE END 2 */
-
-    /* USER CODE BEGIN RTOS_MUTEX */
     /* add mutexes, ... */
-    /* USER CODE END RTOS_MUTEX */
-
-    /* USER CODE BEGIN RTOS_SEMAPHORES */
     /* add semaphores, ... */
-    /* USER CODE END RTOS_SEMAPHORES */
 
-    /* USER CODE BEGIN RTOS_TIMERS */
-    /* start timers, add new ones, ... */
-    /* USER CODE END RTOS_TIMERS */
+//    AppStateMutex = xSemaphoreCreateMutex();
+
+/* start timers, add new ones, ... */
 
     /* Create the thread(s) */
     /* definition and creation of defaultTask */
@@ -199,14 +178,8 @@ int main(void) {
     guiTaskHandle = osThreadCreate(osThread(guiTask), NULL);
     touchscreenTaskHandle = osThreadCreate(osThread(touchscreenTask), NULL);
 
-    /* USER CODE BEGIN RTOS_THREADS */
     /* add threads, ... */
-    /* USER CODE END RTOS_THREADS */
-
-    /* USER CODE BEGIN RTOS_QUEUES */
     /* add queues, ... */
-    /* USER CODE END RTOS_QUEUES */
-
 
     /* Start scheduler */
     osKernelStart();
@@ -339,10 +312,10 @@ void StartGuiTask(void const *argument) {
 			APP_STATE.IS_TOUCHED = -1;
 			GUI_DrawAllButtons();
 		}
-		
+
         if (APP_STATE.SELECTED_OPTION != -1)
-			GUI_HighlightButton(APP_STATE.SELECTED_OPTION);		
- 
+			GUI_HighlightButton(APP_STATE.SELECTED_OPTION);
+
         if (APP_STATE.SELECTED_SOUND_BUTTON != -1)
             GUI_HighlightButton(APP_STATE.SELECTED_SOUND_BUTTON);
     }

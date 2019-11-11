@@ -8,8 +8,6 @@
 #include "gui_colors.h"
 #include "controls.h"
 
-extern AppControlsState APP_STATE;
-
 uint32_t GUI_GetXButtonSize() {
     return (BSP_LCD_GetXSize() - 2 * GUI_margin) / GUI_buttons_in_row;
 }
@@ -91,9 +89,8 @@ void GUI_GetColorsForButton(int buttonNumber, uint32_t *primaryOutput, uint32_t 
     }
 }
 
-
-void GUI_DrawTextAtCenter(int x, int y, int ySize, char *text) {
-	BSP_LCD_SetTextColor(COLOR_TEXT);
+void GUI_DrawTextAtCenter(int x, int y, char *text) {
+    BSP_LCD_SetTextColor(COLOR_TEXT);
     BSP_LCD_SetFont(&Font12);
     BSP_LCD_DisplayStringAt(x + GUI_margin, y + GUI_margin, (uint8_t *) text, LEFT_MODE);
 }
@@ -105,7 +102,7 @@ void GUI_DrawButton(uint32_t backgroundColor, uint32_t frameColor, int x, int y,
     BSP_LCD_SetTextColor(frameColor);
     BSP_LCD_DrawRect(x, y, xSize, ySize);
 
-    GUI_DrawTextAtCenter(x, y, ySize, text);
+    GUI_DrawTextAtCenter(x, y, text);
 }
 
 void GUI_DrawAllButtons(void) {
@@ -152,15 +149,15 @@ void GUI_DrawAllButtons(void) {
             bigButtonXSize, smallButtonYSize,
             "E2"
     );
-	
-	// Selected button
-	uint32_t selectedTrackX = GUI_margin + bigButtonXSize;
-	uint32_t selectedTrackY = GUI_margin + 2 * bigButtonYSize;
-	GUI_DrawButton(
+
+    // Selected button
+    uint32_t selectedTrackX = GUI_margin + bigButtonXSize;
+    uint32_t selectedTrackY = GUI_margin + 2 * bigButtonYSize;
+    GUI_DrawButton(
             COLOR_PRIMARY_SELECTED, COLOR_ACCENT_SELECTED,
             selectedTrackX, selectedTrackY,
             2 * bigButtonXSize, bigButtonYSize,
-            APP_STATE.SELECTED_TRACK
+            APP_STATE.SELECTED_TRACK_NAME ? APP_STATE.SELECTED_TRACK_NAME : "NONE SELECTED"
     );
 }
 
@@ -173,7 +170,6 @@ void GUI_HighlightButton(int buttonNumber) {
 
     GUI_DrawButton(primaryColor, COLOR_HIGHLIGHTED, x, y, xSize, ySize, "");
 }
-
 
 void GUI_HandleTouch(TS_StateTypeDef *tsState, void (*handleButtonTouch)(int)) {
     int touchesDetected = tsState->touchDetected;

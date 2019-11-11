@@ -28,7 +28,7 @@ void GUI_GetSizeForButton(int, int *, int *);
 void GUI_GetColorsForButton(int, uint32_t *, uint32_t *);
 
 // DISPLAY
-void GUI_DrawTextAtCenter(int, int, int, char *);
+void GUI_DrawTextAtCenter(int, int, char *);
 
 void GUI_DrawButton(uint32_t, uint32_t, int, int, int, int, char *);
 

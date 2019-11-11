@@ -218,7 +218,7 @@ ARM GAS  C:\Users\Student\AppData\Local\Temp\cc81WDJF.s 			page 1
  179 0066 01D0     		beq	.L21
   33:Modules/gui.c ****             return rowUpperSection ? EFFECT_1 : EFFECT_2;
   34:Modules/gui.c ****         } else {
-  35:Modules/gui.c ****             return SELECTED_TRACK;
+  35:Modules/gui.c ****             return SELECTED_TRACK_NAME;
  180              		.loc 1 35 0
  181 0068 0A20     		movs	r0, #10
  182              	.LVL20:
@@ -319,7 +319,7 @@ ARM GAS  C:\Users\Student\AppData\Local\Temp\cc81WDJF.s 			page 1
  256 0016 37D9     		bls	.L40
   49:Modules/gui.c ****         *xOutput = GUI_margin;
   50:Modules/gui.c ****         *yOutput = GUI_margin + (buttonNumber == NEXT_TRACK ? 2 : 2.5) * GUI_GetYButtonSize();
-  51:Modules/gui.c ****     } else if (buttonNumber == SELECTED_TRACK) {
+  51:Modules/gui.c ****     } else if (buttonNumber == SELECTED_TRACK_NAME) {
  257              		.loc 1 51 0
  258 0018 0A28     		cmp	r0, #10
  259 001a 50D0     		beq	.L41
@@ -410,14 +410,14 @@ ARM GAS  C:\Users\Student\AppData\Local\Temp\cc81WDJF.s 			page 1
  329              		.loc 1 49 0
  330 0088 0423     		movs	r3, #4
  331 008a 0B60     		str	r3, [r1]
-  50:Modules/gui.c ****     } else if (buttonNumber == SELECTED_TRACK) {
+  50:Modules/gui.c ****     } else if (buttonNumber == SELECTED_TRACK_NAME) {
  332              		.loc 1 50 0
  333 008c 0828     		cmp	r0, #8
  334 008e 12D0     		beq	.L44
  335 0090 0024     		movs	r4, #0
  336 0092 144D     		ldr	r5, .L45
  337              	.L29:
-  50:Modules/gui.c ****     } else if (buttonNumber == SELECTED_TRACK) {
+  50:Modules/gui.c ****     } else if (buttonNumber == SELECTED_TRACK_NAME) {
 ARM GAS  C:\Users\Student\AppData\Local\Temp\cc81WDJF.s 			page 8
 
 
@@ -442,7 +442,7 @@ ARM GAS  C:\Users\Student\AppData\Local\Temp\cc81WDJF.s 			page 1
  356 00b4 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
  357              	.LVL48:
  358              	.L44:
-  50:Modules/gui.c ****     } else if (buttonNumber == SELECTED_TRACK) {
+  50:Modules/gui.c ****     } else if (buttonNumber == SELECTED_TRACK_NAME) {
  359              		.loc 1 50 0
  360 00b6 0024     		movs	r4, #0
  361 00b8 4FF08045 		mov	r5, #1073741824
@@ -531,7 +531,7 @@ ARM GAS  C:\Users\Student\AppData\Local\Temp\cc81WDJF.s 			page 1
  435 000a 10D9     		bls	.L52
   64:Modules/gui.c ****         *xSizeOutput = GUI_GetXButtonSize();
   65:Modules/gui.c ****         *ySizeOutput = GUI_GetYButtonSize();
-  66:Modules/gui.c ****     } else if (buttonNumber == SELECTED_TRACK) {
+  66:Modules/gui.c ****     } else if (buttonNumber == SELECTED_TRACK_NAME) {
  436              		.loc 1 66 0
  437 000c 0A28     		cmp	r0, #10
  438 000e 15D0     		beq	.L53
@@ -567,7 +567,7 @@ ARM GAS  C:\Users\Student\AppData\Local\Temp\cc81WDJF.s 			page 1
  459 002e FFF7FEFF 		bl	GUI_GetXButtonSize
  460              	.LVL63:
  461 0032 2860     		str	r0, [r5]
-  65:Modules/gui.c ****     } else if (buttonNumber == SELECTED_TRACK) {
+  65:Modules/gui.c ****     } else if (buttonNumber == SELECTED_TRACK_NAME) {
  462              		.loc 1 65 0
  463 0034 FFF7FEFF 		bl	GUI_GetYButtonSize
  464              	.LVL64:
@@ -631,7 +631,7 @@ ARM GAS  C:\Users\Student\AppData\Local\Temp\cc81WDJF.s 			page 1
  514 000e 08       		.byte	(.L58-.L59)/2
  515 000f 00       		.p2align 1
  516              	.L60:
-  77:Modules/gui.c ****         case SELECTED_TRACK:
+  77:Modules/gui.c ****         case SELECTED_TRACK_NAME:
   78:Modules/gui.c ****             *primaryOutput = COLOR_PRIMARY_SELECTED;
  517              		.loc 1 78 0
  518 0010 074B     		ldr	r3, .L62
@@ -1047,7 +1047,7 @@ ARM GAS  C:\Users\Student\AppData\Local\Temp\cc81WDJF.s 			page 1
  160:Modules/gui.c ****             COLOR_PRIMARY_SELECTED, COLOR_ACCENT_SELECTED,
  161:Modules/gui.c ****             selectedTrackX, selectedTrackY,
  162:Modules/gui.c ****             2 * bigButtonXSize, bigButtonYSize,
- 163:Modules/gui.c ****             APP_STATE.SELECTED_TRACK
+ 163:Modules/gui.c ****             APP_STATE.SELECTED_TRACK_NAME
  164:Modules/gui.c ****     );
  165:Modules/gui.c **** }
  827              		.loc 1 165 0
