@@ -89,20 +89,21 @@ void GUI_GetColorsForButton(int buttonNumber, uint32_t *primaryOutput, uint32_t 
     }
 }
 
-void GUI_DrawTextAtCenter(int x, int y, char *text) {
+void GUI_DrawTextAtCenter(uint32_t backgroundColor, int x, int y, char *text) {
     BSP_LCD_SetTextColor(COLOR_TEXT);
-    BSP_LCD_SetFont(&Font12);
-    BSP_LCD_DisplayStringAt(x + GUI_margin, y + GUI_margin, (uint8_t *) text, LEFT_MODE);
+    BSP_LCD_SetBackColor(backgroundColor);
+    BSP_LCD_SetFont(&Font16); //possibly changes font size, can be 8,12,16,20 or 24 - 16 is 11 pixels wide
+    BSP_LCD_DisplayStringAt(x + GUI_margin, y + GUI_margin, (uint8_t *) text, LEFT_MODE); //the bigger y, the lower is string
+    //I think center_mode works in a following way: the text is in the middle between x and right side of the screen
 }
 
 void GUI_DrawButton(uint32_t backgroundColor, uint32_t frameColor, int x, int y, int xSize, int ySize, char *text) {
     BSP_LCD_SetTextColor(backgroundColor);
     BSP_LCD_FillRect(x, y, xSize, ySize);
-
     BSP_LCD_SetTextColor(frameColor);
     BSP_LCD_DrawRect(x, y, xSize, ySize);
 
-    GUI_DrawTextAtCenter(x, y, text);
+    GUI_DrawTextAtCenter(backgroundColor, x, y, text);
 }
 
 void GUI_DrawAllButtons(void) {
