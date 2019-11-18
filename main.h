@@ -153,8 +153,6 @@ void StartGuiTask(void const *argument);
 
 void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 
-#define AUDIO_OUT_BUFFER_SIZE                      8192
-#define MASS_STORAGE_BUF_SIZE        ( 1024 * 1024 )
 
 #define LCD_X_SIZE      RK043FN48H_WIDTH
 #define LCD_Y_SIZE      RK043FN48H_HEIGHT
@@ -163,11 +161,11 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 
 #define ALL_THREADS_STACK_SIZE 4096
 
-enum {
+typedef enum BufferState {
     BUFFER_OFFSET_NONE = 0,
     BUFFER_OFFSET_HALF,
     BUFFER_OFFSET_FULL,
-};
+} BufferState;
 
 static FIL testFile;
 extern ApplicationTypeDef Appli_state;
@@ -175,10 +173,8 @@ static uint8_t player_state = 0;
 static uint8_t buf_offs = BUFFER_OFFSET_NONE;
 static uint32_t fpos = 0;
 
-uint8_t buff[AUDIO_OUT_BUFFER_SIZE];
 static uint32_t lcd_image_fg[LCD_Y_SIZE][LCD_X_SIZE] __attribute__((section(".sdram"))) __attribute__((unused));
 static uint32_t lcd_image_bg[LCD_Y_SIZE][LCD_X_SIZE] __attribute__((section(".sdram"))) __attribute__((unused));
-static uint32_t mass_storage_buf[MASS_STORAGE_BUF_SIZE] __attribute__((section(".sdram"))) __attribute__((unused));
 
 static TS_StateTypeDef TS_State;
 

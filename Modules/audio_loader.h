@@ -11,7 +11,19 @@
 
 #define AUDIO_DIRECTORY_PATH AUDIO_STORAGE_PREFIX AUDIO_STORAGE_NAME
 
+#define AUDIO_BUTTONS_COUNT 8
+
 #define AUDIO_FILES_LIMIT 10
+
+#define AUDIO_OUT_BUFFER_SIZE 8192
+
+#define MASS_STORAGE_BUF_SIZE ( 1024 * 1024 )
+
+#define BUFFER_LIMIT_PER_BUTTON (MASS_STORAGE_BUF_SIZE / AUDIO_BUTTONS_COUNT)
+
+extern uint8_t TMP_BUFFER[AUDIO_OUT_BUFFER_SIZE];
+
+extern uint32_t AUDIO_BUFFER[MASS_STORAGE_BUF_SIZE] __attribute__((section(".sdram"))) __attribute__((unused));
 
 FRESULT AUDIO_L_CreateAudioDirectory(void);
 
@@ -20,5 +32,7 @@ int AUDIO_L_ScanAudioDirectory(void);
 void AUDIO_L_PerformScan(void);
 
 void AUDIO_L_ResetState(void);
+
+void AUDIO_L_LoadIntoBufferByName(char*, int);
 
 #endif //EMBEDDED_PLAYER_AUDIO_LOADER_H

@@ -4,6 +4,7 @@
 
 #include <term_io.h>
 #include "controls.h"
+#include "audio_loader.h"
 
 AppControlsState APP_STATE = {
         -1,
@@ -50,6 +51,11 @@ void CON_HandleSoundButtonTouched(SoundControl button) {
 }
 
 void CON_HandleOptionButtonTouched(OptionControl option) {
+    if (APP_STATE.SELECTED_OPTION == option) {
+        APP_STATE.SELECTED_OPTION = -1;
+        return;
+    }
+
     switch (option) {
         case SELECTED_TRACK:
         case EFFECT_1:
@@ -73,8 +79,13 @@ void CON_HandleOptionButtonTouched(OptionControl option) {
 
 void CON_ActivateOption() {
     if (APP_STATE.SELECTED_OPTION && APP_STATE.SELECTED_SOUND_BUTTON) {
+
+        // todo: apply selected options with selected button
+
         switch (APP_STATE.SELECTED_OPTION) {
-            // todo: apply selected option to selected button
+            case SELECTED_TRACK:
+                AUDIO_L_LoadIntoBufferByName(APP_STATE.SELECTED_TRACK_NAME, APP_STATE.SELECTED_SOUND_BUTTON);
+                break;
             default:
                 xprintf("Option no. %d activated with button: %d. \r\n",
                         APP_STATE.SELECTED_OPTION,

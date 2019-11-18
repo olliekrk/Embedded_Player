@@ -210,8 +210,6 @@ void StartDefaultTask(void const *argument) {
         xprintf("Audio codec initialized with errors.\r\n");
     }
     BSP_AUDIO_OUT_SetAudioFrameSlot(CODEC_AUDIOFRAME_SLOT_02);
-
-    //LCD_Initialize_Screen(); // todo: redundant? <---
     AUDIO_L_PerformScan();
 
     /* Infinite loop */
@@ -241,7 +239,7 @@ void StartDefaultTask(void const *argument) {
                     xprintf("wave file open ERROR, res = %d\n", res);
                 }
                 player_state = 1;
-                BSP_AUDIO_OUT_Play((uint16_t *) &buff[0], AUDIO_OUT_BUFFER_SIZE);
+                BSP_AUDIO_OUT_Play((uint16_t *) &TMP_BUFFER[0], AUDIO_OUT_BUFFER_SIZE);
                 fpos = 0;
                 buf_offs = BUFFER_OFFSET_NONE;
                 break;
@@ -257,7 +255,7 @@ void StartDefaultTask(void const *argument) {
 
             if (buf_offs == BUFFER_OFFSET_HALF) {
                 if (f_read(&testFile,
-                           &buff[0],
+                           &TMP_BUFFER[0],
                            AUDIO_OUT_BUFFER_SIZE / 2,
                            (void *) &br) != FR_OK) {
                     BSP_AUDIO_OUT_Stop(CODEC_PDWN_SW);
@@ -270,7 +268,7 @@ void StartDefaultTask(void const *argument) {
 
             if (buf_offs == BUFFER_OFFSET_FULL) {
                 if (f_read(&testFile,
-                           &buff[AUDIO_OUT_BUFFER_SIZE / 2],
+                           &TMP_BUFFER[AUDIO_OUT_BUFFER_SIZE / 2],
                            AUDIO_OUT_BUFFER_SIZE / 2,
                            (void *) &br) != FR_OK) {
                     BSP_AUDIO_OUT_Stop(CODEC_PDWN_SW);
