@@ -7,6 +7,7 @@
 #include "gui.h"
 #include "gui_colors.h"
 #include "controls.h"
+#include <string.h>
 
 uint32_t GUI_GetXButtonSize() {
     return (BSP_LCD_GetXSize() - 2 * GUI_margin) / GUI_buttons_in_row;
@@ -58,7 +59,7 @@ int GUI_GetCoordsForButton(int buttonNumber, int *xOutput, int *yOutput) {
 }
 
 void GUI_GetSizeForButton(int buttonNumber, int *xSizeOutput, int *ySizeOutput) {
-    if (buttonNumber > 0 && buttonNumber < NUMBER_OF_SOUND_CONTROLS) {
+    if (buttonNumber >= 0 && buttonNumber < NUMBER_OF_SOUND_CONTROLS) {
         *xSizeOutput = GUI_GetXButtonSize();
         *ySizeOutput = GUI_GetYButtonSize();
     } else if (buttonNumber == SELECTED_TRACK) {
@@ -90,10 +91,15 @@ void GUI_GetColorsForButton(int buttonNumber, uint32_t *primaryOutput, uint32_t 
 }
 
 void GUI_DrawTextAtCenter(uint32_t backgroundColor, int x, int y, char *text) {
+	char trimmedName[12];
+	memset(trimmedName, '\0', sizeof(trimmedName));
+	strncpy(trimmedName, text, 10);
+
     BSP_LCD_SetTextColor(COLOR_TEXT);
     BSP_LCD_SetBackColor(backgroundColor);
     BSP_LCD_SetFont(&Font16); //possibly changes font size, can be 8,12,16,20 or 24 - 16 is 11 pixels wide
-    BSP_LCD_DisplayStringAt(x + GUI_margin, y + GUI_margin, (uint8_t *) text, LEFT_MODE); //the bigger y, the lower is string
+    BSP_LCD_DisplayStringAt(x + GUI_margin, y + GUI_margin, (uint8_t *) trimmedName, LEFT_MODE);
+	//the bigger y, the lower is string
     //I think center_mode works in a following way: the text is in the middle between x and right side of the screen
 }
 
@@ -169,7 +175,7 @@ void GUI_HighlightButton(int buttonNumber) {
     GUI_GetSizeForButton(buttonNumber, &xSize, &ySize);
     GUI_GetColorsForButton(buttonNumber, &primaryColor, &accentColor);
 
-    GUI_DrawButton(primaryColor, COLOR_HIGHLIGHTED, x, y, xSize, ySize, "");
+    GUI_DrawButton(primaryColor, COLOR_HIGHLIGHTED, x, y, xSize, ySize, "SELECTED");
 }
 
 void GUI_HandleTouch(TS_StateTypeDef *tsState, void (*handleButtonTouch)(int)) {
@@ -182,7 +188,6 @@ void GUI_HandleTouch(TS_StateTypeDef *tsState, void (*handleButtonTouch)(int)) {
     for (int i = 0; i < touchesToHandle; i++) {
         x = tsState->touchX[i];
         y = tsState->touchY[i];
-        BSP_LCD_FillCircle(x, y, GUI_touch_radius);
         (*handleButtonTouch)(GUI_GetButtonForCoords(x, y)); // callback function
     }
 }

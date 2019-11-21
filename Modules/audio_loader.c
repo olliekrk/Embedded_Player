@@ -65,7 +65,7 @@ void AUDIO_L_ResetState(void) {
     free(APP_STATE.TRACKS);
     APP_STATE.TRACKS = malloc(AUDIO_FILES_LIMIT * sizeof(char *));
     APP_STATE.TRACKS_COUNT = 0;
-    APP_STATE.SELECTED_TRACK_INDEX = 0;
+    APP_STATE.SELECTED_TRACK_INDEX = -1;
     APP_STATE.SELECTED_TRACK_NAME = "";
 }
 
@@ -74,8 +74,8 @@ void AUDIO_L_LoadIntoBufferByName(char *fileName, int buttonNumber) {
     UINT _bytesRead;
     char *filePath = malloc(1000 * sizeof(char));
 
-    if (sprintf(filePath, "%s%s%s", AUDIO_STORAGE_PREFIX, AUDIO_DIRECTORY_PATH, fileName) > 0) {
-        if (f_open(&file, filePath, FA_READ)) {
+    if (sprintf(filePath, "%s/%s", AUDIO_DIRECTORY_PATH, fileName) > 0) {
+        if (f_open(&file, filePath, FA_READ) == FR_OK) {
             f_read(&file,
                    &AUDIO_BUFFER[buttonNumber * BUFFER_LIMIT_PER_BUTTON],
                    BUFFER_LIMIT_PER_BUTTON,
@@ -83,7 +83,7 @@ void AUDIO_L_LoadIntoBufferByName(char *fileName, int buttonNumber) {
             );
             f_close(&file);
 
-            xprintf("Successfully read audio file of size %u bytes.\r\n", _bytesRead);
+            xprintf("Successfully read audio file: %s of size %u bytes.\r\n", filePath, _bytesRead);
         }
     } else {
         xprintf("An error has occurred when loading file onto buffer.\r\n");

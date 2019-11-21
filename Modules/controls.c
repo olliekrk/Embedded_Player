@@ -16,7 +16,7 @@ AppControlsState APP_STATE = {
         0
 };
 
-SemaphoreHandle_t AppStateMutex;
+//SemaphoreHandle_t AppStateMutex;
 
 void CON_HandleButtonTouched(int buttonNumber) {
     if (buttonNumber < 0 || buttonNumber >= NUMBER_OF_CONTROLS)
@@ -68,7 +68,7 @@ void CON_HandleOptionButtonTouched(OptionControl option) {
             }
             break;
         case BACK_TRACK:
-            if (APP_STATE.TRACKS_COUNT > 0 && APP_STATE.SELECTED_TRACK_INDEX - 1 > 0) {
+            if (APP_STATE.TRACKS_COUNT > 0 && APP_STATE.SELECTED_TRACK_INDEX - 1 > 0) {		
                 APP_STATE.SELECTED_TRACK_NAME = APP_STATE.TRACKS[--APP_STATE.SELECTED_TRACK_INDEX];
             }
             break;

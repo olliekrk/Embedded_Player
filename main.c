@@ -170,9 +170,9 @@ int main(void) {
 
     /* Create the thread(s) */
     /* definition and creation of defaultTask */
-    osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 1, ALL_THREADS_STACK_SIZE / 4);
-    osThreadDef(guiTask, StartGuiTask, osPriorityHigh, 1, ALL_THREADS_STACK_SIZE / 2);
-    osThreadDef(touchscreenTask, StartTouchscreenTask, osPriorityNormal, 1, ALL_THREADS_STACK_SIZE / 4);
+    osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 1, ALL_THREADS_STACK_SIZE * 0.1);
+    osThreadDef(guiTask, StartGuiTask, osPriorityHigh, 1, ALL_THREADS_STACK_SIZE * 0.4);
+    osThreadDef(touchscreenTask, StartTouchscreenTask, osPriorityHigh, 1, ALL_THREADS_STACK_SIZE * 0.5);
 
     defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
     guiTaskHandle = osThreadCreate(osThread(guiTask), NULL);
@@ -204,7 +204,7 @@ void StartDefaultTask(void const *argument) {
     } while (Appli_state != APPLICATION_READY);
 
     xprintf("Initializing audio codec.\r\n");
-    if (BSP_AUDIO_OUT_Init(OUTPUT_DEVICE_HEADPHONE1, 60, AUDIO_FREQUENCY_44K) == 0) {
+    if (BSP_AUDIO_OUT_Init(OUTPUT_DEVICE_HEADPHONE1, 90, AUDIO_FREQUENCY_44K) == 0) {
         xprintf("Audio codec initialized successfully.\r\n");
     } else {
         xprintf("Audio codec initialized with errors.\r\n");
@@ -226,20 +226,29 @@ void StartDefaultTask(void const *argument) {
 
             case 'p': {
                 xprintf("play command...\n");
-                if (player_state) {
+                
+				/*
+				if (player_state) {
                     xprintf("already playing\n");
                     break;
                 }
 
                 FRESULT res;
                 res = f_open(&testFile, "1:/testwave.wav", FA_READ);
-                if (res == FR_OK) {
+                p
+				
+				if (res == FR_OK) {
                     xprintf("wave file open OK\n");
                 } else {
                     xprintf("wave file open ERROR, res = %d\n", res);
                 }
+				*/
+				
+				
                 player_state = 1;
-                BSP_AUDIO_OUT_Play((uint16_t *) &TMP_BUFFER[0], AUDIO_OUT_BUFFER_SIZE);
+                if (BSP_AUDIO_OUT_Play((uint16_t *) AUDIO_BUFFER[1 * BUFFER_LIMIT_PER_BUTTON], BUFFER_LIMIT_PER_BUTTON) == 0){
+					xprintf("PLAY SUCCESS\r\n");
+				};
                 fpos = 0;
                 buf_offs = BUFFER_OFFSET_NONE;
                 break;
@@ -263,7 +272,6 @@ void StartDefaultTask(void const *argument) {
                 }
                 buf_offs = BUFFER_OFFSET_NONE;
                 fpos += br;
-
             }
 
             if (buf_offs == BUFFER_OFFSET_FULL) {
@@ -288,13 +296,13 @@ void StartDefaultTask(void const *argument) {
                 buf_offs = BUFFER_OFFSET_NONE;
             }
         }
-        vTaskDelay(100);
+        vTaskDelay(300);
     }
 }
 
 void StartTouchscreenTask(void const *argument) {
     for (;;) {
-        vTaskDelay(300);
+        vTaskDelay(100);
         BSP_TS_GetState(&TS_State);
         if (TS_State.touchDetected > 0) {
 			APP_STATE.IS_TOUCHED = 1;
@@ -305,7 +313,7 @@ void StartTouchscreenTask(void const *argument) {
 
 void StartGuiTask(void const *argument) {
     for (;;) {
-        vTaskDelay(50);
+        vTaskDelay(100);
 		if (APP_STATE.IS_TOUCHED != -1){
 			APP_STATE.IS_TOUCHED = -1;
 			GUI_DrawAllButtons();

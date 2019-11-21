@@ -5,7 +5,7 @@
 #ifndef EMBEDDED_PLAYER_CONTROLS_H
 #define EMBEDDED_PLAYER_CONTROLS_H
 
-#include <semphr.h>
+//#include <semphr.h>
 
 #define NUMBER_OF_SOUND_CONTROLS 8
 #define NUMBER_OF_CONTROLS 13
@@ -42,7 +42,7 @@ typedef enum OptionControl {
 
 extern AppControlsState APP_STATE;
 
-extern SemaphoreHandle_t AppStateMutex;
+//extern SemaphoreHandle_t AppStateMutex;
 
 void CON_HandleButtonTouched(int);
 

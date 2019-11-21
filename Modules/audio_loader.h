@@ -21,6 +21,8 @@
 
 #define BUFFER_LIMIT_PER_BUTTON (MASS_STORAGE_BUF_SIZE / AUDIO_BUTTONS_COUNT)
 
+#include <ff.h>
+
 extern uint8_t TMP_BUFFER[AUDIO_OUT_BUFFER_SIZE];
 
 extern uint32_t AUDIO_BUFFER[MASS_STORAGE_BUF_SIZE] __attribute__((section(".sdram"))) __attribute__((unused));
