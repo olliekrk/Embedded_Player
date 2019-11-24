@@ -5,10 +5,28 @@
 #ifndef EMBEDDED_PLAYER_CONTROLS_H
 #define EMBEDDED_PLAYER_CONTROLS_H
 
-//#include <semphr.h>
+#include <stdbool.h>
 
 #define NUMBER_OF_SOUND_CONTROLS 8
 #define NUMBER_OF_CONTROLS 13
+
+typedef enum SoundEffect {
+    effectInactive = 0,
+    effectOne = 1,
+    effectTwo = 2
+} SoundEffect;
+
+typedef struct ButtonState {
+    char *trackName;
+    uint8_t channels;
+    uint16_t sampleRate; // 8k, 44.1k, etc.
+    uint32_t size;
+    SoundEffect effectEnabled;
+} ButtonState;
+
+typedef struct AppButtonsState {
+    ButtonState *configs;
+} AppButtonsState;
 
 typedef struct AppControlsState {
     int SELECTED_SOUND_BUTTON;
@@ -42,7 +60,9 @@ typedef enum OptionControl {
 
 extern AppControlsState APP_STATE;
 
-//extern SemaphoreHandle_t AppStateMutex;
+extern AppButtonsState APP_BUTTONS_STATE;
+
+void CON_Initialize_Buttons(void);
 
 void CON_HandleButtonTouched(int);
 
@@ -52,6 +72,6 @@ void CON_HandleOptionButtonTouched(OptionControl);
 
 void CON_ActivateOption();
 
-void CON_PlayLoadedSound(int);
+void CON_EnqueueAudio(int);
 
 #endif //EMBEDDED_PLAYER_CONTROLS_H

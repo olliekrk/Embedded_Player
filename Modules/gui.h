@@ -10,9 +10,9 @@
 #define GUI_buttons_in_row 4
 #define GUI_sound_rows 2
 #define GUI_margin 4
-
-#define GUI_touch_radius 4
 #define GUI_max_touches 6
+
+#define TEXT_DISPLAYED_MAXLENGTH 15
 
 // UTIL
 uint32_t GUI_GetXButtonSize(void);

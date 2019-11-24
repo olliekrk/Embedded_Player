@@ -187,6 +187,7 @@ Middlewares/ST/STM32_USB_Host_Library/Class/MSC/Src/usbh_msc.c \
 Middlewares/ST/STM32_USB_Host_Library/Class/MSC/Src/usbh_msc_bot.c \
 Middlewares/ST/STM32_USB_Host_Library/Class/MSC/Src/usbh_msc_scsi.c \
 Modules/audio_loader.c \
+Modules/audio_player.c \
 Modules/controls.c \
 Modules/gui.c
 

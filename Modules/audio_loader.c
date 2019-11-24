@@ -9,7 +9,7 @@
 
 uint8_t TMP_BUFFER[AUDIO_OUT_BUFFER_SIZE];
 
-uint32_t AUDIO_BUFFER[MASS_STORAGE_BUF_SIZE] __attribute__((section(".sdram"))) __attribute__((unused));
+uint8_t AUDIO_BUFFER[MASS_STORAGE_BUF_SIZE] __attribute__((section(".sdram"))) __attribute__((unused));
 
 FRESULT AUDIO_L_CreateAudioDirectory(void) {
     FRESULT result = f_mkdir(AUDIO_DIRECTORY_PATH);
@@ -69,13 +69,27 @@ void AUDIO_L_ResetState(void) {
     APP_STATE.SELECTED_TRACK_NAME = "";
 }
 
-void AUDIO_L_LoadIntoBufferByName(char *fileName, int buttonNumber) {
+void AUDIO_L_LoadFileUnderButton(char *fileName, int buttonNumber) {
     FIL file;
     UINT _bytesRead;
     char *filePath = malloc(1000 * sizeof(char));
 
     if (sprintf(filePath, "%s/%s", AUDIO_DIRECTORY_PATH, fileName) > 0) {
         if (f_open(&file, filePath, FA_READ) == FR_OK) {
+
+            ButtonState *state = &APP_BUTTONS_STATE.configs[buttonNumber];
+            state->size = f_size(&file);
+
+            int initOffset = buttonNumber * BUFFER_LIMIT_PER_BUTTON;
+
+            // retrieve essential info about file and skip WAV header
+            f_lseek(&file, 22);
+            f_read(&file, &AUDIO_BUFFER[initOffset], 4, &_bytesRead);
+            state->channels = AUDIO_BUFFER[initOffset];
+            state->sampleRate= (AUDIO_BUFFER[initOffset + 3] << 8) + AUDIO_BUFFER[2];
+            f_lseek(&file, 44);
+
+            // load onto buffer
             f_read(&file,
                    &AUDIO_BUFFER[buttonNumber * BUFFER_LIMIT_PER_BUTTON],
                    BUFFER_LIMIT_PER_BUTTON,
@@ -83,7 +97,12 @@ void AUDIO_L_LoadIntoBufferByName(char *fileName, int buttonNumber) {
             );
             f_close(&file);
 
+            // update app buttons state
+            APP_BUTTONS_STATE.configs[buttonNumber].effectEnabled = effectInactive;
+            strcpy(APP_BUTTONS_STATE.configs[buttonNumber].trackName, fileName);
+
             xprintf("Successfully read audio file: %s of size %u bytes.\r\n", filePath, _bytesRead);
+            xprintf("Sample rate: %hu Channels: %u Total size: %u\r\n", state->sampleRate, state->channels, state->size);
         }
     } else {
         xprintf("An error has occurred when loading file onto buffer.\r\n");

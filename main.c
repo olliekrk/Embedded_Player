@@ -156,46 +156,132 @@ int main(void) {
     xprintf(ANSI_FG_GREEN
             "STM32F746 Discovery Project"
             ANSI_FG_DEFAULT
-            "\r\n");
+            "\r\n"
+    );
 
+    CON_Initialize_Buttons();
     LCD_Initialize_Screen();
     TS_Initialize_Touchscreen();
+    AUDIO_L_PerformScan();
 
-    /* add mutexes, ... */
-    /* add semaphores, ... */
+    MX_FATFS_Init();    // moved from default task
+    MX_USB_HOST_Init();
 
-//    AppStateMutex = xSemaphoreCreateMutex();
+    osPoolDef(audioRequestsPool, AUDIO_QUEUE_SIZE * 2, AudioRequest);
+    audioRequestsPool = osPoolCreate(osPool(audioRequestsPool));
 
-/* start timers, add new ones, ... */
+    osMessageQDef(audioRequestsQueue, AUDIO_QUEUE_SIZE, AudioRequest);
+    audioRequestsQueue = osMessageCreate(osMessageQ(audioRequestsQueue), NULL);
 
     /* Create the thread(s) */
-    /* definition and creation of defaultTask */
-    osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 1, ALL_THREADS_STACK_SIZE * 0.1);
+    osThreadDef(defaultTask, StartDefaultTask, osPriorityLow, 1, ALL_THREADS_STACK_SIZE * 0.1);
+    osThreadDef(audioPlayerTask, StartAudioPlayerTask, osPriorityNormal, 1, ALL_THREADS_STACK_SIZE * 0.1);
     osThreadDef(guiTask, StartGuiTask, osPriorityHigh, 1, ALL_THREADS_STACK_SIZE * 0.4);
-    osThreadDef(touchscreenTask, StartTouchscreenTask, osPriorityHigh, 1, ALL_THREADS_STACK_SIZE * 0.5);
+    osThreadDef(touchscreenTask, StartTouchscreenTask, osPriorityHigh, 1, ALL_THREADS_STACK_SIZE * 0.4);
 
     defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
+    audioPlayerTaskHandle = osThreadCreate(osThread(audioPlayerTask), NULL);
     guiTaskHandle = osThreadCreate(osThread(guiTask), NULL);
     touchscreenTaskHandle = osThreadCreate(osThread(touchscreenTask), NULL);
-
-    /* add threads, ... */
-    /* add queues, ... */
 
     /* Start scheduler */
     osKernelStart();
 
     /* We should never get here as control is now taken by the scheduler */
-    /* Infinite loop */
     while (1) {}
 }
 
+void DefaultTaskAudioLoop() {
+    switch (inkey()) {
+        case 'p':
+            xprintf("Audio play\r\n");
+
+            player_state = 1;
+            // Plays whats under the second button
+            if (BSP_AUDIO_OUT_Play((uint16_t *) &AUDIO_BUFFER[1 * BUFFER_LIMIT_PER_BUTTON], BUFFER_LIMIT_PER_BUTTON) ==
+                AUDIO_OK) {
+                xprintf("Audio streaming has started\r\n");
+            }
+//            fpos = 0;
+            buf_offs = BUFFER_OFFSET_NONE;
+            break;
+        default:
+            break;
+    }
+
+    if (player_state) {
+//        uint32_t bytesRead = 0;
+
+        if (buf_offs == BUFFER_OFFSET_HALF) {
+            xprintf("Audio streaming has now reached half of the buffer size.\r\n");
+/*
+ * THESE COMMENTED FRAGMENTS ARE USEFUL WHEN IT COMES TO PLAYING AUDIO FROM A FILE
+            if (f_read(&testFile,
+                       &TMP_BUFFER[0],
+                       AUDIO_OUT_BUFFER_SIZE / 2,
+                       (void *) &bytesRead) != FR_OK) {
+                BSP_AUDIO_OUT_Stop(CODEC_PDWN_SW);
+                xprintf("f_read error on half\n");
+            }
+            buf_offs = BUFFER_OFFSET_NONE;
+            fpos += bytesRead;
+*/
+        }
+
+        if (buf_offs == BUFFER_OFFSET_FULL) {
+            xprintf("Audio streaming has now reached end of the buffer size.\r\n");
+
+            BSP_AUDIO_OUT_Stop(CODEC_PDWN_SW);
+            player_state = 0;
+/*
+            if (f_read(&testFile,
+                       &TMP_BUFFER[AUDIO_OUT_BUFFER_SIZE / 2],
+                       AUDIO_OUT_BUFFER_SIZE / 2,
+                       (void *) &bytesRead) != FR_OK) {
+                BSP_AUDIO_OUT_Stop(CODEC_PDWN_SW);
+                xprintf("f_read error on full\n");
+            }
+
+            buf_offs = BUFFER_OFFSET_NONE;
+            fpos += bytesRead;
+*/
+        }
+/*
+        if ((bytesRead < AUDIO_OUT_BUFFER_SIZE / 2) && fpos) {
+            xprintf("stop at eof\n");
+            BSP_AUDIO_OUT_Stop(CODEC_PDWN_SW);
+            f_close(&testFile);
+            player_state = 0;
+            fpos = 0;
+            buf_offs = BUFFER_OFFSET_NONE;
+        }
+*/
+    }
+}
+
+void StartAudioPlayerTask(void const *argument) {
+    AudioRequest *request;
+    osEvent event;
+
+    while (1) {
+        event = osMessageGet(audioRequestsQueue, osWaitForever);
+        if (event.status == osEventMessage) {
+            request = event.value.p;
+            xprintf("Request received for: %d\r\n", request->audioIndex);
+
+            int frequency = APP_BUTTONS_STATE.configs[request->audioIndex].sampleRate;
+            if (AUDIO_P_Reinitialize(frequency) == AUDIO_OK) {
+                AUDIO_P_Play(request->audioIndex);
+            }
+
+            osPoolFree(audioRequestsPool, request);
+        }
+
+        vTaskDelay(500);
+    }
+}
+
 void StartDefaultTask(void const *argument) {
-    /* init code for FATFS */
-    MX_FATFS_Init();
-
-    /* init code for USB_HOST */
-    MX_USB_HOST_Init();
-
     vTaskDelay(1000);
     xprintf("Waiting for USB mass storage.\r\n");
 
@@ -204,98 +290,15 @@ void StartDefaultTask(void const *argument) {
     } while (Appli_state != APPLICATION_READY);
 
     xprintf("Initializing audio codec.\r\n");
-    if (BSP_AUDIO_OUT_Init(OUTPUT_DEVICE_HEADPHONE1, 90, AUDIO_FREQUENCY_44K) == 0) {
+    if (AUDIO_P_Reinitialize(AUDIO_FREQUENCY_44K) == AUDIO_OK) {
         xprintf("Audio codec initialized successfully.\r\n");
     } else {
         xprintf("Audio codec initialized with errors.\r\n");
     }
-    BSP_AUDIO_OUT_SetAudioFrameSlot(CODEC_AUDIOFRAME_SLOT_02);
-    AUDIO_L_PerformScan();
 
     /* Infinite loop */
     for (;;) {
-        char key = inkey();
-
-        switch (key) {
-            case 0:
-                break;
-            case 'a': {
-                xprintf("Odebrano polecenie a\n");
-                break;
-            }
-
-            case 'p': {
-                xprintf("play command...\n");
-                
-				/*
-				if (player_state) {
-                    xprintf("already playing\n");
-                    break;
-                }
-
-                FRESULT res;
-                res = f_open(&testFile, "1:/testwave.wav", FA_READ);
-                p
-				
-				if (res == FR_OK) {
-                    xprintf("wave file open OK\n");
-                } else {
-                    xprintf("wave file open ERROR, res = %d\n", res);
-                }
-				*/
-				
-				
-                player_state = 1;
-                if (BSP_AUDIO_OUT_Play((uint16_t *) AUDIO_BUFFER[1 * BUFFER_LIMIT_PER_BUTTON], BUFFER_LIMIT_PER_BUTTON) == 0){
-					xprintf("PLAY SUCCESS\r\n");
-				};
-                fpos = 0;
-                buf_offs = BUFFER_OFFSET_NONE;
-                break;
-            }
-            default: {
-                xprintf("Nie rozpoznane polecenie: %c = %02X\n", key, key);
-                break;
-            }
-        }
-
-        if (player_state) {
-            uint32_t br;
-
-            if (buf_offs == BUFFER_OFFSET_HALF) {
-                if (f_read(&testFile,
-                           &TMP_BUFFER[0],
-                           AUDIO_OUT_BUFFER_SIZE / 2,
-                           (void *) &br) != FR_OK) {
-                    BSP_AUDIO_OUT_Stop(CODEC_PDWN_SW);
-                    xprintf("f_read error on half\n");
-                }
-                buf_offs = BUFFER_OFFSET_NONE;
-                fpos += br;
-            }
-
-            if (buf_offs == BUFFER_OFFSET_FULL) {
-                if (f_read(&testFile,
-                           &TMP_BUFFER[AUDIO_OUT_BUFFER_SIZE / 2],
-                           AUDIO_OUT_BUFFER_SIZE / 2,
-                           (void *) &br) != FR_OK) {
-                    BSP_AUDIO_OUT_Stop(CODEC_PDWN_SW);
-                    xprintf("f_read error on full\n");
-                }
-
-                buf_offs = BUFFER_OFFSET_NONE;
-                fpos += br;
-            }
-
-            if ((br < AUDIO_OUT_BUFFER_SIZE / 2) && fpos) {
-                xprintf("stop at eof\n");
-                BSP_AUDIO_OUT_Stop(CODEC_PDWN_SW);
-                f_close(&testFile);
-                player_state = 0;
-                fpos = 0;
-                buf_offs = BUFFER_OFFSET_NONE;
-            }
-        }
+        DefaultTaskAudioLoop();
         vTaskDelay(300);
     }
 }
@@ -305,7 +308,7 @@ void StartTouchscreenTask(void const *argument) {
         vTaskDelay(100);
         BSP_TS_GetState(&TS_State);
         if (TS_State.touchDetected > 0) {
-			APP_STATE.IS_TOUCHED = 1;
+            APP_STATE.IS_TOUCHED = 1;
             GUI_HandleTouch(&TS_State, CON_HandleButtonTouched);
         }
     }
@@ -314,13 +317,13 @@ void StartTouchscreenTask(void const *argument) {
 void StartGuiTask(void const *argument) {
     for (;;) {
         vTaskDelay(100);
-		if (APP_STATE.IS_TOUCHED != -1){
-			APP_STATE.IS_TOUCHED = -1;
-			GUI_DrawAllButtons();
-		}
+        if (APP_STATE.IS_TOUCHED != -1) {
+            APP_STATE.IS_TOUCHED = -1;
+            GUI_DrawAllButtons();
+        }
 
         if (APP_STATE.SELECTED_OPTION != -1)
-			GUI_HighlightButton(APP_STATE.SELECTED_OPTION);
+            GUI_HighlightButton(APP_STATE.SELECTED_OPTION);
 
         if (APP_STATE.SELECTED_SOUND_BUTTON != -1)
             GUI_HighlightButton(APP_STATE.SELECTED_SOUND_BUTTON);
@@ -1353,6 +1356,7 @@ static void MX_GPIO_Init(void) {
 
 void BSP_AUDIO_OUT_TransferComplete_CallBack(void) {
     buf_offs = BUFFER_OFFSET_FULL;
+    BSP_AUDIO_OUT_Stop(CODEC_PDWN_SW); // TODO: modify this or default task code
 }
 
 void BSP_AUDIO_OUT_HalfTransfer_CallBack(void) {
@@ -1368,15 +1372,9 @@ void BSP_AUDIO_OUT_HalfTransfer_CallBack(void) {
   * @retval None
   */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
-    /* USER CODE BEGIN Callback 0 */
-
-    /* USER CODE END Callback 0 */
     if (htim->Instance == TIM6) {
         HAL_IncTick();
     }
-    /* USER CODE BEGIN Callback 1 */
-
-    /* USER CODE END Callback 1 */
 }
 
 /**
@@ -1386,11 +1384,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
   * @retval None
   */
 void _Error_Handler(char *file, int line) {
-    /* USER CODE BEGIN Error_Handler_Debug */
     /* User can add his own implementation to report the HAL error return state */
     while (1) {
     }
-    /* USER CODE END Error_Handler_Debug */
 }
 
 #ifdef  USE_FULL_ASSERT

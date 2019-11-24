@@ -91,15 +91,15 @@ void GUI_GetColorsForButton(int buttonNumber, uint32_t *primaryOutput, uint32_t 
 }
 
 void GUI_DrawTextAtCenter(uint32_t backgroundColor, int x, int y, char *text) {
-	char trimmedName[12];
-	memset(trimmedName, '\0', sizeof(trimmedName));
-	strncpy(trimmedName, text, 10);
+    char textToDisplay[TEXT_DISPLAYED_MAXLENGTH];
+    memset(textToDisplay, '\0', sizeof(textToDisplay));
+    sprintf(textToDisplay, "%.*s...", TEXT_DISPLAYED_MAXLENGTH - 4, text);
 
     BSP_LCD_SetTextColor(COLOR_TEXT);
     BSP_LCD_SetBackColor(backgroundColor);
     BSP_LCD_SetFont(&Font16); //possibly changes font size, can be 8,12,16,20 or 24 - 16 is 11 pixels wide
-    BSP_LCD_DisplayStringAt(x + GUI_margin, y + GUI_margin, (uint8_t *) trimmedName, LEFT_MODE);
-	//the bigger y, the lower is string
+    BSP_LCD_DisplayStringAt(x + GUI_margin, y + GUI_margin, (uint8_t *) textToDisplay, LEFT_MODE);
+    //the bigger y, the lower is string
     //I think center_mode works in a following way: the text is in the middle between x and right side of the screen
 }
 
@@ -122,7 +122,17 @@ void GUI_DrawAllButtons(void) {
         for (int col = 0; col < GUI_buttons_in_row; col++) {
             int x = GUI_margin + col * bigButtonXSize;
             int y = GUI_margin + row * bigButtonYSize;
-            GUI_DrawButton(COLOR_PRIMARY_DEFAULT, COLOR_ACCENT_DEFAULT, x, y, bigButtonXSize, bigButtonYSize, "");
+
+            int buttonNumber = GUI_buttons_in_row * row + col;
+            char *trackName = APP_BUTTONS_STATE.configs[buttonNumber].trackName;
+            char *buttonText = trackName != NULL ? trackName : "";
+
+            GUI_DrawButton(
+                    COLOR_PRIMARY_DEFAULT, COLOR_ACCENT_DEFAULT,
+                    x, y,
+                    bigButtonXSize, bigButtonYSize,
+                    buttonText
+            );
         }
     }
 

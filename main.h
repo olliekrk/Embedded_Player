@@ -42,8 +42,8 @@
 #include "Modules/gui.h"
 #include "Modules/controls.h"
 #include "Modules/audio_loader.h"
+#include "Modules/audio_player.h"
 
-/* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc3;
 
 CRC_HandleTypeDef hcrc;
@@ -86,13 +86,8 @@ SDRAM_HandleTypeDef hsdram1;
 osThreadId defaultTaskHandle;
 osThreadId touchscreenTaskHandle;
 osThreadId guiTaskHandle;
+osThreadId audioPlayerTaskHandle;
 
-/* USER CODE BEGIN PV */
-/* Private variables ---------------------------------------------------------*/
-
-/* USER CODE END PV */
-
-/* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 
 static void MX_GPIO_Init(void);
@@ -147,6 +142,8 @@ static void MX_TIM7_Init(void);
 
 void StartDefaultTask(void const *argument);
 
+void StartAudioPlayerTask(void const *argument);
+
 void StartTouchscreenTask(void const *argument);
 
 void StartGuiTask(void const *argument);
@@ -167,11 +164,10 @@ typedef enum BufferState {
     BUFFER_OFFSET_FULL,
 } BufferState;
 
-static FIL testFile;
 extern ApplicationTypeDef Appli_state;
 static uint8_t player_state = 0;
 static uint8_t buf_offs = BUFFER_OFFSET_NONE;
-static uint32_t fpos = 0;
+//static uint32_t fpos = 0;
 
 static uint32_t lcd_image_fg[LCD_Y_SIZE][LCD_X_SIZE] __attribute__((section(".sdram"))) __attribute__((unused));
 static uint32_t lcd_image_bg[LCD_Y_SIZE][LCD_X_SIZE] __attribute__((section(".sdram"))) __attribute__((unused));

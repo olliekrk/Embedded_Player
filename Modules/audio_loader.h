@@ -25,7 +25,8 @@
 
 extern uint8_t TMP_BUFFER[AUDIO_OUT_BUFFER_SIZE];
 
-extern uint32_t AUDIO_BUFFER[MASS_STORAGE_BUF_SIZE] __attribute__((section(".sdram"))) __attribute__((unused));
+// changed from uint32_t
+extern uint8_t AUDIO_BUFFER[MASS_STORAGE_BUF_SIZE] __attribute__((section(".sdram")));
 
 FRESULT AUDIO_L_CreateAudioDirectory(void);
 
@@ -35,6 +36,6 @@ void AUDIO_L_PerformScan(void);
 
 void AUDIO_L_ResetState(void);
 
-void AUDIO_L_LoadIntoBufferByName(char*, int);
+void AUDIO_L_LoadFileUnderButton(char*, int);
 
 #endif //EMBEDDED_PLAYER_AUDIO_LOADER_H
