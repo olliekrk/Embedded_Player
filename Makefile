@@ -4,10 +4,6 @@
 
 # ------------------------------------------------
 # Generic Makefile (based on gcc)
-#
-# ChangeLog :
-#	2017-02-10 - Several enhancements + project update mode
-#   2015-07-22 - first version
 # ------------------------------------------------
 
 ######################################
@@ -188,6 +184,7 @@ Middlewares/ST/STM32_USB_Host_Library/Class/MSC/Src/usbh_msc_bot.c \
 Middlewares/ST/STM32_USB_Host_Library/Class/MSC/Src/usbh_msc_scsi.c \
 Modules/audio_loader.c \
 Modules/audio_player.c \
+Modules/effect_converter.c \
 Modules/controls.c \
 Modules/gui.c
 
