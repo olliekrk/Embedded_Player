@@ -28,6 +28,8 @@ int AUDIO_L_ScanAudioDirectory() {
     result = f_findfirst(&audioDirectory, &fileInfo, AUDIO_DIRECTORY_PATH, "*.wav");
     if (result == FR_OK) {
         while (result == FR_OK && strlen(fileInfo.fname) > 0 && count < AUDIO_FILES_LIMIT) {
+			xprintf("Found (%d) wav file: %s\r\n", ++count, fileInfo.fname); 
+		
             APP_STATE.TRACKS[APP_STATE.TRACKS_COUNT] = malloc((strlen(fileInfo.fname) + 1) * sizeof(char));
             strcpy(APP_STATE.TRACKS[APP_STATE.TRACKS_COUNT], fileInfo.fname);
             APP_STATE.TRACKS_COUNT++;
@@ -102,7 +104,7 @@ void AUDIO_L_LoadFileUnderButton(char *fileName, int buttonNumber) {
             strcpy(APP_BUTTONS_STATE.configs[buttonNumber].trackName, fileName);
 
             xprintf("Successfully read audio file: %s of size %u bytes.\r\n", filePath, _bytesRead);
-            xprintf("Sample rate: %hu Channels: %u Total size: %u\r\n", state->sampleRate, state->channels, state->size);
+            xprintf("Sample rate: %hu Channels: %u Total size: %lu\r\n", state->sampleRate, state->channels, state->size);
         }
     } else {
         xprintf("An error has occurred when loading file onto buffer.\r\n");

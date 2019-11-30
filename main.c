@@ -159,13 +159,12 @@ int main(void) {
             "\r\n"
     );
 
+    MX_FATFS_Init();    // moved from default task
+    MX_USB_HOST_Init();
+	
     CON_Initialize_Buttons();
     LCD_Initialize_Screen();
     TS_Initialize_Touchscreen();
-    AUDIO_L_PerformScan();
-
-    MX_FATFS_Init();    // moved from default task
-    MX_USB_HOST_Init();
 
     osPoolDef(audioRequestsPool, AUDIO_QUEUE_SIZE * 2, AudioRequest);
     audioRequestsPool = osPoolCreate(osPool(audioRequestsPool));
@@ -175,9 +174,9 @@ int main(void) {
 
     /* Create the thread(s) */
     osThreadDef(defaultTask, StartDefaultTask, osPriorityLow, 1, ALL_THREADS_STACK_SIZE * 0.1);
-    osThreadDef(audioPlayerTask, StartAudioPlayerTask, osPriorityNormal, 1, ALL_THREADS_STACK_SIZE * 0.1);
+    osThreadDef(audioPlayerTask, StartAudioPlayerTask, osPriorityLow, 1, ALL_THREADS_STACK_SIZE * 0.1);
     osThreadDef(guiTask, StartGuiTask, osPriorityHigh, 1, ALL_THREADS_STACK_SIZE * 0.4);
-    osThreadDef(touchscreenTask, StartTouchscreenTask, osPriorityHigh, 1, ALL_THREADS_STACK_SIZE * 0.4);
+    osThreadDef(touchscreenTask, StartTouchscreenTask, osPriorityNormal, 1, ALL_THREADS_STACK_SIZE * 0.4);
 
     defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
     audioPlayerTaskHandle = osThreadCreate(osThread(audioPlayerTask), NULL);
@@ -198,8 +197,7 @@ void DefaultTaskAudioLoop() {
 
             player_state = 1;
             // Plays whats under the second button
-            if (BSP_AUDIO_OUT_Play((uint16_t *) &AUDIO_BUFFER[1 * BUFFER_LIMIT_PER_BUTTON], BUFFER_LIMIT_PER_BUTTON) ==
-                AUDIO_OK) {
+            if (BSP_AUDIO_OUT_Play((uint16_t *) &AUDIO_BUFFER[1 * BUFFER_LIMIT_PER_BUTTON], BUFFER_LIMIT_PER_BUTTON) == AUDIO_OK) {
                 xprintf("Audio streaming has started\r\n");
             }
 //            fpos = 0;
@@ -262,8 +260,8 @@ void DefaultTaskAudioLoop() {
 void StartAudioPlayerTask(void const *argument) {
     AudioRequest *request;
     osEvent event;
-
-    while (1) {
+	
+	while (1) {	
         event = osMessageGet(audioRequestsQueue, osWaitForever);
         if (event.status == osEventMessage) {
             request = event.value.p;
@@ -288,6 +286,8 @@ void StartDefaultTask(void const *argument) {
     do {
         vTaskDelay(250);
     } while (Appli_state != APPLICATION_READY);
+	
+	AUDIO_L_PerformScan();
 
     xprintf("Initializing audio codec.\r\n");
     if (AUDIO_P_Reinitialize(AUDIO_FREQUENCY_44K) == AUDIO_OK) {
@@ -297,6 +297,7 @@ void StartDefaultTask(void const *argument) {
     }
 
     /* Infinite loop */
+	
     for (;;) {
         DefaultTaskAudioLoop();
         vTaskDelay(300);
@@ -1356,7 +1357,7 @@ static void MX_GPIO_Init(void) {
 
 void BSP_AUDIO_OUT_TransferComplete_CallBack(void) {
     buf_offs = BUFFER_OFFSET_FULL;
-    BSP_AUDIO_OUT_Stop(CODEC_PDWN_SW); // TODO: modify this or default task code
+	AUDIO_P_End();
 }
 
 void BSP_AUDIO_OUT_HalfTransfer_CallBack(void) {

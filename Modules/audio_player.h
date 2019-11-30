@@ -24,4 +24,6 @@ void AUDIO_P_AddToQueue(int);
 
 void AUDIO_P_Play(int);
 
+void AUDIO_P_End();
+
 #endif //EMBEDDED_PLAYER_AUDIO_PLAYER_H

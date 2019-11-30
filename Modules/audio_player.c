@@ -25,7 +25,7 @@ void AUDIO_P_AddToQueue(int audioIndex) {
 }
 
 void AUDIO_P_Play(int audioIndex) {
-    if (isPlaying) {
+	if (isPlaying) {
         BSP_AUDIO_OUT_Stop(CODEC_PDWN_SW);
     }
 
@@ -34,4 +34,8 @@ void AUDIO_P_Play(int audioIndex) {
             (uint16_t *) &AUDIO_BUFFER[audioIndex * BUFFER_LIMIT_PER_BUTTON],
             BUFFER_LIMIT_PER_BUTTON
     );
+}
+
+void AUDIO_P_End(){
+	isPlaying = 0;
 }
