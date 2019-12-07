@@ -32,6 +32,7 @@ typedef struct AppControlsState {
     int SELECTED_SOUND_BUTTON;
     int SELECTED_OPTION;
     int IS_TOUCHED;
+	int IS_PLAYING;
 
     char **TRACKS;
     int TRACKS_COUNT;

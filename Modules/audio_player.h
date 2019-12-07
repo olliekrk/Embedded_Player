@@ -12,7 +12,6 @@
 
 extern osPoolId audioRequestsPool;
 extern osMessageQId audioRequestsQueue;
-extern int isPlaying;
 
 typedef struct AudioRequest{
     int audioIndex;

@@ -261,20 +261,21 @@ void StartAudioPlayerTask(void const *argument) {
     AudioRequest *request;
     osEvent event;
 	
-	while (1) {	
-        event = osMessageGet(audioRequestsQueue, osWaitForever);
-        if (event.status == osEventMessage) {
-            request = event.value.p;
-            xprintf("Request received for: %d\r\n", request->audioIndex);
+	while (1) {
+		if (!APP_STATE.IS_PLAYING) {
+			event = osMessageGet(audioRequestsQueue, osWaitForever);
+			if (event.status == osEventMessage) {
+				request = event.value.p;
+				xprintf("Request received for: %d\r\n", request->audioIndex);
 
-            int frequency = APP_BUTTONS_STATE.configs[request->audioIndex].sampleRate;
-            if (AUDIO_P_Reinitialize(frequency) == AUDIO_OK) {
-                AUDIO_P_Play(request->audioIndex);
-            }
+				int frequency = APP_BUTTONS_STATE.configs[request->audioIndex].sampleRate;
+				if (AUDIO_P_Reinitialize(frequency) == AUDIO_OK) {
+					AUDIO_P_Play(request->audioIndex);
+				}
 
-            osPoolFree(audioRequestsPool, request);
-        }
-
+				osPoolFree(audioRequestsPool, request);
+			}
+		}
         vTaskDelay(500);
     }
 }

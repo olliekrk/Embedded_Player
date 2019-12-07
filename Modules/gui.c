@@ -8,6 +8,7 @@
 #include "gui_colors.h"
 #include "controls.h"
 #include <string.h>
+#include <stdlib.h>
 
 uint32_t GUI_GetXButtonSize() {
     return (BSP_LCD_GetXSize() - 2 * GUI_margin) / GUI_buttons_in_row;
@@ -90,17 +91,39 @@ void GUI_GetColorsForButton(int buttonNumber, uint32_t *primaryOutput, uint32_t 
     }
 }
 
-void GUI_DrawTextAtCenter(uint32_t backgroundColor, int x, int y, char *text) {
-    char textToDisplay[TEXT_DISPLAYED_MAXLENGTH];
-    memset(textToDisplay, '\0', sizeof(textToDisplay));
-    sprintf(textToDisplay, "%.*s...", TEXT_DISPLAYED_MAXLENGTH - 4, text);
+char *GUI_GetTextForButton(int buttonNumber) {
+	char *text;
 	
-	xprintf("to display:%s\r\n", textToDisplay);
+	switch (buttonNumber) {
+        case SELECTED_TRACK:
+			text = APP_STATE.SELECTED_TRACK_NAME;
+			if (text == NULL) return "Nothing selected";
+			break;
+        case EFFECT_1:
+			return "Effect 1";
+        case EFFECT_2:
+			return "Effect 2";
+        case NEXT_TRACK:
+			return "Next";
+        case BACK_TRACK:
+			return "Back";
+        default: {
+			text = APP_BUTTONS_STATE.configs[buttonNumber].trackName;
+			if (text == NULL) return "-";
+			break;
+		}
+    }
+	
+	char *textDisplayed = malloc(TEXT_DISPLAYED_MAXLENGTH * sizeof(char));
+	sprintf(textDisplayed, "%.*s...", TEXT_DISPLAYED_MAXLENGTH, text);
+	return textDisplayed;
+}
 
+void GUI_DrawTextAtCenter(uint32_t backgroundColor, int x, int y, char *text) {
     BSP_LCD_SetTextColor(COLOR_TEXT);
     BSP_LCD_SetBackColor(backgroundColor);
     BSP_LCD_SetFont(&Font12); //possibly changes font size, can be 8,12,16,20 or 24 - 16 is 11 pixels wide
-    BSP_LCD_DisplayStringAt(x + GUI_margin, y + GUI_margin, (uint8_t *) textToDisplay, LEFT_MODE);
+    BSP_LCD_DisplayStringAt(x + GUI_margin, y + GUI_margin, (uint8_t *) text, LEFT_MODE);
     //the bigger y, the lower is string
     //I think center_mode works in a following way: the text is in the middle between x and right side of the screen
 }
@@ -115,72 +138,15 @@ void GUI_DrawButton(uint32_t backgroundColor, uint32_t frameColor, int x, int y,
 }
 
 void GUI_DrawAllButtons(void) {
-    uint32_t bigButtonXSize = GUI_GetXButtonSize();
-    uint32_t bigButtonYSize = GUI_GetYButtonSize();
-    uint32_t smallButtonYSize = GUI_GetYButtonSize() / 2;
+	int x, y, xSize, ySize;
+	uint32_t primaryColor, accentColor;
 
-    // Sound buttons
-    for (int row = 0; row < GUI_sound_rows; row++) {
-        for (int col = 0; col < GUI_buttons_in_row; col++) {
-            int x = GUI_margin + col * bigButtonXSize;
-            int y = GUI_margin + row * bigButtonYSize;
-
-            int buttonNumber = GUI_buttons_in_row * row + col;
-            char *trackName = APP_BUTTONS_STATE.configs[buttonNumber].trackName;
-            char *buttonText = trackName != NULL ? trackName : "";
-			
-			xprintf("track name is: %s boolean: %d\r\n", trackName, trackName!=NULL);
-			xprintf("on button: %s\r\n", buttonText);
-
-            GUI_DrawButton(
-                    COLOR_PRIMARY_DEFAULT, COLOR_ACCENT_DEFAULT,
-                    x, y,
-                    bigButtonXSize, bigButtonYSize,
-                    buttonText
-            );
-        }
-    }
-
-    // Switch track to be loaded buttons
-    uint32_t trackButtonY = GUI_margin + GUI_sound_rows * bigButtonYSize;
-    GUI_DrawButton(
-            COLOR_PRIMARY_OPTION, COLOR_ACCENT_OPTION,
-            GUI_margin, trackButtonY,
-            bigButtonXSize, smallButtonYSize,
-            "NEXT"
-    );
-    GUI_DrawButton(
-            COLOR_PRIMARY_OPTION, COLOR_ACCENT_OPTION,
-            GUI_margin, trackButtonY + smallButtonYSize,
-            bigButtonXSize, smallButtonYSize,
-            "BACK"
-    );
-
-    // Effects buttons
-    uint32_t effectButtonX = GUI_margin + (GUI_buttons_in_row - 1) * bigButtonXSize;
-    uint32_t effectButtonY = GUI_margin + GUI_sound_rows * bigButtonYSize;
-    GUI_DrawButton(
-            COLOR_PRIMARY_OPTION, COLOR_ACCENT_OPTION,
-            effectButtonX, effectButtonY,
-            bigButtonXSize, smallButtonYSize,
-            "E1"
-    );
-    GUI_DrawButton(
-            COLOR_PRIMARY_OPTION, COLOR_ACCENT_OPTION,
-            effectButtonX, effectButtonY + smallButtonYSize,
-            bigButtonXSize, smallButtonYSize,
-            "E2"
-    );
-
-    // Selected button
-    uint32_t selectedTrackX = GUI_margin + bigButtonXSize;
-    uint32_t selectedTrackY = GUI_margin + 2 * bigButtonYSize;
-    GUI_DrawButton(
-            COLOR_PRIMARY_SELECTED, COLOR_ACCENT_SELECTED,
-            selectedTrackX, selectedTrackY,
-            2 * bigButtonXSize, bigButtonYSize,
-            APP_STATE.SELECTED_TRACK_NAME ? APP_STATE.SELECTED_TRACK_NAME : "NONE SELECTED"
-    );
+	for (int i = 0; i < NUMBER_OF_CONTROLS; i++) {
+		GUI_GetCoordsForButton(i, &x, &y);
+		GUI_GetSizeForButton(i, &xSize, &ySize);
+		GUI_GetColorsForButton(i, &primaryColor, &accentColor);
+		GUI_DrawButton(primaryColor, accentColor, x, y, xSize, ySize, GUI_GetTextForButton(i));
+	}
 }
 
 void GUI_HighlightButton(int buttonNumber) {
@@ -190,8 +156,9 @@ void GUI_HighlightButton(int buttonNumber) {
     GUI_GetSizeForButton(buttonNumber, &xSize, &ySize);
     GUI_GetColorsForButton(buttonNumber, &primaryColor, &accentColor);
 
-    GUI_DrawButton(primaryColor, COLOR_HIGHLIGHTED, x, y, xSize, ySize, "SELECTED");
+    GUI_DrawButton(primaryColor, COLOR_HIGHLIGHTED, x, y, xSize, ySize, GUI_GetTextForButton(buttonNumber));
 }
+
 
 void GUI_HandleTouch(TS_StateTypeDef *tsState, void (*handleButtonTouch)(int)) {
     int touchesDetected = tsState->touchDetected;

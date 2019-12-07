@@ -6,6 +6,7 @@
 #include <term_io.h>
 #include "audio_loader.h"
 #include "controls.h"
+#include "gui.h"
 
 uint8_t TMP_BUFFER[AUDIO_OUT_BUFFER_SIZE];
 
@@ -69,6 +70,7 @@ void AUDIO_L_ResetState(void) {
     APP_STATE.TRACKS_COUNT = 0;
     APP_STATE.SELECTED_TRACK_INDEX = -1;
     APP_STATE.SELECTED_TRACK_NAME = "";
+	APP_STATE.IS_PLAYING = 0;
 }
 
 void AUDIO_L_LoadFileUnderButton(char *fileName, int buttonNumber) {
@@ -101,7 +103,8 @@ void AUDIO_L_LoadFileUnderButton(char *fileName, int buttonNumber) {
 
             // update app buttons state
             APP_BUTTONS_STATE.configs[buttonNumber].effectEnabled = effectInactive;
-            strcpy(APP_BUTTONS_STATE.configs[buttonNumber].trackName, fileName);
+			APP_BUTTONS_STATE.configs[buttonNumber].trackName = malloc(TEXT_DISPLAYED_MAXLENGTH * sizeof(char));
+			sprintf(APP_BUTTONS_STATE.configs[buttonNumber].trackName, "%s", fileName);
 
             xprintf("Successfully read audio file: %s of size %u bytes.\r\n", filePath, _bytesRead);
             xprintf("Sample rate: %hu Channels: %u Total size: %lu\r\n", state->sampleRate, state->channels, state->size);

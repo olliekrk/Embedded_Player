@@ -11,6 +11,7 @@ AppControlsState APP_STATE = {
         -1,
         -1,
         1,
+		0,
         NULL,
         0,
         NULL,
@@ -97,6 +98,8 @@ void CON_ActivateOption() {
         switch (APP_STATE.SELECTED_OPTION) {
             case SELECTED_TRACK:
                 AUDIO_L_LoadFileUnderButton(APP_STATE.SELECTED_TRACK_NAME, APP_STATE.SELECTED_SOUND_BUTTON);
+				APP_STATE.SELECTED_SOUND_BUTTON = -1;
+				APP_STATE.SELECTED_OPTION = -1;
                 break;
             case EFFECT_1:
                 APP_BUTTONS_STATE.configs[APP_STATE.SELECTED_SOUND_BUTTON].effectEnabled = effectOne;
