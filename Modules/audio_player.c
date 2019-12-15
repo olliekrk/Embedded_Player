@@ -11,10 +11,20 @@
 osPoolId audioRequestsPool;
 osMessageQId audioRequestsQueue;
 
-int AUDIO_P_Reinitialize(int frequency) {
-    int status = BSP_AUDIO_OUT_Init(OUTPUT_DEVICE_HEADPHONE1, AUDIO_VOLUME, frequency);
+int AUDIO_P_ChangeFrequency(int frequency) {
+    int status = BSP_AUDIO_OUT_Init(OUTPUT_DEVICE_HEADPHONE1, APP_STATE.VOLUME, frequency);
     BSP_AUDIO_OUT_SetAudioFrameSlot(CODEC_AUDIOFRAME_SLOT_02);
     return status;
+}
+
+void AUDIO_P_VolumeUp(){
+    if (APP_STATE.VOLUME < AUDIO_VOLUME_LIMIT) APP_STATE.VOLUME += AUDIO_VOLUME_UNIT;
+    BSP_AUDIO_OUT_SetVolume(APP_STATE.VOLUME);
+}
+
+void AUDIO_P_VolumeDown(){
+    if (APP_STATE.VOLUME > 0) APP_STATE.VOLUME -= AUDIO_VOLUME_UNIT;
+    BSP_AUDIO_OUT_SetVolume(APP_STATE.VOLUME);
 }
 
 void AUDIO_P_AddToQueue(int audioIndex) {
@@ -25,20 +35,17 @@ void AUDIO_P_AddToQueue(int audioIndex) {
 }
 
 void AUDIO_P_Play(int audioIndex) {
-	/*
-	if (APP_STATE.IS_PLAYING) {
-        BSP_AUDIO_OUT_Stop(CODEC_PDWN_SW);
-    }
-	*/
-
     APP_STATE.IS_PLAYING = 1;
-    BSP_AUDIO_OUT_Play(
-            (uint16_t *) &AUDIO_BUFFER[audioIndex * BUFFER_LIMIT_PER_BUTTON],
-            BUFFER_LIMIT_PER_BUTTON
-    );
+    int frequency = APP_BUTTONS_STATE.configs[audioIndex].sampleRate;
+    if (AUDIO_P_ChangeFrequency(frequency) == AUDIO_OK) {
+        xprintf("Playing: %d\r\n", audioIndex);
+        BSP_AUDIO_OUT_Play(
+                (uint16_t *) &AUDIO_BUFFER[audioIndex * BUFFER_LIMIT_PER_BUTTON],
+                BUFFER_LIMIT_PER_BUTTON
+        );
+    }
 }
 
 void AUDIO_P_End(){
-	//if (uxQueueMessagesWaiting(audioRequestsQueue) == 0) BSP_AUDIO_OUT_Stop(CODEC_PDWN_SW);
 	APP_STATE.IS_PLAYING = 0;
 }

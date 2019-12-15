@@ -165,9 +165,6 @@ typedef enum BufferState {
 } BufferState;
 
 extern ApplicationTypeDef Appli_state;
-static uint8_t player_state = 0;
-static uint8_t buf_offs = BUFFER_OFFSET_NONE;
-//static uint32_t fpos = 0;
 
 static uint32_t lcd_image_fg[LCD_Y_SIZE][LCD_X_SIZE] __attribute__((section(".sdram"))) __attribute__((unused));
 static uint32_t lcd_image_bg[LCD_Y_SIZE][LCD_X_SIZE] __attribute__((section(".sdram"))) __attribute__((unused));

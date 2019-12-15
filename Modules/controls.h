@@ -31,13 +31,15 @@ typedef struct AppButtonsState {
 typedef struct AppControlsState {
     int SELECTED_SOUND_BUTTON;
     int SELECTED_OPTION;
-    int IS_TOUCHED;
+    int IS_DIRTY;
 	int IS_PLAYING;
 
     char **TRACKS;
     int TRACKS_COUNT;
     char *SELECTED_TRACK_NAME;
     int SELECTED_TRACK_INDEX;
+
+    int VOLUME;
 } AppControlsState;
 
 typedef enum SoundControl {

@@ -122,10 +122,8 @@ char *GUI_GetTextForButton(int buttonNumber) {
 void GUI_DrawTextAtCenter(uint32_t backgroundColor, int x, int y, char *text) {
     BSP_LCD_SetTextColor(COLOR_TEXT);
     BSP_LCD_SetBackColor(backgroundColor);
-    BSP_LCD_SetFont(&Font12); //possibly changes font size, can be 8,12,16,20 or 24 - 16 is 11 pixels wide
+    BSP_LCD_SetFont(&Font12);
     BSP_LCD_DisplayStringAt(x + GUI_margin, y + GUI_margin, (uint8_t *) text, LEFT_MODE);
-    //the bigger y, the lower is string
-    //I think center_mode works in a following way: the text is in the middle between x and right side of the screen
 }
 
 void GUI_DrawButton(uint32_t backgroundColor, uint32_t frameColor, int x, int y, int xSize, int ySize, char *text) {
@@ -172,4 +170,6 @@ void GUI_HandleTouch(TS_StateTypeDef *tsState, void (*handleButtonTouch)(int)) {
         y = tsState->touchY[i];
         (*handleButtonTouch)(GUI_GetButtonForCoords(x, y)); // callback function
     }
+
+    APP_STATE.IS_DIRTY = -1;
 }

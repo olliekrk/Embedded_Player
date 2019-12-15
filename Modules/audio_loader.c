@@ -7,8 +7,7 @@
 #include "audio_loader.h"
 #include "controls.h"
 #include "gui.h"
-
-uint8_t TMP_BUFFER[AUDIO_OUT_BUFFER_SIZE];
+#include "audio_player.h"
 
 uint8_t AUDIO_BUFFER[MASS_STORAGE_BUF_SIZE] __attribute__((section(".sdram"))) __attribute__((unused));
 
@@ -71,6 +70,7 @@ void AUDIO_L_ResetState(void) {
     APP_STATE.SELECTED_TRACK_INDEX = -1;
     APP_STATE.SELECTED_TRACK_NAME = "";
 	APP_STATE.IS_PLAYING = 0;
+	APP_STATE.VOLUME = AUDIO_VOLUME_INIT;
 }
 
 void AUDIO_L_LoadFileUnderButton(char *fileName, int buttonNumber) {

@@ -111,13 +111,6 @@ static void LCD_Initialize_Screen(void) {
     BSP_LCD_SetTransparency(1, 255);
 }
 
-/* USER CODE END 0 */
-
-/**
-  * @brief  The application entry point.
-  *
-  * @retval None
-  */
 int main(void) {
     /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
     HAL_Init();
@@ -153,15 +146,9 @@ int main(void) {
 
     debug_init(&huart1);
 
-    xprintf(ANSI_FG_GREEN
-            "STM32F746 Discovery Project"
-            ANSI_FG_DEFAULT
-            "\r\n"
-    );
-
-    MX_FATFS_Init();    // moved from default task
+    MX_FATFS_Init();
     MX_USB_HOST_Init();
-	
+
     CON_Initialize_Buttons();
     LCD_Initialize_Screen();
     TS_Initialize_Touchscreen();
@@ -174,8 +161,8 @@ int main(void) {
 
     /* Create the thread(s) */
     osThreadDef(defaultTask, StartDefaultTask, osPriorityLow, 1, ALL_THREADS_STACK_SIZE * 0.1);
-    osThreadDef(audioPlayerTask, StartAudioPlayerTask, osPriorityLow, 1, ALL_THREADS_STACK_SIZE * 0.1);
-    osThreadDef(guiTask, StartGuiTask, osPriorityHigh, 1, ALL_THREADS_STACK_SIZE * 0.4);
+    osThreadDef(audioPlayerTask, StartAudioPlayerTask, osPriorityNormal, 1, ALL_THREADS_STACK_SIZE * 0.1);
+    osThreadDef(guiTask, StartGuiTask, osPriorityNormal, 1, ALL_THREADS_STACK_SIZE * 0.4);
     osThreadDef(touchscreenTask, StartTouchscreenTask, osPriorityNormal, 1, ALL_THREADS_STACK_SIZE * 0.4);
 
     defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
@@ -190,30 +177,26 @@ int main(void) {
     while (1) {}
 }
 
-void DefaultTaskAudioLoop() {
-    switch (inkey()) {
-        case 'p':
-            xprintf("Audio play\r\n");
-
-            player_state = 1;
-            // Plays whats under the second button
-            if (BSP_AUDIO_OUT_Play((uint16_t *) &AUDIO_BUFFER[1 * BUFFER_LIMIT_PER_BUTTON], BUFFER_LIMIT_PER_BUTTON) == AUDIO_OK) {
-                xprintf("Audio streaming has started\r\n");
-            }
-//            fpos = 0;
-            buf_offs = BUFFER_OFFSET_NONE;
+void VolumeChangeRoutine() {
+    char input = inkey();
+    switch (input) {
+        case 0:
+            return;
+        case 'q':
+            AUDIO_P_VolumeDown();
             break;
         default:
-            break;
+            AUDIO_P_VolumeUp();
     }
+}
 
+// THIS COMMENTED FRAGMENT COULD BE USEFUL, to be removed eventually
+/*
     if (player_state) {
-//        uint32_t bytesRead = 0;
+        uint32_t bytesRead = 0;
 
         if (buf_offs == BUFFER_OFFSET_HALF) {
             xprintf("Audio streaming has now reached half of the buffer size.\r\n");
-/*
- * THESE COMMENTED FRAGMENTS ARE USEFUL WHEN IT COMES TO PLAYING AUDIO FROM A FILE
             if (f_read(&testFile,
                        &TMP_BUFFER[0],
                        AUDIO_OUT_BUFFER_SIZE / 2,
@@ -223,7 +206,6 @@ void DefaultTaskAudioLoop() {
             }
             buf_offs = BUFFER_OFFSET_NONE;
             fpos += bytesRead;
-*/
         }
 
         if (buf_offs == BUFFER_OFFSET_FULL) {
@@ -231,7 +213,6 @@ void DefaultTaskAudioLoop() {
 
             BSP_AUDIO_OUT_Stop(CODEC_PDWN_SW);
             player_state = 0;
-/*
             if (f_read(&testFile,
                        &TMP_BUFFER[AUDIO_OUT_BUFFER_SIZE / 2],
                        AUDIO_OUT_BUFFER_SIZE / 2,
@@ -242,9 +223,7 @@ void DefaultTaskAudioLoop() {
 
             buf_offs = BUFFER_OFFSET_NONE;
             fpos += bytesRead;
-*/
         }
-/*
         if ((bytesRead < AUDIO_OUT_BUFFER_SIZE / 2) && fpos) {
             xprintf("stop at eof\n");
             BSP_AUDIO_OUT_Stop(CODEC_PDWN_SW);
@@ -253,55 +232,42 @@ void DefaultTaskAudioLoop() {
             fpos = 0;
             buf_offs = BUFFER_OFFSET_NONE;
         }
-*/
+    }
+    */
+
+void StartDefaultTask(void const *argument) {
+    vTaskDelay(1000);
+
+    do {
+        vTaskDelay(300);
+    } while (Appli_state != APPLICATION_READY);
+
+    AUDIO_L_PerformScan();
+
+    for (;;) {
+        vTaskDelay(1000);
+        VolumeChangeRoutine();
     }
 }
 
 void StartAudioPlayerTask(void const *argument) {
     AudioRequest *request;
     osEvent event;
-	
-	while (1) {
-		if (!APP_STATE.IS_PLAYING) {
-			event = osMessageGet(audioRequestsQueue, osWaitForever);
-			if (event.status == osEventMessage) {
-				request = event.value.p;
-				xprintf("Request received for: %d\r\n", request->audioIndex);
 
-				int frequency = APP_BUTTONS_STATE.configs[request->audioIndex].sampleRate;
-				if (AUDIO_P_Reinitialize(frequency) == AUDIO_OK) {
-					AUDIO_P_Play(request->audioIndex);
-				}
-
-				osPoolFree(audioRequestsPool, request);
-			}
-		}
-        vTaskDelay(500);
-    }
-}
-
-void StartDefaultTask(void const *argument) {
-    vTaskDelay(1000);
-    xprintf("Waiting for USB mass storage.\r\n");
-
-    do {
-        vTaskDelay(250);
-    } while (Appli_state != APPLICATION_READY);
-	
-	AUDIO_L_PerformScan();
-
-    xprintf("Initializing audio codec.\r\n");
-    if (AUDIO_P_Reinitialize(AUDIO_FREQUENCY_44K) == AUDIO_OK) {
-        xprintf("Audio codec initialized successfully.\r\n");
-    } else {
-        xprintf("Audio codec initialized with errors.\r\n");
-    }
-
-    /* Infinite loop */
-	
     for (;;) {
-        DefaultTaskAudioLoop();
         vTaskDelay(300);
+        if (APP_STATE.IS_PLAYING == 0) {
+            event = osMessageGet(audioRequestsQueue, 0);
+            if (event.status == osEventMessage) {
+                request = event.value.p;
+                AUDIO_P_VolumeUp();
+                AUDIO_P_Play(request->audioIndex);
+                osPoolFree(audioRequestsPool, request);
+            } else {
+                APP_STATE.VOLUME = AUDIO_VOLUME_INIT;
+                BSP_AUDIO_OUT_Stop(CODEC_PDWN_SW);
+            }
+        }
     }
 }
 
@@ -310,7 +276,7 @@ void StartTouchscreenTask(void const *argument) {
         vTaskDelay(100);
         BSP_TS_GetState(&TS_State);
         if (TS_State.touchDetected > 0) {
-            APP_STATE.IS_TOUCHED = 1;
+            APP_STATE.IS_DIRTY = 1;
             GUI_HandleTouch(&TS_State, CON_HandleButtonTouched);
         }
     }
@@ -319,8 +285,7 @@ void StartTouchscreenTask(void const *argument) {
 void StartGuiTask(void const *argument) {
     for (;;) {
         vTaskDelay(100);
-        if (APP_STATE.IS_TOUCHED != -1) {
-            APP_STATE.IS_TOUCHED = -1;
+        if (APP_STATE.IS_DIRTY == 1) {
             GUI_DrawAllButtons();
         }
 
@@ -332,10 +297,6 @@ void StartGuiTask(void const *argument) {
     }
 }
 
-/**
-  * @brief System Clock Configuration
-  * @retval None
-  */
 void SystemClock_Config(void) {
 
     RCC_OscInitTypeDef RCC_OscInitStruct;
@@ -1357,12 +1318,12 @@ static void MX_GPIO_Init(void) {
 }
 
 void BSP_AUDIO_OUT_TransferComplete_CallBack(void) {
-    buf_offs = BUFFER_OFFSET_FULL;
-	AUDIO_P_End();
+    //buf_offs = BUFFER_OFFSET_FULL;
+    AUDIO_P_End();
 }
 
 void BSP_AUDIO_OUT_HalfTransfer_CallBack(void) {
-    buf_offs = BUFFER_OFFSET_HALF;
+    //buf_offs = BUFFER_OFFSET_HALF;
 }
 
 /**
