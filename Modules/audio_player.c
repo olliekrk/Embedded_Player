@@ -35,7 +35,6 @@ void AUDIO_P_AddToQueue(int audioIndex) {
 }
 
 void AUDIO_P_Play(int audioIndex) {
-    APP_STATE.IS_PLAYING = 1;
     int frequency = APP_BUTTONS_STATE.configs[audioIndex].sampleRate;
     if (AUDIO_P_ChangeFrequency(frequency) == AUDIO_OK) {
         xprintf("Playing: %d\r\n", audioIndex);

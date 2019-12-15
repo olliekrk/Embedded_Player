@@ -19,13 +19,25 @@
 
 #define MASS_STORAGE_BUF_SIZE ( 1024 * 1024 )
 
+#define WAV_HEADER_LENGTH 44
+
 #define BUFFER_LIMIT_PER_BUTTON (MASS_STORAGE_BUF_SIZE / AUDIO_BUTTONS_COUNT)
 
 #include <ff.h>
 
+typedef enum BufferPos {
+    BUFFER_OFFSET_NONE = 11,
+    BUFFER_OFFSET_HALF = 22,
+    BUFFER_OFFSET_FULL = 33,
+} BufferPos;
+
+// Audio Buffer State
+extern int FILE_OFFSET;
+extern BufferPos BUFFER_OFFSET;
+extern FIL CURRENT_FILE;
+
 extern uint8_t TMP_BUFFER[AUDIO_OUT_BUFFER_SIZE];
 
-// changed from uint32_t
 extern uint8_t AUDIO_BUFFER[MASS_STORAGE_BUF_SIZE] __attribute__((section(".sdram")));
 
 FRESULT AUDIO_L_CreateAudioDirectory(void);
@@ -37,5 +49,9 @@ void AUDIO_L_PerformScan(void);
 void AUDIO_L_ResetState(void);
 
 void AUDIO_L_LoadFileUnderButton(char*, int);
+
+void AUDIO_L_UpdateBuffer();
+
+void AUDIO_L_ResetBuffer();
 
 #endif //EMBEDDED_PLAYER_AUDIO_LOADER_H

@@ -190,51 +190,6 @@ void VolumeChangeRoutine() {
     }
 }
 
-// THIS COMMENTED FRAGMENT COULD BE USEFUL, to be removed eventually
-/*
-    if (player_state) {
-        uint32_t bytesRead = 0;
-
-        if (buf_offs == BUFFER_OFFSET_HALF) {
-            xprintf("Audio streaming has now reached half of the buffer size.\r\n");
-            if (f_read(&testFile,
-                       &TMP_BUFFER[0],
-                       AUDIO_OUT_BUFFER_SIZE / 2,
-                       (void *) &bytesRead) != FR_OK) {
-                BSP_AUDIO_OUT_Stop(CODEC_PDWN_SW);
-                xprintf("f_read error on half\n");
-            }
-            buf_offs = BUFFER_OFFSET_NONE;
-            fpos += bytesRead;
-        }
-
-        if (buf_offs == BUFFER_OFFSET_FULL) {
-            xprintf("Audio streaming has now reached end of the buffer size.\r\n");
-
-            BSP_AUDIO_OUT_Stop(CODEC_PDWN_SW);
-            player_state = 0;
-            if (f_read(&testFile,
-                       &TMP_BUFFER[AUDIO_OUT_BUFFER_SIZE / 2],
-                       AUDIO_OUT_BUFFER_SIZE / 2,
-                       (void *) &bytesRead) != FR_OK) {
-                BSP_AUDIO_OUT_Stop(CODEC_PDWN_SW);
-                xprintf("f_read error on full\n");
-            }
-
-            buf_offs = BUFFER_OFFSET_NONE;
-            fpos += bytesRead;
-        }
-        if ((bytesRead < AUDIO_OUT_BUFFER_SIZE / 2) && fpos) {
-            xprintf("stop at eof\n");
-            BSP_AUDIO_OUT_Stop(CODEC_PDWN_SW);
-            f_close(&testFile);
-            player_state = 0;
-            fpos = 0;
-            buf_offs = BUFFER_OFFSET_NONE;
-        }
-    }
-    */
-
 void StartDefaultTask(void const *argument) {
     vTaskDelay(1000);
 
@@ -260,6 +215,7 @@ void StartAudioPlayerTask(void const *argument) {
             event = osMessageGet(audioRequestsQueue, 0);
             if (event.status == osEventMessage) {
                 request = event.value.p;
+                APP_STATE.IS_PLAYING = 1;
                 AUDIO_P_VolumeUp();
                 AUDIO_P_Play(request->audioIndex);
                 osPoolFree(audioRequestsPool, request);
@@ -1318,12 +1274,12 @@ static void MX_GPIO_Init(void) {
 }
 
 void BSP_AUDIO_OUT_TransferComplete_CallBack(void) {
-    //buf_offs = BUFFER_OFFSET_FULL;
+    BUFFER_OFFSET = BUFFER_OFFSET_FULL;
     AUDIO_P_End();
 }
 
 void BSP_AUDIO_OUT_HalfTransfer_CallBack(void) {
-    //buf_offs = BUFFER_OFFSET_HALF;
+    BUFFER_OFFSET = BUFFER_OFFSET_HALF;
 }
 
 /**
