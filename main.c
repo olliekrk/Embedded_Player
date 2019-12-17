@@ -49,7 +49,6 @@
   */
 
 #include "main.h"
-#include "bam_glo.h"
 
 int __io_putchar(int ch) {
     uint8_t data = ch;
@@ -160,8 +159,10 @@ int main(void) {
 
     osMessageQDef(audioRequestsQueue, AUDIO_QUEUE_SIZE, AudioRequest);
     audioRequestsQueue = osMessageCreate(osMessageQ(audioRequestsQueue), NULL);
-    bam_reset(NULL, NULL);
-    struct bam_static_param lol;
+    // bam_reset(NULL, NULL);
+    // greq_reset(NULL, NULL);
+    // src236_reset(NULL, NULL);
+    // src441_reset(NULL, NULL);
     /* Create the thread(s) */
     osThreadDef(defaultTask, StartDefaultTask, osPriorityLow, 1, ALL_THREADS_STACK_SIZE * 0.1);
     osThreadDef(audioPlayerTask, StartAudioPlayerTask, osPriorityLow, 1, ALL_THREADS_STACK_SIZE * 0.1);

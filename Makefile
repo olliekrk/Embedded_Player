@@ -288,6 +288,9 @@ C_INCLUDES =  \
 -IMiddlewares/Third_Party/LwIP/system/arch \
 -IDrivers/CMSIS/Include \
 -IMiddlewares/Third_Party/STM32_Audio/BAM/Inc \
+-IMiddlewares/Third_Party/STM32_Audio/GREQ/Inc \
+-IMiddlewares/Third_Party/STM32_Audio/SRC441/Inc \
+-IMiddlewares/Third_Party/STM32_Audio/SRC236/Inc \
 -IMiddlewares/Third_Party/STM32_Audio/Common/Inc
 
 # compile gcc flags
@@ -312,8 +315,12 @@ LDSCRIPT = STM32F746NGHx_FLASH.ld
 
 # libraries
 LIBS = -lc -lm -lnosys
-LIBDIR = -LMiddlewares/Third_Party/STM32_Audio/BAM/Src
-LDFLAGS = $(MCU) -specs=nano.specs -T$(LDSCRIPT) $(LIBDIR) $(LIBS) -Wl,-Map=$(BUILD_DIR)/$(TARGET).map,--cref -Wl,--gc-sections
+LIBDIR =
+STATIC_LIBS = Middlewares/Third_Party/STM32_Audio/BAM/Lib/BAM_32b_CM7_GCC.a \
+			  Middlewares/Third_Party/STM32_Audio/GREQ/Lib/GrEq_32b_CM7_GCC.a \
+			  Middlewares/Third_Party/STM32_Audio/SRC236/Lib/SRC236_32b_CM7_GCC.a \
+			  Middlewares/Third_Party/STM32_Audio/SRC441/Lib/SRC441_32b_CM7_GCC.a
+LDFLAGS = $(MCU) -specs=nano.specs -T$(LDSCRIPT) $(LIBDIR) $(LIBS) -Wl,-Map=$(BUILD_DIR)/$(TARGET).map,--cref -Wl,--gc-sections $(STATIC_LIBS)
 
 # default action: build all
 all: $(BUILD_DIR)/$(TARGET).elf $(BUILD_DIR)/$(TARGET).hex $(BUILD_DIR)/$(TARGET).bin

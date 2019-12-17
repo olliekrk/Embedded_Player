@@ -44,6 +44,11 @@
 #include "Modules/audio_loader.h"
 #include "Modules/audio_player.h"
 
+#include "bam_glo.h"
+#include "greq_glo.h"
+#include "src441_glo.h"
+#include "src236_glo.h"
+
 ADC_HandleTypeDef hadc3;
 
 CRC_HandleTypeDef hcrc;
