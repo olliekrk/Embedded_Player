@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 1
 
 
    1              		.cpu cortex-m7
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
   29:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****                                       Size   : size of the buffer to be sent in Bytes
   30:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****                                      )
   31:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****           to start playing (for the first time) from the audio file/stream.
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 2
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 2
 
 
   32:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****        + Call the function BSP_AUDIO_OUT_Pause() to pause playing   
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
   86:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
   87:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
   88:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 3
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 3
 
 
   89:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   *
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  143:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   */
  144:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** AUDIO_DrvTypeDef          *audio_drv;
  145:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** SAI_HandleTypeDef         haudio_out_sai={0};
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 4
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 4
 
 
  146:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** SAI_HandleTypeDef         haudio_in_sai={0};
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  200:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   /* wm8994 codec initialization */
  201:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   deviceid = wm8994_drv.ReadID(AUDIO_I2C_ADDRESS);
  202:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 5
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 5
 
 
  203:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   if((deviceid) == WM8994_ID)
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  257:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** }
  258:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** 
  259:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** /**
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 6
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 6
 
 
  260:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   * @brief  This function Pauses the audio file stream. In case
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  314:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   *                            Then need to reconfigure the Codec after power on.  
  315:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   * @retval AUDIO_OK if correct communication, else wrong communication
  316:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   */
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 7
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 7
 
 
  317:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** uint8_t BSP_AUDIO_OUT_Stop(uint32_t Option)
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  371:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   }
  372:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   else
  373:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   {
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 8
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 8
 
 
  374:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****     /* Return AUDIO_OK when all operations are correctly done */
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  428:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   *            @arg CODEC_AUDIOFRAME_SLOT_02
  429:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   *            @arg CODEC_AUDIOFRAME_SLOT_13
  430:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   * @note   This API should be called after the BSP_AUDIO_OUT_Init() to adjust the
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 9
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 9
 
 
  431:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   *         audio frame slot.
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  485:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   * @retval None
  486:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   */
  487:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** void HAL_SAI_ErrorCallback(SAI_HandleTypeDef *hsai)
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 10
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 10
 
 
  488:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** {
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  542:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   /* Enable SAI clock */
  543:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   AUDIO_OUT_SAIx_CLK_ENABLE();
  544:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 11
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 11
 
 
  545:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   /* Enable GPIO clock */
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  599:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****     /* Associate the DMA handle */
  600:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****     __HAL_LINKDMA(hsai, hdmatx, hdma_sai_tx);
  601:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****     
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 12
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 12
 
 
  602:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****     /* Deinitialize the Stream for new transfer */
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  656:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** /**
  657:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   * @brief  Clock Config.
  658:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   * @param  hsai: might be required to set audio peripheral predivider if any.
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 13
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 13
 
 
  659:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   * @param  AudioFreq: Audio frequency used to play the audio stream.
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  713:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   */
  714:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** static void SAIx_Out_Init(uint32_t AudioFreq)
  715:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** {
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 14
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 14
 
 
  716:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   /* Initialize the haudio_out_sai Instance parameter */
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  770:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** static void SAIx_Out_DeInit(void)
  771:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** {
   28              		.loc 1 771 1 view -0
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 15
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 15
 
 
   29              		.cfi_startproc
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  789:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** /**
  790:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   * @brief  Initializes wave recording.
  791:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   * @param  AudioFreq: Audio frequency to be configured for the SAI peripheral.
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 16
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 16
 
 
  792:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   * @param  BitRes: Audio frequency to be configured.
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  846:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****     else
  847:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****     {
  848:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****       slot_active = CODEC_AUDIOFRAME_SLOT_02;
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 17
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 17
 
 
  849:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****     }
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  903:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****     /* PLL clock is set depending on the AudioFreq (44.1khz vs 48khz groups) */
  904:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****     BSP_AUDIO_OUT_ClockConfig(&haudio_in_sai, AudioFreq, NULL); /* Clock config is shared between A
  905:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** 
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 18
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 18
 
 
  906:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****     /* SAI data transfer preparation:
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  960:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   return ret;
  961:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** }
  962:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** 
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 19
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 19
 
 
  963:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** 
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
 1017:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   * @retval AUDIO_OK if correct communication, else wrong communication
 1018:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   */
 1019:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** uint8_t BSP_AUDIO_IN_Pause(void)
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 20
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 20
 
 
 1020:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** {    
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
 1074:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   * @retval None
 1075:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   */
 1076:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** void HAL_SAI_RxCpltCallback(SAI_HandleTypeDef *hsai)
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 21
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 21
 
 
 1077:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** {
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
 1131:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   */
 1132:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** __weak void BSP_AUDIO_IN_MspInit(SAI_HandleTypeDef *hsai, void *Params)
 1133:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** {
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 22
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 22
 
 
 1134:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   static DMA_HandleTypeDef hdma_sai_rx;
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
 1188:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   }
 1189:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   
 1190:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   /* SAI DMA IRQ Channel configuration */
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 23
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 23
 
 
 1191:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   HAL_NVIC_SetPriority(AUDIO_IN_SAIx_DMAx_IRQ, AUDIO_IN_IRQ_PREPRIO, 0);
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
 1245:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   * @retval None
 1246:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   */
 1247:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** static void SAIx_In_Init(uint32_t SaiOutMode, uint32_t SlotActive, uint32_t AudioFreq)
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 24
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 24
 
 
 1248:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** {
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
 1302:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   LSBFirst: Disabled
 1303:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   DataSize: 16 */
 1304:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   haudio_in_sai.Init.AudioFrequency = AudioFreq;
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 25
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 25
 
 
 1305:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   haudio_in_sai.Init.AudioMode = SAI_MODESLAVE_RX;
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
   73              	.LCFI1:
   74              		.cfi_def_cfa_offset 8
   75              		.cfi_offset 3, -8
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 26
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 26
 
 
   76              		.cfi_offset 14, -4
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  120              		.loc 1 717 27 is_stmt 0 view .LVU15
  121 0002 184C     		ldr	r4, .L11
  122 0004 184B     		ldr	r3, .L11+4
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 27
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 27
 
 
  123 0006 2360     		str	r3, [r4]
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  158 002a 2161     		str	r1, [r4, #16]
  734:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   
  159              		.loc 1 734 3 is_stmt 1 view .LVU35
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 28
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 28
 
 
  734:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  758:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   
  195              		.loc 1 758 3 is_stmt 1 view .LVU55
  196 0050 2046     		mov	r0, r4
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 29
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 29
 
 
  197              	.LVL3:
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  247              		.loc 1 1251 3 is_stmt 1 view .LVU61
 1251:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** 
  248              		.loc 1 1251 27 is_stmt 0 view .LVU62
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 30
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 30
 
 
  249 0008 324D     		ldr	r5, .L15
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  285 0030 AE60     		str	r6, [r5, #8]
 1267:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   haudio_out_sai.Init.FIFOThreshold = SAI_FIFOTHRESHOLD_1QF;
  286              		.loc 1 1267 3 is_stmt 1 view .LVU81
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 31
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 31
 
 
 1267:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   haudio_out_sai.Init.FIFOThreshold = SAI_FIFOTHRESHOLD_1QF;
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  321              		.loc 1 1289 38 is_stmt 0 view .LVU101
  322 005e 0420     		movs	r0, #4
  323 0060 E865     		str	r0, [r5, #92]
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 32
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 32
 
 
 1290:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** 
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
 1309:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   haudio_in_sai.Init.ClockStrobing = SAI_CLOCKSTROBING_RISINGEDGE;
  361              		.loc 1 1309 3 is_stmt 1 view .LVU119
 1309:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   haudio_in_sai.Init.ClockStrobing = SAI_CLOCKSTROBING_RISINGEDGE;
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 33
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 33
 
 
  362              		.loc 1 1309 31 is_stmt 0 view .LVU120
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  395              		.loc 1 1333 3 is_stmt 1 view .LVU141
 1333:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   haudio_in_sai.SlotInit.SlotNumber = 4;
  396              		.loc 1 1333 35 is_stmt 0 view .LVU142
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 34
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 34
 
 
  397 00aa A665     		str	r6, [r4, #88]
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  445              	.LVL12:
  446              	.LFB139:
  233:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   /* Call the audio Codec Play function */
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 35
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 35
 
 
  447              		.loc 1 233 1 is_stmt 1 view -0
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  490 0028 0448     		ldr	r0, .L23+4
  491 002a FFF7FEFF 		bl	HAL_SAI_Transmit_DMA
  492              	.LVL16:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 36
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 36
 
 
  244:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   }
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  540              		.loc 1 256 4 view .LVU171
  541 0008 FFF7FEFF 		bl	HAL_SAI_Transmit_DMA
  542              	.LVL21:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 37
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 37
 
 
  257:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** 
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  590 0014 FFF7FEFF 		bl	HAL_SAI_DMAPause
  591              	.LVL23:
  280:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   }
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 38
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 38
 
 
  592              		.loc 1 280 5 view .LVU181
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  301:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****     
  640              		.loc 1 301 5 is_stmt 1 view .LVU190
  641 0012 0348     		ldr	r0, .L41+4
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 39
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 39
 
 
  642 0014 FFF7FEFF 		bl	HAL_SAI_DMAResume
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  689              		.loc 1 323 6 view .LVU199
  690 0010 2146     		mov	r1, r4
  691 0012 3420     		movs	r0, #52
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 40
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 40
 
 
  692 0014 9847     		blx	r3
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  739              		@ args = 0, pretend = 0, frame = 0
  740              		@ frame_needed = 0, uses_anonymous_args = 0
  346:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   /* Call the codec volume control function with converted volume value */
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 41
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 41
 
 
  741              		.loc 1 346 1 is_stmt 0 view .LVU209
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  788              		.loc 1 366 1 is_stmt 1 view -0
  789              		.cfi_startproc
  790              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 42
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 42
 
 
  791              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  838              	.LFB146:
  387:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   /* Call the Codec output device function */
  839              		.loc 1 387 1 is_stmt 1 view -0
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 43
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 43
 
 
  840              		.cfi_startproc
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  887              	BSP_AUDIO_OUT_SetAudioFrameSlot:
  888              	.LVL41:
  889              	.LFB148:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 44
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 44
 
 
  435:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   /* Disable SAI peripheral to allow access to SAI internal registers */
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  937              	BSP_AUDIO_OUT_TransferComplete_CallBack:
  938              	.LFB153:
  512:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** }
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 45
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 45
 
 
  939              		.loc 1 512 1 is_stmt 1 view -0
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  991              		@ frame_needed = 0, uses_anonymous_args = 0
  992              		@ link register save eliminated.
  521:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** 
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 46
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 46
 
 
  993              		.loc 1 521 1 view .LVU254
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  1045              	.LFE155:
  1047              		.section	.text.BSP_AUDIO_OUT_MspInit,"ax",%progbits
  1048              		.align	1
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 47
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 47
 
 
  1049              		.weak	BSP_AUDIO_OUT_MspInit
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  543:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   
  1095              		.loc 1 543 3 view .LVU270
  546:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   AUDIO_OUT_SAIx_SCK_SD_ENABLE();
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 48
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 48
 
 
  1096              		.loc 1 546 3 view .LVU271
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  1135 004a 03F48073 		and	r3, r3, #256
  1136 004e 0393     		str	r3, [sp, #12]
  548:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   /* CODEC_SAI pins configuration: FS, SCK, MCK and SD pins ------------------*/
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 49
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 49
 
 
  1137              		.loc 1 548 3 view .LVU287
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  558:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   gpio_init_structure.Pull = GPIO_NOPULL;
  1175              		.loc 1 558 3 is_stmt 1 view .LVU304
  558:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   gpio_init_structure.Pull = GPIO_NOPULL;
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 50
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 50
 
 
  1176              		.loc 1 558 28 is_stmt 0 view .LVU305
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  1212              	.LVL53:
  571:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   gpio_init_structure.Mode = GPIO_MODE_AF_PP;
  1213              		.loc 1 571 3 view .LVU324
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 51
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 51
 
 
  571:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   gpio_init_structure.Mode = GPIO_MODE_AF_PP;
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  1250              		.loc 1 581 10 is_stmt 0 view .LVU342
  1251 00d2 DAF80020 		ldr	r2, [r10]
  581:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   {
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 52
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 52
 
 
  1252              		.loc 1 581 5 view .LVU343
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  1294              		.loc 1 588 5 is_stmt 1 view .LVU355
  588:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****     hdma_sai_tx.Init.MemDataAlignment    = AUDIO_OUT_SAIx_DMAx_MEM_DATA_SIZE;
  1295              		.loc 1 588 42 is_stmt 0 view .LVU356
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 53
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 53
 
 
  1296 0108 4FF40062 		mov	r2, #2048
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  1331 0136 C4F838A0 		str	r10, [r4, #56]
  600:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****     
  1332              		.loc 1 600 5 view .LVU376
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 54
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 54
 
 
  603:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****     
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  627:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****     {
  1382              		.loc 1 627 5 is_stmt 1 view .LVU384
  627:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****     {
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 55
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 55
 
 
  1383              		.loc 1 627 12 is_stmt 0 view .LVU385
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  1425 0042 23F40003 		bic	r3, r3, #8388608
  1426 0046 5364     		str	r3, [r2, #68]
  654:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** 
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 56
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 56
 
 
  1427              		.loc 1 654 1 is_stmt 0 view .LVU398
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  1478              		.cfi_endproc
  1479              	.LFE149:
  1481              		.section	.text.BSP_AUDIO_OUT_ClockConfig,"ax",%progbits
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 57
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 57
 
 
  1482              		.align	1
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  1527              		.loc 1 678 49 is_stmt 0 view .LVU413
  1528 0024 4FF48013 		mov	r3, #1048576
  1529 0028 0193     		str	r3, [sp, #4]
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 58
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 58
 
 
  679:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****     rcc_ex_clk_init_struct.PLLI2S.PLLI2SN = 429;
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  695:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****     rcc_ex_clk_init_struct.PLLI2S.PLLI2SQ = 7;
  1570              		.loc 1 695 5 is_stmt 1 view .LVU428
  695:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****     rcc_ex_clk_init_struct.PLLI2S.PLLI2SQ = 7;
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 59
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 59
 
 
  1571              		.loc 1 695 43 is_stmt 0 view .LVU429
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  181:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   uint32_t deviceid = 0x00;
  1619              		.loc 1 181 3 is_stmt 1 view .LVU438
  1620              	.LVL79:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 60
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 60
 
 
  182:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** 
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  213:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   }
  1661              		.loc 1 213 9 view .LVU453
  1662 003a 0120     		movs	r0, #1
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 61
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 61
 
 
  1663              	.LVL85:
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  1703 005e A847     		blx	r5
  1704              	.LVL92:
  209:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   }
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 62
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 62
 
 
  1705              		.loc 1 209 9 view .LVU468
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  416:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   HAL_SAI_Init(&haudio_out_sai);
  1756              		.loc 1 416 3 view .LVU474
  416:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   HAL_SAI_Init(&haudio_out_sai);
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 63
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 63
 
 
  1757              		.loc 1 416 38 is_stmt 0 view .LVU475
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  1805              	.LVL100:
  976:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   
  1806              		.loc 1 976 3 is_stmt 0 view .LVU484
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 64
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 64
 
 
  1807 0006 0248     		ldr	r0, .L116
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  1853              		.loc 1 999 15 is_stmt 0 view .LVU494
  1854 000a 094B     		ldr	r3, .L124+4
  1855 000c 1B68     		ldr	r3, [r3]
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 65
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 65
 
 
  1856 000e 9B69     		ldr	r3, [r3, #24]
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  1903              	.LFB166:
 1020:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   /* Call the Media layer pause function */
  1904              		.loc 1 1020 1 is_stmt 1 view -0
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 66
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 66
 
 
  1905              		.cfi_startproc
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  1954 000a 08BD     		pop	{r3, pc}
  1955              	.L133:
  1956              		.align	2
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 67
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 67
 
 
  1957              	.L132:
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  2003              		.loc 1 1056 5 is_stmt 1 view .LVU521
  2004              	.L135:
 1058:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** 
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 68
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 68
 
 
  2005              		.loc 1 1058 1 is_stmt 0 view .LVU522
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  2058              		.cfi_offset 3, -8
  2059              		.cfi_offset 14, -4
 1079:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** }
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 69
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 69
 
 
  2060              		.loc 1 1079 3 is_stmt 1 view .LVU528
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
 1092:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** 
  2112              		.loc 1 1092 1 is_stmt 0 view .LVU535
  2113 0006 08BD     		pop	{r3, pc}
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 70
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 70
 
 
  2114              		.cfi_endproc
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  2164 0002 0B48     		ldr	r0, .L153
  2165              	.LVL119:
  492:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   audio_in_state = HAL_SAI_GetState(&haudio_in_sai);
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 71
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 71
 
 
  2166              		.loc 1 492 21 view .LVU544
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  2210 0034 00000000 		.word	.LANCHOR1
  2211              		.cfi_endproc
  2212              	.LFE152:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 72
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 72
 
 
  2214              		.section	.text.BSP_AUDIO_IN_MspInit,"ax",%progbits
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  2259              		.loc 1 1138 3 view .LVU564
 1141:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****   /* CODEC_SAI pin configuration: SD pin */
  2260              		.loc 1 1141 3 view .LVU565
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 73
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 73
 
 
  2261              	.LBB8:
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  2298 0042 2D48     		ldr	r0, .L159+4
  2299              	.LVL129:
 1148:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** 
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 74
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 74
 
 
  2300              		.loc 1 1148 3 view .LVU583
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
 1160:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****     
  2338              		.loc 1 1160 3 view .LVU600
 1160:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****     
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 75
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 75
 
 
  2339              		.loc 1 1160 3 view .LVU601
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  2382              		.cfi_remember_state
  2383              		.cfi_def_cfa_offset 20
  2384              		@ sp needed
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 76
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 76
 
 
  2385 00aa F0BD     		pop	{r4, r5, r6, r7, pc}
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  2421              		.loc 1 1173 42 is_stmt 0 view .LVU630
  2422 00d2 6762     		str	r7, [r4, #36]
 1174:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****     hdma_sai_rx.Init.MemBurst            = DMA_MBURST_SINGLE;
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 77
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 77
 
 
  2423              		.loc 1 1174 5 is_stmt 1 view .LVU631
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  2465              		.align	1
  2466              		.global	BSP_AUDIO_IN_InitEx
  2467              		.syntax unified
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 78
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 78
 
 
  2468              		.thumb
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  2511 001c 0022     		movs	r2, #0
  2512 001e 2946     		mov	r1, r5
  2513 0020 3046     		mov	r0, r6
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 79
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 79
 
 
  2514 0022 FFF7FEFF 		bl	BSP_AUDIO_OUT_ClockConfig
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  865:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****     }
  2554              		.loc 1 865 11 view .LVU671
  2555 0052 0120     		movs	r0, #1
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 80
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 80
 
 
  2556              	.LVL148:
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  871:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****     }
  2597              		.loc 1 871 7 view .LVU685
  871:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****     }
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 81
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 81
 
 
  2598              		.loc 1 871 16 is_stmt 0 view .LVU686
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  2647 0006 0146     		mov	r1, r0
  2648              	.LVL159:
  798:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** }
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 82
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 82
 
 
  2649              		.loc 1 798 10 view .LVU694
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  2693              		.cfi_def_cfa_offset 24
  2694              		.cfi_offset 3, -24
  2695              		.cfi_offset 4, -20
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 83
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 83
 
 
  2696              		.cfi_offset 5, -16
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  2737              		.loc 1 918 7 view .LVU719
  2738 003c 98B1     		cbz	r0, .L192
  2739              	.L183:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 84
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 84
 
 
  928:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****     {
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  2782 006e E6E7     		b	.L183
  2783              	.LVL177:
  2784              	.L193:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 85
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 85
 
 
  944:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c ****       /* Initialize the audio driver structure */
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  2828              		.align	1
  2829              		.weak	BSP_AUDIO_IN_MspDeInit
  2830              		.syntax unified
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 86
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 86
 
 
  2831              		.thumb
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  2874 0022 FFF7FEFF 		bl	HAL_GPIO_DeInit
  2875              	.LVL185:
 1228:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** 
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 87
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 87
 
 
  2876              		.loc 1 1228 3 view .LVU756
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
 1069:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.c **** 
  2927              		.loc 1 1069 1 is_stmt 0 view .LVU762
  2928 000e 08BD     		pop	{r3, pc}
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 88
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 88
 
 
  2929              	.L205:
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  2975      00000000 
  2975      00000000 
  2976              		.section	.data.AudioInVolume,"aw"
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 89
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 89
 
 
  2977              		.align	1
@@ -5307,142 +5307,142 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 1
  3002              		.file 19 "Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.h"
  3003              		.file 20 "Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_cortex.h"
  3004              		.file 21 "Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h"
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 90
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 90
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32746g_discovery_audio.c
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:18     .text.SAIx_Out_DeInit:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:25     .text.SAIx_Out_DeInit:00000000 SAIx_Out_DeInit
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:54     .text.SAIx_Out_DeInit:00000018 $d
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:60     .text.SAIx_In_DeInit:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:66     .text.SAIx_In_DeInit:00000000 SAIx_In_DeInit
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:94     .text.SAIx_In_DeInit:00000018 $d
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:100    .text.SAIx_Out_Init:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:106    .text.SAIx_Out_Init:00000000 SAIx_Out_Init
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:211    .text.SAIx_Out_Init:00000064 $d
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:217    .text.SAIx_In_Init:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:223    .text.SAIx_In_Init:00000000 SAIx_In_Init
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:429    .text.SAIx_In_Init:000000d4 $d
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:437    .text.BSP_AUDIO_OUT_Play:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:444    .text.BSP_AUDIO_OUT_Play:00000000 BSP_AUDIO_OUT_Play
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:507    .text.BSP_AUDIO_OUT_Play:00000038 $d
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:18     .text.SAIx_Out_DeInit:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:25     .text.SAIx_Out_DeInit:00000000 SAIx_Out_DeInit
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:54     .text.SAIx_Out_DeInit:00000018 $d
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:60     .text.SAIx_In_DeInit:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:66     .text.SAIx_In_DeInit:00000000 SAIx_In_DeInit
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:94     .text.SAIx_In_DeInit:00000018 $d
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:100    .text.SAIx_Out_Init:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:106    .text.SAIx_Out_Init:00000000 SAIx_Out_Init
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:211    .text.SAIx_Out_Init:00000064 $d
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:217    .text.SAIx_In_Init:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:223    .text.SAIx_In_Init:00000000 SAIx_In_Init
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:429    .text.SAIx_In_Init:000000d4 $d
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:437    .text.BSP_AUDIO_OUT_Play:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:444    .text.BSP_AUDIO_OUT_Play:00000000 BSP_AUDIO_OUT_Play
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:507    .text.BSP_AUDIO_OUT_Play:00000038 $d
                             *COM*:00000004 audio_drv
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:513    .text.BSP_AUDIO_OUT_ChangeBuffer:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:520    .text.BSP_AUDIO_OUT_ChangeBuffer:00000000 BSP_AUDIO_OUT_ChangeBuffer
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:548    .text.BSP_AUDIO_OUT_ChangeBuffer:00000010 $d
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:553    .text.BSP_AUDIO_OUT_Pause:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:560    .text.BSP_AUDIO_OUT_Pause:00000000 BSP_AUDIO_OUT_Pause
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:599    .text.BSP_AUDIO_OUT_Pause:0000001c $d
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:605    .text.BSP_AUDIO_OUT_Resume:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:612    .text.BSP_AUDIO_OUT_Resume:00000000 BSP_AUDIO_OUT_Resume
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:651    .text.BSP_AUDIO_OUT_Resume:0000001c $d
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:657    .text.BSP_AUDIO_OUT_Stop:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:664    .text.BSP_AUDIO_OUT_Stop:00000000 BSP_AUDIO_OUT_Stop
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:721    .text.BSP_AUDIO_OUT_Stop:0000002c $d
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:727    .text.BSP_AUDIO_OUT_SetVolume:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:734    .text.BSP_AUDIO_OUT_SetVolume:00000000 BSP_AUDIO_OUT_SetVolume
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:773    .text.BSP_AUDIO_OUT_SetVolume:00000018 $d
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:778    .text.BSP_AUDIO_OUT_SetMute:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:785    .text.BSP_AUDIO_OUT_SetMute:00000000 BSP_AUDIO_OUT_SetMute
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:824    .text.BSP_AUDIO_OUT_SetMute:00000018 $d
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:829    .text.BSP_AUDIO_OUT_SetOutputMode:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:836    .text.BSP_AUDIO_OUT_SetOutputMode:00000000 BSP_AUDIO_OUT_SetOutputMode
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:875    .text.BSP_AUDIO_OUT_SetOutputMode:00000018 $d
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:880    .text.BSP_AUDIO_OUT_SetAudioFrameSlot:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:887    .text.BSP_AUDIO_OUT_SetAudioFrameSlot:00000000 BSP_AUDIO_OUT_SetAudioFrameSlot
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:925    .text.BSP_AUDIO_OUT_SetAudioFrameSlot:00000024 $d
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:930    .text.BSP_AUDIO_OUT_TransferComplete_CallBack:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:937    .text.BSP_AUDIO_OUT_TransferComplete_CallBack:00000000 BSP_AUDIO_OUT_TransferComplete_CallBack
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:950    .text.HAL_SAI_TxCpltCallback:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:957    .text.HAL_SAI_TxCpltCallback:00000000 HAL_SAI_TxCpltCallback
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:979    .text.BSP_AUDIO_OUT_HalfTransfer_CallBack:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:986    .text.BSP_AUDIO_OUT_HalfTransfer_CallBack:00000000 BSP_AUDIO_OUT_HalfTransfer_CallBack
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:999    .text.HAL_SAI_TxHalfCpltCallback:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:1006   .text.HAL_SAI_TxHalfCpltCallback:00000000 HAL_SAI_TxHalfCpltCallback
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:1028   .text.BSP_AUDIO_OUT_Error_CallBack:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:1035   .text.BSP_AUDIO_OUT_Error_CallBack:00000000 BSP_AUDIO_OUT_Error_CallBack
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:1048   .text.BSP_AUDIO_OUT_MspInit:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:1055   .text.BSP_AUDIO_OUT_MspInit:00000000 BSP_AUDIO_OUT_MspInit
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:1345   .text.BSP_AUDIO_OUT_MspInit:00000148 $d
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:1354   .text.BSP_AUDIO_OUT_MspDeInit:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:1361   .text.BSP_AUDIO_OUT_MspDeInit:00000000 BSP_AUDIO_OUT_MspDeInit
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 91
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:513    .text.BSP_AUDIO_OUT_ChangeBuffer:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:520    .text.BSP_AUDIO_OUT_ChangeBuffer:00000000 BSP_AUDIO_OUT_ChangeBuffer
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:548    .text.BSP_AUDIO_OUT_ChangeBuffer:00000010 $d
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:553    .text.BSP_AUDIO_OUT_Pause:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:560    .text.BSP_AUDIO_OUT_Pause:00000000 BSP_AUDIO_OUT_Pause
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:599    .text.BSP_AUDIO_OUT_Pause:0000001c $d
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:605    .text.BSP_AUDIO_OUT_Resume:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:612    .text.BSP_AUDIO_OUT_Resume:00000000 BSP_AUDIO_OUT_Resume
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:651    .text.BSP_AUDIO_OUT_Resume:0000001c $d
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:657    .text.BSP_AUDIO_OUT_Stop:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:664    .text.BSP_AUDIO_OUT_Stop:00000000 BSP_AUDIO_OUT_Stop
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:721    .text.BSP_AUDIO_OUT_Stop:0000002c $d
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:727    .text.BSP_AUDIO_OUT_SetVolume:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:734    .text.BSP_AUDIO_OUT_SetVolume:00000000 BSP_AUDIO_OUT_SetVolume
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:773    .text.BSP_AUDIO_OUT_SetVolume:00000018 $d
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:778    .text.BSP_AUDIO_OUT_SetMute:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:785    .text.BSP_AUDIO_OUT_SetMute:00000000 BSP_AUDIO_OUT_SetMute
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:824    .text.BSP_AUDIO_OUT_SetMute:00000018 $d
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:829    .text.BSP_AUDIO_OUT_SetOutputMode:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:836    .text.BSP_AUDIO_OUT_SetOutputMode:00000000 BSP_AUDIO_OUT_SetOutputMode
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:875    .text.BSP_AUDIO_OUT_SetOutputMode:00000018 $d
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:880    .text.BSP_AUDIO_OUT_SetAudioFrameSlot:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:887    .text.BSP_AUDIO_OUT_SetAudioFrameSlot:00000000 BSP_AUDIO_OUT_SetAudioFrameSlot
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:925    .text.BSP_AUDIO_OUT_SetAudioFrameSlot:00000024 $d
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:930    .text.BSP_AUDIO_OUT_TransferComplete_CallBack:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:937    .text.BSP_AUDIO_OUT_TransferComplete_CallBack:00000000 BSP_AUDIO_OUT_TransferComplete_CallBack
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:950    .text.HAL_SAI_TxCpltCallback:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:957    .text.HAL_SAI_TxCpltCallback:00000000 HAL_SAI_TxCpltCallback
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:979    .text.BSP_AUDIO_OUT_HalfTransfer_CallBack:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:986    .text.BSP_AUDIO_OUT_HalfTransfer_CallBack:00000000 BSP_AUDIO_OUT_HalfTransfer_CallBack
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:999    .text.HAL_SAI_TxHalfCpltCallback:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:1006   .text.HAL_SAI_TxHalfCpltCallback:00000000 HAL_SAI_TxHalfCpltCallback
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:1028   .text.BSP_AUDIO_OUT_Error_CallBack:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:1035   .text.BSP_AUDIO_OUT_Error_CallBack:00000000 BSP_AUDIO_OUT_Error_CallBack
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:1048   .text.BSP_AUDIO_OUT_MspInit:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:1055   .text.BSP_AUDIO_OUT_MspInit:00000000 BSP_AUDIO_OUT_MspInit
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:1345   .text.BSP_AUDIO_OUT_MspInit:00000148 $d
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:1354   .text.BSP_AUDIO_OUT_MspDeInit:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:1361   .text.BSP_AUDIO_OUT_MspDeInit:00000000 BSP_AUDIO_OUT_MspDeInit
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 91
 
 
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:1439   .text.BSP_AUDIO_OUT_MspDeInit:00000054 $d
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:1446   .text.BSP_AUDIO_OUT_DeInit:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:1453   .text.BSP_AUDIO_OUT_DeInit:00000000 BSP_AUDIO_OUT_DeInit
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:1477   .text.BSP_AUDIO_OUT_DeInit:00000010 $d
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:1482   .text.BSP_AUDIO_OUT_ClockConfig:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:1489   .text.BSP_AUDIO_OUT_ClockConfig:00000000 BSP_AUDIO_OUT_ClockConfig
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:1592   .text.BSP_AUDIO_OUT_Init:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:1599   .text.BSP_AUDIO_OUT_Init:00000000 BSP_AUDIO_OUT_Init
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:1711   .text.BSP_AUDIO_OUT_Init:00000064 $d
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:1719   .text.BSP_AUDIO_OUT_SetFrequency:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:1726   .text.BSP_AUDIO_OUT_SetFrequency:00000000 BSP_AUDIO_OUT_SetFrequency
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:1775   .text.BSP_AUDIO_OUT_SetFrequency:00000030 $d
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:1780   .text.BSP_AUDIO_IN_Record:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:1787   .text.BSP_AUDIO_IN_Record:00000000 BSP_AUDIO_IN_Record
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:1820   .text.BSP_AUDIO_IN_Record:00000010 $d
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:1825   .text.BSP_AUDIO_IN_Stop:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:1832   .text.BSP_AUDIO_IN_Stop:00000000 BSP_AUDIO_IN_Stop
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:1889   .text.BSP_AUDIO_IN_Stop:0000002c $d
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:1895   .text.BSP_AUDIO_IN_Pause:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:1902   .text.BSP_AUDIO_IN_Pause:00000000 BSP_AUDIO_IN_Pause
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:1924   .text.BSP_AUDIO_IN_Pause:0000000c $d
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:1929   .text.BSP_AUDIO_IN_Resume:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:1936   .text.BSP_AUDIO_IN_Resume:00000000 BSP_AUDIO_IN_Resume
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:1958   .text.BSP_AUDIO_IN_Resume:0000000c $d
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:1963   .text.BSP_AUDIO_IN_SetVolume:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:1970   .text.BSP_AUDIO_IN_SetVolume:00000000 BSP_AUDIO_IN_SetVolume
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2014   .text.BSP_AUDIO_IN_SetVolume:00000020 $d
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2020   .text.BSP_AUDIO_IN_TransferComplete_CallBack:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2027   .text.BSP_AUDIO_IN_TransferComplete_CallBack:00000000 BSP_AUDIO_IN_TransferComplete_CallBack
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2040   .text.HAL_SAI_RxCpltCallback:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2047   .text.HAL_SAI_RxCpltCallback:00000000 HAL_SAI_RxCpltCallback
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2069   .text.BSP_AUDIO_IN_HalfTransfer_CallBack:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2076   .text.BSP_AUDIO_IN_HalfTransfer_CallBack:00000000 BSP_AUDIO_IN_HalfTransfer_CallBack
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2089   .text.HAL_SAI_RxHalfCpltCallback:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2096   .text.HAL_SAI_RxHalfCpltCallback:00000000 HAL_SAI_RxHalfCpltCallback
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2118   .text.BSP_AUDIO_IN_Error_CallBack:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2125   .text.BSP_AUDIO_IN_Error_CallBack:00000000 BSP_AUDIO_IN_Error_CallBack
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2138   .text.HAL_SAI_ErrorCallback:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2145   .text.HAL_SAI_ErrorCallback:00000000 HAL_SAI_ErrorCallback
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2209   .text.HAL_SAI_ErrorCallback:00000030 $d
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2215   .text.BSP_AUDIO_IN_MspInit:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2222   .text.BSP_AUDIO_IN_MspInit:00000000 BSP_AUDIO_IN_MspInit
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2455   .text.BSP_AUDIO_IN_MspInit:000000f4 $d
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2465   .text.BSP_AUDIO_IN_InitEx:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2472   .text.BSP_AUDIO_IN_InitEx:00000000 BSP_AUDIO_IN_InitEx
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2613   .text.BSP_AUDIO_IN_InitEx:00000088 $d
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2621   .text.BSP_AUDIO_IN_Init:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2628   .text.BSP_AUDIO_IN_Init:00000000 BSP_AUDIO_IN_Init
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2661   .text.BSP_AUDIO_IN_OUT_Init:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2668   .text.BSP_AUDIO_IN_OUT_Init:00000000 BSP_AUDIO_IN_OUT_Init
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2818   .text.BSP_AUDIO_IN_OUT_Init:00000090 $d
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2828   .text.BSP_AUDIO_IN_MspDeInit:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2835   .text.BSP_AUDIO_IN_MspDeInit:00000000 BSP_AUDIO_IN_MspDeInit
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2893   .text.BSP_AUDIO_IN_MspDeInit:0000003c $d
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2901   .text.BSP_AUDIO_IN_DeInit:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2908   .text.BSP_AUDIO_IN_DeInit:00000000 BSP_AUDIO_IN_DeInit
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2932   .text.BSP_AUDIO_IN_DeInit:00000010 $d
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s 			page 92
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:1439   .text.BSP_AUDIO_OUT_MspDeInit:00000054 $d
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:1446   .text.BSP_AUDIO_OUT_DeInit:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:1453   .text.BSP_AUDIO_OUT_DeInit:00000000 BSP_AUDIO_OUT_DeInit
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:1477   .text.BSP_AUDIO_OUT_DeInit:00000010 $d
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:1482   .text.BSP_AUDIO_OUT_ClockConfig:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:1489   .text.BSP_AUDIO_OUT_ClockConfig:00000000 BSP_AUDIO_OUT_ClockConfig
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:1592   .text.BSP_AUDIO_OUT_Init:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:1599   .text.BSP_AUDIO_OUT_Init:00000000 BSP_AUDIO_OUT_Init
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:1711   .text.BSP_AUDIO_OUT_Init:00000064 $d
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:1719   .text.BSP_AUDIO_OUT_SetFrequency:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:1726   .text.BSP_AUDIO_OUT_SetFrequency:00000000 BSP_AUDIO_OUT_SetFrequency
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:1775   .text.BSP_AUDIO_OUT_SetFrequency:00000030 $d
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:1780   .text.BSP_AUDIO_IN_Record:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:1787   .text.BSP_AUDIO_IN_Record:00000000 BSP_AUDIO_IN_Record
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:1820   .text.BSP_AUDIO_IN_Record:00000010 $d
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:1825   .text.BSP_AUDIO_IN_Stop:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:1832   .text.BSP_AUDIO_IN_Stop:00000000 BSP_AUDIO_IN_Stop
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:1889   .text.BSP_AUDIO_IN_Stop:0000002c $d
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:1895   .text.BSP_AUDIO_IN_Pause:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:1902   .text.BSP_AUDIO_IN_Pause:00000000 BSP_AUDIO_IN_Pause
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:1924   .text.BSP_AUDIO_IN_Pause:0000000c $d
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:1929   .text.BSP_AUDIO_IN_Resume:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:1936   .text.BSP_AUDIO_IN_Resume:00000000 BSP_AUDIO_IN_Resume
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:1958   .text.BSP_AUDIO_IN_Resume:0000000c $d
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:1963   .text.BSP_AUDIO_IN_SetVolume:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:1970   .text.BSP_AUDIO_IN_SetVolume:00000000 BSP_AUDIO_IN_SetVolume
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2014   .text.BSP_AUDIO_IN_SetVolume:00000020 $d
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2020   .text.BSP_AUDIO_IN_TransferComplete_CallBack:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2027   .text.BSP_AUDIO_IN_TransferComplete_CallBack:00000000 BSP_AUDIO_IN_TransferComplete_CallBack
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2040   .text.HAL_SAI_RxCpltCallback:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2047   .text.HAL_SAI_RxCpltCallback:00000000 HAL_SAI_RxCpltCallback
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2069   .text.BSP_AUDIO_IN_HalfTransfer_CallBack:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2076   .text.BSP_AUDIO_IN_HalfTransfer_CallBack:00000000 BSP_AUDIO_IN_HalfTransfer_CallBack
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2089   .text.HAL_SAI_RxHalfCpltCallback:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2096   .text.HAL_SAI_RxHalfCpltCallback:00000000 HAL_SAI_RxHalfCpltCallback
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2118   .text.BSP_AUDIO_IN_Error_CallBack:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2125   .text.BSP_AUDIO_IN_Error_CallBack:00000000 BSP_AUDIO_IN_Error_CallBack
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2138   .text.HAL_SAI_ErrorCallback:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2145   .text.HAL_SAI_ErrorCallback:00000000 HAL_SAI_ErrorCallback
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2209   .text.HAL_SAI_ErrorCallback:00000030 $d
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2215   .text.BSP_AUDIO_IN_MspInit:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2222   .text.BSP_AUDIO_IN_MspInit:00000000 BSP_AUDIO_IN_MspInit
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2455   .text.BSP_AUDIO_IN_MspInit:000000f4 $d
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2465   .text.BSP_AUDIO_IN_InitEx:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2472   .text.BSP_AUDIO_IN_InitEx:00000000 BSP_AUDIO_IN_InitEx
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2613   .text.BSP_AUDIO_IN_InitEx:00000088 $d
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2621   .text.BSP_AUDIO_IN_Init:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2628   .text.BSP_AUDIO_IN_Init:00000000 BSP_AUDIO_IN_Init
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2661   .text.BSP_AUDIO_IN_OUT_Init:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2668   .text.BSP_AUDIO_IN_OUT_Init:00000000 BSP_AUDIO_IN_OUT_Init
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2818   .text.BSP_AUDIO_IN_OUT_Init:00000090 $d
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2828   .text.BSP_AUDIO_IN_MspDeInit:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2835   .text.BSP_AUDIO_IN_MspDeInit:00000000 BSP_AUDIO_IN_MspDeInit
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2893   .text.BSP_AUDIO_IN_MspDeInit:0000003c $d
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2901   .text.BSP_AUDIO_IN_DeInit:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2908   .text.BSP_AUDIO_IN_DeInit:00000000 BSP_AUDIO_IN_DeInit
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2932   .text.BSP_AUDIO_IN_DeInit:00000010 $d
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s 			page 92
 
 
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2981   .data.AudioInVolume:00000000 AudioInVolume
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2981   .data.AudioInVolume:00000000 AudioInVolume
                             *COM*:00000040 haudio_tim
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2946   .bss.haudio_in_sai:00000000 haudio_in_sai
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2953   .bss.haudio_out_sai:00000000 haudio_out_sai
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2942   .bss.haudio_in_sai:00000000 $d
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2949   .bss.haudio_out_sai:00000000 $d
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2956   .bss.hdma_sai_rx.12330:00000000 $d
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2960   .bss.hdma_sai_rx.12330:00000000 hdma_sai_rx.12330
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2963   .bss.hdma_sai_rx.12341:00000000 $d
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2967   .bss.hdma_sai_rx.12341:00000000 hdma_sai_rx.12341
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2970   .bss.hdma_sai_tx.12243:00000000 $d
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2974   .bss.hdma_sai_tx.12243:00000000 hdma_sai_tx.12243
-C:\Users\Nina\AppData\Local\Temp\ccY3AlzB.s:2977   .data.AudioInVolume:00000000 $d
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2946   .bss.haudio_in_sai:00000000 haudio_in_sai
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2953   .bss.haudio_out_sai:00000000 haudio_out_sai
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2942   .bss.haudio_in_sai:00000000 $d
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2949   .bss.haudio_out_sai:00000000 $d
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2956   .bss.hdma_sai_rx.12330:00000000 $d
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2960   .bss.hdma_sai_rx.12330:00000000 hdma_sai_rx.12330
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2963   .bss.hdma_sai_rx.12341:00000000 $d
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2967   .bss.hdma_sai_rx.12341:00000000 hdma_sai_rx.12341
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2970   .bss.hdma_sai_tx.12243:00000000 $d
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2974   .bss.hdma_sai_tx.12243:00000000 hdma_sai_tx.12243
+C:\Users\Nina\AppData\Local\Temp\ccto1wMa.s:2977   .data.AudioInVolume:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_SAI_DeInit

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 1
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s 			page 1
 
 
    1              		.cpu cortex-m7
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 1
   27:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c ****      + SDRAM read/write operations
   28:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c ****         o SDRAM external memory can be accessed with read/write operations once it is
   29:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c ****           initialized.
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 2
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s 			page 2
 
 
   30:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c ****           Read/write operation can be performed with AHB access using the functions
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 1
   84:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c **** 
   85:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c **** /* Includes ------------------------------------------------------------------*/
   86:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c **** #include "stm32746g_discovery_sdram.h"
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 3
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s 			page 3
 
 
   87:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 1
  141:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c **** 
  142:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c **** /**
  143:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c ****   * @brief  Initializes the SDRAM device.
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 4
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s 			page 4
 
 
  144:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c ****   * @retval SDRAM status
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 1
  198:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c ****   /* SDRAM device de-initialization */
  199:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c ****   sdramHandle.Instance = FMC_SDRAM_DEVICE;
  200:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c **** 
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 5
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s 			page 5
 
 
  201:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c ****   if(HAL_SDRAM_DeInit(&sdramHandle) != HAL_OK)
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 1
  227:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c ****   Command.CommandTarget          = FMC_SDRAM_CMD_TARGET_BANK1;
   58              		.loc 1 227 3 is_stmt 1 view .LVU6
   59              		.loc 1 227 34 is_stmt 0 view .LVU7
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 6
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s 			page 6
 
 
   60 0016 1027     		movs	r7, #16
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 1
   96 0044 2146     		mov	r1, r4
   97 0046 2846     		mov	r0, r5
   98 0048 FFF7FEFF 		bl	HAL_SDRAM_SendCommand
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 7
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s 			page 7
 
 
   99              	.LVL4:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 1
  133 0072 A660     		str	r6, [r4, #8]
  266:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c ****   Command.ModeRegisterDefinition = tmpmrd;
  134              		.loc 1 266 3 is_stmt 1 view .LVU41
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 8
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s 			page 8
 
 
  135              		.loc 1 266 34 is_stmt 0 view .LVU42
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 1
  282:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c ****   */
  283:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c **** uint8_t BSP_SDRAM_ReadData(uint32_t uwStartAddress, uint32_t *pData, uint32_t uwDataSize)
  284:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c **** {
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 9
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s 			page 9
 
 
  176              		.loc 1 284 1 is_stmt 1 view -0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 1
  223              	.LVL14:
  224              	.LFB142:
  294:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c **** 
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 10
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s 			page 10
 
 
  295:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c **** /**
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 1
  261              	.LFE142:
  263              		.section	.text.BSP_SDRAM_WriteData,"ax",%progbits
  264              		.align	1
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 11
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s 			page 11
 
 
  265              		.global	BSP_SDRAM_WriteData
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 1
  330:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c ****   }
  331:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c **** }
  303              		.loc 1 331 1 view .LVU76
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 12
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s 			page 12
 
 
  304 0012 08BD     		pop	{r3, pc}
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 1
  343:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c ****   {
  344:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c ****     return SDRAM_ERROR;
  349              		.loc 1 344 12 view .LVU85
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 13
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s 			page 13
 
 
  350 0010 0120     		movs	r0, #1
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 1
  391              		.loc 1 359 5 view .LVU92
  392 000e 00B1     		cbz	r0, .L26
  360:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c ****   {
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 14
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s 			page 14
 
 
  361:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c ****     return SDRAM_ERROR;
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 1
  432              		.loc 1 377 3 is_stmt 1 view .LVU97
  378:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c ****   GPIO_InitTypeDef gpio_init_structure;
  433              		.loc 1 378 3 view .LVU98
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 15
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s 			page 15
 
 
  379:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c ****   
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 1
  479              		.loc 1 387 3 view .LVU116
  388:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c ****   __HAL_RCC_GPIOD_CLK_ENABLE();
  480              		.loc 1 388 3 view .LVU117
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 16
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s 			page 16
 
 
  481              	.LBB5:
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 1
  532              		.loc 1 391 3 view .LVU138
  533 007c 1A6B     		ldr	r2, [r3, #48]
  534 007e 02F04002 		and	r2, r2, #64
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 17
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s 			page 17
 
 
  535 0082 0792     		str	r2, [sp, #28]
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 1
  578 00ac 2A48     		ldr	r0, .L32+4
  579              	.LVL34:
  580              		.loc 1 402 3 view .LVU159
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 18
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s 			page 18
 
 
  581 00ae FFF7FEFF 		bl	HAL_GPIO_Init
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 1
  424:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c ****   HAL_GPIO_Init(GPIOG, &gpio_init_structure);
  614              		.loc 1 424 3 is_stmt 1 view .LVU171
  615 00e2 09A9     		add	r1, sp, #36
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 19
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s 			page 19
 
 
  616 00e4 2048     		ldr	r0, .L32+20
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 1
  656              		.loc 1 438 3 is_stmt 1 view .LVU189
  657              		.loc 1 438 39 is_stmt 0 view .LVU190
  658 011a 4FF40033 		mov	r3, #131072
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 20
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s 			page 20
 
 
  659 011e 2362     		str	r3, [r4, #32]
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 1
  695 0144 FFF7FEFF 		bl	HAL_NVIC_SetPriority
  696              	.LVL43:
  457:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c ****   HAL_NVIC_EnableIRQ(SDRAM_DMAx_IRQn);
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 21
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s 			page 21
 
 
  697              		.loc 1 457 3 view .LVU208
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 1
  748 0002 1B4C     		ldr	r4, .L38
  749 0004 1B4B     		ldr	r3, .L38+4
  750 0006 2360     		str	r3, [r4]
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 22
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s 			page 22
 
 
  153:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c ****   Timing.ExitSelfRefreshDelay = 7;
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 1
  785 0024 E260     		str	r2, [r4, #12]
  164:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c ****   sdramHandle.Init.InternalBankNumber = FMC_SDRAM_INTERN_BANKS_NUM_4;
  786              		.loc 1 164 3 is_stmt 1 view .LVU235
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 23
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s 			page 23
 
 
  164:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c ****   sdramHandle.Init.InternalBankNumber = FMC_SDRAM_INTERN_BANKS_NUM_4;
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 1
  178:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c ****   }
  824              		.loc 1 178 5 is_stmt 1 view .LVU253
  178:Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_sdram.c ****   }
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 24
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s 			page 24
 
 
  825              		.loc 1 178 17 is_stmt 0 view .LVU254
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 1
  867              		.loc 1 467 1 is_stmt 1 view -0
  868              		.cfi_startproc
  869              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 25
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s 			page 25
 
 
  870              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 1
  913              		.cfi_startproc
  914              		@ args = 0, pretend = 0, frame = 0
  915              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 26
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s 			page 26
 
 
  916 0000 08B5     		push	{r3, lr}
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 1
  957 002a 00BF     		.align	2
  958              	.L48:
  959 002c 00000000 		.word	sdramHandle
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 27
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s 			page 27
 
 
  960 0030 400100A0 		.word	-1610612416
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 1
  1012              		.file 6 "Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f746xx.h"
  1013              		.file 7 "c:\\program files (x86)\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\
  1014              		.file 8 "c:\\program files (x86)\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 28
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s 			page 28
 
 
  1015              		.file 9 "c:\\program files (x86)\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi
@@ -1630,52 +1630,52 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 1
  1021              		.file 15 "Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_sdram.h"
  1022              		.file 16 "Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_cortex.h"
  1023              		.file 17 "Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h"
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 29
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s 			page 29
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32746g_discovery_sdram.c
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:18     .text.BSP_SDRAM_Initialization_sequence:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:26     .text.BSP_SDRAM_Initialization_sequence:00000000 BSP_SDRAM_Initialization_sequence
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:160    .text.BSP_SDRAM_Initialization_sequence:00000094 $d
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:18     .text.BSP_SDRAM_Initialization_sequence:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:26     .text.BSP_SDRAM_Initialization_sequence:00000000 BSP_SDRAM_Initialization_sequence
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:160    .text.BSP_SDRAM_Initialization_sequence:00000094 $d
                             *COM*:00000034 sdramHandle
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:166    .text.BSP_SDRAM_ReadData:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:173    .text.BSP_SDRAM_ReadData:00000000 BSP_SDRAM_ReadData
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:210    .text.BSP_SDRAM_ReadData:00000014 $d
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:215    .text.BSP_SDRAM_ReadData_DMA:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:222    .text.BSP_SDRAM_ReadData_DMA:00000000 BSP_SDRAM_ReadData_DMA
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:259    .text.BSP_SDRAM_ReadData_DMA:00000014 $d
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:264    .text.BSP_SDRAM_WriteData:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:271    .text.BSP_SDRAM_WriteData:00000000 BSP_SDRAM_WriteData
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:308    .text.BSP_SDRAM_WriteData:00000014 $d
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:313    .text.BSP_SDRAM_WriteData_DMA:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:320    .text.BSP_SDRAM_WriteData_DMA:00000000 BSP_SDRAM_WriteData_DMA
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:357    .text.BSP_SDRAM_WriteData_DMA:00000014 $d
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:362    .text.BSP_SDRAM_Sendcmd:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:369    .text.BSP_SDRAM_Sendcmd:00000000 BSP_SDRAM_Sendcmd
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:401    .text.BSP_SDRAM_Sendcmd:00000014 $d
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:406    .text.BSP_SDRAM_MspInit:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:413    .text.BSP_SDRAM_MspInit:00000000 BSP_SDRAM_MspInit
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:712    .text.BSP_SDRAM_MspInit:00000154 $d
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:725    .text.BSP_SDRAM_Init:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:732    .text.BSP_SDRAM_Init:00000000 BSP_SDRAM_Init
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:849    .text.BSP_SDRAM_Init:00000070 $d
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:857    .text.BSP_SDRAM_MspDeInit:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:864    .text.BSP_SDRAM_MspDeInit:00000000 BSP_SDRAM_MspDeInit
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:897    .text.BSP_SDRAM_MspDeInit:00000014 $d
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:903    .text.BSP_SDRAM_DeInit:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:910    .text.BSP_SDRAM_DeInit:00000000 BSP_SDRAM_DeInit
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:959    .text.BSP_SDRAM_DeInit:0000002c $d
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:967    .bss.Command:00000000 $d
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:971    .bss.Command:00000000 Command
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:974    .bss.Timing:00000000 $d
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:978    .bss.Timing:00000000 Timing
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:981    .bss.dma_handle.12023:00000000 $d
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:985    .bss.dma_handle.12023:00000000 dma_handle.12023
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:988    .bss.dma_handle.12037:00000000 $d
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:992    .bss.dma_handle.12037:00000000 dma_handle.12037
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:998    .data.sdramstatus.11987:00000000 sdramstatus.11987
-C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s:1004   .data.sdramstatus.11991:00000000 sdramstatus.11991
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:166    .text.BSP_SDRAM_ReadData:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:173    .text.BSP_SDRAM_ReadData:00000000 BSP_SDRAM_ReadData
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:210    .text.BSP_SDRAM_ReadData:00000014 $d
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:215    .text.BSP_SDRAM_ReadData_DMA:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:222    .text.BSP_SDRAM_ReadData_DMA:00000000 BSP_SDRAM_ReadData_DMA
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:259    .text.BSP_SDRAM_ReadData_DMA:00000014 $d
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:264    .text.BSP_SDRAM_WriteData:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:271    .text.BSP_SDRAM_WriteData:00000000 BSP_SDRAM_WriteData
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:308    .text.BSP_SDRAM_WriteData:00000014 $d
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:313    .text.BSP_SDRAM_WriteData_DMA:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:320    .text.BSP_SDRAM_WriteData_DMA:00000000 BSP_SDRAM_WriteData_DMA
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:357    .text.BSP_SDRAM_WriteData_DMA:00000014 $d
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:362    .text.BSP_SDRAM_Sendcmd:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:369    .text.BSP_SDRAM_Sendcmd:00000000 BSP_SDRAM_Sendcmd
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:401    .text.BSP_SDRAM_Sendcmd:00000014 $d
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:406    .text.BSP_SDRAM_MspInit:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:413    .text.BSP_SDRAM_MspInit:00000000 BSP_SDRAM_MspInit
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:712    .text.BSP_SDRAM_MspInit:00000154 $d
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:725    .text.BSP_SDRAM_Init:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:732    .text.BSP_SDRAM_Init:00000000 BSP_SDRAM_Init
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:849    .text.BSP_SDRAM_Init:00000070 $d
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:857    .text.BSP_SDRAM_MspDeInit:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:864    .text.BSP_SDRAM_MspDeInit:00000000 BSP_SDRAM_MspDeInit
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:897    .text.BSP_SDRAM_MspDeInit:00000014 $d
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:903    .text.BSP_SDRAM_DeInit:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:910    .text.BSP_SDRAM_DeInit:00000000 BSP_SDRAM_DeInit
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:959    .text.BSP_SDRAM_DeInit:0000002c $d
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:967    .bss.Command:00000000 $d
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:971    .bss.Command:00000000 Command
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:974    .bss.Timing:00000000 $d
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:978    .bss.Timing:00000000 Timing
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:981    .bss.dma_handle.12023:00000000 $d
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:985    .bss.dma_handle.12023:00000000 dma_handle.12023
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:988    .bss.dma_handle.12037:00000000 $d
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:992    .bss.dma_handle.12037:00000000 dma_handle.12037
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:998    .data.sdramstatus.11987:00000000 sdramstatus.11987
+C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s:1004   .data.sdramstatus.11991:00000000 sdramstatus.11991
 
 UNDEFINED SYMBOLS
 HAL_SDRAM_SendCommand
@@ -1690,7 +1690,7 @@ HAL_DMA_DeInit
 HAL_DMA_Init
 HAL_NVIC_SetPriority
 HAL_NVIC_EnableIRQ
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8vfBFe.s 			page 30
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczr1eLK.s 			page 30
 
 
 HAL_SDRAM_Init

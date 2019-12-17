@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 1
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s 			page 1
 
 
    1              		.cpu cortex-m7
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 1
   27:Middlewares/Third_Party/LwIP/system/OS/sys_arch.c ****  * This file is part of the lwIP TCP/IP stack.
   28:Middlewares/Third_Party/LwIP/system/OS/sys_arch.c ****  *
   29:Middlewares/Third_Party/LwIP/system/OS/sys_arch.c ****  * Author: Adam Dunkels <adam@sics.se>
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 2
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s 			page 2
 
 
   30:Middlewares/Third_Party/LwIP/system/OS/sys_arch.c ****  *
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 1
   59 0014 2060     		str	r0, [r4]
   55:Middlewares/Third_Party/LwIP/system/OS/sys_arch.c **** 
   56:Middlewares/Third_Party/LwIP/system/OS/sys_arch.c **** #if SYS_STATS
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 3
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s 			page 3
 
 
   57:Middlewares/Third_Party/LwIP/system/OS/sys_arch.c ****       ++lwip_stats.sys.mbox.used;
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 1
   96              		@ args = 0, pretend = 0, frame = 0
   97              		@ frame_needed = 0, uses_anonymous_args = 0
   98              		.loc 1 75 1 is_stmt 0 view .LVU14
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 4
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s 			page 4
 
 
   99 0000 10B5     		push	{r4, lr}
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 1
   97:Middlewares/Third_Party/LwIP/system/OS/sys_arch.c **** {
  134              		.loc 1 97 1 is_stmt 1 view -0
  135              		.cfi_startproc
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 5
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s 			page 5
 
 
  136              		@ args = 0, pretend = 0, frame = 0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 1
  184 0000 08B5     		push	{r3, lr}
  185              	.LCFI6:
  186              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 6
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s 			page 6
 
 
  187              		.cfi_offset 3, -8
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 1
  124:Middlewares/Third_Party/LwIP/system/OS/sys_arch.c **** 
  125:Middlewares/Third_Party/LwIP/system/OS/sys_arch.c **** /*-----------------------------------------------------------------------------------*/
  126:Middlewares/Third_Party/LwIP/system/OS/sys_arch.c **** /*
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 7
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s 			page 7
 
 
  127:Middlewares/Third_Party/LwIP/system/OS/sys_arch.c ****   Blocks the thread until a message arrives in the mailbox, but does
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 1
  256              		.loc 1 148 13 is_stmt 0 view .LVU51
  257 0012 2246     		mov	r2, r4
  258 0014 2968     		ldr	r1, [r5]
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 8
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s 			page 8
 
 
  259 0016 05A8     		add	r0, sp, #20
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 1
  153:Middlewares/Third_Party/LwIP/system/OS/sys_arch.c ****     }
  291              		.loc 1 153 15 is_stmt 0 view .LVU62
  292 002e FFF7FEFF 		bl	osKernelSysTick
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 9
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s 			page 9
 
 
  293              	.LVL24:
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 1
  338              	.LVL30:
  339              	.LFB170:
  167:Middlewares/Third_Party/LwIP/system/OS/sys_arch.c **** 
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 10
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s 			page 10
 
 
  168:Middlewares/Third_Party/LwIP/system/OS/sys_arch.c **** /*-----------------------------------------------------------------------------------*/
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 1
  187:Middlewares/Third_Party/LwIP/system/OS/sys_arch.c ****   }
  188:Middlewares/Third_Party/LwIP/system/OS/sys_arch.c **** }
  375              		.loc 1 188 1 view .LVU85
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 11
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s 			page 11
 
 
  376 001a 04B0     		add	sp, sp, #16
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 1
  420 0004 0120     		movs	r0, #1
  421              	.LVL36:
  196:Middlewares/Third_Party/LwIP/system/OS/sys_arch.c **** }                                             
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 12
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s 			page 12
 
 
  422              		.loc 1 196 1 view .LVU96
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 1
  205:Middlewares/Third_Party/LwIP/system/OS/sys_arch.c **** //  the initial state of the semaphore.
  206:Middlewares/Third_Party/LwIP/system/OS/sys_arch.c **** err_t sys_sem_new(sys_sem_t *sem, u8_t count)
  207:Middlewares/Third_Party/LwIP/system/OS/sys_arch.c **** {
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 13
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s 			page 13
 
 
  470              		.loc 1 207 1 is_stmt 1 view -0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 1
  225:Middlewares/Third_Party/LwIP/system/OS/sys_arch.c **** #if SYS_STATS
  226:Middlewares/Third_Party/LwIP/system/OS/sys_arch.c **** 	++lwip_stats.sys.sem.used;
  227:Middlewares/Third_Party/LwIP/system/OS/sys_arch.c ****  	if (lwip_stats.sys.sem.max < lwip_stats.sys.sem.used) {
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 14
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s 			page 14
 
 
  228:Middlewares/Third_Party/LwIP/system/OS/sys_arch.c **** 		lwip_stats.sys.sem.max = lwip_stats.sys.sem.used;
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 1
  242:Middlewares/Third_Party/LwIP/system/OS/sys_arch.c ****   If the timeout argument is non-zero, the return value is the number of
  243:Middlewares/Third_Party/LwIP/system/OS/sys_arch.c ****   milliseconds spent waiting for the semaphore to be signaled. If the
  244:Middlewares/Third_Party/LwIP/system/OS/sys_arch.c ****   semaphore wasn't signaled within the specified time, the return value is
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 15
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s 			page 15
 
 
  245:Middlewares/Third_Party/LwIP/system/OS/sys_arch.c ****   SYS_ARCH_TIMEOUT. If the thread didn't have to wait for the semaphore
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 1
  576 0012 2068     		ldr	r0, [r4]
  577 0014 FFF7FEFF 		bl	osSemaphoreWait
  578              	.LVL50:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 16
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s 			page 16
 
 
  579              		.loc 1 268 10 discriminator 1 view .LVU130
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 1
  623              		.fpu fpv5-sp-d16
  625              	sys_sem_signal:
  626              	.LVL56:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 17
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s 			page 17
 
 
  627              	.LFB175:
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 1
  285:Middlewares/Third_Party/LwIP/system/OS/sys_arch.c ****   --lwip_stats.sys.sem.used;
  286:Middlewares/Third_Party/LwIP/system/OS/sys_arch.c **** #endif /* SYS_STATS */
  287:Middlewares/Third_Party/LwIP/system/OS/sys_arch.c ****   
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 18
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s 			page 18
 
 
  288:Middlewares/Third_Party/LwIP/system/OS/sys_arch.c ****   osSemaphoreDelete(*sem);
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 1
  714              		.cfi_endproc
  715              	.LFE177:
  717              		.section	.text.sys_sem_set_invalid,"ax",%progbits
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 19
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s 			page 19
 
 
  718              		.align	1
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 1
  761              		.loc 1 311 3 view .LVU166
  762              		.loc 1 311 20 is_stmt 0 view .LVU167
  763 0002 0348     		ldr	r0, .L55
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 20
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s 			page 20
 
 
  764 0004 FFF7FEFF 		bl	osMutexCreate
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 1
  808              		.loc 1 323 12 is_stmt 0 view .LVU174
  809 000a 01A8     		add	r0, sp, #4
  810              	.LVL69:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 21
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s 			page 21
 
 
  811              		.loc 1 323 12 view .LVU175
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 1
  847              	sys_mutex_free:
  848              	.LVL72:
  849              	.LFB181:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 22
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s 			page 22
 
 
  343:Middlewares/Third_Party/LwIP/system/OS/sys_arch.c **** /*-----------------------------------------------------------------------------------*/
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 1
  357:Middlewares/Third_Party/LwIP/system/OS/sys_arch.c ****   osMutexWait (*mutex, osWaitForever);
  892              		.loc 1 357 3 is_stmt 1 view .LVU189
  893 0002 4FF0FF31 		mov	r1, #-1
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 23
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s 			page 23
 
 
  894 0006 0068     		ldr	r0, [r0]
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 1
  944              	sys_thread_new:
  945              	.LVL81:
  946              	.LFB184:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 24
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s 			page 24
 
 
  366:Middlewares/Third_Party/LwIP/system/OS/sys_arch.c **** #endif /*LWIP_COMPAT_MUTEX*/
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 1
  986              		.cfi_endproc
  987              	.LFE184:
  989              		.section	.text.sys_arch_protect,"ax",%progbits
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 25
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s 			page 25
 
 
  990              		.align	1
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 1
  1023              	.LFE185:
  1025              		.section	.text.sys_arch_unprotect,"ax",%progbits
  1026              		.align	1
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 26
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s 			page 26
 
 
  1027              		.global	sys_arch_unprotect
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 1
  1067              		.align	2
  1068              		.set	.LANCHOR0,. + 0
  1071              	os_mutex_def_lwip_sys_mutex:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 27
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s 			page 27
 
 
  1072 0000 00000000 		.space	4
@@ -1585,67 +1585,67 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 1
  1093              		.file 20 "Middlewares/Third_Party/LwIP/src/include/lwip/sys.h"
  1094              		.file 21 "Middlewares/Third_Party/LwIP/src/include/lwip/memp.h"
  1095              		.file 22 "Middlewares/Third_Party/LwIP/src/include/lwip/priv/memp_priv.h"
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 28
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s 			page 28
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 sys_arch.c
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:18     .text.sys_mbox_new:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:26     .text.sys_mbox_new:00000000 sys_mbox_new
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:84     .text.sys_mbox_free:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:91     .text.sys_mbox_free:00000000 sys_mbox_free
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:124    .text.sys_mbox_post:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:131    .text.sys_mbox_post:00000000 sys_mbox_post
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:169    .text.sys_mbox_trypost:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:176    .text.sys_mbox_trypost:00000000 sys_mbox_trypost
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:214    .text.sys_arch_mbox_fetch:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:221    .text.sys_arch_mbox_fetch:00000000 sys_arch_mbox_fetch
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:330    .text.sys_arch_mbox_tryfetch:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:337    .text.sys_arch_mbox_tryfetch:00000000 sys_arch_mbox_tryfetch
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:399    .text.sys_mbox_valid:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:406    .text.sys_mbox_valid:00000000 sys_mbox_valid
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:435    .text.sys_mbox_set_invalid:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:442    .text.sys_mbox_set_invalid:00000000 sys_mbox_set_invalid
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:460    .text.sys_sem_new:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:467    .text.sys_sem_new:00000000 sys_sem_new
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:536    .text.sys_arch_sem_wait:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:543    .text.sys_arch_sem_wait:00000000 sys_arch_sem_wait
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:618    .text.sys_sem_signal:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:625    .text.sys_sem_signal:00000000 sys_sem_signal
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:650    .text.sys_sem_free:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:657    .text.sys_sem_free:00000000 sys_sem_free
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:682    .text.sys_sem_valid:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:689    .text.sys_sem_valid:00000000 sys_sem_valid
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:718    .text.sys_sem_set_invalid:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:725    .text.sys_sem_set_invalid:00000000 sys_sem_set_invalid
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:743    .text.sys_init:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:750    .text.sys_init:00000000 sys_init
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:774    .text.sys_init:00000010 $d
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:18     .text.sys_mbox_new:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:26     .text.sys_mbox_new:00000000 sys_mbox_new
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:84     .text.sys_mbox_free:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:91     .text.sys_mbox_free:00000000 sys_mbox_free
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:124    .text.sys_mbox_post:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:131    .text.sys_mbox_post:00000000 sys_mbox_post
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:169    .text.sys_mbox_trypost:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:176    .text.sys_mbox_trypost:00000000 sys_mbox_trypost
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:214    .text.sys_arch_mbox_fetch:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:221    .text.sys_arch_mbox_fetch:00000000 sys_arch_mbox_fetch
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:330    .text.sys_arch_mbox_tryfetch:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:337    .text.sys_arch_mbox_tryfetch:00000000 sys_arch_mbox_tryfetch
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:399    .text.sys_mbox_valid:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:406    .text.sys_mbox_valid:00000000 sys_mbox_valid
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:435    .text.sys_mbox_set_invalid:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:442    .text.sys_mbox_set_invalid:00000000 sys_mbox_set_invalid
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:460    .text.sys_sem_new:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:467    .text.sys_sem_new:00000000 sys_sem_new
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:536    .text.sys_arch_sem_wait:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:543    .text.sys_arch_sem_wait:00000000 sys_arch_sem_wait
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:618    .text.sys_sem_signal:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:625    .text.sys_sem_signal:00000000 sys_sem_signal
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:650    .text.sys_sem_free:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:657    .text.sys_sem_free:00000000 sys_sem_free
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:682    .text.sys_sem_valid:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:689    .text.sys_sem_valid:00000000 sys_sem_valid
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:718    .text.sys_sem_set_invalid:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:725    .text.sys_sem_set_invalid:00000000 sys_sem_set_invalid
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:743    .text.sys_init:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:750    .text.sys_init:00000000 sys_init
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:774    .text.sys_init:00000010 $d
                             *COM*:00000004 lwip_sys_mutex
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:780    .text.sys_mutex_new:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:787    .text.sys_mutex_new:00000000 sys_mutex_new
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:840    .text.sys_mutex_free:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:847    .text.sys_mutex_free:00000000 sys_mutex_free
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:872    .text.sys_mutex_lock:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:879    .text.sys_mutex_lock:00000000 sys_mutex_lock
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:905    .text.sys_mutex_unlock:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:912    .text.sys_mutex_unlock:00000000 sys_mutex_unlock
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:937    .text.sys_thread_new:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:944    .text.sys_thread_new:00000000 sys_thread_new
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:990    .text.sys_arch_protect:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:997    .text.sys_arch_protect:00000000 sys_arch_protect
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:1021   .text.sys_arch_protect:00000014 $d
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:1026   .text.sys_arch_unprotect:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:1033   .text.sys_arch_unprotect:00000000 sys_arch_unprotect
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:1059   .text.sys_arch_unprotect:0000000c $d
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:1071   .rodata.os_mutex_def_lwip_sys_mutex:00000000 os_mutex_def_lwip_sys_mutex
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:780    .text.sys_mutex_new:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:787    .text.sys_mutex_new:00000000 sys_mutex_new
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:840    .text.sys_mutex_free:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:847    .text.sys_mutex_free:00000000 sys_mutex_free
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:872    .text.sys_mutex_lock:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:879    .text.sys_mutex_lock:00000000 sys_mutex_lock
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:905    .text.sys_mutex_unlock:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:912    .text.sys_mutex_unlock:00000000 sys_mutex_unlock
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:937    .text.sys_thread_new:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:944    .text.sys_thread_new:00000000 sys_thread_new
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:990    .text.sys_arch_protect:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:997    .text.sys_arch_protect:00000000 sys_arch_protect
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:1021   .text.sys_arch_protect:00000014 $d
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:1026   .text.sys_arch_unprotect:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:1033   .text.sys_arch_unprotect:00000000 sys_arch_unprotect
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:1059   .text.sys_arch_unprotect:0000000c $d
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:1071   .rodata.os_mutex_def_lwip_sys_mutex:00000000 os_mutex_def_lwip_sys_mutex
                             *COM*:00000004 errno
-C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s:1067   .rodata.os_mutex_def_lwip_sys_mutex:00000000 $d
+C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s:1067   .rodata.os_mutex_def_lwip_sys_mutex:00000000 $d
 
 UNDEFINED SYMBOLS
 osMessageCreate
 osMessageWaiting
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccoHLKDI.s 			page 29
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8iatMz.s 			page 29
 
 
 osMessageDelete

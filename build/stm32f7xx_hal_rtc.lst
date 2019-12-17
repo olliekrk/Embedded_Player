@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 1
 
 
    1              		.cpu cortex-m7
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
   27:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     (#) The RTC
   28:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     (#) The LSE oscillator
   29:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     (#) The backup SRAM when the low power backup regulator is enabled
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 2
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 2
 
 
   30:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     (#) PC13 to PC15 I/Os, plus PI8 I/O (when available)
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
   84:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   ===========================
   85:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   [..]
   86:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     (+) To configure the RTC Alarm use the HAL_RTC_SetAlarm() function. 
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 3
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 3
 
 
   87:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****         You can also configure the RTC Alarm with interrupt mode using the HAL_RTC_SetAlarm_IT() fu
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  141:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   * @{
  142:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   */
  143:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c **** 
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 4
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 4
 
 
  144:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c **** /** @defgroup RTC RTC
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  198:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   * @param  hrtc pointer to a RTC_HandleTypeDef structure that contains
  199:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   *                the configuration information for RTC.
  200:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   * @retval HAL status
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 5
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 5
 
 
  201:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   */
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  255:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     /* Exit Initialization mode */
  256:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     hrtc->Instance->ISR &= (uint32_t)~RTC_ISR_INIT; 
  257:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 6
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 6
 
 
  258:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     hrtc->Instance->OR &= (uint32_t)~RTC_OR_ALARMTYPE;
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  312:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c **** 
  313:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     /* Wait till WUTWF flag is set and if Time out is reached exit */
  314:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     while(((hrtc->Instance->ISR) & RTC_ISR_WUTWF) == (uint32_t)RESET)
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 7
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 7
 
 
  315:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     {
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  369:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   hrtc->State = HAL_RTC_STATE_RESET; 
  370:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c **** 
  371:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   /* Release Lock */
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 8
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 8
 
 
  372:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   __HAL_UNLOCK(hrtc);
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  401:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   /* Prevent unused argument(s) compilation warning */
  402:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   UNUSED(hrtc);
   57              		.loc 1 402 3 view .LVU4
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 9
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 9
 
 
  403:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  443:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   assert_param(IS_RTC_FORMAT(Format));
  444:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   assert_param(IS_RTC_DAYLIGHT_SAVING(sTime->DayLightSaving));
  445:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   assert_param(IS_RTC_STORE_OPERATION(sTime->StoreOperation));
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 10
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 10
 
 
  446:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  500:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     __HAL_RTC_WRITEPROTECTION_ENABLE(hrtc); 
  501:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     
  502:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     /* Set RTC state */
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 11
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 11
 
 
  503:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     hrtc->State = HAL_RTC_STATE_ERROR;
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  557:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   *                RTC_SSR register content and SecondFraction field the Synchronous pre-scaler
  558:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   *                factor to be used for second fraction ratio computation.
  559:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   * @param  Format Specifies the format of the entered parameters.
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 12
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 12
 
 
  560:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   *          This parameter can be one of the following values:
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  614:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   *            @arg RTC_FORMAT_BIN: Binary data format 
  615:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   *            @arg RTC_FORMAT_BCD: BCD data format
  616:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   * @retval HAL status
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 13
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 13
 
 
  617:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   */
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  671:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     
  672:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     /* Process Unlocked */ 
  673:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     __HAL_UNLOCK(hrtc);
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 14
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 14
 
 
  674:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  728:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c **** HAL_StatusTypeDef HAL_RTC_GetDate(RTC_HandleTypeDef *hrtc, RTC_DateTypeDef *sDate, uint32_t Format)
  729:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c **** {
  730:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   uint32_t datetmpreg = 0;
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 15
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 15
 
 
  731:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c **** 
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  785:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   uint32_t tickstart = 0;
  786:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   uint32_t tmpreg = 0, subsecondtmpreg = 0;
  787:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 16
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 16
 
 
  788:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   /* Check the parameters */
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  842:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     {
  843:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****       sAlarm->AlarmTime.TimeFormat = 0x00;
  844:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****       assert_param(IS_RTC_HOUR24(RTC_Bcd2ToByte(sAlarm->AlarmTime.Hours)));
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 17
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 17
 
 
  845:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     }
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  899:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****         __HAL_UNLOCK(hrtc);
  900:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****         
  901:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****         return HAL_TIMEOUT;
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 18
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 18
 
 
  902:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****       }   
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  956:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c **** }
  957:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c **** 
  958:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c **** /**
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 19
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 19
 
 
  959:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   * @brief  Sets the specified RTC Alarm with Interrupt 
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
 1013:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     tmpreg = (((uint32_t)RTC_ByteToBcd2(sAlarm->AlarmTime.Hours) << 16U) | \
 1014:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****               ((uint32_t)RTC_ByteToBcd2(sAlarm->AlarmTime.Minutes) << 8U) | \
 1015:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****               ((uint32_t)RTC_ByteToBcd2(sAlarm->AlarmTime.Seconds)) | \
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 20
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 20
 
 
 1016:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****               ((uint32_t)(sAlarm->AlarmTime.TimeFormat) << 16U) | \
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
 1070:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c **** 
 1071:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     /* Wait till RTC ALRAWF flag is set and if Time out is reached exit */
 1072:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     do
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 21
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 21
 
 
 1073:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     {
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
 1127:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     __HAL_RTC_ALARMB_ENABLE(hrtc);
 1128:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     /* Configure the Alarm interrupt */
 1129:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     __HAL_RTC_ALARM_ENABLE_IT(hrtc, RTC_IT_ALRB);
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 22
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 22
 
 
 1130:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   }
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
   91 0002 037F     		ldrb	r3, [r0, #28]	@ zero_extendqisi2
   92 0004 012B     		cmp	r3, #1
   93 0006 55D0     		beq	.L11
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 23
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 23
 
 
   94 0008 0446     		mov	r4, r0
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
 1198:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****       }      
 1199:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     }
 1200:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   }
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 24
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 24
 
 
 1201:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   else
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  153              		.loc 1 1218 9 view .LVU36
  154 0054 2368     		ldr	r3, [r4]
  155 0056 FF22     		movs	r2, #255
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 25
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 25
 
 
  156 0058 5A62     		str	r2, [r3, #36]
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
 1185:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     {
  195              		.loc 1 1185 10 view .LVU53
  196 0082 13F0010F 		tst	r3, #1
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 26
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 26
 
 
  197 0086 0DD1     		bne	.L8
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
 1231:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   
 1232:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   hrtc->State = HAL_RTC_STATE_READY; 
  232              		.loc 1 1232 3 view .LVU71
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 27
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 27
 
 
  233              		.loc 1 1232 15 is_stmt 0 view .LVU72
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
 1253:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   * @retval HAL status
 1254:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   */
 1255:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c **** HAL_StatusTypeDef HAL_RTC_GetAlarm(RTC_HandleTypeDef *hrtc, RTC_AlarmTypeDef *sAlarm, uint32_t Alar
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 28
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 28
 
 
 1256:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c **** {
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
 1310:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     /* Get the status of the Interrupt */
 1311:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     if((uint32_t)(hrtc->Instance->CR & RTC_IT_ALRA) != (uint32_t)RESET)
 1312:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     {
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 29
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 29
 
 
 1313:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****       /* AlarmA callback */ 
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  279              		.align	1
  280              		.global	HAL_RTC_AlarmIRQHandler
  281              		.syntax unified
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 30
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 30
 
 
  282              		.thumb
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  324 0020 9B68     		ldr	r3, [r3, #8]
 1324:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     {
  325              		.loc 1 1324 7 view .LVU96
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 31
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 31
 
 
  326 0022 13F4005F 		tst	r3, #8192
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  373              		.syntax unified
  374              		.thumb
  375              		.thumb_func
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 32
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 32
 
 
  376              		.fpu fpv5-sp-d16
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  413              		.loc 1 1373 5 is_stmt 1 view .LVU115
  414              		.loc 1 1373 7 is_stmt 0 view .LVU116
  415 0016 B5F1FF3F 		cmp	r5, #-1
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 33
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 33
 
 
  416 001a F7D0     		beq	.L25
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  453              		.cfi_endproc
  454              	.LFE152:
  456              		.section	.text.HAL_RTC_WaitForSynchro,"ax",%progbits
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 34
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 34
 
 
  457              		.align	1
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  475              		.cfi_offset 3, -16
  476              		.cfi_offset 4, -12
  477              		.cfi_offset 5, -8
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 35
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 35
 
 
  478              		.cfi_offset 14, -4
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  518              	.L37:
 1442:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     } 
 1443:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   }
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 36
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 36
 
 
 1444:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c **** 
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  544              		.loc 1 1474 3 view .LVU156
  545              		.loc 1 1474 14 is_stmt 0 view .LVU157
  546 0000 407F     		ldrb	r0, [r0, #29]	@ zero_extendqisi2
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 37
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 37
 
 
  547              	.LVL31:
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  583              		.loc 1 1494 5 view .LVU165
  584 0006 12F0400F 		tst	r2, #64
  585 000a 01D0     		beq	.L46
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 38
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 38
 
 
 1495:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   {
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  612              		.loc 1 1503 26 view .LVU177
  613 0020 DB68     		ldr	r3, [r3, #12]
 1503:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     {
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 39
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 39
 
 
  614              		.loc 1 1503 10 view .LVU178
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  660              		.cfi_offset 4, -12
  661              		.cfi_offset 5, -8
  662              		.cfi_offset 14, -4
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 40
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 40
 
 
  663 0006 0446     		mov	r4, r0
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  698 0022 50B1     		cbz	r0, .L51
  237:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     
  699              		.loc 1 237 5 is_stmt 1 view .LVU208
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 41
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 41
 
 
  237:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  737              		.loc 1 249 24 view .LVU225
  738 0046 8A68     		ldr	r2, [r1, #8]
  249:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 42
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 42
 
 
  739              		.loc 1 249 48 view .LVU226
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  258:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     hrtc->Instance->OR |= (uint32_t)(hrtc->Init.OutPutType); 
  776              		.loc 1 258 5 is_stmt 1 view .LVU244
  258:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     hrtc->Instance->OR |= (uint32_t)(hrtc->Init.OutPutType); 
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 43
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 43
 
 
  777              		.loc 1 258 9 is_stmt 0 view .LVU245
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  269:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c **** 
  817              		.loc 1 269 1 view .LVU260
  818 0094 7047     		bx	lr
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 44
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 44
 
 
  819              	.L59:
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  289:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   
  866              		.loc 1 289 3 view .LVU270
  292:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   {
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 45
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 45
 
 
  867              		.loc 1 292 3 view .LVU271
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  904              		.loc 1 306 24 view .LVU288
  905 0034 42F20112 		movw	r2, #8449
  906 0038 5A60     		str	r2, [r3, #4]
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 46
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 46
 
 
  308:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c **** 
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  944              		.loc 1 319 9 view .LVU305
  322:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****         
  945              		.loc 1 322 9 view .LVU306
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 47
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 47
 
 
  322:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****         
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  981              		.loc 1 334 9 is_stmt 0 view .LVU325
  982 0088 2368     		ldr	r3, [r4]
  334:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     hrtc->Instance->CALR = (uint32_t)0x00000000;
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 48
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 48
 
 
  983              		.loc 1 334 28 view .LVU326
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  1017 00a4 2368     		ldr	r3, [r4]
  349:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     {
  1018              		.loc 1 349 23 view .LVU347
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 49
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 49
 
 
  1019 00a6 9B68     		ldr	r3, [r3, #8]
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  1056 00cc FF22     		movs	r2, #255
  1057 00ce 5A62     		str	r2, [r3, #36]
  354:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****         
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 50
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 50
 
 
  1058              		.loc 1 354 9 view .LVU365
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  1097 0002 0928     		cmp	r0, #9
  1098 0004 03D9     		bls	.L74
 1526:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   {
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 51
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 51
 
 
 1527:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     bcdhigh++;
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  1147              		.cfi_offset 5, -12
  1148              		.cfi_offset 6, -8
  1149              		.cfi_offset 14, -4
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 52
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 52
 
 
  620:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  637:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   {   
  1186              		.loc 1 637 5 is_stmt 0 view .LVU406
  1187 0026 002A     		cmp	r2, #0
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 53
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 53
 
 
  1188 0028 31D1     		bne	.L78
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  1226 0052 5322     		movs	r2, #83
  1227 0054 5A62     		str	r2, [r3, #36]
  661:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 54
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 54
 
 
  1228              		.loc 1 661 3 view .LVU423
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  1265 007c 2368     		ldr	r3, [r4]
  1266 007e FF22     		movs	r2, #255
  1267 0080 5A62     		str	r2, [r3, #36]
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 55
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 55
 
 
  703:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  1303              		.loc 1 657 36 view .LVU459
  1304 009c 3078     		ldrb	r0, [r6]	@ zero_extendqisi2
  654:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****                   (((uint32_t)sDate->Month) << 8) | \
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 56
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 56
 
 
  1305              		.loc 1 654 16 view .LVU460
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  1343 00c2 FF22     		movs	r2, #255
  1344 00c4 5A62     		str	r2, [r3, #36]
  691:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****         
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 57
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 57
 
 
  1345              		.loc 1 691 9 view .LVU477
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  1391              		.cfi_offset 4, -20
  1392              		.cfi_offset 5, -16
  1393              		.cfi_offset 6, -12
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 58
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 58
 
 
  1394              		.cfi_offset 7, -8
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  1430 0022 0023     		movs	r3, #0
  1431 0024 0B73     		strb	r3, [r1, #12]
  1432              	.L91:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 59
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 59
 
 
  462:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     }
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  1471 0050 5A62     		str	r2, [r3, #36]
  494:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   
  1472              		.loc 1 494 3 view .LVU522
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 60
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 60
 
 
  497:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   {
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  1510 007c 8B60     		str	r3, [r1, #8]
  522:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     
  1511              		.loc 1 522 5 is_stmt 1 view .LVU540
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 61
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 61
 
 
  522:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  474:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     {
  1550              		.loc 1 474 5 is_stmt 1 view .LVU557
  474:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     {
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 62
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 62
 
 
  1551              		.loc 1 474 13 is_stmt 0 view .LVU558
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  1588              	.LVL92:
  1589              	.L98:
  500:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 63
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 63
 
 
  1590              		.loc 1 500 5 is_stmt 1 view .LVU576
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  1627 00ec 6377     		strb	r3, [r4, #29]
  535:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****         
  1628              		.loc 1 535 9 is_stmt 1 view .LVU594
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 64
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 64
 
 
  535:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****         
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  1676              		.loc 1 786 3 view .LVU603
  789:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   assert_param(IS_RTC_ALARM(sAlarm->Alarm));
  1677              		.loc 1 789 3 view .LVU604
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 65
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 65
 
 
  790:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   assert_param(IS_RTC_ALARM_MASK(sAlarm->AlarmMask));
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  1713 0026 0B73     		strb	r3, [r1, #12]
  1714              	.L105:
  811:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     }
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 66
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 66
 
 
  1715              		.loc 1 811 7 is_stmt 1 view .LVU624
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  1752 0052 47EA0067 		orr	r7, r7, r0, lsl #24
  829:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****               ((uint32_t)sAlarm->AlarmDateWeekDaySel) | \
  1753              		.loc 1 829 74 view .LVU642
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 67
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 67
 
 
  1754 0056 3743     		orrs	r7, r7, r6
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  1793 0084 23F40053 		bic	r3, r3, #8192
  1794 0088 9360     		str	r3, [r2, #8]
  920:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c **** 
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 68
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 68
 
 
  1795              		.loc 1 920 5 view .LVU658
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  933:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****         
  1833              		.loc 1 933 9 view .LVU675
  935:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****       }  
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 69
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 69
 
 
  1834              		.loc 1 935 9 view .LVU676
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  863:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****               ((uint32_t)(sAlarm->AlarmTime.TimeFormat) << 16) | \
  1870              		.loc 1 863 44 view .LVU695
  1871 00d0 AA78     		ldrb	r2, [r5, #2]	@ zero_extendqisi2
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 70
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 70
 
 
  862:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****               ((uint32_t) sAlarm->AlarmTime.Seconds) | \
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  1911              		.loc 1 889 10 view .LVU710
  889:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     {
  1912              		.loc 1 889 11 is_stmt 0 view .LVU711
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 71
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 71
 
 
  1913 0104 2368     		ldr	r3, [r4]
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  1949              		.loc 1 907 5 is_stmt 1 view .LVU729
  907:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     /* Configure the Alarm state: Enable Alarm */
  1950              		.loc 1 907 9 is_stmt 0 view .LVU730
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 72
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 72
 
 
  1951 012c 2368     		ldr	r3, [r4]
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  1989              		.loc 1 953 3 view .LVU746
  955:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c **** }
  1990              		.loc 1 955 3 view .LVU747
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 73
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 73
 
 
  1991              	.LVL115:
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  2039 000a 6349     		ldr	r1, .L136+4
  2040              	.LVL120:
  975:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 74
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 74
 
 
  2041              		.loc 1 975 69 view .LVU756
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  2076              		.loc 1 992 23 view .LVU775
  2077 0034 9B68     		ldr	r3, [r3, #8]
  992:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     {
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 75
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 75
 
 
  2078              		.loc 1 992 7 view .LVU776
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  2115 005c 287B     		ldrb	r0, [r5, #12]	@ zero_extendqisi2
 1015:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****               ((uint32_t)(sAlarm->AlarmTime.TimeFormat) << 16U) | \
  2116              		.loc 1 1015 69 view .LVU794
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 76
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 76
 
 
  2117 005e 46EA0046 		orr	r6, r6, r0, lsl #16
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  2155 008c 4DD0     		beq	.L133
 1100:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c **** 
  2156              		.loc 1 1100 5 is_stmt 1 view .LVU811
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 77
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 77
 
 
  2157 008e 2268     		ldr	r2, [r4]
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
 1129:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   }
  2197              		.loc 1 1129 5 view .LVU826
  2198 00c8 2268     		ldr	r2, [r4]
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 78
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 78
 
 
  2199 00ca 9368     		ldr	r3, [r2, #8]
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  2239 00f4 F0BD     		pop	{r4, r5, r6, r7, pc}
  2240              	.LVL130:
  2241              	.L121:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 79
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 79
 
 
  2242              	.LCFI14:
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  2277              		.loc 1 1049 61 view .LVU859
  2278 0112 0B43     		orrs	r3, r3, r1
 1051:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****               ((uint32_t)(sAlarm->AlarmDateWeekDay) << 24U) | \
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 80
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 80
 
 
  2279              		.loc 1 1051 44 view .LVU860
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
 1087:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c **** 
  2319              		.loc 1 1087 12 is_stmt 0 view .LVU875
  2320 0148 2368     		ldr	r3, [r4]
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 81
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 81
 
 
  2321 014a D968     		ldr	r1, [r3, #12]
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  2359 0178 0023     		movs	r3, #0
  2360 017a 2377     		strb	r3, [r4, #28]
 1082:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c **** 
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 82
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 82
 
 
  2361              		.loc 1 1082 9 view .LVU892
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  2400              		.cfi_endproc
  2401              	.LFE147:
  2403              		.section	.text.RTC_Bcd2ToByte,"ax",%progbits
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 83
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 83
 
 
  2404              		.align	1
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  574:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   uint32_t tmpreg = 0;
  2449              		.loc 1 574 1 is_stmt 1 view -0
  2450              		.cfi_startproc
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 84
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 84
 
 
  2451              		@ args = 0, pretend = 0, frame = 0
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  2488              		.loc 1 590 18 is_stmt 0 view .LVU934
  2489 0018 C5F30641 		ubfx	r1, r5, #16, #7
  2490              	.LVL146:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 85
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 85
 
 
  590:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   sTime->Minutes = (uint8_t)((tmpreg & (RTC_TR_MNT | RTC_TR_MNU)) >>8);
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  2526              		.loc 1 600 20 view .LVU953
  2527 0042 6070     		strb	r0, [r4, #1]
  601:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   }
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 86
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 86
 
 
  2528              		.loc 1 601 5 is_stmt 1 view .LVU954
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  736:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c **** 
  2573              		.loc 1 736 41 view .LVU966
  2574 0004 5B68     		ldr	r3, [r3, #4]
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 87
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 87
 
 
  2575              	.LVL154:
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  2610 0028 3046     		mov	r0, r6
  2611 002a FFF7FEFF 		bl	RTC_Bcd2ToByte
  2612              	.LVL158:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 88
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 88
 
 
  749:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     sDate->Date = (uint8_t)RTC_Bcd2ToByte(sDate->Date);  
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  2659              		.loc 1 1260 3 view .LVU995
 1261:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   
  2660              		.loc 1 1261 3 view .LVU996
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 89
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 89
 
 
 1263:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   {
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  2697              		.loc 1 1282 3 is_stmt 1 view .LVU1014
 1282:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   sAlarm->AlarmTime.TimeFormat = (uint32_t)((tmpreg & RTC_ALRMAR_PM) >> 16);
  2698              		.loc 1 1282 31 is_stmt 0 view .LVU1015
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 90
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 90
 
 
  2699 002a 02F07F06 		and	r6, r2, #127
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
 1291:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     sAlarm->AlarmTime.Minutes = RTC_Bcd2ToByte(sAlarm->AlarmTime.Minutes);
  2734              		.loc 1 1291 29 view .LVU1035
  2735 0052 2070     		strb	r0, [r4]
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 91
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 91
 
 
 1292:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****     sAlarm->AlarmTime.Seconds = RTC_Bcd2ToByte(sAlarm->AlarmTime.Seconds);
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
 1269:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   }
  2774              		.loc 1 1269 5 is_stmt 1 view .LVU1052
 1269:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c ****   }
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 92
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 92
 
 
  2775              		.loc 1 1269 49 is_stmt 0 view .LVU1053
@@ -5488,57 +5488,57 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 1
  2798              		.file 13 "Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rtc.h"
  2799              		.file 14 "Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h"
  2800              		.file 15 "Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rtc_ex.h"
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s 			page 93
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s 			page 93
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32f7xx_hal_rtc.c
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:18     .text.HAL_RTC_MspInit:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:26     .text.HAL_RTC_MspInit:00000000 HAL_RTC_MspInit
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:42     .text.HAL_RTC_MspDeInit:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:49     .text.HAL_RTC_MspDeInit:00000000 HAL_RTC_MspDeInit
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:64     .text.HAL_RTC_DeactivateAlarm:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:71     .text.HAL_RTC_DeactivateAlarm:00000000 HAL_RTC_DeactivateAlarm
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:257    .text.HAL_RTC_AlarmAEventCallback:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:264    .text.HAL_RTC_AlarmAEventCallback:00000000 HAL_RTC_AlarmAEventCallback
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:279    .text.HAL_RTC_AlarmIRQHandler:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:286    .text.HAL_RTC_AlarmIRQHandler:00000000 HAL_RTC_AlarmIRQHandler
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:366    .text.HAL_RTC_AlarmIRQHandler:0000005c $d
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:371    .text.HAL_RTC_PollForAlarmAEvent:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:378    .text.HAL_RTC_PollForAlarmAEvent:00000000 HAL_RTC_PollForAlarmAEvent
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:457    .text.HAL_RTC_WaitForSynchro:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:464    .text.HAL_RTC_WaitForSynchro:00000000 HAL_RTC_WaitForSynchro
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:529    .text.HAL_RTC_GetState:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:536    .text.HAL_RTC_GetState:00000000 HAL_RTC_GetState
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:554    .text.RTC_EnterInitMode:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:561    .text.RTC_EnterInitMode:00000000 RTC_EnterInitMode
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:637    .text.HAL_RTC_Init:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:644    .text.HAL_RTC_Init:00000000 HAL_RTC_Init
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:822    .text.HAL_RTC_Init:00000098 $d
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:827    .text.HAL_RTC_DeInit:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:834    .text.HAL_RTC_DeInit:00000000 HAL_RTC_DeInit
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:1070   .text.HAL_RTC_DeInit:000000d8 $d
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:1075   .text.RTC_ByteToBcd2:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:1082   .text.RTC_ByteToBcd2:00000000 RTC_ByteToBcd2
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:1128   .text.HAL_RTC_SetDate:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:1135   .text.HAL_RTC_SetDate:00000000 HAL_RTC_SetDate
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:1367   .text.HAL_RTC_SetDate:000000d8 $d
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:1372   .text.HAL_RTC_SetTime:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:1379   .text.HAL_RTC_SetTime:00000000 HAL_RTC_SetTime
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:1645   .text.HAL_RTC_SetTime:000000fc $d
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:1650   .text.HAL_RTC_SetAlarm:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:1657   .text.HAL_RTC_SetAlarm:00000000 HAL_RTC_SetAlarm
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:2006   .text.HAL_RTC_SetAlarm_IT:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:2013   .text.HAL_RTC_SetAlarm_IT:00000000 HAL_RTC_SetAlarm_IT
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:2397   .text.HAL_RTC_SetAlarm_IT:00000194 $d
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:2404   .text.RTC_Bcd2ToByte:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:2411   .text.RTC_Bcd2ToByte:00000000 RTC_Bcd2ToByte
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:2439   .text.HAL_RTC_GetTime:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:2446   .text.HAL_RTC_GetTime:00000000 HAL_RTC_GetTime
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:2545   .text.HAL_RTC_GetDate:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:2552   .text.HAL_RTC_GetDate:00000000 HAL_RTC_GetDate
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:2632   .text.HAL_RTC_GetAlarm:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cccoeVvS.s:2639   .text.HAL_RTC_GetAlarm:00000000 HAL_RTC_GetAlarm
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:18     .text.HAL_RTC_MspInit:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:26     .text.HAL_RTC_MspInit:00000000 HAL_RTC_MspInit
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:42     .text.HAL_RTC_MspDeInit:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:49     .text.HAL_RTC_MspDeInit:00000000 HAL_RTC_MspDeInit
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:64     .text.HAL_RTC_DeactivateAlarm:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:71     .text.HAL_RTC_DeactivateAlarm:00000000 HAL_RTC_DeactivateAlarm
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:257    .text.HAL_RTC_AlarmAEventCallback:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:264    .text.HAL_RTC_AlarmAEventCallback:00000000 HAL_RTC_AlarmAEventCallback
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:279    .text.HAL_RTC_AlarmIRQHandler:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:286    .text.HAL_RTC_AlarmIRQHandler:00000000 HAL_RTC_AlarmIRQHandler
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:366    .text.HAL_RTC_AlarmIRQHandler:0000005c $d
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:371    .text.HAL_RTC_PollForAlarmAEvent:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:378    .text.HAL_RTC_PollForAlarmAEvent:00000000 HAL_RTC_PollForAlarmAEvent
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:457    .text.HAL_RTC_WaitForSynchro:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:464    .text.HAL_RTC_WaitForSynchro:00000000 HAL_RTC_WaitForSynchro
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:529    .text.HAL_RTC_GetState:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:536    .text.HAL_RTC_GetState:00000000 HAL_RTC_GetState
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:554    .text.RTC_EnterInitMode:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:561    .text.RTC_EnterInitMode:00000000 RTC_EnterInitMode
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:637    .text.HAL_RTC_Init:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:644    .text.HAL_RTC_Init:00000000 HAL_RTC_Init
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:822    .text.HAL_RTC_Init:00000098 $d
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:827    .text.HAL_RTC_DeInit:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:834    .text.HAL_RTC_DeInit:00000000 HAL_RTC_DeInit
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:1070   .text.HAL_RTC_DeInit:000000d8 $d
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:1075   .text.RTC_ByteToBcd2:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:1082   .text.RTC_ByteToBcd2:00000000 RTC_ByteToBcd2
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:1128   .text.HAL_RTC_SetDate:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:1135   .text.HAL_RTC_SetDate:00000000 HAL_RTC_SetDate
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:1367   .text.HAL_RTC_SetDate:000000d8 $d
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:1372   .text.HAL_RTC_SetTime:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:1379   .text.HAL_RTC_SetTime:00000000 HAL_RTC_SetTime
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:1645   .text.HAL_RTC_SetTime:000000fc $d
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:1650   .text.HAL_RTC_SetAlarm:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:1657   .text.HAL_RTC_SetAlarm:00000000 HAL_RTC_SetAlarm
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:2006   .text.HAL_RTC_SetAlarm_IT:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:2013   .text.HAL_RTC_SetAlarm_IT:00000000 HAL_RTC_SetAlarm_IT
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:2397   .text.HAL_RTC_SetAlarm_IT:00000194 $d
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:2404   .text.RTC_Bcd2ToByte:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:2411   .text.RTC_Bcd2ToByte:00000000 RTC_Bcd2ToByte
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:2439   .text.HAL_RTC_GetTime:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:2446   .text.HAL_RTC_GetTime:00000000 HAL_RTC_GetTime
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:2545   .text.HAL_RTC_GetDate:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:2552   .text.HAL_RTC_GetDate:00000000 HAL_RTC_GetDate
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:2632   .text.HAL_RTC_GetAlarm:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cczKhJoU.s:2639   .text.HAL_RTC_GetAlarm:00000000 HAL_RTC_GetAlarm
 
 UNDEFINED SYMBOLS
 HAL_GetTick

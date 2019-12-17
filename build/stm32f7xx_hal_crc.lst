@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 1
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s 			page 1
 
 
    1              		.cpu cortex-m7
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 1
   28:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****         initialization value
   29:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c **** 
   30:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****     (#) Use HAL_CRC_Calculate() function to compute the CRC value of the 
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 2
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s 			page 2
 
 
   31:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****         input data buffer starting with the defined initialization value 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 1
   85:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c **** static uint32_t CRC_Handle_16(CRC_HandleTypeDef *hcrc, uint16_t pBuffer[], uint32_t BufferLength);
   86:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c **** /* Exported functions --------------------------------------------------------*/
   87:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c **** 
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 3
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s 			page 3
 
 
   88:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c **** /** @defgroup CRC_Exported_Functions CRC Exported Functions
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 1
  142:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****   {
  143:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****     /* initialize IP with default generating polynomial */
  144:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****     WRITE_REG(hcrc->Instance->POL, DEFAULT_CRC32_POLY);  
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 4
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s 			page 4
 
 
  145:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****     MODIFY_REG(hcrc->Instance->CR, CRC_CR_POLYSIZE, CRC_POLYLENGTH_32B);
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 1
  199:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****   }
  200:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c **** 
  201:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****   /* Check the parameters */
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 5
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s 			page 5
 
 
  202:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****   assert_param(IS_CRC_ALL_INSTANCE(hcrc->Instance));
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 1
  256:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****   
  257:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****   /* NOTE : This function should not be modified, when the callback is needed,
  258:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****             the HAL_CRC_MspDeInit can be implemented in the user file
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 6
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s 			page 6
 
 
  259:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****    */
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 1
  313:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****   {
  314:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****     case CRC_INPUTDATA_FORMAT_WORDS:  
  315:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****       /* Enter Data to the CRC calculator */
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 7
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s 			page 7
 
 
  316:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****       for(index = 0; index < BufferLength; index++)
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 1
  370:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****   /* Reset CRC Calculation Unit (hcrc->Instance->INIT is 
  371:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****   *  written in hcrc->Instance->DR) */
  372:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****   __HAL_CRC_DR_RESET(hcrc);
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 8
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s 			page 8
 
 
  373:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****   
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 1
   38              		.cfi_offset 4, -12
   39              		.cfi_offset 5, -8
   40              		.cfi_offset 6, -4
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 9
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s 			page 9
 
 
  418:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****   uint32_t i = 0; /* input data buffer index */
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 1
   81              		.loc 1 428 4 is_stmt 1 view .LVU21
   82              		.loc 1 428 6 is_stmt 0 view .LVU22
   83 002c 12F00302 		ands	r2, r2, #3
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 10
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s 			page 10
 
 
   84              	.LVL4:
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 1
  119 0044 7047     		bx	lr
  120              	.LVL8:
  121              	.L9:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 11
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s 			page 11
 
 
  122              	.LCFI2:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 1
  159              		.loc 1 440 48 view .LVU51
  160 0074 1380     		strh	r3, [r2]	@ movhi
  441:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****      }
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 12
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s 			page 12
 
 
  161              		.loc 1 441 8 is_stmt 1 view .LVU52
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 1
  196              		.loc 1 458 1 view .LVU62
  197 0008 70B4     		push	{r4, r5, r6}
  198              	.LCFI3:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 13
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s 			page 13
 
 
  199              		.cfi_def_cfa_offset 12
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 1
  239              		.loc 1 474 14 is_stmt 0 view .LVU80
  240 0032 0368     		ldr	r3, [r0]
  241              		.loc 1 474 24 view .LVU81
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 14
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s 			page 14
 
 
  242 0034 1868     		ldr	r0, [r3]
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 1
  288              	.LVL20:
  289              	.LFB140:
  238:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****   /* Prevent unused argument(s) compilation warning */
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 15
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s 			page 15
 
 
  290              		.loc 1 238 1 is_stmt 1 view -0
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 1
  335              		.loc 1 136 3 is_stmt 1 view .LVU104
  136:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****   
  336              		.loc 1 136 15 is_stmt 0 view .LVU105
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 16
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s 			page 16
 
 
  337 000c 0223     		movs	r3, #2
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 1
  376 003e 2268     		ldr	r2, [r4]
  377 0040 9368     		ldr	r3, [r2, #8]
  378 0042 23F08003 		bic	r3, r3, #128
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 17
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s 			page 17
 
 
  379 0046 A169     		ldr	r1, [r4, #24]
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 1
  418              		.loc 1 165 5 is_stmt 1 view .LVU135
  419 006e 2368     		ldr	r3, [r4]
  420 0070 2269     		ldr	r2, [r4, #16]
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 18
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s 			page 18
 
 
  421 0072 1A61     		str	r2, [r3, #16]
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 1
  194:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****   /* Check the CRC handle allocation */
  474              		.loc 1 194 1 is_stmt 1 view -0
  475              		.cfi_startproc
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 19
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s 			page 19
 
 
  476              		@ args = 0, pretend = 0, frame = 0
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 1
  517              	.LVL31:
  223:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c **** 
  518              		.loc 1 223 3 view .LVU155
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 20
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s 			page 20
 
 
  223:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c **** 
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 1
  564              	.LCFI9:
  565              		.cfi_def_cfa_offset 16
  566              		.cfi_offset 3, -16
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 21
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s 			page 21
 
 
  567              		.cfi_offset 4, -12
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 1
  338:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****   
  606              		.loc 1 338 3 view .LVU182
  607 0026 0023     		movs	r3, #0
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 22
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s 			page 22
 
 
  608 0028 2377     		strb	r3, [r4, #28]
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 1
  646 0042 F8E7     		b	.L51
  647              	.L52:
  324:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****       break;
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 23
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s 			page 23
 
 
  648              		.loc 1 324 7 is_stmt 1 view .LVU199
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 1
  361:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****   uint32_t temp = 0;  /* CRC output (read from hcrc->Instance->DR register) */
  695              		.loc 1 361 3 is_stmt 1 view .LVU209
  696              	.LVL49:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 24
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s 			page 24
 
 
  362:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****     
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 1
  736 002e 6377     		strb	r3, [r4, #29]
  402:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****   
  737              		.loc 1 402 3 is_stmt 1 view .LVU225
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 25
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s 			page 25
 
 
  402:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****   
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 1
  374:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****   {
  776              		.loc 1 374 3 is_stmt 0 view .LVU242
  777 004a 0023     		movs	r3, #0
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 26
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s 			page 26
 
 
  778 004c F8E7     		b	.L61
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 1
  485:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****  ==============================================================================
  486:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****                       ##### Peripheral State functions #####
  487:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****  ==============================================================================  
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 27
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s 			page 27
 
 
  488:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c ****     [..]
@@ -1605,30 +1605,30 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 1
  842              		.file 11 "Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_def.h"
  843              		.file 12 "Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_crc.h"
  844              		.file 13 "Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_crc_ex.h"
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s 			page 28
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s 			page 28
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32f7xx_hal_crc.c
-C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s:18     .text.CRC_Handle_8:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s:25     .text.CRC_Handle_8:00000000 CRC_Handle_8
-C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s:173    .text.CRC_Handle_16:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s:179    .text.CRC_Handle_16:00000000 CRC_Handle_16
-C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s:280    .text.HAL_CRC_MspInit:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s:287    .text.HAL_CRC_MspInit:00000000 HAL_CRC_MspInit
-C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s:302    .text.HAL_CRC_Init:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s:309    .text.HAL_CRC_Init:00000000 HAL_CRC_Init
-C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s:437    .text.HAL_CRC_Init:0000007c $d
-C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s:442    .text.HAL_CRC_MspDeInit:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s:449    .text.HAL_CRC_MspDeInit:00000000 HAL_CRC_MspDeInit
-C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s:464    .text.HAL_CRC_DeInit:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s:471    .text.HAL_CRC_DeInit:00000000 HAL_CRC_DeInit
-C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s:548    .text.HAL_CRC_Accumulate:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s:555    .text.HAL_CRC_Accumulate:00000000 HAL_CRC_Accumulate
-C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s:673    .text.HAL_CRC_Calculate:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s:680    .text.HAL_CRC_Calculate:00000000 HAL_CRC_Calculate
-C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s:807    .text.HAL_CRC_GetState:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccA4N6bh.s:814    .text.HAL_CRC_GetState:00000000 HAL_CRC_GetState
+C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s:18     .text.CRC_Handle_8:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s:25     .text.CRC_Handle_8:00000000 CRC_Handle_8
+C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s:173    .text.CRC_Handle_16:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s:179    .text.CRC_Handle_16:00000000 CRC_Handle_16
+C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s:280    .text.HAL_CRC_MspInit:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s:287    .text.HAL_CRC_MspInit:00000000 HAL_CRC_MspInit
+C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s:302    .text.HAL_CRC_Init:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s:309    .text.HAL_CRC_Init:00000000 HAL_CRC_Init
+C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s:437    .text.HAL_CRC_Init:0000007c $d
+C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s:442    .text.HAL_CRC_MspDeInit:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s:449    .text.HAL_CRC_MspDeInit:00000000 HAL_CRC_MspDeInit
+C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s:464    .text.HAL_CRC_DeInit:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s:471    .text.HAL_CRC_DeInit:00000000 HAL_CRC_DeInit
+C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s:548    .text.HAL_CRC_Accumulate:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s:555    .text.HAL_CRC_Accumulate:00000000 HAL_CRC_Accumulate
+C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s:673    .text.HAL_CRC_Calculate:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s:680    .text.HAL_CRC_Calculate:00000000 HAL_CRC_Calculate
+C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s:807    .text.HAL_CRC_GetState:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\cc9FC1t8.s:814    .text.HAL_CRC_GetState:00000000 HAL_CRC_GetState
 
 UNDEFINED SYMBOLS
 HAL_CRCEx_Polynomial_Set

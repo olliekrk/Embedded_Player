@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 1
 
 
    1              		.cpu cortex-m7
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
   28:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****              different data bus modes: 1-bit (default) and 4-bit
   29:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****          (+) Full support of the CE-ATA features (full compliance with CE-ATA digital protocol
   30:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****              Rev1.1)
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 2
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 2
 
 
   31:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****          (+) Data transfer up to 48 MHz for the 8 bit mode
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
   85:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   
   86:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****           -@@- To check if the command is well received, read the SDMMC_CMDRESP
   87:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****               register using the SDMMC_GetCommandResponse().
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 3
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 3
 
 
   88:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****               The SDMMC responses registers (SDMMC_RESP1 to SDMMC_RESP2), use the
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  142:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****          By the same approach, you could implement a command and check the response.
  143:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   
  144:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   @endverbatim
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 4
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 4
 
 
  145:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   ******************************************************************************
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  199:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c **** static uint32_t SDMMC_GetCmdResp6(SDMMC_TypeDef *SDMMCx, uint8_t SD_CMD, uint16_t *pRCA);
  200:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c **** 
  201:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c **** /* Exported functions --------------------------------------------------------*/
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 5
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 5
 
 
  202:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c **** 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  256:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c **** /**
  257:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   * @}
  258:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   */
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 6
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 6
 
 
  259:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c **** 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  313:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****     transfers.
  314:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c **** 
  315:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c **** @endverbatim
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 7
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 7
 
 
  316:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   * @{
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  370:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   
  371:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   /* Check the parameters */
  372:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   assert_param(IS_SDMMC_CMD_INDEX(Command->CmdIndex));
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 8
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 8
 
 
  373:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   assert_param(IS_SDMMC_RESPONSE(Command->Response));
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  427:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c **** /**
  428:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   * @brief  Configure the SDMMC data path according to the specified 
  429:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   *         parameters in the SDMMC_DataInitTypeDef.
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 9
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 9
 
 
  430:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   * @param  SDMMCx Pointer to SDMMC register base  
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  484:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c **** 
  485:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c **** /**
  486:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   * @brief  Sets one of the two options of inserting read wait interval.
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 10
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 10
 
 
  487:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   * @param  SDMMCx Pointer to SDMMC register base   
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  541:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   
  542:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   /* Check for error conditions */
  543:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   errorstate = SDMMC_GetCmdResp1(SDMMCx, SDMMC_CMD_SET_BLOCKLEN, SDMMC_CMDTIMEOUT);
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 11
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 11
 
 
  544:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c **** 
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  598:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   * @param  SDMMCx Pointer to SDMMC register base 
  599:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   * @retval HAL status
  600:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   */
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 12
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 12
 
 
  601:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c **** uint32_t SDMMC_CmdWriteSingleBlock(SDMMC_TypeDef *SDMMCx, uint32_t WriteAdd)
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  655:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   sdmmc_cmdinit.Argument         = (uint32_t)StartAdd;
  656:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   sdmmc_cmdinit.CmdIndex         = SDMMC_CMD_SD_ERASE_GRP_START;
  657:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   sdmmc_cmdinit.Response         = SDMMC_RESPONSE_SHORT;
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 13
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 13
 
 
  658:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   sdmmc_cmdinit.WaitForInterrupt = SDMMC_WAIT_NO;
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  712:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c **** 
  713:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   return errorstate;
  714:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c **** }
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 14
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 14
 
 
  715:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c **** 
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  769:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c **** uint32_t SDMMC_CmdStopTransfer(SDMMC_TypeDef *SDMMCx)
  770:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c **** {
  771:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   SDMMC_CmdInitTypeDef  sdmmc_cmdinit;
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 15
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 15
 
 
  772:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   uint32_t errorstate = SDMMC_ERROR_NONE;
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  826:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   sdmmc_cmdinit.WaitForInterrupt = SDMMC_WAIT_NO;
  827:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   sdmmc_cmdinit.CPSM             = SDMMC_CPSM_ENABLE;
  828:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   SDMMC_SendCommand(SDMMCx, &sdmmc_cmdinit);
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 16
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 16
 
 
  829:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  883:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   /* Check for error conditions */
  884:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   /* If there is a HAL_ERROR, it is a MMC card, else
  885:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   it is a SD card: SD card 2.0 (voltage range mismatch)
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 17
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 17
 
 
  886:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****      or SD card 1.x */
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  940:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   * @brief  Send the Send SCR command and check the response.
  941:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   * @param  SDMMCx Pointer to SDMMC register base 
  942:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   * @retval HAL status
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 18
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 18
 
 
  943:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   */
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  997:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   /* Send CMD9 SEND_CSD */
  998:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   sdmmc_cmdinit.Argument         = (uint32_t)Argument;
  999:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   sdmmc_cmdinit.CmdIndex         = SDMMC_CMD_SEND_CSD;
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 19
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 19
 
 
 1000:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   sdmmc_cmdinit.Response         = SDMMC_RESPONSE_LONG;
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
 1054:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c **** 
 1055:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   return errorstate;
 1056:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c **** }
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 20
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 20
 
 
 1057:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c **** 
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
 1111:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   */
 1112:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c **** uint32_t SDMMC_CmdSwitch(SDMMC_TypeDef *SDMMCx, uint32_t Argument)
 1113:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c **** {
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 21
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 21
 
 
 1114:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   SDMMC_CmdInitTypeDef  sdmmc_cmdinit;
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
   46              		.loc 1 1150 3 is_stmt 1 view .LVU4
 1151:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   {
 1152:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****     if (count-- == 0)
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 22
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 22
 
 
   47              		.loc 1 1152 5 view .LVU5
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
   90              		.thumb_func
   91              		.fpu fpv5-sp-d16
   93              	SDMMC_GetCmdResp2:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 23
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 23
 
 
   94              	.LVL7:
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
 1216:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   }
 1217:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   else if((response_r1 & SDMMC_OCR_ADDR_OUT_OF_RANGE) == SDMMC_OCR_ADDR_OUT_OF_RANGE)
 1218:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   {
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 24
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 24
 
 
 1219:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****     return SDMMC_ERROR_ADDR_OUT_OF_RANGE;
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
 1273:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   else if((response_r1 & SDMMC_OCR_WP_ERASE_SKIP) == SDMMC_OCR_WP_ERASE_SKIP)
 1274:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   {
 1275:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****     return SDMMC_ERROR_WP_ERASE_SKIP;
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 25
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 25
 
 
 1276:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   }
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  117 0016 1A46     		mov	r2, r3
  118              		.loc 1 1308 14 is_stmt 0 view .LVU25
  119 0018 013B     		subs	r3, r3, #1
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 26
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 26
 
 
  120              	.LVL9:
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  148 003a 7047     		bx	lr
  149              	.LVL12:
  150              	.L13:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 27
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 27
 
 
 1317:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****     
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
 1343:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c **** {
  191              		.loc 1 1343 1 is_stmt 1 view -0
  192              		.cfi_startproc
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 28
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 28
 
 
  193              		@ args = 0, pretend = 0, frame = 0
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
 1360:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****     
 1361:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****     return SDMMC_ERROR_CMD_RSP_TIMEOUT;
 1362:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   }
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 29
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 29
 
 
 1363:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   else
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
 1374:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   * @brief  Checks for error conditions for R6 (RCA) response.
 1375:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   * @param  hsd SD handle
 1376:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   * @param  SD_CMD The sent command index
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 30
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 30
 
 
 1377:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   * @param  pRCA Pointer to the variable that will contain the SD card relative 
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
 1431:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****     return SDMMC_ERROR_ILLEGAL_CMD;
 1432:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   }
 1433:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   else if((response_r1 & SDMMC_R6_COM_CRC_FAILED) == SDMMC_R6_COM_CRC_FAILED)
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 31
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 31
 
 
 1434:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   {
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
 1461:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   }while(!__SDMMC_GET_FLAG(SDMMCx, SDMMC_FLAG_CCRCFAIL | SDMMC_FLAG_CMDREND | SDMMC_FLAG_CTIMEOUT))
  299              		.loc 1 1461 9 is_stmt 1 view .LVU81
  300              		.loc 1 1461 11 is_stmt 0 view .LVU82
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 32
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 32
 
 
  301 001c 4A6B     		ldr	r2, [r1, #52]
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  335 0042 7047     		bx	lr
  336              	.LVL31:
  337              	.L29:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 33
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 33
 
 
 1458:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****     }
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  236:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   assert_param(IS_SDMMC_HARDWARE_FLOW_CONTROL(Init.HardwareFlowControl));
  384              		.loc 1 236 3 view .LVU105
  237:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   assert_param(IS_SDMMC_CLKDIV(Init.ClockDiv));
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 34
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 34
 
 
  385              		.loc 1 237 3 view .LVU106
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  423              	.LCFI2:
  424              		.cfi_restore 4
  425              		.cfi_def_cfa_offset 16
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 35
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 35
 
 
  426              	.LVL38:
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  477              		.loc 1 293 1 is_stmt 1 view -0
  478              		.cfi_startproc
  479              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 36
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 36
 
 
  480              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  525              		.section	.text.SDMMC_PowerState_OFF,"ax",%progbits
  526              		.align	1
  527              		.global	SDMMC_PowerState_OFF
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 37
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 37
 
 
  528              		.syntax unified
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  357:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c **** 
  575              		.loc 1 357 1 view .LVU152
  576 0002 00F00300 		and	r0, r0, #3
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 38
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 38
 
 
  577 0006 7047     		bx	lr
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  384:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   
  618              		.loc 1 384 31 view .LVU168
  619 000e 0A69     		ldr	r2, [r1, #16]
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 39
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 39
 
 
  383:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****                        Command->CPSM);
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  666              	.LVL57:
  400:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c **** 
  667              		.loc 1 400 1 view .LVU179
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 40
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 40
 
 
  668 0002 C0B2     		uxtb	r0, r0
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  425:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c **** 
  712              		.loc 1 425 1 view .LVU192
  713 0010 02B0     		add	sp, sp, #8
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 41
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 41
 
 
  714              	.LCFI5:
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  761 0016 1346     		mov	r3, r2
 1181:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****     {
  762              		.loc 1 1181 14 is_stmt 0 view .LVU202
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 42
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 42
 
 
  763 0018 013A     		subs	r2, r2, #1
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
 1192:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   }
  801              		.loc 1 1192 5 is_stmt 1 view .LVU219
 1192:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   }
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 43
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 43
 
 
  802              		.loc 1 1192 12 is_stmt 0 view .LVU220
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  842 0068 38DB     		blt	.L55
 1221:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   {
  843              		.loc 1 1221 8 is_stmt 1 view .LVU235
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 44
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 44
 
 
 1221:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   {
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
 1257:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   {
  880              		.loc 1 1257 10 is_stmt 0 view .LVU254
  881 00a0 13F4801F 		tst	r3, #1048576
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 45
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 45
 
 
  882 00a4 36D1     		bne	.L65
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
 1293:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c **** 
  920              		.loc 1 1293 1 view .LVU271
  921 00da 38BD     		pop	{r3, r4, r5, pc}
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 46
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 46
 
 
  922              	.LVL76:
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  965 0114 4FF40040 		mov	r0, #32768
  966 0118 DFE7     		b	.L48
  967              	.L66:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 47
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 47
 
 
 1263:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   }
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  1016              		@ args = 0, pretend = 0, frame = 0
  1017              		@ frame_needed = 0, uses_anonymous_args = 0
 1382:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   uint32_t response_r1;
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 48
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 48
 
 
  1018              		.loc 1 1382 1 is_stmt 0 view .LVU291
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  1059              		.loc 1 1396 3 view .LVU304
  1060 0024 14F0450F 		tst	r4, #69
  1061 0028 F8D0     		beq	.L80
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 49
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 49
 
 
 1398:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   {
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  1100              	.L90:
 1418:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   
  1101              		.loc 1 1418 3 is_stmt 1 view .LVU321
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 50
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 50
 
 
  1102 0054 40F2FF53 		movw	r3, #1535
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
 1393:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****     }
  1141              		.loc 1 1393 14 view .LVU337
  1142 0082 4FF00040 		mov	r0, #-2147483648
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 51
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 51
 
 
  1143              	.LVL89:
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  1187              		.loc 1 447 24 is_stmt 0 view .LVU349
  1188 0000 0B68     		ldr	r3, [r1]
  447:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c **** 
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 52
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 52
 
 
  1189              		.loc 1 447 18 view .LVU350
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  1227              	.LFE147:
  1229              		.section	.text.SDMMC_GetDataCounter,"ax",%progbits
  1230              		.align	1
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 53
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 53
 
 
  1231              		.global	SDMMC_GetDataCounter
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  1281              		.global	SDMMC_SetSDMMCReadWaitMode
  1282              		.syntax unified
  1283              		.thumb
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 54
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 54
 
 
  1284              		.thumb_func
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  1333              	.LCFI9:
  1334              		.cfi_def_cfa_offset 40
  1335 0004 0446     		mov	r4, r0
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 55
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 55
 
 
  531:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   uint32_t errorstate = SDMMC_ERROR_NONE;
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  1372              		.loc 1 546 1 is_stmt 0 view .LVU400
  1373 002c 07B0     		add	sp, sp, #28
  1374              	.LCFI10:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 56
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 56
 
 
  1375              		.cfi_def_cfa_offset 12
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  1420 000c 4023     		movs	r3, #64
  1421 000e 0393     		str	r3, [sp, #12]
  562:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   sdmmc_cmdinit.CPSM             = SDMMC_CPSM_ENABLE;
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 57
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 57
 
 
  1422              		.loc 1 562 3 is_stmt 1 view .LVU412
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  1467              		@ args = 0, pretend = 0, frame = 24
  1468              		@ frame_needed = 0, uses_anonymous_args = 0
  578:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   SDMMC_CmdInitTypeDef  sdmmc_cmdinit;
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 58
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 58
 
 
  1469              		.loc 1 578 1 is_stmt 0 view .LVU424
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  1508              		.loc 1 591 3 is_stmt 1 view .LVU439
  591:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c **** 
  1509              		.loc 1 591 16 is_stmt 0 view .LVU440
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 59
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 59
 
 
  1510 0020 41F28832 		movw	r2, #5000
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  1557 0006 0191     		str	r1, [sp, #4]
  608:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   sdmmc_cmdinit.Response         = SDMMC_RESPONSE_SHORT;
  1558              		.loc 1 608 3 is_stmt 1 view .LVU450
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 60
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 60
 
 
  608:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   sdmmc_cmdinit.Response         = SDMMC_RESPONSE_SHORT;
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  1600              		.global	SDMMC_CmdWriteMultiBlock
  1601              		.syntax unified
  1602              		.thumb
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 61
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 61
 
 
  1603              		.thumb_func
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  1644 0014 4FF48063 		mov	r3, #1024
  1645 0018 0593     		str	r3, [sp, #20]
  636:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 62
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 62
 
 
  1646              		.loc 1 636 3 is_stmt 1 view .LVU479
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  1694              		.cfi_def_cfa_offset 40
  1695 0004 0446     		mov	r4, r0
  651:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   uint32_t errorstate = SDMMC_ERROR_NONE;
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 63
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 63
 
 
  1696              		.loc 1 651 3 is_stmt 1 view .LVU488
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  1733 002c 07B0     		add	sp, sp, #28
  1734              	.LCFI25:
  1735              		.cfi_def_cfa_offset 12
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 64
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 64
 
 
  1736              		@ sp needed
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  1781 000e 0393     		str	r3, [sp, #12]
  682:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   sdmmc_cmdinit.CPSM             = SDMMC_CPSM_ENABLE;
  1782              		.loc 1 682 3 is_stmt 1 view .LVU517
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 65
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 65
 
 
  682:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   sdmmc_cmdinit.CPSM             = SDMMC_CPSM_ENABLE;
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  1828              		@ frame_needed = 0, uses_anonymous_args = 0
  698:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   SDMMC_CmdInitTypeDef  sdmmc_cmdinit;
  1829              		.loc 1 698 1 is_stmt 0 view .LVU529
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 66
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 66
 
 
  1830 0000 30B5     		push	{r4, r5, lr}
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  711:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c **** 
  1869              		.loc 1 711 16 is_stmt 0 view .LVU545
  1870 0020 41F28832 		movw	r2, #5000
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 67
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 67
 
 
  1871 0024 2946     		mov	r1, r5
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  728:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   sdmmc_cmdinit.Response         = SDMMC_RESPONSE_SHORT;
  1918              		.loc 1 728 3 is_stmt 1 view .LVU555
  728:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   sdmmc_cmdinit.Response         = SDMMC_RESPONSE_SHORT;
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 68
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 68
 
 
  1919              		.loc 1 728 34 is_stmt 0 view .LVU556
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  1961              		.syntax unified
  1962              		.thumb
  1963              		.thumb_func
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 69
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 69
 
 
  1964              		.fpu fpv5-sp-d16
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  2005 0018 0593     		str	r3, [sp, #20]
  756:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   
  2006              		.loc 1 756 3 is_stmt 1 view .LVU584
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 70
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 70
 
 
  2007 001a 01A9     		add	r1, sp, #4
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  772:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   
  2055              		.loc 1 772 3 view .LVU593
  2056              	.LVL152:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 71
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 71
 
 
  775:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   sdmmc_cmdinit.CmdIndex         = SDMMC_CMD_STOP_TRANSMISSION;
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  786:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c **** 
  2096              		.loc 1 786 1 view .LVU609
  2097 002e 00BF     		.align	2
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 72
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 72
 
 
  2098              	.L120:
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  2143              		.loc 1 803 3 is_stmt 1 view .LVU620
  803:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   sdmmc_cmdinit.CPSM             = SDMMC_CPSM_ENABLE;
  2144              		.loc 1 803 34 is_stmt 0 view .LVU621
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 73
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 73
 
 
  2145 0010 0023     		movs	r3, #0
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  2191              		.cfi_def_cfa_offset 8
  2192              		.cfi_offset 4, -8
  2193              		.cfi_offset 14, -4
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 74
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 74
 
 
  2194 0002 86B0     		sub	sp, sp, #24
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  2231              		.cfi_def_cfa_offset 8
  2232              		@ sp needed
  2233 0024 10BD     		pop	{r4, pc}
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 75
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 75
 
 
  834:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c **** 
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  2278              		.loc 1 854 3 is_stmt 1 view .LVU660
  854:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   sdmmc_cmdinit.CPSM             = SDMMC_CPSM_ENABLE;
  2279              		.loc 1 854 34 is_stmt 0 view .LVU661
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 76
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 76
 
 
  2280 0014 0023     		movs	r3, #0
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  2326              		.cfi_offset 5, -8
  2327              		.cfi_offset 14, -4
  2328 0002 87B0     		sub	sp, sp, #28
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 77
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 77
 
 
  2329              	.LCFI51:
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  889:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c **** }
  2367              		.loc 1 889 3 is_stmt 1 view .LVU688
  890:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c **** 
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 78
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 78
 
 
  2368              		.loc 1 890 1 is_stmt 0 view .LVU689
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  2414 000c 2923     		movs	r3, #41
  2415 000e 0293     		str	r3, [sp, #8]
  905:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   sdmmc_cmdinit.WaitForInterrupt = SDMMC_WAIT_NO;
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 79
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 79
 
 
  2416              		.loc 1 905 3 is_stmt 1 view .LVU700
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  2459              		.thumb
  2460              		.thumb_func
  2461              		.fpu fpv5-sp-d16
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 80
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 80
 
 
  2463              	SDMMC_CmdBusWidth:
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  931:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   
  2503              		.loc 1 931 3 is_stmt 1 view .LVU727
  2504 001a 01A9     		add	r1, sp, #4
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 81
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 81
 
 
  2505              	.LVL181:
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  946:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   uint32_t errorstate = SDMMC_ERROR_NONE;
  2553              		.loc 1 946 3 is_stmt 1 view .LVU736
  947:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 82
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 82
 
 
  2554              		.loc 1 947 3 view .LVU737
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  961:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c **** 
  2593              		.loc 1 961 1 view .LVU753
  2594              		.cfi_endproc
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 83
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 83
 
 
  2595              	.LFE168:
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  2639 0012 0493     		str	r3, [sp, #16]
  978:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   SDMMC_SendCommand(SDMMCx, &sdmmc_cmdinit);
  2640              		.loc 1 978 3 is_stmt 1 view .LVU766
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 84
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 84
 
 
  978:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   SDMMC_SendCommand(SDMMCx, &sdmmc_cmdinit);
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  2688 0004 0446     		mov	r4, r0
  994:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   uint32_t errorstate = SDMMC_ERROR_NONE;
  2689              		.loc 1 994 3 is_stmt 1 view .LVU776
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 85
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 85
 
 
  995:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  2727              		@ sp needed
  2728 0028 10BD     		pop	{r4, pc}
 1009:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c **** 
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 86
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 86
 
 
  2729              		.loc 1 1009 1 view .LVU794
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  2775 0012 0392     		str	r2, [sp, #12]
 1025:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   sdmmc_cmdinit.CPSM             = SDMMC_CPSM_ENABLE;
  2776              		.loc 1 1025 3 is_stmt 1 view .LVU805
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 87
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 87
 
 
 1025:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   sdmmc_cmdinit.CPSM             = SDMMC_CPSM_ENABLE;
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
 1041:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   SDMMC_CmdInitTypeDef  sdmmc_cmdinit;
  2822              		.loc 1 1041 1 is_stmt 0 view .LVU817
  2823 0000 30B5     		push	{r4, r5, lr}
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 88
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 88
 
 
  2824              	.LCFI71:
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  2862              		.loc 1 1053 16 is_stmt 0 view .LVU833
  2863 0020 41F28832 		movw	r2, #5000
  2864 0024 2946     		mov	r1, r5
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 89
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 89
 
 
  2865 0026 2046     		mov	r0, r4
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
 1069:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   sdmmc_cmdinit.Response         = SDMMC_RESPONSE_SHORT;
  2912              		.loc 1 1069 3 is_stmt 1 view .LVU843
 1069:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   sdmmc_cmdinit.Response         = SDMMC_RESPONSE_SHORT;
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 90
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 90
 
 
  2913              		.loc 1 1069 34 is_stmt 0 view .LVU844
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  2957              	SDMMC_CmdOpCondition:
  2958              	.LVL211:
  2959              	.LFB174:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 91
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 91
 
 
 1089:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   SDMMC_CmdInitTypeDef  sdmmc_cmdinit;
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
 1098:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   
  2999              		.loc 1 1098 3 is_stmt 0 view .LVU872
  3000 001c FFF7FEFF 		bl	SDMMC_SendCommand
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 92
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 92
 
 
  3001              	.LVL214:
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  3047              		.loc 1 1117 3 view .LVU882
 1117:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c ****   sdmmc_cmdinit.CmdIndex         = SDMMC_CMD_HS_SWITCH;
  3048              		.loc 1 1117 34 is_stmt 0 view .LVU883
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 93
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 93
 
 
  3049 0006 0191     		str	r1, [sp, #4]
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  3088              	.LFE175:
  3090              		.text
  3091              	.Letext0:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 94
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 94
 
 
  3092              		.file 2 "c:\\program files (x86)\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\
@@ -5593,112 +5593,112 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 1
  3101              		.file 11 "Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h"
  3102              		.file 12 "Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_def.h"
  3103              		.file 13 "Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_sdmmc.h"
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 95
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 95
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32f7xx_ll_sdmmc.c
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:18     .text.SDMMC_GetCmdError:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:25     .text.SDMMC_GetCmdError:00000000 SDMMC_GetCmdError
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:81     .text.SDMMC_GetCmdError:00000034 $d
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:87     .text.SDMMC_GetCmdResp2:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:93     .text.SDMMC_GetCmdResp2:00000000 SDMMC_GetCmdResp2
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:176    .text.SDMMC_GetCmdResp2:00000050 $d
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:182    .text.SDMMC_GetCmdResp3:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:188    .text.SDMMC_GetCmdResp3:00000000 SDMMC_GetCmdResp3
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:257    .text.SDMMC_GetCmdResp3:00000040 $d
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:263    .text.SDMMC_GetCmdResp7:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:269    .text.SDMMC_GetCmdResp7:00000000 SDMMC_GetCmdResp7
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:347    .text.SDMMC_GetCmdResp7:0000004c $d
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:353    .text.SDMMC_Init:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:360    .text.SDMMC_Init:00000000 SDMMC_Init
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:437    .text.SDMMC_Init:00000034 $d
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:442    .text.SDMMC_ReadFIFO:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:449    .text.SDMMC_ReadFIFO:00000000 SDMMC_ReadFIFO
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:467    .text.SDMMC_WriteFIFO:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:474    .text.SDMMC_WriteFIFO:00000000 SDMMC_WriteFIFO
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:497    .text.SDMMC_PowerState_ON:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:504    .text.SDMMC_PowerState_ON:00000000 SDMMC_PowerState_ON
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:526    .text.SDMMC_PowerState_OFF:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:533    .text.SDMMC_PowerState_OFF:00000000 SDMMC_PowerState_OFF
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:556    .text.SDMMC_GetPowerState:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:563    .text.SDMMC_GetPowerState:00000000 SDMMC_GetPowerState
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:582    .text.SDMMC_SendCommand:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:589    .text.SDMMC_SendCommand:00000000 SDMMC_SendCommand
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:643    .text.SDMMC_SendCommand:00000020 $d
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:648    .text.SDMMC_GetCommandResponse:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:655    .text.SDMMC_GetCommandResponse:00000000 SDMMC_GetCommandResponse
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:674    .text.SDMMC_GetResponse:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:681    .text.SDMMC_GetResponse:00000000 SDMMC_GetResponse
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:722    .text.SDMMC_GetCmdResp1:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:728    .text.SDMMC_GetCmdResp1:00000000 SDMMC_GetCmdResp1
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:998    .text.SDMMC_GetCmdResp1:00000144 $d
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:1005   .text.SDMMC_GetCmdResp6:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:1011   .text.SDMMC_GetCmdResp6:00000000 SDMMC_GetCmdResp6
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:1159   .text.SDMMC_GetCmdResp6:00000094 $d
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:1165   .text.SDMMC_ConfigData:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:1172   .text.SDMMC_ConfigData:00000000 SDMMC_ConfigData
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:1230   .text.SDMMC_GetDataCounter:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:1237   .text.SDMMC_GetDataCounter:00000000 SDMMC_GetDataCounter
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:1255   .text.SDMMC_GetFIFOCount:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:1262   .text.SDMMC_GetFIFOCount:00000000 SDMMC_GetFIFOCount
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:1280   .text.SDMMC_SetSDMMCReadWaitMode:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:1287   .text.SDMMC_SetSDMMCReadWaitMode:00000000 SDMMC_SetSDMMCReadWaitMode
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:1311   .text.SDMMC_CmdBlockLength:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:1318   .text.SDMMC_CmdBlockLength:00000000 SDMMC_CmdBlockLength
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:1383   .text.SDMMC_CmdReadSingleBlock:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:1390   .text.SDMMC_CmdReadSingleBlock:00000000 SDMMC_CmdReadSingleBlock
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:1455   .text.SDMMC_CmdReadMultiBlock:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:1462   .text.SDMMC_CmdReadMultiBlock:00000000 SDMMC_CmdReadMultiBlock
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:1527   .text.SDMMC_CmdWriteSingleBlock:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:1534   .text.SDMMC_CmdWriteSingleBlock:00000000 SDMMC_CmdWriteSingleBlock
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:1599   .text.SDMMC_CmdWriteMultiBlock:00000000 $t
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s 			page 96
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:18     .text.SDMMC_GetCmdError:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:25     .text.SDMMC_GetCmdError:00000000 SDMMC_GetCmdError
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:81     .text.SDMMC_GetCmdError:00000034 $d
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:87     .text.SDMMC_GetCmdResp2:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:93     .text.SDMMC_GetCmdResp2:00000000 SDMMC_GetCmdResp2
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:176    .text.SDMMC_GetCmdResp2:00000050 $d
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:182    .text.SDMMC_GetCmdResp3:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:188    .text.SDMMC_GetCmdResp3:00000000 SDMMC_GetCmdResp3
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:257    .text.SDMMC_GetCmdResp3:00000040 $d
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:263    .text.SDMMC_GetCmdResp7:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:269    .text.SDMMC_GetCmdResp7:00000000 SDMMC_GetCmdResp7
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:347    .text.SDMMC_GetCmdResp7:0000004c $d
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:353    .text.SDMMC_Init:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:360    .text.SDMMC_Init:00000000 SDMMC_Init
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:437    .text.SDMMC_Init:00000034 $d
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:442    .text.SDMMC_ReadFIFO:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:449    .text.SDMMC_ReadFIFO:00000000 SDMMC_ReadFIFO
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:467    .text.SDMMC_WriteFIFO:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:474    .text.SDMMC_WriteFIFO:00000000 SDMMC_WriteFIFO
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:497    .text.SDMMC_PowerState_ON:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:504    .text.SDMMC_PowerState_ON:00000000 SDMMC_PowerState_ON
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:526    .text.SDMMC_PowerState_OFF:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:533    .text.SDMMC_PowerState_OFF:00000000 SDMMC_PowerState_OFF
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:556    .text.SDMMC_GetPowerState:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:563    .text.SDMMC_GetPowerState:00000000 SDMMC_GetPowerState
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:582    .text.SDMMC_SendCommand:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:589    .text.SDMMC_SendCommand:00000000 SDMMC_SendCommand
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:643    .text.SDMMC_SendCommand:00000020 $d
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:648    .text.SDMMC_GetCommandResponse:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:655    .text.SDMMC_GetCommandResponse:00000000 SDMMC_GetCommandResponse
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:674    .text.SDMMC_GetResponse:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:681    .text.SDMMC_GetResponse:00000000 SDMMC_GetResponse
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:722    .text.SDMMC_GetCmdResp1:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:728    .text.SDMMC_GetCmdResp1:00000000 SDMMC_GetCmdResp1
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:998    .text.SDMMC_GetCmdResp1:00000144 $d
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:1005   .text.SDMMC_GetCmdResp6:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:1011   .text.SDMMC_GetCmdResp6:00000000 SDMMC_GetCmdResp6
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:1159   .text.SDMMC_GetCmdResp6:00000094 $d
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:1165   .text.SDMMC_ConfigData:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:1172   .text.SDMMC_ConfigData:00000000 SDMMC_ConfigData
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:1230   .text.SDMMC_GetDataCounter:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:1237   .text.SDMMC_GetDataCounter:00000000 SDMMC_GetDataCounter
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:1255   .text.SDMMC_GetFIFOCount:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:1262   .text.SDMMC_GetFIFOCount:00000000 SDMMC_GetFIFOCount
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:1280   .text.SDMMC_SetSDMMCReadWaitMode:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:1287   .text.SDMMC_SetSDMMCReadWaitMode:00000000 SDMMC_SetSDMMCReadWaitMode
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:1311   .text.SDMMC_CmdBlockLength:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:1318   .text.SDMMC_CmdBlockLength:00000000 SDMMC_CmdBlockLength
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:1383   .text.SDMMC_CmdReadSingleBlock:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:1390   .text.SDMMC_CmdReadSingleBlock:00000000 SDMMC_CmdReadSingleBlock
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:1455   .text.SDMMC_CmdReadMultiBlock:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:1462   .text.SDMMC_CmdReadMultiBlock:00000000 SDMMC_CmdReadMultiBlock
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:1527   .text.SDMMC_CmdWriteSingleBlock:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:1534   .text.SDMMC_CmdWriteSingleBlock:00000000 SDMMC_CmdWriteSingleBlock
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:1599   .text.SDMMC_CmdWriteMultiBlock:00000000 $t
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s 			page 96
 
 
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:1606   .text.SDMMC_CmdWriteMultiBlock:00000000 SDMMC_CmdWriteMultiBlock
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:1671   .text.SDMMC_CmdSDEraseStartAdd:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:1678   .text.SDMMC_CmdSDEraseStartAdd:00000000 SDMMC_CmdSDEraseStartAdd
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:1743   .text.SDMMC_CmdSDEraseEndAdd:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:1750   .text.SDMMC_CmdSDEraseEndAdd:00000000 SDMMC_CmdSDEraseEndAdd
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:1815   .text.SDMMC_CmdEraseStartAdd:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:1822   .text.SDMMC_CmdEraseStartAdd:00000000 SDMMC_CmdEraseStartAdd
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:1887   .text.SDMMC_CmdEraseEndAdd:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:1894   .text.SDMMC_CmdEraseEndAdd:00000000 SDMMC_CmdEraseEndAdd
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:1959   .text.SDMMC_CmdErase:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:1966   .text.SDMMC_CmdErase:00000000 SDMMC_CmdErase
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:2029   .text.SDMMC_CmdStopTransfer:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:2036   .text.SDMMC_CmdStopTransfer:00000000 SDMMC_CmdStopTransfer
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:2099   .text.SDMMC_CmdStopTransfer:00000030 $d
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:2104   .text.SDMMC_CmdSelDesel:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:2111   .text.SDMMC_CmdSelDesel:00000000 SDMMC_CmdSelDesel
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:2174   .text.SDMMC_CmdGoIdleState:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:2181   .text.SDMMC_CmdGoIdleState:00000000 SDMMC_CmdGoIdleState
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:2239   .text.SDMMC_CmdOperCond:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:2246   .text.SDMMC_CmdOperCond:00000000 SDMMC_CmdOperCond
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:2307   .text.SDMMC_CmdAppCommand:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:2314   .text.SDMMC_CmdAppCommand:00000000 SDMMC_CmdAppCommand
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:2379   .text.SDMMC_CmdAppOperCommand:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:2386   .text.SDMMC_CmdAppOperCommand:00000000 SDMMC_CmdAppOperCommand
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:2451   .text.SDMMC_CmdAppOperCommand:00000030 $d
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:2456   .text.SDMMC_CmdBusWidth:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:2463   .text.SDMMC_CmdBusWidth:00000000 SDMMC_CmdBusWidth
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:2528   .text.SDMMC_CmdSendSCR:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:2535   .text.SDMMC_CmdSendSCR:00000000 SDMMC_CmdSendSCR
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:2598   .text.SDMMC_CmdSendCID:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:2605   .text.SDMMC_CmdSendCID:00000000 SDMMC_CmdSendCID
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:2665   .text.SDMMC_CmdSendCSD:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:2672   .text.SDMMC_CmdSendCSD:00000000 SDMMC_CmdSendCSD
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:2734   .text.SDMMC_CmdSetRelAdd:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:2741   .text.SDMMC_CmdSetRelAdd:00000000 SDMMC_CmdSetRelAdd
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:2808   .text.SDMMC_CmdSendStatus:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:2815   .text.SDMMC_CmdSendStatus:00000000 SDMMC_CmdSendStatus
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:2880   .text.SDMMC_CmdStatusRegister:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:2887   .text.SDMMC_CmdStatusRegister:00000000 SDMMC_CmdStatusRegister
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:2950   .text.SDMMC_CmdOpCondition:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:2957   .text.SDMMC_CmdOpCondition:00000000 SDMMC_CmdOpCondition
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:3019   .text.SDMMC_CmdSwitch:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc1lLAY1.s:3026   .text.SDMMC_CmdSwitch:00000000 SDMMC_CmdSwitch
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:1606   .text.SDMMC_CmdWriteMultiBlock:00000000 SDMMC_CmdWriteMultiBlock
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:1671   .text.SDMMC_CmdSDEraseStartAdd:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:1678   .text.SDMMC_CmdSDEraseStartAdd:00000000 SDMMC_CmdSDEraseStartAdd
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:1743   .text.SDMMC_CmdSDEraseEndAdd:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:1750   .text.SDMMC_CmdSDEraseEndAdd:00000000 SDMMC_CmdSDEraseEndAdd
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:1815   .text.SDMMC_CmdEraseStartAdd:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:1822   .text.SDMMC_CmdEraseStartAdd:00000000 SDMMC_CmdEraseStartAdd
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:1887   .text.SDMMC_CmdEraseEndAdd:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:1894   .text.SDMMC_CmdEraseEndAdd:00000000 SDMMC_CmdEraseEndAdd
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:1959   .text.SDMMC_CmdErase:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:1966   .text.SDMMC_CmdErase:00000000 SDMMC_CmdErase
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:2029   .text.SDMMC_CmdStopTransfer:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:2036   .text.SDMMC_CmdStopTransfer:00000000 SDMMC_CmdStopTransfer
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:2099   .text.SDMMC_CmdStopTransfer:00000030 $d
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:2104   .text.SDMMC_CmdSelDesel:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:2111   .text.SDMMC_CmdSelDesel:00000000 SDMMC_CmdSelDesel
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:2174   .text.SDMMC_CmdGoIdleState:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:2181   .text.SDMMC_CmdGoIdleState:00000000 SDMMC_CmdGoIdleState
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:2239   .text.SDMMC_CmdOperCond:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:2246   .text.SDMMC_CmdOperCond:00000000 SDMMC_CmdOperCond
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:2307   .text.SDMMC_CmdAppCommand:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:2314   .text.SDMMC_CmdAppCommand:00000000 SDMMC_CmdAppCommand
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:2379   .text.SDMMC_CmdAppOperCommand:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:2386   .text.SDMMC_CmdAppOperCommand:00000000 SDMMC_CmdAppOperCommand
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:2451   .text.SDMMC_CmdAppOperCommand:00000030 $d
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:2456   .text.SDMMC_CmdBusWidth:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:2463   .text.SDMMC_CmdBusWidth:00000000 SDMMC_CmdBusWidth
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:2528   .text.SDMMC_CmdSendSCR:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:2535   .text.SDMMC_CmdSendSCR:00000000 SDMMC_CmdSendSCR
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:2598   .text.SDMMC_CmdSendCID:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:2605   .text.SDMMC_CmdSendCID:00000000 SDMMC_CmdSendCID
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:2665   .text.SDMMC_CmdSendCSD:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:2672   .text.SDMMC_CmdSendCSD:00000000 SDMMC_CmdSendCSD
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:2734   .text.SDMMC_CmdSetRelAdd:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:2741   .text.SDMMC_CmdSetRelAdd:00000000 SDMMC_CmdSetRelAdd
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:2808   .text.SDMMC_CmdSendStatus:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:2815   .text.SDMMC_CmdSendStatus:00000000 SDMMC_CmdSendStatus
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:2880   .text.SDMMC_CmdStatusRegister:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:2887   .text.SDMMC_CmdStatusRegister:00000000 SDMMC_CmdStatusRegister
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:2950   .text.SDMMC_CmdOpCondition:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:2957   .text.SDMMC_CmdOpCondition:00000000 SDMMC_CmdOpCondition
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:3019   .text.SDMMC_CmdSwitch:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccBk4n3h.s:3026   .text.SDMMC_CmdSwitch:00000000 SDMMC_CmdSwitch
 
 UNDEFINED SYMBOLS
 SystemCoreClock

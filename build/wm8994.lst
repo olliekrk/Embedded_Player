@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 1
 
 
    1              		.cpu cortex-m7
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
   28:Drivers/BSP/Components/wm8994/wm8994.c ****   * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
   29:Drivers/BSP/Components/wm8994/wm8994.c ****   * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
   30:Drivers/BSP/Components/wm8994/wm8994.c ****   * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 2
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 2
 
 
   31:Drivers/BSP/Components/wm8994/wm8994.c ****   * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
   85:Drivers/BSP/Components/wm8994/wm8994.c **** /* Audio codec driver structure initialization */  
   86:Drivers/BSP/Components/wm8994/wm8994.c **** AUDIO_DrvTypeDef wm8994_drv = 
   87:Drivers/BSP/Components/wm8994/wm8994.c **** {
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 3
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 3
 
 
   88:Drivers/BSP/Components/wm8994/wm8994.c ****   wm8994_Init,
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  142:Drivers/BSP/Components/wm8994/wm8994.c ****   uint16_t power_mgnt_reg_1 = 0;
  143:Drivers/BSP/Components/wm8994/wm8994.c ****   
  144:Drivers/BSP/Components/wm8994/wm8994.c ****   /* Initialize the Control interface of the Audio Codec */
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 4
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 4
 
 
  145:Drivers/BSP/Components/wm8994/wm8994.c ****   AUDIO_IO_Init();
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  199:Drivers/BSP/Components/wm8994/wm8994.c **** 
  200:Drivers/BSP/Components/wm8994/wm8994.c ****       /* Enable the AIF1 Timeslot 0 (Right) to DAC 1 (Right) mixer path */
  201:Drivers/BSP/Components/wm8994/wm8994.c ****       counter += CODEC_IO_Write(DeviceAddr, 0x602, 0x0001);
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 5
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 5
 
 
  202:Drivers/BSP/Components/wm8994/wm8994.c **** 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  256:Drivers/BSP/Components/wm8994/wm8994.c ****       Enable DAC2 (Left), Enable DAC2 (Right)*/
  257:Drivers/BSP/Components/wm8994/wm8994.c ****       counter += CODEC_IO_Write(DeviceAddr, 0x05, 0x0303);
  258:Drivers/BSP/Components/wm8994/wm8994.c **** 
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 6
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 6
 
 
  259:Drivers/BSP/Components/wm8994/wm8994.c ****       /* Enable the AIF1 Timeslot 0 (Left) to DAC 1 (Left) mixer path */
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  313:Drivers/BSP/Components/wm8994/wm8994.c ****       /* Disable mute on IN1R_TO_MIXINL, Gain = +30dB */
  314:Drivers/BSP/Components/wm8994/wm8994.c ****       counter += CODEC_IO_Write(DeviceAddr, 0x2A, 0x0035);
  315:Drivers/BSP/Components/wm8994/wm8994.c **** 
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 7
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 7
 
 
  316:Drivers/BSP/Components/wm8994/wm8994.c ****       /* Enable AIF1ADC1 (Left), Enable AIF1ADC1 (Right)
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  370:Drivers/BSP/Components/wm8994/wm8994.c ****       counter += CODEC_IO_Write(DeviceAddr, 0x02, 0x63A0);
  371:Drivers/BSP/Components/wm8994/wm8994.c **** 
  372:Drivers/BSP/Components/wm8994/wm8994.c ****       /* Enable the DMIC2(Left) to AIF1 Timeslot 0 (Left) mixer path */
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 8
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 8
 
 
  373:Drivers/BSP/Components/wm8994/wm8994.c ****       counter += CODEC_IO_Write(DeviceAddr, 0x606, 0x0002);
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  427:Drivers/BSP/Components/wm8994/wm8994.c ****   case  AUDIO_FREQUENCY_11K:
  428:Drivers/BSP/Components/wm8994/wm8994.c ****     /* AIF1 Sample Rate = 11.025 (KHz), ratio=256 */ 
  429:Drivers/BSP/Components/wm8994/wm8994.c ****     counter += CODEC_IO_Write(DeviceAddr, 0x210, 0x0013);
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 9
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 9
 
 
  430:Drivers/BSP/Components/wm8994/wm8994.c ****     break;
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  484:Drivers/BSP/Components/wm8994/wm8994.c ****         /* Add Delay */
  485:Drivers/BSP/Components/wm8994/wm8994.c ****         AUDIO_IO_Delay(300);
  486:Drivers/BSP/Components/wm8994/wm8994.c ****       }
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 10
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 10
 
 
  487:Drivers/BSP/Components/wm8994/wm8994.c ****       else /* Headphone Warm Start-Up */
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  541:Drivers/BSP/Components/wm8994/wm8994.c **** 
  542:Drivers/BSP/Components/wm8994/wm8994.c ****     /* Select DAC1 (Left) to Left Headphone Output PGA (HPOUT1LVOL) path */
  543:Drivers/BSP/Components/wm8994/wm8994.c ****     counter += CODEC_IO_Write(DeviceAddr, 0x2D, 0x0001);
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 11
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 11
 
 
  544:Drivers/BSP/Components/wm8994/wm8994.c **** 
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  598:Drivers/BSP/Components/wm8994/wm8994.c ****     }
  599:Drivers/BSP/Components/wm8994/wm8994.c ****     else if(input_device == INPUT_DEVICE_DIGITAL_MIC1_MIC2)
  600:Drivers/BSP/Components/wm8994/wm8994.c ****     {
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 12
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 12
 
 
  601:Drivers/BSP/Components/wm8994/wm8994.c ****       /* Enable Microphone bias 1 generator, Enable VMID */
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  655:Drivers/BSP/Components/wm8994/wm8994.c **** }
  656:Drivers/BSP/Components/wm8994/wm8994.c **** 
  657:Drivers/BSP/Components/wm8994/wm8994.c **** /**
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 13
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 13
 
 
  658:Drivers/BSP/Components/wm8994/wm8994.c ****   * @brief Start the audio Codec play feature.
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  712:Drivers/BSP/Components/wm8994/wm8994.c ****   * @param CodecPdwnMode: selects the  power down mode.
  713:Drivers/BSP/Components/wm8994/wm8994.c ****   *          - CODEC_PDWN_SW: only mutes the audio codec. When resuming from this 
  714:Drivers/BSP/Components/wm8994/wm8994.c ****   *                           mode the codec keeps the previous initialization
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 14
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 14
 
 
  715:Drivers/BSP/Components/wm8994/wm8994.c ****   *                           (no need to re-Initialize the codec registers).
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  769:Drivers/BSP/Components/wm8994/wm8994.c **** {
  770:Drivers/BSP/Components/wm8994/wm8994.c ****   uint32_t counter = 0;
  771:Drivers/BSP/Components/wm8994/wm8994.c ****   uint8_t convertedvol = VOLUME_CONVERT(Volume);
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 15
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 15
 
 
  772:Drivers/BSP/Components/wm8994/wm8994.c **** 
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  826:Drivers/BSP/Components/wm8994/wm8994.c ****     counter += CODEC_IO_Write(DeviceAddr, 0x401, convertedvol | 0x100);
  827:Drivers/BSP/Components/wm8994/wm8994.c **** 
  828:Drivers/BSP/Components/wm8994/wm8994.c ****     /* Left AIF1 ADC2 volume */
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 16
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 16
 
 
  829:Drivers/BSP/Components/wm8994/wm8994.c ****     counter += CODEC_IO_Write(DeviceAddr, 0x404, convertedvol | 0x100);
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  883:Drivers/BSP/Components/wm8994/wm8994.c ****   switch (Output) 
  884:Drivers/BSP/Components/wm8994/wm8994.c ****   {
  885:Drivers/BSP/Components/wm8994/wm8994.c ****   case OUTPUT_DEVICE_SPEAKER:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 17
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 17
 
 
  886:Drivers/BSP/Components/wm8994/wm8994.c ****     /* Enable DAC1 (Left), Enable DAC1 (Right), 
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  940:Drivers/BSP/Components/wm8994/wm8994.c ****     /* Disable DAC1 (Left), Disable DAC1 (Right), 
  941:Drivers/BSP/Components/wm8994/wm8994.c ****     Enable DAC2 (Left), Enable DAC2 (Right)*/
  942:Drivers/BSP/Components/wm8994/wm8994.c ****     counter += CODEC_IO_Write(DeviceAddr, 0x05, 0x0303);
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 18
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 18
 
 
  943:Drivers/BSP/Components/wm8994/wm8994.c ****     
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  997:Drivers/BSP/Components/wm8994/wm8994.c ****     
  998:Drivers/BSP/Components/wm8994/wm8994.c ****   case  AUDIO_FREQUENCY_11K:
  999:Drivers/BSP/Components/wm8994/wm8994.c ****     /* AIF1 Sample Rate = 11.025 (KHz), ratio=256 */ 
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 19
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 19
 
 
 1000:Drivers/BSP/Components/wm8994/wm8994.c ****     counter += CODEC_IO_Write(DeviceAddr, 0x210, 0x0013);
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
   36              		.cfi_def_cfa_offset 8
   37              		.cfi_offset 3, -8
   38              		.cfi_offset 14, -4
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 20
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 20
 
 
 1047:Drivers/BSP/Components/wm8994/wm8994.c ****   uint32_t result = 0;
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
   79 0004 134A     		ldr	r2, .L8
   80 0006 1068     		ldr	r0, [r2]
   81              	.LVL5:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 21
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 21
 
 
  848:Drivers/BSP/Components/wm8994/wm8994.c ****   {
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  122 0034 4FF48461 		mov	r1, #1056
  123              	.LVL13:
  854:Drivers/BSP/Components/wm8994/wm8994.c **** 
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 22
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 22
 
 
  124              		.loc 1 854 18 view .LVU25
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  172              		.loc 1 665 3 is_stmt 1 view .LVU33
  173              	.LVL20:
  669:Drivers/BSP/Components/wm8994/wm8994.c ****   
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 23
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 23
 
 
  174              		.loc 1 669 3 view .LVU34
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  219              	.LFE5:
  221              		.section	.text.wm8994_Pause,"ax",%progbits
  222              		.align	1
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 24
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 24
 
 
  223              		.global	wm8994_Pause
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  267              	.LVL32:
  691:Drivers/BSP/Components/wm8994/wm8994.c **** 
  268              		.loc 1 691 1 view .LVU57
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 25
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 25
 
 
  269 0018 38BD     		pop	{r3, r4, r5, pc}
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  315              		.loc 1 729 16 is_stmt 0 view .LVU67
  316 0010 0121     		movs	r1, #1
  317              	.LVL37:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 26
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 26
 
 
  729:Drivers/BSP/Components/wm8994/wm8994.c **** 
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  358              		.loc 1 744 15 view .LVU81
  359 0048 0444     		add	r4, r4, r0
  360              	.LVL46:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 27
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 27
 
 
  747:Drivers/BSP/Components/wm8994/wm8994.c **** 
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  402 0078 00000000 		.word	.LANCHOR0
  403              		.cfi_endproc
  404              	.LFE6:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 28
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 28
 
 
  406              		.section	.text.wm8994_SetVolume,"ax",%progbits
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  452              		.loc 1 771 11 view .LVU103
  453 0020 6427     		movs	r7, #100
  454              	.LVL57:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 29
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 29
 
 
  455              	.L23:
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  493 0048 2401     		lsls	r4, r4, #4
  494 004a 384B     		ldr	r3, .L33
  495 004c 83FB0423 		smull	r2, r3, r3, r4
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 30
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 30
 
 
  496 0050 E417     		asrs	r4, r4, #31
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  788:Drivers/BSP/Components/wm8994/wm8994.c **** 
  538              		.loc 1 788 7 is_stmt 1 view .LVU132
  788:Drivers/BSP/Components/wm8994/wm8994.c **** 
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 31
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 31
 
 
  539              		.loc 1 788 18 is_stmt 0 view .LVU133
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  804:Drivers/BSP/Components/wm8994/wm8994.c **** 
  582              		.loc 1 804 18 view .LVU145
  583 00b8 FFF7FEFF 		bl	CODEC_IO_Write
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 32
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 32
 
 
  584              	.LVL81:
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  625              		.loc 1 823 5 is_stmt 1 discriminator 4 view .LVU158
  823:Drivers/BSP/Components/wm8994/wm8994.c **** 
  626              		.loc 1 823 16 is_stmt 0 discriminator 4 view .LVU159
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 33
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 33
 
 
  627 00e6 F6B2     		uxtb	r6, r6
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  669              		.loc 1 834 3 is_stmt 1 discriminator 4 view .LVU171
  670              	.L22:
  835:Drivers/BSP/Components/wm8994/wm8994.c **** 
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 34
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 34
 
 
  671              		.loc 1 835 1 is_stmt 0 view .LVU172
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  141:Drivers/BSP/Components/wm8994/wm8994.c ****   uint16_t power_mgnt_reg_1 = 0;
  721              		.loc 1 141 3 is_stmt 1 view .LVU179
  141:Drivers/BSP/Components/wm8994/wm8994.c ****   uint16_t power_mgnt_reg_1 = 0;
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 35
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 35
 
 
  722              		.loc 1 141 12 is_stmt 0 view .LVU180
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  763 0042 6C22     		movs	r2, #108
  764 0044 3921     		movs	r1, #57
  765 0046 2046     		mov	r0, r4
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 36
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 36
 
 
  766 0048 FFF7FEFF 		bl	CODEC_IO_Write
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  806              		.loc 1 257 18 is_stmt 0 view .LVU207
  807 007a 40F20332 		movw	r2, #771
  808 007e 0521     		movs	r1, #5
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 37
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 37
 
 
  809 0080 2046     		mov	r0, r4
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  851              	.LVL125:
  269:Drivers/BSP/Components/wm8994/wm8994.c ****       break;
  852              		.loc 1 269 15 view .LVU220
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 38
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 38
 
 
  853 00be 0644     		add	r6, r6, r0
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  894 00ee 40F20261 		movw	r1, #1538
  895 00f2 2046     		mov	r0, r4
  896 00f4 FFF7FEFF 		bl	CODEC_IO_Write
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 39
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 39
 
 
  897              	.LVL133:
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  938 012c 2046     		mov	r0, r4
  939 012e FFF7FEFF 		bl	CODEC_IO_Write
  940              	.LVL141:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 40
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 40
 
 
  198:Drivers/BSP/Components/wm8994/wm8994.c **** 
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  981              		.loc 1 237 9 is_stmt 1 view .LVU260
  237:Drivers/BSP/Components/wm8994/wm8994.c ****         
  982              		.loc 1 237 20 is_stmt 0 view .LVU261
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 41
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 41
 
 
  983 0166 40F60F72 		movw	r2, #3855
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  1025 01a4 2046     		mov	r0, r4
  1026 01a6 FFF7FEFF 		bl	CODEC_IO_Write
  1027              	.LVL157:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 42
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 42
 
 
  249:Drivers/BSP/Components/wm8994/wm8994.c ****       }
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  1069 01e0 FFF7FEFF 		bl	CODEC_IO_Write
  1070              	.LVL165:
  227:Drivers/BSP/Components/wm8994/wm8994.c ****         
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 43
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 43
 
 
  1071              		.loc 1 227 17 view .LVU287
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  1112 0220 4FF44362 		mov	r2, #3120
  1113 0224 0421     		movs	r1, #4
  1114 0226 2046     		mov	r0, r4
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 44
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 44
 
 
  1115 0228 FFF7FEFF 		bl	CODEC_IO_Write
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  300:Drivers/BSP/Components/wm8994/wm8994.c **** 
  1157              		.loc 1 300 15 view .LVU313
  1158 0264 0644     		add	r6, r6, r0
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 45
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 45
 
 
  1159              	.LVL178:
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  1200 02a0 2046     		mov	r0, r4
  1201 02a2 FFF7FEFF 		bl	CODEC_IO_Write
  1202              	.LVL185:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 46
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 46
 
 
  367:Drivers/BSP/Components/wm8994/wm8994.c **** 
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  1244 02de 0644     		add	r6, r6, r0
  1245              	.LVL194:
  382:Drivers/BSP/Components/wm8994/wm8994.c ****       
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 47
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 47
 
 
  1246              		.loc 1 382 7 is_stmt 1 view .LVU340
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  1288              	.LVL202:
  314:Drivers/BSP/Components/wm8994/wm8994.c **** 
  1289              		.loc 1 314 7 is_stmt 1 view .LVU353
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 48
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 48
 
 
  314:Drivers/BSP/Components/wm8994/wm8994.c **** 
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  1331 034c 0222     		movs	r2, #2
  1332 034e 40F20661 		movw	r1, #1542
  1333 0352 2046     		mov	r0, r4
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 49
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 49
 
 
  1334 0354 FFF7FEFF 		bl	CODEC_IO_Write
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  1375 0388 4FF48861 		mov	r1, #1088
  1376 038c 2046     		mov	r0, r4
  1377 038e FFF7FEFF 		bl	CODEC_IO_Write
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 50
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 50
 
 
  1378              	.LVL219:
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  1419              		.loc 1 355 15 view .LVU392
  1420 03ca 0644     		add	r6, r6, r0
  1421              	.LVL228:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 51
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 51
 
 
  356:Drivers/BSP/Components/wm8994/wm8994.c ****     case INPUT_DEVICE_DIGITAL_MIC1_MIC2 :
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  1464 0408 00000000 		.word	.LANCHOR0
  1465 040c 00000000 		.word	.LANCHOR1
  1466              	.L79:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 52
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 52
 
 
  400:Drivers/BSP/Components/wm8994/wm8994.c ****   {
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  439:Drivers/BSP/Components/wm8994/wm8994.c ****     break; 
  1510              		.loc 1 439 5 is_stmt 1 view .LVU416
  439:Drivers/BSP/Components/wm8994/wm8994.c ****     break; 
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 53
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 53
 
 
  1511              		.loc 1 439 16 is_stmt 0 view .LVU417
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  1552 0490 0022     		movs	r2, #0
  1553 0492 40F20231 		movw	r1, #770
  1554 0496 2046     		mov	r0, r4
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 54
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 54
 
 
  1555 0498 FFF7FEFF 		bl	CODEC_IO_Write
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  500:Drivers/BSP/Components/wm8994/wm8994.c **** 
  1596              		.loc 1 500 13 view .LVU444
  1597 04d2 0644     		add	r6, r6, r0
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 55
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 55
 
 
  1598              	.LVL249:
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  1639              		.loc 1 517 5 is_stmt 1 view .LVU457
  517:Drivers/BSP/Components/wm8994/wm8994.c ****     {
  1640              		.loc 1 517 8 is_stmt 0 view .LVU458
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 56
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 56
 
 
  1641 0508 B5F5006F 		cmp	r5, #2048
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  1682              		.loc 1 537 13 view .LVU471
  1683 0542 0644     		add	r6, r6, r0
  1684              	.LVL265:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 57
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 57
 
 
  540:Drivers/BSP/Components/wm8994/wm8994.c **** 
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  1726              		.loc 1 553 13 view .LVU484
  1727 057a 0644     		add	r6, r6, r0
  1728              	.LVL274:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 58
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 58
 
 
  556:Drivers/BSP/Components/wm8994/wm8994.c **** 
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  1770              		.loc 1 570 13 view .LVU497
  1771 05b8 0644     		add	r6, r6, r0
  1772              	.LVL283:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 59
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 59
 
 
  573:Drivers/BSP/Components/wm8994/wm8994.c **** 
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  1814 05f0 A5B1     		cbz	r5, .L35
  587:Drivers/BSP/Components/wm8994/wm8994.c ****     {
  1815              		.loc 1 587 5 is_stmt 1 view .LVU511
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 60
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 60
 
 
  587:Drivers/BSP/Components/wm8994/wm8994.c ****     {
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  414:Drivers/BSP/Components/wm8994/wm8994.c ****     break;
  1858              		.loc 1 414 5 view .LVU524
  414:Drivers/BSP/Components/wm8994/wm8994.c ****     break;
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 61
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 61
 
 
  1859              		.loc 1 414 16 is_stmt 0 view .LVU525
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  1901 066a 2046     		mov	r0, r4
  1902 066c FFF7FEFF 		bl	CODEC_IO_Write
  1903              	.LVL303:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 62
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 62
 
 
  451:Drivers/BSP/Components/wm8994/wm8994.c ****   }
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  1944 06a4 0644     		add	r6, r6, r0
  1945              	.LVL310:
  483:Drivers/BSP/Components/wm8994/wm8994.c ****         /* Add Delay */
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 63
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 63
 
 
  1946              		.loc 1 483 9 is_stmt 1 view .LVU552
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  1988 06e0 5121     		movs	r1, #81
  1989 06e2 2046     		mov	r0, r4
  1990 06e4 FFF7FEFF 		bl	CODEC_IO_Write
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 64
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 64
 
 
  1991              	.LVL317:
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  2032              	.LVL326:
  2033              	.L85:
  602:Drivers/BSP/Components/wm8994/wm8994.c ****       counter += CODEC_IO_Write(DeviceAddr, 0x01, power_mgnt_reg_1);
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 65
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 65
 
 
  2034              		.loc 1 602 7 is_stmt 1 view .LVU578
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  2075              		.loc 1 612 15 view .LVU591
  2076 0756 5DE7     		b	.L74
  2077              	.LVL335:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 66
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 66
 
 
  2078              	.L86:
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  2123              		.thumb
  2124              		.thumb_func
  2125              		.fpu fpv5-sp-d16
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 67
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 67
 
 
  2127              	wm8994_SetOutputMode:
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  945:Drivers/BSP/Components/wm8994/wm8994.c ****     
  2171              		.loc 1 945 16 view .LVU612
  2172 0026 FFF7FEFF 		bl	CODEC_IO_Write
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 68
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 68
 
 
  2173              	.LVL349:
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  2213              		.loc 1 888 5 is_stmt 1 view .LVU626
  888:Drivers/BSP/Components/wm8994/wm8994.c ****     
  2214              		.loc 1 888 16 is_stmt 0 view .LVU627
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 69
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 69
 
 
  2215 0058 C4B2     		uxtb	r4, r0
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  2257 0090 0544     		add	r5, r5, r0
  2258              	.LVL368:
  900:Drivers/BSP/Components/wm8994/wm8994.c ****     break;
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 70
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 70
 
 
  2259              		.loc 1 900 5 is_stmt 1 view .LVU640
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  912:Drivers/BSP/Components/wm8994/wm8994.c ****     
  2301              		.loc 1 912 5 is_stmt 1 view .LVU653
  912:Drivers/BSP/Components/wm8994/wm8994.c ****     
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 71
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 71
 
 
  2302              		.loc 1 912 16 is_stmt 0 view .LVU654
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  2344              		.loc 1 924 16 view .LVU666
  2345 00f6 FFF7FEFF 		bl	CODEC_IO_Write
  2346              	.LVL388:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 72
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 72
 
 
  2347 00fa 0546     		mov	r5, r0
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  2388              		.loc 1 936 13 view .LVU679
  2389 0132 2844     		add	r0, r0, r5
  2390              	.LVL398:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 73
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 73
 
 
  937:Drivers/BSP/Components/wm8994/wm8994.c ****     
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  2438 0022 FFF7FEFF 		bl	CODEC_IO_Write
  2439              	.LVL403:
 1006:Drivers/BSP/Components/wm8994/wm8994.c ****     
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 74
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 74
 
 
  2440              		.loc 1 1006 5 is_stmt 1 view .LVU689
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  996:Drivers/BSP/Components/wm8994/wm8994.c ****     
  2483              		.loc 1 996 5 is_stmt 1 view .LVU701
  2484 005e 10E0     		b	.L98
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 75
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 75
 
 
  2485              	.LVL412:
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  2525 0084 3322     		movs	r2, #51
  2526 0086 4FF40471 		mov	r1, #528
  2527              	.LVL421:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 76
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 76
 
 
  980:Drivers/BSP/Components/wm8994/wm8994.c ****     break;
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  2568              		.loc 1 1015 5 view .LVU729
 1015:Drivers/BSP/Components/wm8994/wm8994.c ****     break; 
  2569              		.loc 1 1015 16 is_stmt 0 view .LVU730
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 77
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 77
 
 
  2570 00ae 8322     		movs	r2, #131
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  2616 0004 1146     		mov	r1, r2
  2617 0006 C0B2     		uxtb	r0, r0
  2618              	.LVL438:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 78
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 78
 
 
 1031:Drivers/BSP/Components/wm8994/wm8994.c ****   outputEnabled = 0;
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  2665 0006 08BD     		pop	{r3, pc}
  2666              		.cfi_endproc
  2667              	.LFE1:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 79
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 79
 
 
  2669              		.section	.text.wm8994_ReadID,"ax",%progbits
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  2725 0000 01       		.byte	1
  2726              		.section	.data.wm8994_drv,"aw"
  2727              		.align	2
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 80
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 80
 
 
  2730              	wm8994_drv:
@@ -4760,52 +4760,52 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 1
  2746              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\
  2747              		.file 4 "Drivers/BSP/Components/wm8994/../Common/audio.h"
  2748              		.file 5 "Drivers/BSP/Components/wm8994/wm8994.h"
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s 			page 81
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s 			page 81
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 wm8994.c
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:18     .text.CODEC_IO_Write:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:25     .text.CODEC_IO_Write:00000000 CODEC_IO_Write
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:52     .text.wm8994_SetMute:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:59     .text.wm8994_SetMute:00000000 wm8994_SetMute
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:147    .text.wm8994_SetMute:00000054 $d
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:152    .text.wm8994_Play:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:159    .text.wm8994_Play:00000000 wm8994_Play
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:188    .text.wm8994_Resume:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:195    .text.wm8994_Resume:00000000 wm8994_Resume
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:222    .text.wm8994_Pause:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:229    .text.wm8994_Pause:00000000 wm8994_Pause
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:274    .text.wm8994_Stop:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:281    .text.wm8994_Stop:00000000 wm8994_Stop
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:402    .text.wm8994_Stop:00000078 $d
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:407    .text.wm8994_SetVolume:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:414    .text.wm8994_SetVolume:00000000 wm8994_SetVolume
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:679    .text.wm8994_SetVolume:0000012c $d
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:686    .text.wm8994_Init:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:693    .text.wm8994_Init:00000000 wm8994_Init
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:1464   .text.wm8994_Init:00000408 $d
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:1468   .text.wm8994_Init:00000410 $t
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:2114   .text.wm8994_Init:00000784 $d
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:2120   .text.wm8994_SetOutputMode:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:2127   .text.wm8994_SetOutputMode:00000000 wm8994_SetOutputMode
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:2397   .text.wm8994_SetFrequency:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:2404   .text.wm8994_SetFrequency:00000000 wm8994_SetFrequency
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:2586   .text.wm8994_SetFrequency:000000bc $d
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:2591   .text.wm8994_Reset:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:2598   .text.wm8994_Reset:00000000 wm8994_Reset
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:2637   .text.wm8994_Reset:00000018 $d
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:2643   .text.wm8994_DeInit:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:2650   .text.wm8994_DeInit:00000000 wm8994_DeInit
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:2670   .text.wm8994_ReadID:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:2677   .text.wm8994_ReadID:00000000 wm8994_ReadID
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:2730   .data.wm8994_drv:00000000 wm8994_drv
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:2707   .bss.inputEnabled:00000000 $d
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:2711   .bss.inputEnabled:00000000 inputEnabled
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:2714   .bss.outputEnabled:00000000 $d
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:2718   .bss.outputEnabled:00000000 outputEnabled
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:2724   .data.ColdStartup:00000000 ColdStartup
-C:\Users\Nina\AppData\Local\Temp\cc8QiTVf.s:2727   .data.wm8994_drv:00000000 $d
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:18     .text.CODEC_IO_Write:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:25     .text.CODEC_IO_Write:00000000 CODEC_IO_Write
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:52     .text.wm8994_SetMute:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:59     .text.wm8994_SetMute:00000000 wm8994_SetMute
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:147    .text.wm8994_SetMute:00000054 $d
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:152    .text.wm8994_Play:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:159    .text.wm8994_Play:00000000 wm8994_Play
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:188    .text.wm8994_Resume:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:195    .text.wm8994_Resume:00000000 wm8994_Resume
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:222    .text.wm8994_Pause:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:229    .text.wm8994_Pause:00000000 wm8994_Pause
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:274    .text.wm8994_Stop:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:281    .text.wm8994_Stop:00000000 wm8994_Stop
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:402    .text.wm8994_Stop:00000078 $d
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:407    .text.wm8994_SetVolume:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:414    .text.wm8994_SetVolume:00000000 wm8994_SetVolume
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:679    .text.wm8994_SetVolume:0000012c $d
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:686    .text.wm8994_Init:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:693    .text.wm8994_Init:00000000 wm8994_Init
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:1464   .text.wm8994_Init:00000408 $d
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:1468   .text.wm8994_Init:00000410 $t
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:2114   .text.wm8994_Init:00000784 $d
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:2120   .text.wm8994_SetOutputMode:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:2127   .text.wm8994_SetOutputMode:00000000 wm8994_SetOutputMode
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:2397   .text.wm8994_SetFrequency:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:2404   .text.wm8994_SetFrequency:00000000 wm8994_SetFrequency
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:2586   .text.wm8994_SetFrequency:000000bc $d
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:2591   .text.wm8994_Reset:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:2598   .text.wm8994_Reset:00000000 wm8994_Reset
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:2637   .text.wm8994_Reset:00000018 $d
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:2643   .text.wm8994_DeInit:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:2650   .text.wm8994_DeInit:00000000 wm8994_DeInit
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:2670   .text.wm8994_ReadID:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:2677   .text.wm8994_ReadID:00000000 wm8994_ReadID
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:2730   .data.wm8994_drv:00000000 wm8994_drv
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:2707   .bss.inputEnabled:00000000 $d
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:2711   .bss.inputEnabled:00000000 inputEnabled
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:2714   .bss.outputEnabled:00000000 $d
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:2718   .bss.outputEnabled:00000000 outputEnabled
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:2724   .data.ColdStartup:00000000 ColdStartup
+C:\Users\Nina\AppData\Local\Temp\ccZdjv2w.s:2727   .data.wm8994_drv:00000000 $d
 
 UNDEFINED SYMBOLS
 AUDIO_IO_Write

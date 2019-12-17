@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 1
 
 
    1              		.cpu cortex-m7
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
   28:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****              and HAL_SAI_Receive_IT() APIs):
   29:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****             (+++) Configure the SAI interrupt priority.
   30:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****             (+++) Enable the NVIC SAI IRQ handle.
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 2
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 2
 
 
   31:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
   85:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****       (+) At transmission end of transfer HAL_SAI_TxCpltCallback() is executed and user can
   86:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****           add his own code by customization of function pointer HAL_SAI_TxCpltCallback()
   87:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****       (+) Receive an amount of data in non-blocking mode using HAL_SAI_Receive_IT()
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 3
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 3
 
 
   88:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****       (+) At reception end of transfer HAL_SAI_RxCpltCallback() is executed and user can
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  142:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   *      this list of conditions and the following disclaimer.
  143:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   *   2. Redistributions in binary form must reproduce the above copyright notice,
  144:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   *      this list of conditions and the following disclaimer in the documentation
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 4
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 4
 
 
  145:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   *      and/or other materials provided with the distribution.
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  199:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   * @}
  200:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   */
  201:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 5
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 5
 
 
  202:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** /* Private macro -------------------------------------------------------------*/
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  256:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****         (++) MCLK Output
  257:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****         (++) Audio frequency
  258:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****         (++) FIFO Threshold
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 6
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 6
 
 
  259:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****         (++) Frame Config
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  313:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** /**
  314:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   * @brief  Initialize the SAI according to the specified parameters.
  315:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   *         in the SAI_InitTypeDef structure and initialize the associated handle.
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 7
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 7
 
 
  316:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   * @param  hsai pointer to a SAI_HandleTypeDef structure that contains
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  370:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     HAL_SAI_MspInit(hsai);
  371:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   }
  372:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 8
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 8
 
 
  373:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   hsai->State = HAL_SAI_STATE_BUSY;
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  427:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   {
  428:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     SAI2->GCR = tmpregisterGCR;
  429:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   }
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 9
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 9
 
 
  430:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  484:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   hsai->Instance->CR2&= ~(SAI_xCR2_FTH | SAI_xCR2_FFLUSH | SAI_xCR2_COMP | SAI_xCR2_CPL);
  485:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   hsai->Instance->CR2|=  (hsai->Init.FIFOThreshold | hsai->Init.CompandingMode | hsai->Init.TriStat
  486:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 10
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 10
 
 
  487:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   /* SAI Frame Configuration -----------------------------------------*/
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  541:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   
  542:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   /* DeInit the low level hardware: GPIO, CLOCK, NVIC and DMA */
  543:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   HAL_SAI_MspDeInit(hsai);
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 11
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 11
 
 
  544:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  598:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****                       ##### IO operation functions #####
  599:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   ==============================================================================
  600:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   [..]
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 12
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 12
 
 
  601:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     This subsection provides a set of functions allowing to manage the SAI data
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  655:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     /* Process Locked */
  656:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     __HAL_LOCK(hsai);
  657:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 13
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 13
 
 
  658:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     hsai->XferSize = Size;
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  712:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****           hsai->State = HAL_SAI_STATE_READY;
  713:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
  714:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****           /* Process Unlocked */
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 14
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 14
 
 
  715:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****           __HAL_UNLOCK(hsai);
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  769:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     }
  770:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
  771:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     /* Receive data */
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 15
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 15
 
 
  772:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     while(hsai->XferCount > 0)
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  826:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   }
  827:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   else
  828:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   {
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 16
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 16
 
 
  829:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     return HAL_BUSY;
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  883:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     }
  884:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     /* Process Unlocked */
  885:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     __HAL_UNLOCK(hsai);
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 17
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 17
 
 
  886:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  940:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****       /* Enable SAI peripheral */
  941:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****       __HAL_SAI_ENABLE(hsai);
  942:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     }
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 18
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 18
 
 
  943:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  997:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   __HAL_UNLOCK(hsai);
  998:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
  999:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   return HAL_OK;
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 19
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 19
 
 
 1000:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** }
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 1054:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
 1055:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   /* Process Unlocked */
 1056:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   __HAL_UNLOCK(hsai);
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 20
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 20
 
 
 1057:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 1111:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
 1112:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   /* Disable SAI peripheral */
 1113:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   SAI_Disable(hsai);
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 21
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 21
 
 
 1114:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 1168:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****       __HAL_UNLOCK(hsai);
 1169:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****       return  HAL_ERROR;
 1170:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     }
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 22
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 22
 
 
 1171:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 1225:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
 1226:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     /* Set the SAI Rx DMA transfer complete callback */
 1227:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     hsai->hdmarx->XferCpltCallback = SAI_DMARxCplt;
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 23
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 23
 
 
 1228:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 1282:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   }
 1283:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   return HAL_ERROR;
 1284:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** }
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 24
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 24
 
 
 1285:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 1339:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     /* enable the IT interrupt */
 1340:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     __HAL_SAI_DISABLE_IT(hsai, SAI_IT_MUTEDET);
 1341:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     return HAL_OK;
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 25
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 25
 
 
 1342:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   }
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 1396:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****       if((cr1config & SAI_xCR1_DMAEN) == SAI_xCR1_DMAEN)
 1397:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****       {
 1398:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****         /* Abort the SAI DMA Streams */
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 26
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 26
 
 
 1399:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****         if(hsai->hdmatx != NULL)
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 1453:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****         
 1454:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****         /* Set error callback */
 1455:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****         HAL_SAI_ErrorCallback(hsai);
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 27
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 27
 
 
 1456:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****       }
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 1510:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** }
 1511:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
 1512:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** /**
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 28
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 28
 
 
 1513:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   * @brief Tx Transfer completed callback.
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 1567:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** {
 1568:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   /* Prevent unused argument(s) compilation warning */
 1569:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   UNUSED(hsai);
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 29
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 29
 
 
 1570:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 1624:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** * @brief  Return the SAI error code.
 1625:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** * @param  hsai pointer to a SAI_HandleTypeDef structure that contains
 1626:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   *              the configuration information for the specified SAI Block.
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 30
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 30
 
 
 1627:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** * @retval SAI Error Code
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 1663:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   if((hsai->Init.AudioMode == SAI_MODEMASTER_TX) || (hsai->Init.AudioMode == SAI_MODESLAVE_TX))
   47              		.loc 1 1663 3 is_stmt 1 view .LVU6
   48              		.loc 1 1663 17 is_stmt 0 view .LVU7
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 31
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 31
 
 
   49 0008 4568     		ldr	r5, [r0, #4]
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
   84              		.loc 1 1682 3 is_stmt 1 view .LVU22
   85 0036 59B1     		cbz	r1, .L5
   86 0038 4C1E     		subs	r4, r1, #1
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 32
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 32
 
 
   87 003a 012C     		cmp	r4, #1
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  118 005c 3FD8     		bhi	.L17
  119 005e DFE802F0 		tbb	[pc, r2]
  120              	.L9:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 33
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 33
 
 
  121 0062 02       		.byte	(.L12-.L9)/2
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 1724:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   default :
 1725:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     return HAL_ERROR;
 1726:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   }
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 34
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 34
 
 
 1727:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   if(protocol == SAI_I2S_LSBJUSTIFIED)
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 1711:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   case SAI_PROTOCOL_DATASIZE_24BIT:
  181              		.loc 1 1711 5 is_stmt 1 view .LVU63
  182 0090 F2E7     		b	.L13
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 35
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 35
 
 
  183              	.LVL5:
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 1720:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     hsai->FrameInit.ActiveFrameLength = 32*(nbslot/2);
  220              		.loc 1 1720 33 view .LVU81
  221 00ae 0464     		str	r4, [r0, #64]
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 36
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 36
 
 
 1721:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     hsai->SlotInit.SlotSize = SAI_SLOTSIZE_32B;
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  262              	.LVL11:
  263              		.loc 1 1738 10 view .LVU99
  264 00d2 00E0     		b	.L4
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 37
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 37
 
 
  265              	.LVL12:
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 1747:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   * @param  datasize one of the supported datasize @ref SAI_Protocol_DataSize
 1748:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   * @param  nbslot number of slot minimum value is 1 and the max is 16.
 1749:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   * @retval HAL status
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 38
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 38
 
 
 1750:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   */
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  347 0020 8464     		str	r4, [r0, #72]
 1765:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   hsai->FrameInit.FSPolarity     = SAI_FS_ACTIVE_HIGH;
  348              		.loc 1 1765 3 is_stmt 1 view .LVU120
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 39
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 39
 
 
  349              		.loc 1 1765 34 is_stmt 0 view .LVU121
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  385 004c 08       		.byte	(.L36-.L33)/2
  386 004d 10       		.byte	(.L35-.L33)/2
  387 004e 17       		.byte	(.L34-.L33)/2
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 40
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 40
 
 
  388 004f 1F       		.byte	(.L32-.L33)/2
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 1796:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     hsai->Init.DataSize = SAI_DATASIZE_24;
 1797:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     hsai->FrameInit.FrameLength = 32 * nbslot;
 1798:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     hsai->SlotInit.SlotSize = SAI_SLOTSIZE_32B;
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 41
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 41
 
 
 1799:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     break;
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 1796:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     hsai->FrameInit.FrameLength = 32 * nbslot;
  455              		.loc 1 1796 25 is_stmt 0 view .LVU166
  456 007a C022     		movs	r2, #192
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 42
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 42
 
 
  457              	.LVL30:
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  494              		.loc 1 1804 5 is_stmt 1 view .LVU184
  495              		.loc 1 1809 10 is_stmt 0 view .LVU185
  496 0096 0020     		movs	r0, #0
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 43
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 43
 
 
  497              	.LVL36:
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 1821:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   while(((hsai->Instance->SR & SAI_xSR_FLVL) != SAI_FIFOSTATUS_FULL) && (hsai->XferCount > 0))
  538              		.loc 1 1821 3 view .LVU192
  539              		.loc 1 1821 8 is_stmt 0 view .LVU193
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 44
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 44
 
 
  540 0000 12E0     		b	.L41
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 1821:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   {
  578              		.loc 1 1821 8 is_stmt 1 view .LVU210
 1821:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   {
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 45
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 45
 
 
  579              		.loc 1 1821 15 is_stmt 0 view .LVU211
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 1838:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   }
 1839:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** }
  617              		.loc 1 1839 1 view .LVU228
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 46
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 46
 
 
  618 0054 7047     		bx	lr
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 1860:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     tmpIT|= SAI_IT_CNRDY;
 1861:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   }
 1862:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 47
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 47
 
 
 1863:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   if((hsai->Init.AudioMode == SAI_MODESLAVE_RX) || (hsai->Init.AudioMode == SAI_MODESLAVE_TX))
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  689              		.loc 1 1865 5 is_stmt 1 view .LVU251
 1865:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   }
  690              		.loc 1 1865 10 is_stmt 0 view .LVU252
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 48
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 48
 
 
  691 002e 43F06000 		orr	r0, r3, #96
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  730              		.loc 1 1889 3 view .LVU260
 1890:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   {
 1891:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     /* Check for the Timeout */
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 49
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 49
 
 
 1892:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     if (count-- == 0)
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 1897:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     }
  767              		.loc 1 1897 7 view .LVU277
  768 003a 7047     		bx	lr
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 50
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 50
 
 
  769              	.L62:
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  818              		.loc 1 327 5 is_stmt 0 view .LVU286
  819 0000 0028     		cmp	r0, #0
  820 0002 00F0EB80 		beq	.L77
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 51
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 51
 
 
  321:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   uint32_t tmpregisterGCR = 0;
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  361:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   assert_param(IS_SAI_SLOT_ACTIVE(hsai->SlotInit.SlotActive));
  852              		.loc 1 361 3 view .LVU310
  362:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 52
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 52
 
 
  853              		.loc 1 362 3 view .LVU311
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  894              	.L68:
  422:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   {
  895              		.loc 1 422 3 is_stmt 1 view .LVU325
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 53
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 53
 
 
  422:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   {
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  935              		.loc 1 440 5 is_stmt 1 view .LVU340
  440:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     {
  936              		.loc 1 440 13 is_stmt 0 view .LVU341
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 54
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 54
 
 
  937 0070 2368     		ldr	r3, [r4]
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  976 00a4 0133     		adds	r3, r3, #1
  977 00a6 2362     		str	r3, [r4, #32]
  978              	.L72:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 55
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 55
 
 
  456:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     }
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  1018 00d8 6368     		ldr	r3, [r4, #4]
  477:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****                         hsai->Init.DataSize | hsai->Init.FirstBit  |           \
  1019              		.loc 1 477 58 view .LVU372
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 56
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 56
 
 
  1020 00da 206B     		ldr	r0, [r4, #48]
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  1056 0100 2268     		ldr	r2, [r4]
  484:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   hsai->Instance->CR2|=  (hsai->Init.FIFOThreshold | hsai->Init.CompandingMode | hsai->Init.TriStat
  1057              		.loc 1 484 22 view .LVU391
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 57
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 57
 
 
  1058 0102 5168     		ldr	r1, [r2, #4]
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  1095              		.loc 1 490 55 view .LVU408
  1096 012c 013B     		subs	r3, r3, #1
  491:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****                           hsai->FrameInit.FSDefinition |
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 58
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 58
 
 
  1097              		.loc 1 491 42 view .LVU409
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  501:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****                           | (hsai->SlotInit.SlotActive << 16) | ((hsai->SlotInit.SlotNumber - 1) <<
  1135              		.loc 1 501 75 view .LVU426
  1136 015e A16D     		ldr	r1, [r4, #88]
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 59
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 59
 
 
  501:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****                           | (hsai->SlotInit.SlotActive << 16) | ((hsai->SlotInit.SlotNumber - 1) <<
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  1172              		.loc 1 370 5 is_stmt 1 view .LVU445
  1173 018a FFF7FEFF 		bl	HAL_SAI_MspInit
  1174              	.LVL71:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 60
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 60
 
 
  370:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   }
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  1216              	.LBB3:
  438:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     }
  1217              		.loc 1 438 7 is_stmt 1 view .LVU459
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 61
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 61
 
 
  438:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     }
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  329:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   }
  1261              		.loc 1 329 12 view .LVU471
  1262 01dc 0120     		movs	r0, #1
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 62
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 62
 
 
  1263              	.LVL83:
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  1312              	.LVL86:
  289:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   {
  1313              		.loc 1 289 3 is_stmt 0 view .LVU479
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 63
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 63
 
 
  1314 000a 0128     		cmp	r0, #1
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  1353 0026 0120     		movs	r0, #1
  1354 0028 F8E7     		b	.L99
  1355              		.cfi_endproc
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 64
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 64
 
 
  1356              	.LFE138:
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  530:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
  1407              		.loc 1 530 3 is_stmt 1 view .LVU502
  530:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 65
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 65
 
 
  1408              		.loc 1 530 15 is_stmt 0 view .LVU503
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  1445              		.loc 1 554 3 view .LVU520
  554:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** }
  1446              		.loc 1 554 10 is_stmt 0 view .LVU521
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 66
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 66
 
 
  1447 003a 2846     		mov	r0, r5
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  1497              		.loc 1 646 3 is_stmt 1 view .LVU527
  646:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
  1498              		.loc 1 646 24 is_stmt 0 view .LVU528
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 67
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 67
 
 
  1499 000c FFF7FEFF 		bl	HAL_GetTick
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  1536              		.loc 1 660 20 is_stmt 0 discriminator 2 view .LVU545
  1537 0044 C4F86490 		str	r9, [r4, #100]
  661:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     hsai->ErrorCode = HAL_SAI_ERROR_NONE;
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 68
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 68
 
 
  1538              		.loc 1 661 5 is_stmt 1 discriminator 2 view .LVU546
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  680:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****         }
  1577              		.loc 1 680 33 view .LVU562
  1578 007a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 69
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 69
 
 
  680:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****         }
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  676:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****       {
  1616              		.loc 1 676 9 view .LVU580
  1617 00a6 B2F5A02F 		cmp	r2, #327680
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 70
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 70
 
 
  1618 00aa 0BD0     		beq	.L119
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  1655              		.loc 1 697 57 discriminator 2 view .LVU597
  1656 00d2 A842     		cmp	r0, r5
  1657 00d4 DFD9     		bls	.L118
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 71
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 71
 
 
  1658              	.L124:
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  725:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
  1696              		.loc 1 725 5 is_stmt 1 view .LVU614
  725:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 72
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 72
 
 
  1697              		.loc 1 725 5 view .LVU615
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  1744              		.cfi_offset 3, -32
  1745              		.cfi_offset 4, -28
  1746              		.cfi_offset 5, -24
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 73
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 73
 
 
  1747              		.cfi_offset 6, -20
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  758:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     hsai->XferSize = Size;
  1788              		.loc 1 758 5 discriminator 2 view .LVU638
  758:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     hsai->XferSize = Size;
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 74
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 74
 
 
  1789              		.loc 1 758 20 is_stmt 0 discriminator 2 view .LVU639
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  1826 006c D269     		ldr	r2, [r2, #28]
  778:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****         }
  1827              		.loc 1 778 17 view .LVU657
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 75
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 75
 
 
  1828 006e 636E     		ldr	r3, [r4, #100]
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  1865 0096 5169     		ldr	r1, [r2, #20]
  774:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****       {
  1866              		.loc 1 774 9 view .LVU675
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 76
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 76
 
 
  1867 0098 11F4E02F 		tst	r1, #458752
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  795:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****         {
  1905              		.loc 1 795 57 discriminator 2 view .LVU692
  1906 00c4 A842     		cmp	r0, r5
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 77
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 77
 
 
  1907 00c6 E2D9     		bls	.L135
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  1945 00fc 84F87D30 		strb	r3, [r4, #125]
  823:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
  1946              		.loc 1 823 5 is_stmt 1 view .LVU709
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 78
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 78
 
 
  823:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  1993              		.cfi_def_cfa_offset 16
  1994              		.cfi_offset 3, -16
  1995              		.cfi_offset 4, -12
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 79
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 79
 
 
  1996              		.cfi_offset 5, -8
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  2034              		.loc 1 854 5 is_stmt 1 discriminator 2 view .LVU735
  854:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     hsai->XferCount = Size;
  2035              		.loc 1 854 20 is_stmt 0 discriminator 2 view .LVU736
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 80
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 80
 
 
  2036 0030 A4F86800 		strh	r0, [r4, #104]	@ movhi
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  2075 0064 0343     		orrs	r3, r3, r0
  2076 0066 1361     		str	r3, [r2, #16]
  879:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     {
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 81
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 81
 
 
  2077              		.loc 1 879 5 view .LVU752
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  2116              	.L155:
  845:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   }
  2117              		.loc 1 845 13 view .LVU768
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 82
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 82
 
 
  2118 0094 0120     		movs	r0, #1
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  2167 0004 1046     		mov	r0, r2
  2168              	.LVL127:
  905:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   {
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 83
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 83
 
 
  2169              		.loc 1 905 31 view .LVU776
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  2206              		.loc 1 918 5 is_stmt 1 discriminator 2 view .LVU793
  918:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     hsai->State = HAL_SAI_STATE_BUSY_RX;
  2207              		.loc 1 918 21 is_stmt 0 discriminator 2 view .LVU794
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 84
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 84
 
 
  2208 0038 0023     		movs	r3, #0
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  938:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     {
  2247              		.loc 1 938 7 view .LVU810
  2248 0066 12F4803F 		tst	r2, #65536
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 85
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 85
 
 
  2249 006a 03D1     		bne	.L167
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  2289              	.L169:
  951:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   }
  2290              		.loc 1 951 12 view .LVU825
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 86
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 86
 
 
  2291 0092 0220     		movs	r0, #2
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  970:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
  2338              		.loc 1 970 3 is_stmt 1 discriminator 2 view .LVU835
  970:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 87
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 87
 
 
  2339              		.loc 1 970 3 discriminator 2 view .LVU836
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  987:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
  2384              		.loc 1 987 3 discriminator 2 view .LVU848
  987:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 88
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 88
 
 
  2385              		.loc 1 987 7 is_stmt 0 discriminator 2 view .LVU849
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  2426              		.align	1
  2427              		.global	HAL_SAI_DMAStop
  2428              		.syntax unified
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 89
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 89
 
 
  2429              		.thumb
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  2471              		.loc 1 1019 5 discriminator 2 view .LVU876
  2472 001e 68B3     		cbz	r0, .L187
 1019:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   {
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 90
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 90
 
 
  2473              		.loc 1 1019 37 discriminator 1 view .LVU877
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  2513              		.loc 1 1056 3 view .LVU891
 1058:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** }
  2514              		.loc 1 1058 3 view .LVU892
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 91
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 91
 
 
  2515              	.LVL148:
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  2555 0080 0025     		movs	r5, #0
  2556 0082 D3E7     		b	.L184
  2557              	.LVL153:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 92
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 92
 
 
  2558              	.L192:
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  2602              	.LFB150:
 1068:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   HAL_StatusTypeDef status = HAL_OK;
  2603              		.loc 1 1068 1 is_stmt 1 view -0
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 93
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 93
 
 
  2604              		.cfi_startproc
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 1081:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     {
  2644              		.loc 1 1081 7 view .LVU934
  2645 0026 60B3     		cbz	r0, .L199
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 94
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 94
 
 
 1081:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     {
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  2683              		.loc 1 1103 11 view .LVU951
 1103:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****         }
  2684              		.loc 1 1103 27 is_stmt 0 view .LVU952
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 95
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 95
 
 
  2685 0050 D4F88030 		ldr	r3, [r4, #128]
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  2725              		.loc 1 1069 21 view .LVU966
  2726 0086 0026     		movs	r6, #0
  2727 0088 D4E7     		b	.L196
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 96
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 96
 
 
  2728              	.LVL167:
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  2766              		.loc 1 1125 1 is_stmt 0 view .LVU982
  2767 00b4 3046     		mov	r0, r6
  2768 00b6 70BD     		pop	{r4, r5, r6, pc}
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 97
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 97
 
 
  2769              	.LVL171:
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 1142:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   {
  2816              		.loc 1 1142 10 is_stmt 0 view .LVU992
  2817 0016 94F87D50 		ldrb	r5, [r4, #125]	@ zero_extendqisi2
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 98
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 98
 
 
  2818 001a EDB2     		uxtb	r5, r5
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 1154:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
  2854              		.loc 1 1154 40 discriminator 2 view .LVU1011
  2855 0048 1164     		str	r1, [r2, #64]
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 99
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 99
 
 
  2856              	.LVL175:
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  2893              		.loc 1 1168 7 view .LVU1028
 1169:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     }
  2894              		.loc 1 1169 7 view .LVU1029
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 100
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 100
 
 
 1169:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     }
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  2934 00a8 3546     		mov	r5, r6
  2935 00aa 00E0     		b	.L205
  2936              	.LVL179:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 101
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 101
 
 
  2937              	.L208:
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  2986              		.loc 1 1207 3 is_stmt 1 view .LVU1051
 1207:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   {
  2987              		.loc 1 1207 31 is_stmt 0 view .LVU1052
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 102
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 102
 
 
  2988 0002 1346     		mov	r3, r2
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 1220:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     hsai->State = HAL_SAI_STATE_BUSY_RX;
  3026              		.loc 1 1220 5 is_stmt 1 discriminator 2 view .LVU1069
 1220:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     hsai->State = HAL_SAI_STATE_BUSY_RX;
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 103
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 103
 
 
  3027              		.loc 1 1220 21 is_stmt 0 discriminator 2 view .LVU1070
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  3063              		.loc 1 1236 8 discriminator 2 view .LVU1088
  3064 005c B4F86830 		ldrh	r3, [r4, #104]
  3065 0060 626E     		ldr	r2, [r4, #100]
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 104
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 104
 
 
  3066 0062 1C31     		adds	r1, r1, #28
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  3106              		.loc 1 1253 5 view .LVU1102
 1253:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
  3107              		.loc 1 1253 9 is_stmt 0 view .LVU1103
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 105
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 105
 
 
  3108 0098 2268     		ldr	r2, [r4]
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  3153              		.thumb
  3154              		.thumb_func
  3155              		.fpu fpv5-sp-d16
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 106
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 106
 
 
  3157              	HAL_SAI_EnableTxMuteMode:
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  3198              	.LFE153:
  3200              		.section	.text.HAL_SAI_DisableTxMuteMode,"ax",%progbits
  3201              		.align	1
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 107
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 107
 
 
  3202              		.global	HAL_SAI_DisableTxMuteMode
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  3248              		.fpu fpv5-sp-d16
  3250              	HAL_SAI_EnableRxMuteMode:
  3251              	.LVL201:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 108
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 108
 
 
  3252              	.LFB155:
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  3292 0022 0268     		ldr	r2, [r0]
  3293 0024 1369     		ldr	r3, [r2, #16]
  3294 0026 43F00203 		orr	r3, r3, #2
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 109
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 109
 
 
  3295 002a 1361     		str	r3, [r2, #16]
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  3340 000c 4367     		str	r3, [r0, #116]
 1340:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     return HAL_OK;
  3341              		.loc 1 1340 5 is_stmt 1 view .LVU1162
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 110
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 110
 
 
  3342 000e 0168     		ldr	r1, [r0]
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 1910:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** static void SAI_Transmit_IT8Bit(SAI_HandleTypeDef *hsai)
 1911:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** {
 1912:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   if(hsai->XferCount == 0)
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 111
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 111
 
 
 1913:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   {
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  3393              	.LCFI20:
  3394              		.cfi_def_cfa_offset 8
  3395              		.cfi_offset 4, -8
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 112
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 112
 
 
  3396              		.cfi_offset 14, -4
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 1965:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     hsai->State = HAL_SAI_STATE_READY;
  3433              		.loc 1 1965 5 is_stmt 0 view .LVU1186
  3434 002a 2268     		ldr	r2, [r4]
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 113
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 113
 
 
  3435 002c 1369     		ldr	r3, [r2, #16]
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  3480 000c 0368     		ldr	r3, [r0]
 1947:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     hsai->pBuffPtr+=2;
  3481              		.loc 1 1947 26 view .LVU1198
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 114
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 114
 
 
  3482 000e 1288     		ldrh	r2, [r2]
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  3525              		.syntax unified
  3526              		.thumb
  3527              		.thumb_func
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 115
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 115
 
 
  3528              		.fpu fpv5-sp-d16
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 1926:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
  3569              		.loc 1 1926 1 view .LVU1225
  3570 0020 10BD     		pop	{r4, pc}
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 116
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 116
 
 
  3571              	.LVL223:
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 1995:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
 1996:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     /* Clear the SAI Overrun flag */
 1997:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     __HAL_SAI_CLEAR_FLAG(hsai, SAI_FLAG_OVRUDR);
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 117
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 117
 
 
 1998:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 2052:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     hsai->State = HAL_SAI_STATE_READY;
 2053:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     HAL_SAI_RxCpltCallback(hsai);
 2054:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   }
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 118
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 118
 
 
 2055:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** }
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  3637              		.loc 1 2075 5 is_stmt 1 view .LVU1244
  3638 001e 2046     		mov	r0, r4
  3639              	.LVL228:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 119
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 119
 
 
  3640              		.loc 1 2075 5 is_stmt 0 view .LVU1245
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  3689              		.fpu fpv5-sp-d16
  3691              	SAI_DMATxHalfCplt:
  3692              	.LVL232:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 120
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 120
 
 
  3693              	.LFB177:
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 1558:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
  3734              		.loc 1 1558 1 is_stmt 0 view .LVU1262
  3735 0000 7047     		bx	lr
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 121
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 121
 
 
  3736              		.cfi_endproc
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 2037:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   /* Receive data */
  3779              		.loc 1 2037 1 view .LVU1276
  3780 001e 10B5     		push	{r4, lr}
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 122
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 122
 
 
  3781              	.LCFI25:
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 2013:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   hsai->pBuffPtr+=2;
  3827              		.loc 1 2013 36 is_stmt 0 view .LVU1287
  3828 0000 0368     		ldr	r3, [r0]
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 123
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 123
 
 
 2013:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   hsai->pBuffPtr+=2;
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  3869 0032 2268     		ldr	r2, [r4]
  3870 0034 0123     		movs	r3, #1
  3871 0036 9361     		str	r3, [r2, #24]
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 124
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 124
 
 
 2026:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     HAL_SAI_RxCpltCallback(hsai);
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 1988:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
  3914              		.loc 1 1988 18 view .LVU1316
  3915 0010 013B     		subs	r3, r3, #1
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 125
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 125
 
 
  3916 0012 9BB2     		uxth	r3, r3
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  3960              		.thumb_func
  3961              		.fpu fpv5-sp-d16
  3963              	SAI_DMARxCplt:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 126
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 126
 
 
  3964              	.LVL246:
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  4000 001e 2046     		mov	r0, r4
  4001              	.LVL248:
  4002              		.loc 1 2111 5 is_stmt 0 view .LVU1342
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 127
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 127
 
 
  4003 0020 FFF7FEFF 		bl	SAI_InterruptFlag
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  4053              	SAI_DMARxHalfCplt:
  4054              	.LVL252:
  4055              	.LFB179:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 128
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 128
 
 
 2117:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  4096              		.loc 1 1590 1 is_stmt 0 view .LVU1359
  4097 0000 7047     		bx	lr
  4098              		.cfi_endproc
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 129
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 129
 
 
  4099              	.LFE162:
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  4141 001a 5B6D     		ldr	r3, [r3, #84]
  4142              		.loc 1 2143 52 discriminator 1 view .LVU1372
  4143 001c 012B     		cmp	r3, #1
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 130
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 130
 
 
  4144 001e 03D0     		beq	.L296
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  4173              		.loc 1 2155 21 is_stmt 0 view .LVU1383
  4174 003e 0023     		movs	r3, #0
  4175 0040 A4F86A30 		strh	r3, [r4, #106]	@ movhi
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 131
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 131
 
 
  4176 0044 ECE7     		b	.L297
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  4220              		.loc 1 1358 14 is_stmt 0 view .LVU1395
  4221 0014 1068     		ldr	r0, [r2]
  4222              	.LVL267:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 132
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 132
 
 
 1359:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** 
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  4261              		.loc 1 1372 7 is_stmt 1 view .LVU1411
 1372:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****       /* Change the SAI error code */
  4262              		.loc 1 1372 24 is_stmt 0 view .LVU1412
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 133
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 133
 
 
  4263 003a 94F87D30 		ldrb	r3, [r4, #125]	@ zero_extendqisi2
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 1384:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****       {
  4304              		.loc 1 1384 14 is_stmt 0 view .LVU1426
  4305 006c 636F     		ldr	r3, [r4, #116]
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 134
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 134
 
 
 1384:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****       {
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  4343              		.loc 1 1405 11 is_stmt 1 view .LVU1443
  4344 009c E06E     		ldr	r0, [r4, #108]
  4345              	.LVL282:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 135
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 135
 
 
 1405:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****         }
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  4386              		.loc 1 1425 10 view .LVU1457
 1425:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****     {
  4387              		.loc 1 1425 12 is_stmt 0 view .LVU1458
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 136
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 136
 
 
  4388 00c4 13F0400F 		tst	r3, #64
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 1441:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****         {
  4426              		.loc 1 1441 16 view .LVU1475
  4427 00f4 002B     		cmp	r3, #0
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 137
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 137
 
 
  4428 00f6 97D0     		beq	.L299
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  4468 0122 43F02003 		orr	r3, r3, #32
  4469 0126 C4F88030 		str	r3, [r4, #128]
 1465:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****       {
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 138
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 138
 
 
  4470              		.loc 1 1465 7 is_stmt 1 view .LVU1490
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  4508              		.loc 1 1483 9 is_stmt 1 view .LVU1506
 1483:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****         hsai->Instance->CLRFR = 0xFFFFFFFFU;
  4509              		.loc 1 1483 29 is_stmt 0 view .LVU1507
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 139
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 139
 
 
  4510 014a 0023     		movs	r3, #0
@@ -8338,7 +8338,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  4548              		.loc 1 1501 7 is_stmt 1 view .LVU1523
 1501:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****       /* the transfer is not stopped, we will forward the information to the user and we let the us
  4549              		.loc 1 1501 23 is_stmt 0 view .LVU1524
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 140
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 140
 
 
  4550 017c D4F88030 		ldr	r3, [r4, #128]
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  4592              		.loc 1 2168 1 is_stmt 0 view .LVU1531
  4593 0000 10B5     		push	{r4, lr}
  4594              	.LCFI33:
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 141
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 141
 
 
  4595              		.cfi_def_cfa_offset 8
@@ -8458,7 +8458,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  4630              		.loc 1 2187 15 is_stmt 0 view .LVU1547
  4631 0024 0123     		movs	r3, #1
  4632 0026 84F87D30 		strb	r3, [r4, #125]
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 142
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 142
 
 
 2188:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c ****   
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
 1620:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sai.c **** }
  4677              		.loc 1 1620 14 is_stmt 0 view .LVU1557
  4678 0000 90F87D00 		ldrb	r0, [r0, #125]	@ zero_extendqisi2
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 143
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 143
 
 
  4679              	.LVL326:
@@ -8571,113 +8571,113 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 1
  4724              		.file 14 "Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_sai.h"
  4725              		.file 15 "Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h"
  4726              		.file 16 "Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc_ex.h"
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 144
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 144
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32f7xx_hal_sai.c
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:18     .text.SAI_InitI2S:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:25     .text.SAI_InitI2S:00000000 SAI_InitI2S
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:121    .text.SAI_InitI2S:00000062 $d
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:125    .text.SAI_InitI2S:00000066 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:299    .text.SAI_InitPCM:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:305    .text.SAI_InitPCM:00000000 SAI_InitPCM
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:385    .text.SAI_InitPCM:0000004c $d
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:390    .text.SAI_InitPCM:00000050 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:524    .text.SAI_FillFifo:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:530    .text.SAI_FillFifo:00000000 SAI_FillFifo
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:623    .text.SAI_InterruptFlag:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:629    .text.SAI_InterruptFlag:00000000 SAI_InterruptFlag
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:699    .text.SAI_Disable:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:705    .text.SAI_Disable:00000000 SAI_Disable
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:772    .text.SAI_Disable:0000003c $d
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:778    .text.HAL_SAI_MspInit:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:785    .text.HAL_SAI_MspInit:00000000 HAL_SAI_MspInit
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:800    .text.HAL_SAI_Init:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:807    .text.HAL_SAI_Init:00000000 HAL_SAI_Init
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:1269   .text.HAL_SAI_Init:000001e0 $d
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:1283   .text.HAL_SAI_InitProtocol:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:1290   .text.HAL_SAI_InitProtocol:00000000 HAL_SAI_InitProtocol
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:1359   .text.HAL_SAI_MspDeInit:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:1366   .text.HAL_SAI_MspDeInit:00000000 HAL_SAI_MspDeInit
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:1381   .text.HAL_SAI_DeInit:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:1388   .text.HAL_SAI_DeInit:00000000 HAL_SAI_DeInit
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:1467   .text.HAL_SAI_Transmit:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:1474   .text.HAL_SAI_Transmit:00000000 HAL_SAI_Transmit
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:1726   .text.HAL_SAI_Receive:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:1733   .text.HAL_SAI_Receive:00000000 HAL_SAI_Receive
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:1976   .text.HAL_SAI_Transmit_IT:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:1983   .text.HAL_SAI_Transmit_IT:00000000 HAL_SAI_Transmit_IT
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:2135   .text.HAL_SAI_Transmit_IT:000000a0 $d
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:3457   .text.SAI_Transmit_IT16Bit:00000000 SAI_Transmit_IT16Bit
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:3530   .text.SAI_Transmit_IT8Bit:00000000 SAI_Transmit_IT8Bit
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:3384   .text.SAI_Transmit_IT32Bit:00000000 SAI_Transmit_IT32Bit
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:2142   .text.HAL_SAI_Receive_IT:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:2149   .text.HAL_SAI_Receive_IT:00000000 HAL_SAI_Receive_IT
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:2300   .text.HAL_SAI_Receive_IT:0000009c $d
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:3819   .text.SAI_Receive_IT16Bit:00000000 SAI_Receive_IT16Bit
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:3892   .text.SAI_Receive_IT8Bit:00000000 SAI_Receive_IT8Bit
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:3746   .text.SAI_Receive_IT32Bit:00000000 SAI_Receive_IT32Bit
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:2307   .text.HAL_SAI_DMAPause:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:2314   .text.HAL_SAI_DMAPause:00000000 HAL_SAI_DMAPause
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:2360   .text.HAL_SAI_DMAResume:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:2367   .text.HAL_SAI_DMAResume:00000000 HAL_SAI_DMAResume
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:2426   .text.HAL_SAI_DMAStop:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:2433   .text.HAL_SAI_DMAStop:00000000 HAL_SAI_DMAStop
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:2593   .text.HAL_SAI_Abort:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:2600   .text.HAL_SAI_Abort:00000000 HAL_SAI_Abort
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:2778   .text.HAL_SAI_Transmit_DMA:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:2785   .text.HAL_SAI_Transmit_DMA:00000000 HAL_SAI_Transmit_DMA
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:2957   .text.HAL_SAI_Transmit_DMA:000000bc $d
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:3691   .text.SAI_DMATxHalfCplt:00000000 SAI_DMATxHalfCplt
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:3601   .text.SAI_DMATxCplt:00000000 SAI_DMATxCplt
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s 			page 145
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:18     .text.SAI_InitI2S:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:25     .text.SAI_InitI2S:00000000 SAI_InitI2S
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:121    .text.SAI_InitI2S:00000062 $d
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:125    .text.SAI_InitI2S:00000066 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:299    .text.SAI_InitPCM:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:305    .text.SAI_InitPCM:00000000 SAI_InitPCM
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:385    .text.SAI_InitPCM:0000004c $d
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:390    .text.SAI_InitPCM:00000050 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:524    .text.SAI_FillFifo:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:530    .text.SAI_FillFifo:00000000 SAI_FillFifo
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:623    .text.SAI_InterruptFlag:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:629    .text.SAI_InterruptFlag:00000000 SAI_InterruptFlag
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:699    .text.SAI_Disable:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:705    .text.SAI_Disable:00000000 SAI_Disable
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:772    .text.SAI_Disable:0000003c $d
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:778    .text.HAL_SAI_MspInit:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:785    .text.HAL_SAI_MspInit:00000000 HAL_SAI_MspInit
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:800    .text.HAL_SAI_Init:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:807    .text.HAL_SAI_Init:00000000 HAL_SAI_Init
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:1269   .text.HAL_SAI_Init:000001e0 $d
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:1283   .text.HAL_SAI_InitProtocol:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:1290   .text.HAL_SAI_InitProtocol:00000000 HAL_SAI_InitProtocol
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:1359   .text.HAL_SAI_MspDeInit:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:1366   .text.HAL_SAI_MspDeInit:00000000 HAL_SAI_MspDeInit
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:1381   .text.HAL_SAI_DeInit:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:1388   .text.HAL_SAI_DeInit:00000000 HAL_SAI_DeInit
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:1467   .text.HAL_SAI_Transmit:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:1474   .text.HAL_SAI_Transmit:00000000 HAL_SAI_Transmit
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:1726   .text.HAL_SAI_Receive:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:1733   .text.HAL_SAI_Receive:00000000 HAL_SAI_Receive
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:1976   .text.HAL_SAI_Transmit_IT:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:1983   .text.HAL_SAI_Transmit_IT:00000000 HAL_SAI_Transmit_IT
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:2135   .text.HAL_SAI_Transmit_IT:000000a0 $d
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:3457   .text.SAI_Transmit_IT16Bit:00000000 SAI_Transmit_IT16Bit
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:3530   .text.SAI_Transmit_IT8Bit:00000000 SAI_Transmit_IT8Bit
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:3384   .text.SAI_Transmit_IT32Bit:00000000 SAI_Transmit_IT32Bit
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:2142   .text.HAL_SAI_Receive_IT:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:2149   .text.HAL_SAI_Receive_IT:00000000 HAL_SAI_Receive_IT
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:2300   .text.HAL_SAI_Receive_IT:0000009c $d
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:3819   .text.SAI_Receive_IT16Bit:00000000 SAI_Receive_IT16Bit
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:3892   .text.SAI_Receive_IT8Bit:00000000 SAI_Receive_IT8Bit
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:3746   .text.SAI_Receive_IT32Bit:00000000 SAI_Receive_IT32Bit
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:2307   .text.HAL_SAI_DMAPause:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:2314   .text.HAL_SAI_DMAPause:00000000 HAL_SAI_DMAPause
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:2360   .text.HAL_SAI_DMAResume:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:2367   .text.HAL_SAI_DMAResume:00000000 HAL_SAI_DMAResume
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:2426   .text.HAL_SAI_DMAStop:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:2433   .text.HAL_SAI_DMAStop:00000000 HAL_SAI_DMAStop
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:2593   .text.HAL_SAI_Abort:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:2600   .text.HAL_SAI_Abort:00000000 HAL_SAI_Abort
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:2778   .text.HAL_SAI_Transmit_DMA:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:2785   .text.HAL_SAI_Transmit_DMA:00000000 HAL_SAI_Transmit_DMA
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:2957   .text.HAL_SAI_Transmit_DMA:000000bc $d
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:3691   .text.SAI_DMATxHalfCplt:00000000 SAI_DMATxHalfCplt
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:3601   .text.SAI_DMATxCplt:00000000 SAI_DMATxCplt
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s 			page 145
 
 
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:4108   .text.SAI_DMAError:00000000 SAI_DMAError
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:2964   .text.HAL_SAI_Receive_DMA:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:2971   .text.HAL_SAI_Receive_DMA:00000000 HAL_SAI_Receive_DMA
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:3143   .text.HAL_SAI_Receive_DMA:000000bc $d
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:4053   .text.SAI_DMARxHalfCplt:00000000 SAI_DMARxHalfCplt
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:3963   .text.SAI_DMARxCplt:00000000 SAI_DMARxCplt
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:3150   .text.HAL_SAI_EnableTxMuteMode:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:3157   .text.HAL_SAI_EnableTxMuteMode:00000000 HAL_SAI_EnableTxMuteMode
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:3201   .text.HAL_SAI_DisableTxMuteMode:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:3208   .text.HAL_SAI_DisableTxMuteMode:00000000 HAL_SAI_DisableTxMuteMode
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:3243   .text.HAL_SAI_EnableRxMuteMode:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:3250   .text.HAL_SAI_EnableRxMuteMode:00000000 HAL_SAI_EnableRxMuteMode
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:3310   .text.HAL_SAI_DisableRxMuteMode:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:3317   .text.HAL_SAI_DisableRxMuteMode:00000000 HAL_SAI_DisableRxMuteMode
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:3356   .text.HAL_SAI_TxCpltCallback:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:3363   .text.HAL_SAI_TxCpltCallback:00000000 HAL_SAI_TxCpltCallback
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:3378   .text.SAI_Transmit_IT32Bit:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:3451   .text.SAI_Transmit_IT16Bit:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:3524   .text.SAI_Transmit_IT8Bit:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:3595   .text.SAI_DMATxCplt:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:3663   .text.HAL_SAI_TxHalfCpltCallback:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:3670   .text.HAL_SAI_TxHalfCpltCallback:00000000 HAL_SAI_TxHalfCpltCallback
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:3685   .text.SAI_DMATxHalfCplt:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:3718   .text.HAL_SAI_RxCpltCallback:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:3725   .text.HAL_SAI_RxCpltCallback:00000000 HAL_SAI_RxCpltCallback
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:3740   .text.SAI_Receive_IT32Bit:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:3813   .text.SAI_Receive_IT16Bit:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:3886   .text.SAI_Receive_IT8Bit:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:3957   .text.SAI_DMARxCplt:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:4025   .text.HAL_SAI_RxHalfCpltCallback:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:4032   .text.HAL_SAI_RxHalfCpltCallback:00000000 HAL_SAI_RxHalfCpltCallback
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:4047   .text.SAI_DMARxHalfCplt:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:4080   .text.HAL_SAI_ErrorCallback:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:4087   .text.HAL_SAI_ErrorCallback:00000000 HAL_SAI_ErrorCallback
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:4102   .text.SAI_DMAError:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:4181   .text.HAL_SAI_IRQHandler:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:4188   .text.HAL_SAI_IRQHandler:00000000 HAL_SAI_IRQHandler
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:4574   .text.HAL_SAI_IRQHandler:00000194 $d
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:4585   .text.SAI_DMAAbort:00000000 SAI_DMAAbort
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:4579   .text.SAI_DMAAbort:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:4661   .text.HAL_SAI_GetState:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:4668   .text.HAL_SAI_GetState:00000000 HAL_SAI_GetState
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:4686   .text.HAL_SAI_GetError:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccF3hOVf.s:4693   .text.HAL_SAI_GetError:00000000 HAL_SAI_GetError
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:4108   .text.SAI_DMAError:00000000 SAI_DMAError
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:2964   .text.HAL_SAI_Receive_DMA:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:2971   .text.HAL_SAI_Receive_DMA:00000000 HAL_SAI_Receive_DMA
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:3143   .text.HAL_SAI_Receive_DMA:000000bc $d
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:4053   .text.SAI_DMARxHalfCplt:00000000 SAI_DMARxHalfCplt
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:3963   .text.SAI_DMARxCplt:00000000 SAI_DMARxCplt
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:3150   .text.HAL_SAI_EnableTxMuteMode:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:3157   .text.HAL_SAI_EnableTxMuteMode:00000000 HAL_SAI_EnableTxMuteMode
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:3201   .text.HAL_SAI_DisableTxMuteMode:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:3208   .text.HAL_SAI_DisableTxMuteMode:00000000 HAL_SAI_DisableTxMuteMode
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:3243   .text.HAL_SAI_EnableRxMuteMode:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:3250   .text.HAL_SAI_EnableRxMuteMode:00000000 HAL_SAI_EnableRxMuteMode
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:3310   .text.HAL_SAI_DisableRxMuteMode:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:3317   .text.HAL_SAI_DisableRxMuteMode:00000000 HAL_SAI_DisableRxMuteMode
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:3356   .text.HAL_SAI_TxCpltCallback:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:3363   .text.HAL_SAI_TxCpltCallback:00000000 HAL_SAI_TxCpltCallback
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:3378   .text.SAI_Transmit_IT32Bit:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:3451   .text.SAI_Transmit_IT16Bit:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:3524   .text.SAI_Transmit_IT8Bit:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:3595   .text.SAI_DMATxCplt:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:3663   .text.HAL_SAI_TxHalfCpltCallback:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:3670   .text.HAL_SAI_TxHalfCpltCallback:00000000 HAL_SAI_TxHalfCpltCallback
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:3685   .text.SAI_DMATxHalfCplt:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:3718   .text.HAL_SAI_RxCpltCallback:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:3725   .text.HAL_SAI_RxCpltCallback:00000000 HAL_SAI_RxCpltCallback
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:3740   .text.SAI_Receive_IT32Bit:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:3813   .text.SAI_Receive_IT16Bit:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:3886   .text.SAI_Receive_IT8Bit:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:3957   .text.SAI_DMARxCplt:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:4025   .text.HAL_SAI_RxHalfCpltCallback:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:4032   .text.HAL_SAI_RxHalfCpltCallback:00000000 HAL_SAI_RxHalfCpltCallback
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:4047   .text.SAI_DMARxHalfCplt:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:4080   .text.HAL_SAI_ErrorCallback:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:4087   .text.HAL_SAI_ErrorCallback:00000000 HAL_SAI_ErrorCallback
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:4102   .text.SAI_DMAError:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:4181   .text.HAL_SAI_IRQHandler:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:4188   .text.HAL_SAI_IRQHandler:00000000 HAL_SAI_IRQHandler
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:4574   .text.HAL_SAI_IRQHandler:00000194 $d
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:4585   .text.SAI_DMAAbort:00000000 SAI_DMAAbort
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:4579   .text.SAI_DMAAbort:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:4661   .text.HAL_SAI_GetState:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:4668   .text.HAL_SAI_GetState:00000000 HAL_SAI_GetState
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:4686   .text.HAL_SAI_GetError:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccx1JQLj.s:4693   .text.HAL_SAI_GetError:00000000 HAL_SAI_GetError
 
 UNDEFINED SYMBOLS
 SystemCoreClock

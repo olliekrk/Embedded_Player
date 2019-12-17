@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccfk2Xrm.s 			page 1
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccPK8EGe.s 			page 1
 
 
    1              		.cpu cortex-m7
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccfk2Xrm.s 			page 1
   28:Src/fatfs_platform.c ****   *    microprocessor devices manufactured by or for STMicroelectronics.
   29:Src/fatfs_platform.c ****   * 5. Redistribution and use of this software other than as permitted under 
   30:Src/fatfs_platform.c ****   *    this license is void and will automatically terminate your rights under 
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccfk2Xrm.s 			page 2
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccPK8EGe.s 			page 2
 
 
   31:Src/fatfs_platform.c ****   *    this license. 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccfk2Xrm.s 			page 1
   60:Src/fatfs_platform.c **** }  
   53              		.loc 1 60 1 is_stmt 0 view .LVU7
   54 0010 08BD     		pop	{r3, pc}
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccfk2Xrm.s 			page 3
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccPK8EGe.s 			page 3
 
 
   55              	.L5:
@@ -139,14 +139,14 @@ ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccfk2Xrm.s 			page 1
   71              		.file 9 "c:\\program files (x86)\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi
   72              		.file 10 "c:\\program files (x86)\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include
   73              		.file 11 "Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_gpio.h"
-ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccfk2Xrm.s 			page 4
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccPK8EGe.s 			page 4
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 fatfs_platform.c
-C:\Users\Nina\AppData\Local\Temp\ccfk2Xrm.s:18     .text.BSP_PlatformIsDetected:00000000 $t
-C:\Users\Nina\AppData\Local\Temp\ccfk2Xrm.s:26     .text.BSP_PlatformIsDetected:00000000 BSP_PlatformIsDetected
-C:\Users\Nina\AppData\Local\Temp\ccfk2Xrm.s:58     .text.BSP_PlatformIsDetected:00000014 $d
+C:\Users\Nina\AppData\Local\Temp\ccPK8EGe.s:18     .text.BSP_PlatformIsDetected:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccPK8EGe.s:26     .text.BSP_PlatformIsDetected:00000000 BSP_PlatformIsDetected
+C:\Users\Nina\AppData\Local\Temp\ccPK8EGe.s:58     .text.BSP_PlatformIsDetected:00000014 $d
 
 UNDEFINED SYMBOLS
 HAL_GPIO_ReadPin
