@@ -1,0 +1,1868 @@
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"term_io.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.xatoi,"ax",%progbits
+  18              		.align	1
+  19              		.global	xatoi
+  20              		.arch armv7e-m
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  24              		.fpu fpv5-sp-d16
+  26              	xatoi:
+  27              	.LVL0:
+  28              	.LFB138:
+  29              		.file 1 "Src/term_io.c"
+   1:Src/term_io.c **** // Basic code from ChaN, minor modifications by Martin Thomas
+   2:Src/term_io.c **** // 2011, 2017 minor tuning by RABW
+   3:Src/term_io.c **** 
+   4:Src/term_io.c **** #include <stdarg.h>
+   5:Src/term_io.c **** #include "term_io.h"
+   6:Src/term_io.c **** #include "dbgu.h"
+   7:Src/term_io.c **** #include "stm32f7xx_hal.h"
+   8:Src/term_io.c **** 
+   9:Src/term_io.c **** 
+  10:Src/term_io.c **** int xatoi (char **str, long *res)
+  11:Src/term_io.c **** {
+  30              		.loc 1 11 1 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		@ link register save eliminated.
+  35              		.loc 1 11 1 is_stmt 0 view .LVU1
+  36 0000 70B4     		push	{r4, r5, r6}
+  37              	.LCFI0:
+  38              		.cfi_def_cfa_offset 12
+  39              		.cfi_offset 4, -12
+  40              		.cfi_offset 5, -8
+  41              		.cfi_offset 6, -4
+  12:Src/term_io.c **** 	uint32_t val;
+  42              		.loc 1 12 2 is_stmt 1 view .LVU2
+  13:Src/term_io.c **** 	uint8_t c, radix, s = 0;
+  43              		.loc 1 13 2 view .LVU3
+  44              	.LVL1:
+  14:Src/term_io.c **** 
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s 			page 2
+
+
+  15:Src/term_io.c **** 
+  16:Src/term_io.c **** 	while ((c = **str) == ' ') (*str)++;
+  45              		.loc 1 16 2 view .LVU4
+  46              	.L2:
+  47              		.loc 1 16 8 discriminator 1 view .LVU5
+  48              		.loc 1 16 15 is_stmt 0 discriminator 1 view .LVU6
+  49 0002 0268     		ldr	r2, [r0]
+  50              		.loc 1 16 12 discriminator 1 view .LVU7
+  51 0004 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  52              	.LVL2:
+  53              		.loc 1 16 8 discriminator 1 view .LVU8
+  54 0006 202B     		cmp	r3, #32
+  55 0008 02D1     		bne	.L22
+  56              		.loc 1 16 29 is_stmt 1 discriminator 2 view .LVU9
+  57              		.loc 1 16 35 is_stmt 0 discriminator 2 view .LVU10
+  58 000a 0132     		adds	r2, r2, #1
+  59 000c 0260     		str	r2, [r0]
+  60 000e F8E7     		b	.L2
+  61              	.L22:
+  17:Src/term_io.c **** 	if (c == '-') {
+  62              		.loc 1 17 2 is_stmt 1 view .LVU11
+  63              		.loc 1 17 5 is_stmt 0 view .LVU12
+  64 0010 2D2B     		cmp	r3, #45
+  65 0012 0AD0     		beq	.L23
+  13:Src/term_io.c **** 	uint8_t c, radix, s = 0;
+  66              		.loc 1 13 20 view .LVU13
+  67 0014 0026     		movs	r6, #0
+  68              	.LVL3:
+  69              	.L4:
+  18:Src/term_io.c **** 		s = 1;
+  19:Src/term_io.c **** 		c = *(++(*str));
+  20:Src/term_io.c **** 	}
+  21:Src/term_io.c **** 	if (c == '0') {
+  70              		.loc 1 21 2 is_stmt 1 view .LVU14
+  71              		.loc 1 21 5 is_stmt 0 view .LVU15
+  72 0016 302B     		cmp	r3, #48
+  73 0018 0CD0     		beq	.L24
+  22:Src/term_io.c **** 		c = *(++(*str));
+  23:Src/term_io.c **** 		if (c <= ' ') {
+  24:Src/term_io.c **** 			*res = 0; return 1;
+  25:Src/term_io.c **** 		}
+  26:Src/term_io.c **** 		if (c == 'x') {
+  27:Src/term_io.c **** 			radix = 16;
+  28:Src/term_io.c **** 			c = *(++(*str));
+  29:Src/term_io.c **** 		} else {
+  30:Src/term_io.c **** 			if (c == 'b') {
+  31:Src/term_io.c **** 				radix = 2;
+  32:Src/term_io.c **** 				c = *(++(*str));
+  33:Src/term_io.c **** 			} else {
+  34:Src/term_io.c **** 				if ((c >= '0')&&(c <= '9'))
+  35:Src/term_io.c **** 					radix = 8;
+  36:Src/term_io.c **** 				else
+  37:Src/term_io.c **** 					return 0;
+  38:Src/term_io.c **** 			}
+  39:Src/term_io.c **** 		}
+  40:Src/term_io.c **** 	} else {
+  41:Src/term_io.c **** 		if ((c < '1')||(c > '9'))
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s 			page 3
+
+
+  74              		.loc 1 41 3 is_stmt 1 view .LVU16
+  75              		.loc 1 41 16 is_stmt 0 view .LVU17
+  76 001a A3F13102 		sub	r2, r3, #49
+  77 001e D2B2     		uxtb	r2, r2
+  78              		.loc 1 41 6 view .LVU18
+  79 0020 082A     		cmp	r2, #8
+  80 0022 47D8     		bhi	.L18
+  42:Src/term_io.c **** 			return 0;
+  43:Src/term_io.c **** 		radix = 10;
+  81              		.loc 1 43 9 view .LVU19
+  82 0024 0A25     		movs	r5, #10
+  83              	.L9:
+  84              	.LVL4:
+  44:Src/term_io.c **** 	}
+  45:Src/term_io.c **** 	val = 0;
+  85              		.loc 1 45 2 is_stmt 1 view .LVU20
+  46:Src/term_io.c **** 	while (c > ' ') {
+  86              		.loc 1 46 2 view .LVU21
+  45:Src/term_io.c **** 	while (c > ' ') {
+  87              		.loc 1 45 6 is_stmt 0 view .LVU22
+  88 0026 0024     		movs	r4, #0
+  89              		.loc 1 46 8 view .LVU23
+  90 0028 2DE0     		b	.L11
+  91              	.LVL5:
+  92              	.L23:
+  18:Src/term_io.c **** 		c = *(++(*str));
+  93              		.loc 1 18 3 is_stmt 1 view .LVU24
+  19:Src/term_io.c **** 	}
+  94              		.loc 1 19 3 view .LVU25
+  19:Src/term_io.c **** 	}
+  95              		.loc 1 19 9 is_stmt 0 view .LVU26
+  96 002a 531C     		adds	r3, r2, #1
+  97              	.LVL6:
+  19:Src/term_io.c **** 	}
+  98              		.loc 1 19 5 view .LVU27
+  99 002c 0360     		str	r3, [r0]
+ 100              	.LVL7:
+  19:Src/term_io.c **** 	}
+ 101              		.loc 1 19 5 view .LVU28
+ 102 002e 5378     		ldrb	r3, [r2, #1]	@ zero_extendqisi2
+ 103              	.LVL8:
+  18:Src/term_io.c **** 		c = *(++(*str));
+ 104              		.loc 1 18 5 view .LVU29
+ 105 0030 0126     		movs	r6, #1
+ 106 0032 F0E7     		b	.L4
+ 107              	.LVL9:
+ 108              	.L24:
+  22:Src/term_io.c **** 		if (c <= ' ') {
+ 109              		.loc 1 22 3 is_stmt 1 view .LVU30
+  22:Src/term_io.c **** 		if (c <= ' ') {
+ 110              		.loc 1 22 12 is_stmt 0 view .LVU31
+ 111 0034 0368     		ldr	r3, [r0]
+ 112              	.LVL10:
+  22:Src/term_io.c **** 		if (c <= ' ') {
+ 113              		.loc 1 22 9 view .LVU32
+ 114 0036 5A1C     		adds	r2, r3, #1
+  22:Src/term_io.c **** 		if (c <= ' ') {
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s 			page 4
+
+
+ 115              		.loc 1 22 5 view .LVU33
+ 116 0038 0260     		str	r2, [r0]
+ 117 003a 5B78     		ldrb	r3, [r3, #1]	@ zero_extendqisi2
+ 118              	.LVL11:
+  23:Src/term_io.c **** 			*res = 0; return 1;
+ 119              		.loc 1 23 3 is_stmt 1 view .LVU34
+  23:Src/term_io.c **** 			*res = 0; return 1;
+ 120              		.loc 1 23 6 is_stmt 0 view .LVU35
+ 121 003c 202B     		cmp	r3, #32
+ 122 003e 0AD9     		bls	.L25
+  26:Src/term_io.c **** 			radix = 16;
+ 123              		.loc 1 26 3 is_stmt 1 view .LVU36
+  26:Src/term_io.c **** 			radix = 16;
+ 124              		.loc 1 26 6 is_stmt 0 view .LVU37
+ 125 0040 782B     		cmp	r3, #120
+ 126 0042 0CD0     		beq	.L26
+  30:Src/term_io.c **** 				radix = 2;
+ 127              		.loc 1 30 4 is_stmt 1 view .LVU38
+  30:Src/term_io.c **** 				radix = 2;
+ 128              		.loc 1 30 7 is_stmt 0 view .LVU39
+ 129 0044 622B     		cmp	r3, #98
+ 130 0046 0FD0     		beq	.L27
+  34:Src/term_io.c **** 					radix = 8;
+ 131              		.loc 1 34 5 is_stmt 1 view .LVU40
+  34:Src/term_io.c **** 					radix = 8;
+ 132              		.loc 1 34 19 is_stmt 0 view .LVU41
+ 133 0048 A3F13002 		sub	r2, r3, #48
+ 134 004c D2B2     		uxtb	r2, r2
+  34:Src/term_io.c **** 					radix = 8;
+ 135              		.loc 1 34 8 view .LVU42
+ 136 004e 092A     		cmp	r2, #9
+ 137 0050 0FD8     		bhi	.L28
+  35:Src/term_io.c **** 				else
+ 138              		.loc 1 35 12 view .LVU43
+ 139 0052 0825     		movs	r5, #8
+ 140 0054 E7E7     		b	.L9
+ 141              	.L25:
+  24:Src/term_io.c **** 		}
+ 142              		.loc 1 24 4 is_stmt 1 view .LVU44
+  24:Src/term_io.c **** 		}
+ 143              		.loc 1 24 9 is_stmt 0 view .LVU45
+ 144 0056 0023     		movs	r3, #0
+ 145              	.LVL12:
+  24:Src/term_io.c **** 		}
+ 146              		.loc 1 24 9 view .LVU46
+ 147 0058 0B60     		str	r3, [r1]
+ 148              	.LVL13:
+  24:Src/term_io.c **** 		}
+ 149              		.loc 1 24 14 is_stmt 1 view .LVU47
+  24:Src/term_io.c **** 		}
+ 150              		.loc 1 24 21 is_stmt 0 view .LVU48
+ 151 005a 0120     		movs	r0, #1
+ 152              	.LVL14:
+  24:Src/term_io.c **** 		}
+ 153              		.loc 1 24 21 view .LVU49
+ 154 005c 28E0     		b	.L1
+ 155              	.LVL15:
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s 			page 5
+
+
+ 156              	.L26:
+  27:Src/term_io.c **** 			c = *(++(*str));
+ 157              		.loc 1 27 4 is_stmt 1 view .LVU50
+  28:Src/term_io.c **** 		} else {
+ 158              		.loc 1 28 4 view .LVU51
+  28:Src/term_io.c **** 		} else {
+ 159              		.loc 1 28 10 is_stmt 0 view .LVU52
+ 160 005e 531C     		adds	r3, r2, #1
+ 161              	.LVL16:
+  28:Src/term_io.c **** 		} else {
+ 162              		.loc 1 28 6 view .LVU53
+ 163 0060 0360     		str	r3, [r0]
+ 164              	.LVL17:
+  28:Src/term_io.c **** 		} else {
+ 165              		.loc 1 28 6 view .LVU54
+ 166 0062 5378     		ldrb	r3, [r2, #1]	@ zero_extendqisi2
+ 167              	.LVL18:
+  27:Src/term_io.c **** 			c = *(++(*str));
+ 168              		.loc 1 27 10 view .LVU55
+ 169 0064 1025     		movs	r5, #16
+ 170 0066 DEE7     		b	.L9
+ 171              	.LVL19:
+ 172              	.L27:
+  31:Src/term_io.c **** 				c = *(++(*str));
+ 173              		.loc 1 31 5 is_stmt 1 view .LVU56
+  32:Src/term_io.c **** 			} else {
+ 174              		.loc 1 32 5 view .LVU57
+  32:Src/term_io.c **** 			} else {
+ 175              		.loc 1 32 11 is_stmt 0 view .LVU58
+ 176 0068 531C     		adds	r3, r2, #1
+ 177              	.LVL20:
+  32:Src/term_io.c **** 			} else {
+ 178              		.loc 1 32 7 view .LVU59
+ 179 006a 0360     		str	r3, [r0]
+ 180              	.LVL21:
+  32:Src/term_io.c **** 			} else {
+ 181              		.loc 1 32 7 view .LVU60
+ 182 006c 5378     		ldrb	r3, [r2, #1]	@ zero_extendqisi2
+ 183              	.LVL22:
+  31:Src/term_io.c **** 				c = *(++(*str));
+ 184              		.loc 1 31 11 view .LVU61
+ 185 006e 0225     		movs	r5, #2
+ 186 0070 D9E7     		b	.L9
+ 187              	.LVL23:
+ 188              	.L28:
+  37:Src/term_io.c **** 			}
+ 189              		.loc 1 37 13 view .LVU62
+ 190 0072 0020     		movs	r0, #0
+ 191              	.LVL24:
+  37:Src/term_io.c **** 			}
+ 192              		.loc 1 37 13 view .LVU63
+ 193 0074 1CE0     		b	.L1
+ 194              	.LVL25:
+ 195              	.L13:
+  47:Src/term_io.c **** 		if (c >= 'a') c -= 0x20;
+  48:Src/term_io.c **** 		c -= '0';
+  49:Src/term_io.c **** 		if (c >= 17) {
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s 			page 6
+
+
+  50:Src/term_io.c **** 			c -= 7;
+  51:Src/term_io.c **** 			if (c <= 9) return 0;
+  52:Src/term_io.c **** 		}
+  53:Src/term_io.c **** 		if (c >= radix) return 0;
+ 196              		.loc 1 53 3 is_stmt 1 view .LVU64
+ 197              		.loc 1 53 6 is_stmt 0 view .LVU65
+ 198 0076 AA42     		cmp	r2, r5
+ 199 0078 1ED2     		bcs	.L20
+  54:Src/term_io.c **** 		val = val * radix + c;
+ 200              		.loc 1 54 3 is_stmt 1 view .LVU66
+ 201              		.loc 1 54 7 is_stmt 0 view .LVU67
+ 202 007a 04FB0524 		mla	r4, r4, r5, r2
+ 203              	.LVL26:
+  55:Src/term_io.c **** 		c = *(++(*str));
+ 204              		.loc 1 55 3 is_stmt 1 view .LVU68
+ 205              		.loc 1 55 12 is_stmt 0 view .LVU69
+ 206 007e 0368     		ldr	r3, [r0]
+ 207              		.loc 1 55 9 view .LVU70
+ 208 0080 5A1C     		adds	r2, r3, #1
+ 209              	.LVL27:
+ 210              		.loc 1 55 5 view .LVU71
+ 211 0082 0260     		str	r2, [r0]
+ 212 0084 5B78     		ldrb	r3, [r3, #1]	@ zero_extendqisi2
+ 213              	.LVL28:
+ 214              	.L11:
+  46:Src/term_io.c **** 		if (c >= 'a') c -= 0x20;
+ 215              		.loc 1 46 8 is_stmt 1 view .LVU72
+ 216 0086 202B     		cmp	r3, #32
+ 217 0088 0ED9     		bls	.L29
+  47:Src/term_io.c **** 		c -= '0';
+ 218              		.loc 1 47 3 view .LVU73
+  47:Src/term_io.c **** 		c -= '0';
+ 219              		.loc 1 47 6 is_stmt 0 view .LVU74
+ 220 008a 602B     		cmp	r3, #96
+ 221 008c 01D9     		bls	.L12
+  47:Src/term_io.c **** 		c -= '0';
+ 222              		.loc 1 47 17 is_stmt 1 discriminator 1 view .LVU75
+  47:Src/term_io.c **** 		c -= '0';
+ 223              		.loc 1 47 19 is_stmt 0 discriminator 1 view .LVU76
+ 224 008e 203B     		subs	r3, r3, #32
+ 225              	.LVL29:
+  47:Src/term_io.c **** 		c -= '0';
+ 226              		.loc 1 47 19 discriminator 1 view .LVU77
+ 227 0090 DBB2     		uxtb	r3, r3
+ 228              	.LVL30:
+ 229              	.L12:
+  48:Src/term_io.c **** 		if (c >= 17) {
+ 230              		.loc 1 48 3 is_stmt 1 view .LVU78
+  48:Src/term_io.c **** 		if (c >= 17) {
+ 231              		.loc 1 48 5 is_stmt 0 view .LVU79
+ 232 0092 A3F13002 		sub	r2, r3, #48
+ 233 0096 D2B2     		uxtb	r2, r2
+ 234              	.LVL31:
+  49:Src/term_io.c **** 			c -= 7;
+ 235              		.loc 1 49 3 is_stmt 1 view .LVU80
+  49:Src/term_io.c **** 			c -= 7;
+ 236              		.loc 1 49 6 is_stmt 0 view .LVU81
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s 			page 7
+
+
+ 237 0098 102A     		cmp	r2, #16
+ 238 009a ECD9     		bls	.L13
+  50:Src/term_io.c **** 			if (c <= 9) return 0;
+ 239              		.loc 1 50 4 is_stmt 1 view .LVU82
+  50:Src/term_io.c **** 			if (c <= 9) return 0;
+ 240              		.loc 1 50 6 is_stmt 0 view .LVU83
+ 241 009c 373B     		subs	r3, r3, #55
+ 242 009e DAB2     		uxtb	r2, r3
+ 243              	.LVL32:
+  51:Src/term_io.c **** 		}
+ 244              		.loc 1 51 4 is_stmt 1 view .LVU84
+  51:Src/term_io.c **** 		}
+ 245              		.loc 1 51 7 is_stmt 0 view .LVU85
+ 246 00a0 092A     		cmp	r2, #9
+ 247 00a2 E8D8     		bhi	.L13
+  51:Src/term_io.c **** 		}
+ 248              		.loc 1 51 23 view .LVU86
+ 249 00a4 0020     		movs	r0, #0
+ 250              	.LVL33:
+  51:Src/term_io.c **** 		}
+ 251              		.loc 1 51 23 view .LVU87
+ 252 00a6 03E0     		b	.L1
+ 253              	.LVL34:
+ 254              	.L29:
+  56:Src/term_io.c **** 	}
+  57:Src/term_io.c **** 	if (s) val = -val;
+ 255              		.loc 1 57 2 is_stmt 1 view .LVU88
+ 256              		.loc 1 57 5 is_stmt 0 view .LVU89
+ 257 00a8 06B1     		cbz	r6, .L15
+ 258              		.loc 1 57 9 is_stmt 1 discriminator 1 view .LVU90
+ 259              		.loc 1 57 13 is_stmt 0 discriminator 1 view .LVU91
+ 260 00aa 6442     		rsbs	r4, r4, #0
+ 261              	.LVL35:
+ 262              	.L15:
+  58:Src/term_io.c **** 	*res = val;
+ 263              		.loc 1 58 2 is_stmt 1 view .LVU92
+ 264              		.loc 1 58 7 is_stmt 0 view .LVU93
+ 265 00ac 0C60     		str	r4, [r1]
+  59:Src/term_io.c **** 	return 1;
+ 266              		.loc 1 59 2 is_stmt 1 view .LVU94
+ 267              		.loc 1 59 9 is_stmt 0 view .LVU95
+ 268 00ae 0120     		movs	r0, #1
+ 269              	.LVL36:
+ 270              	.L1:
+  60:Src/term_io.c **** }
+ 271              		.loc 1 60 1 view .LVU96
+ 272 00b0 70BC     		pop	{r4, r5, r6}
+ 273              	.LCFI1:
+ 274              		.cfi_remember_state
+ 275              		.cfi_restore 6
+ 276              		.cfi_restore 5
+ 277              		.cfi_restore 4
+ 278              		.cfi_def_cfa_offset 0
+ 279              	.LVL37:
+ 280              		.loc 1 60 1 view .LVU97
+ 281 00b2 7047     		bx	lr
+ 282              	.LVL38:
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s 			page 8
+
+
+ 283              	.L18:
+ 284              	.LCFI2:
+ 285              		.cfi_restore_state
+  42:Src/term_io.c **** 		radix = 10;
+ 286              		.loc 1 42 11 view .LVU98
+ 287 00b4 0020     		movs	r0, #0
+ 288              	.LVL39:
+  42:Src/term_io.c **** 		radix = 10;
+ 289              		.loc 1 42 11 view .LVU99
+ 290 00b6 FBE7     		b	.L1
+ 291              	.LVL40:
+ 292              	.L20:
+  53:Src/term_io.c **** 		val = val * radix + c;
+ 293              		.loc 1 53 26 view .LVU100
+ 294 00b8 0020     		movs	r0, #0
+ 295              	.LVL41:
+  53:Src/term_io.c **** 		val = val * radix + c;
+ 296              		.loc 1 53 26 view .LVU101
+ 297 00ba F9E7     		b	.L1
+ 298              		.cfi_endproc
+ 299              	.LFE138:
+ 301              		.section	.text.xputc,"ax",%progbits
+ 302              		.align	1
+ 303              		.global	xputc
+ 304              		.syntax unified
+ 305              		.thumb
+ 306              		.thumb_func
+ 307              		.fpu fpv5-sp-d16
+ 309              	xputc:
+ 310              	.LVL42:
+ 311              	.LFB139:
+  61:Src/term_io.c **** 
+  62:Src/term_io.c **** 
+  63:Src/term_io.c **** 
+  64:Src/term_io.c **** 
+  65:Src/term_io.c **** void xputc (char c)
+  66:Src/term_io.c **** {
+ 312              		.loc 1 66 1 is_stmt 1 view -0
+ 313              		.cfi_startproc
+ 314              		@ args = 0, pretend = 0, frame = 0
+ 315              		@ frame_needed = 0, uses_anonymous_args = 0
+ 316              		.loc 1 66 1 is_stmt 0 view .LVU103
+ 317 0000 08B5     		push	{r3, lr}
+ 318              	.LCFI3:
+ 319              		.cfi_def_cfa_offset 8
+ 320              		.cfi_offset 3, -8
+ 321              		.cfi_offset 14, -4
+  67:Src/term_io.c **** 	debug_chr(c);
+ 322              		.loc 1 67 2 is_stmt 1 view .LVU104
+ 323 0002 FFF7FEFF 		bl	debug_chr
+ 324              	.LVL43:
+  68:Src/term_io.c **** }
+ 325              		.loc 1 68 1 is_stmt 0 view .LVU105
+ 326 0006 08BD     		pop	{r3, pc}
+ 327              		.cfi_endproc
+ 328              	.LFE139:
+ 330              		.section	.text.xputs,"ax",%progbits
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s 			page 9
+
+
+ 331              		.align	1
+ 332              		.global	xputs
+ 333              		.syntax unified
+ 334              		.thumb
+ 335              		.thumb_func
+ 336              		.fpu fpv5-sp-d16
+ 338              	xputs:
+ 339              	.LVL44:
+ 340              	.LFB140:
+  69:Src/term_io.c **** 
+  70:Src/term_io.c **** 
+  71:Src/term_io.c **** 
+  72:Src/term_io.c **** 
+  73:Src/term_io.c **** void xputs (const char* str)
+  74:Src/term_io.c **** {
+ 341              		.loc 1 74 1 is_stmt 1 view -0
+ 342              		.cfi_startproc
+ 343              		@ args = 0, pretend = 0, frame = 0
+ 344              		@ frame_needed = 0, uses_anonymous_args = 0
+ 345              		.loc 1 74 1 is_stmt 0 view .LVU107
+ 346 0000 10B5     		push	{r4, lr}
+ 347              	.LCFI4:
+ 348              		.cfi_def_cfa_offset 8
+ 349              		.cfi_offset 4, -8
+ 350              		.cfi_offset 14, -4
+ 351 0002 0446     		mov	r4, r0
+  75:Src/term_io.c **** 	while (*str)
+ 352              		.loc 1 75 2 is_stmt 1 view .LVU108
+ 353              	.LVL45:
+ 354              	.L33:
+ 355              		.loc 1 75 8 view .LVU109
+ 356              		.loc 1 75 9 is_stmt 0 view .LVU110
+ 357 0004 2078     		ldrb	r0, [r4]	@ zero_extendqisi2
+ 358              		.loc 1 75 8 view .LVU111
+ 359 0006 18B1     		cbz	r0, .L36
+  76:Src/term_io.c **** 		xputc(*str++);
+ 360              		.loc 1 76 3 is_stmt 1 view .LVU112
+ 361              		.loc 1 76 13 is_stmt 0 view .LVU113
+ 362 0008 0134     		adds	r4, r4, #1
+ 363              	.LVL46:
+ 364              		.loc 1 76 3 view .LVU114
+ 365 000a FFF7FEFF 		bl	xputc
+ 366              	.LVL47:
+ 367 000e F9E7     		b	.L33
+ 368              	.L36:
+  77:Src/term_io.c **** }
+ 369              		.loc 1 77 1 view .LVU115
+ 370 0010 10BD     		pop	{r4, pc}
+ 371              		.loc 1 77 1 view .LVU116
+ 372              		.cfi_endproc
+ 373              	.LFE140:
+ 375              		.section	.text.xitoa,"ax",%progbits
+ 376              		.align	1
+ 377              		.global	xitoa
+ 378              		.syntax unified
+ 379              		.thumb
+ 380              		.thumb_func
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s 			page 10
+
+
+ 381              		.fpu fpv5-sp-d16
+ 383              	xitoa:
+ 384              	.LVL48:
+ 385              	.LFB141:
+  78:Src/term_io.c **** 
+  79:Src/term_io.c **** 
+  80:Src/term_io.c **** 
+  81:Src/term_io.c **** 
+  82:Src/term_io.c **** void xitoa (long val, int radix, int len)
+  83:Src/term_io.c **** {
+ 386              		.loc 1 83 1 is_stmt 1 view -0
+ 387              		.cfi_startproc
+ 388              		@ args = 0, pretend = 0, frame = 24
+ 389              		@ frame_needed = 0, uses_anonymous_args = 0
+ 390              		.loc 1 83 1 is_stmt 0 view .LVU118
+ 391 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 392              	.LCFI5:
+ 393              		.cfi_def_cfa_offset 20
+ 394              		.cfi_offset 4, -20
+ 395              		.cfi_offset 5, -16
+ 396              		.cfi_offset 6, -12
+ 397              		.cfi_offset 7, -8
+ 398              		.cfi_offset 14, -4
+ 399 0002 87B0     		sub	sp, sp, #28
+ 400              	.LCFI6:
+ 401              		.cfi_def_cfa_offset 48
+  84:Src/term_io.c **** 	uint8_t c, r, sgn = 0, pad = ' ';
+ 402              		.loc 1 84 2 is_stmt 1 view .LVU119
+ 403              	.LVL49:
+  85:Src/term_io.c **** 	uint8_t s[20], i = 0;
+ 404              		.loc 1 85 2 view .LVU120
+  86:Src/term_io.c **** 	uint32_t v;
+ 405              		.loc 1 86 2 view .LVU121
+  87:Src/term_io.c **** 
+  88:Src/term_io.c **** 
+  89:Src/term_io.c **** 	if (radix < 0) {
+ 406              		.loc 1 89 2 view .LVU122
+ 407              		.loc 1 89 5 is_stmt 0 view .LVU123
+ 408 0004 B1F1000E 		subs	lr, r1, #0
+ 409 0008 07DB     		blt	.L53
+  84:Src/term_io.c **** 	uint8_t s[20], i = 0;
+ 410              		.loc 1 84 16 view .LVU124
+ 411 000a 0021     		movs	r1, #0
+ 412              	.LVL50:
+ 413              	.L38:
+  90:Src/term_io.c **** 		radix = -radix;
+  91:Src/term_io.c **** 		if (val < 0) {
+  92:Src/term_io.c **** 			val = -val;
+  93:Src/term_io.c **** 			sgn = '-';
+  94:Src/term_io.c **** 		}
+  95:Src/term_io.c **** 	}
+  96:Src/term_io.c **** 	v = val;
+ 414              		.loc 1 96 2 is_stmt 1 view .LVU125
+  97:Src/term_io.c **** 	r = radix;
+ 415              		.loc 1 97 2 view .LVU126
+  98:Src/term_io.c **** 	if (len < 0) {
+ 416              		.loc 1 98 2 view .LVU127
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s 			page 11
+
+
+ 417              		.loc 1 98 5 is_stmt 0 view .LVU128
+ 418 000c 002A     		cmp	r2, #0
+ 419 000e 0DDB     		blt	.L54
+  84:Src/term_io.c **** 	uint8_t s[20], i = 0;
+ 420              		.loc 1 84 25 view .LVU129
+ 421 0010 2027     		movs	r7, #32
+ 422              	.LVL51:
+ 423              	.L39:
+  99:Src/term_io.c **** 		len = -len;
+ 100:Src/term_io.c **** 		pad = '0';
+ 101:Src/term_io.c **** 	}
+ 102:Src/term_io.c **** 	if (len > 20) return;
+ 424              		.loc 1 102 2 is_stmt 1 view .LVU130
+ 425              		.loc 1 102 5 is_stmt 0 view .LVU131
+ 426 0012 142A     		cmp	r2, #20
+ 427 0014 42DC     		bgt	.L37
+  85:Src/term_io.c **** 	uint32_t v;
+ 428              		.loc 1 85 17 view .LVU132
+ 429 0016 0026     		movs	r6, #0
+ 430 0018 19E0     		b	.L40
+ 431              	.LVL52:
+ 432              	.L53:
+  90:Src/term_io.c **** 		if (val < 0) {
+ 433              		.loc 1 90 3 is_stmt 1 view .LVU133
+  90:Src/term_io.c **** 		if (val < 0) {
+ 434              		.loc 1 90 9 is_stmt 0 view .LVU134
+ 435 001a CEF1000E 		rsb	lr, lr, #0
+ 436              	.LVL53:
+  91:Src/term_io.c **** 			val = -val;
+ 437              		.loc 1 91 3 is_stmt 1 view .LVU135
+  91:Src/term_io.c **** 			val = -val;
+ 438              		.loc 1 91 6 is_stmt 0 view .LVU136
+ 439 001e 0028     		cmp	r0, #0
+ 440 0020 01DB     		blt	.L55
+  84:Src/term_io.c **** 	uint8_t s[20], i = 0;
+ 441              		.loc 1 84 16 view .LVU137
+ 442 0022 0021     		movs	r1, #0
+ 443 0024 F2E7     		b	.L38
+ 444              	.L55:
+  92:Src/term_io.c **** 			sgn = '-';
+ 445              		.loc 1 92 4 is_stmt 1 view .LVU138
+  92:Src/term_io.c **** 			sgn = '-';
+ 446              		.loc 1 92 8 is_stmt 0 view .LVU139
+ 447 0026 4042     		rsbs	r0, r0, #0
+ 448              	.LVL54:
+  93:Src/term_io.c **** 		}
+ 449              		.loc 1 93 4 is_stmt 1 view .LVU140
+  93:Src/term_io.c **** 		}
+ 450              		.loc 1 93 8 is_stmt 0 view .LVU141
+ 451 0028 2D21     		movs	r1, #45
+ 452 002a EFE7     		b	.L38
+ 453              	.LVL55:
+ 454              	.L54:
+  99:Src/term_io.c **** 		pad = '0';
+ 455              		.loc 1 99 3 is_stmt 1 view .LVU142
+  99:Src/term_io.c **** 		pad = '0';
+ 456              		.loc 1 99 7 is_stmt 0 view .LVU143
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s 			page 12
+
+
+ 457 002c 5242     		rsbs	r2, r2, #0
+ 458              	.LVL56:
+ 100:Src/term_io.c **** 	}
+ 459              		.loc 1 100 3 is_stmt 1 view .LVU144
+ 100:Src/term_io.c **** 	}
+ 460              		.loc 1 100 7 is_stmt 0 view .LVU145
+ 461 002e 3027     		movs	r7, #48
+ 462 0030 EFE7     		b	.L39
+ 463              	.LVL57:
+ 464              	.L42:
+ 103:Src/term_io.c **** 	do {
+ 104:Src/term_io.c **** 		c = (uint8_t)(v % r);
+ 105:Src/term_io.c **** 		if (c >= 10) c += 7;
+ 106:Src/term_io.c **** 		c += '0';
+ 465              		.loc 1 106 3 is_stmt 1 view .LVU146
+ 466              		.loc 1 106 5 is_stmt 0 view .LVU147
+ 467 0032 3033     		adds	r3, r3, #48
+ 468              	.LVL58:
+ 107:Src/term_io.c **** 		s[i++] = c;
+ 469              		.loc 1 107 3 is_stmt 1 view .LVU148
+ 470              		.loc 1 107 6 is_stmt 0 view .LVU149
+ 471 0034 741C     		adds	r4, r6, #1
+ 472 0036 E4B2     		uxtb	r4, r4
+ 473              	.LVL59:
+ 474              		.loc 1 107 10 view .LVU150
+ 475 0038 0DF1180C 		add	ip, sp, #24
+ 476 003c B444     		add	ip, ip, r6
+ 477 003e 0CF8143C 		strb	r3, [ip, #-20]
+ 108:Src/term_io.c **** 		v /= r;
+ 478              		.loc 1 108 3 is_stmt 1 view .LVU151
+ 479              		.loc 1 108 5 is_stmt 0 view .LVU152
+ 480 0042 B0FBF5F3 		udiv	r3, r0, r5
+ 481              	.LVL60:
+ 109:Src/term_io.c **** 	} while (v);
+ 482              		.loc 1 109 10 is_stmt 1 view .LVU153
+ 483              		.loc 1 109 2 is_stmt 0 view .LVU154
+ 484 0046 8542     		cmp	r5, r0
+ 485 0048 0DD8     		bhi	.L56
+ 108:Src/term_io.c **** 		v /= r;
+ 486              		.loc 1 108 5 view .LVU155
+ 487 004a 1846     		mov	r0, r3
+ 107:Src/term_io.c **** 		s[i++] = c;
+ 488              		.loc 1 107 6 view .LVU156
+ 489 004c 2646     		mov	r6, r4
+ 490              	.LVL61:
+ 491              	.L40:
+ 103:Src/term_io.c **** 		c = (uint8_t)(v % r);
+ 492              		.loc 1 103 2 is_stmt 1 view .LVU157
+ 104:Src/term_io.c **** 		if (c >= 10) c += 7;
+ 493              		.loc 1 104 3 view .LVU158
+ 104:Src/term_io.c **** 		if (c >= 10) c += 7;
+ 494              		.loc 1 104 19 is_stmt 0 view .LVU159
+ 495 004e 5FFA8EF5 		uxtb	r5, lr
+ 496 0052 B0FBF5F3 		udiv	r3, r0, r5
+ 497 0056 05FB1303 		mls	r3, r5, r3, r0
+ 104:Src/term_io.c **** 		if (c >= 10) c += 7;
+ 498              		.loc 1 104 5 view .LVU160
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s 			page 13
+
+
+ 499 005a DBB2     		uxtb	r3, r3
+ 500              	.LVL62:
+ 105:Src/term_io.c **** 		c += '0';
+ 501              		.loc 1 105 3 is_stmt 1 view .LVU161
+ 105:Src/term_io.c **** 		c += '0';
+ 502              		.loc 1 105 6 is_stmt 0 view .LVU162
+ 503 005c 092B     		cmp	r3, #9
+ 504 005e E8D9     		bls	.L42
+ 105:Src/term_io.c **** 		c += '0';
+ 505              		.loc 1 105 16 is_stmt 1 discriminator 1 view .LVU163
+ 105:Src/term_io.c **** 		c += '0';
+ 506              		.loc 1 105 18 is_stmt 0 discriminator 1 view .LVU164
+ 507 0060 0733     		adds	r3, r3, #7
+ 508              	.LVL63:
+ 105:Src/term_io.c **** 		c += '0';
+ 509              		.loc 1 105 18 discriminator 1 view .LVU165
+ 510 0062 DBB2     		uxtb	r3, r3
+ 511              	.LVL64:
+ 105:Src/term_io.c **** 		c += '0';
+ 512              		.loc 1 105 18 discriminator 1 view .LVU166
+ 513 0064 E5E7     		b	.L42
+ 514              	.LVL65:
+ 515              	.L56:
+ 110:Src/term_io.c **** 	if (sgn) s[i++] = sgn;
+ 516              		.loc 1 110 2 is_stmt 1 view .LVU167
+ 517              		.loc 1 110 5 is_stmt 0 view .LVU168
+ 518 0066 29B1     		cbz	r1, .L44
+ 519              		.loc 1 110 11 is_stmt 1 discriminator 1 view .LVU169
+ 520              		.loc 1 110 14 is_stmt 0 discriminator 1 view .LVU170
+ 521 0068 0236     		adds	r6, r6, #2
+ 522              	.LVL66:
+ 523              		.loc 1 110 18 discriminator 1 view .LVU171
+ 524 006a 06AB     		add	r3, sp, #24
+ 525              	.LVL67:
+ 526              		.loc 1 110 18 discriminator 1 view .LVU172
+ 527 006c 1C44     		add	r4, r4, r3
+ 528 006e 04F8141C 		strb	r1, [r4, #-20]
+ 529              	.LVL68:
+ 530              		.loc 1 110 14 discriminator 1 view .LVU173
+ 531 0072 F4B2     		uxtb	r4, r6
+ 532              	.LVL69:
+ 533              	.L44:
+ 111:Src/term_io.c **** 	while (i < len)
+ 534              		.loc 1 111 8 is_stmt 1 view .LVU174
+ 535              		.loc 1 111 11 is_stmt 0 view .LVU175
+ 536 0074 2346     		mov	r3, r4
+ 537              		.loc 1 111 8 view .LVU176
+ 538 0076 9442     		cmp	r4, r2
+ 539 0078 06DA     		bge	.L46
+ 112:Src/term_io.c **** 		s[i++] = pad;
+ 540              		.loc 1 112 3 is_stmt 1 view .LVU177
+ 541              		.loc 1 112 6 is_stmt 0 view .LVU178
+ 542 007a 0134     		adds	r4, r4, #1
+ 543              	.LVL70:
+ 544              		.loc 1 112 6 view .LVU179
+ 545 007c E4B2     		uxtb	r4, r4
+ 546              	.LVL71:
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s 			page 14
+
+
+ 547              		.loc 1 112 10 view .LVU180
+ 548 007e 06A9     		add	r1, sp, #24
+ 549 0080 0B44     		add	r3, r3, r1
+ 550 0082 03F8147C 		strb	r7, [r3, #-20]
+ 551 0086 F5E7     		b	.L44
+ 552              	.LVL72:
+ 553              	.L46:
+ 113:Src/term_io.c **** 	do
+ 554              		.loc 1 113 2 is_stmt 1 discriminator 1 view .LVU181
+ 114:Src/term_io.c **** 		xputc(s[--i]);
+ 555              		.loc 1 114 3 discriminator 1 view .LVU182
+ 556 0088 013C     		subs	r4, r4, #1
+ 557              	.LVL73:
+ 558              		.loc 1 114 3 is_stmt 0 discriminator 1 view .LVU183
+ 559 008a E4B2     		uxtb	r4, r4
+ 560              	.LVL74:
+ 561              		.loc 1 114 10 discriminator 1 view .LVU184
+ 562 008c 06AB     		add	r3, sp, #24
+ 563 008e 2344     		add	r3, r3, r4
+ 564              		.loc 1 114 3 discriminator 1 view .LVU185
+ 565 0090 13F8140C 		ldrb	r0, [r3, #-20]	@ zero_extendqisi2
+ 566 0094 FFF7FEFF 		bl	xputc
+ 567              	.LVL75:
+ 115:Src/term_io.c **** 	while (i);
+ 568              		.loc 1 115 8 is_stmt 1 discriminator 1 view .LVU186
+ 569              		.loc 1 115 2 is_stmt 0 discriminator 1 view .LVU187
+ 570 0098 002C     		cmp	r4, #0
+ 571 009a F5D1     		bne	.L46
+ 572              	.LVL76:
+ 573              	.L37:
+ 116:Src/term_io.c **** }
+ 574              		.loc 1 116 1 view .LVU188
+ 575 009c 07B0     		add	sp, sp, #28
+ 576              	.LCFI7:
+ 577              		.cfi_def_cfa_offset 20
+ 578              		@ sp needed
+ 579 009e F0BD     		pop	{r4, r5, r6, r7, pc}
+ 580              		.loc 1 116 1 view .LVU189
+ 581              		.cfi_endproc
+ 582              	.LFE141:
+ 584              		.section	.text.xprintf,"ax",%progbits
+ 585              		.align	1
+ 586              		.global	xprintf
+ 587              		.syntax unified
+ 588              		.thumb
+ 589              		.thumb_func
+ 590              		.fpu fpv5-sp-d16
+ 592              	xprintf:
+ 593              	.LVL77:
+ 594              	.LFB142:
+ 117:Src/term_io.c **** 
+ 118:Src/term_io.c **** void xprintf (const char* str, ...)
+ 119:Src/term_io.c **** {
+ 595              		.loc 1 119 1 is_stmt 1 view -0
+ 596              		.cfi_startproc
+ 597              		@ args = 4, pretend = 16, frame = 8
+ 598              		@ frame_needed = 0, uses_anonymous_args = 1
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s 			page 15
+
+
+ 599              		.loc 1 119 1 is_stmt 0 view .LVU191
+ 600 0000 0FB4     		push	{r0, r1, r2, r3}
+ 601              	.LCFI8:
+ 602              		.cfi_def_cfa_offset 16
+ 603              		.cfi_offset 0, -16
+ 604              		.cfi_offset 1, -12
+ 605              		.cfi_offset 2, -8
+ 606              		.cfi_offset 3, -4
+ 607 0002 30B5     		push	{r4, r5, lr}
+ 608              	.LCFI9:
+ 609              		.cfi_def_cfa_offset 28
+ 610              		.cfi_offset 4, -28
+ 611              		.cfi_offset 5, -24
+ 612              		.cfi_offset 14, -20
+ 613 0004 83B0     		sub	sp, sp, #12
+ 614              	.LCFI10:
+ 615              		.cfi_def_cfa_offset 40
+ 616 0006 06AB     		add	r3, sp, #24
+ 617 0008 53F8044B 		ldr	r4, [r3], #4
+ 120:Src/term_io.c **** 	va_list arp;
+ 618              		.loc 1 120 2 is_stmt 1 view .LVU192
+ 121:Src/term_io.c **** 	int d, r, w, s, l;
+ 619              		.loc 1 121 2 view .LVU193
+ 122:Src/term_io.c **** 
+ 123:Src/term_io.c **** 
+ 124:Src/term_io.c **** 	va_start(arp, str);
+ 620              		.loc 1 124 2 view .LVU194
+ 621 000c 0193     		str	r3, [sp, #4]
+ 125:Src/term_io.c **** 
+ 126:Src/term_io.c **** 	while ((d = *str++) != 0) {
+ 622              		.loc 1 126 2 view .LVU195
+ 623              		.loc 1 126 8 is_stmt 0 view .LVU196
+ 624 000e 02E0     		b	.L58
+ 625              	.LVL78:
+ 626              	.L83:
+ 127:Src/term_io.c **** 		if (d != '%') {
+ 128:Src/term_io.c **** 			xputc(d); continue;
+ 627              		.loc 1 128 4 is_stmt 1 view .LVU197
+ 628 0010 FFF7FEFF 		bl	xputc
+ 629              	.LVL79:
+ 630              		.loc 1 128 14 view .LVU198
+ 126:Src/term_io.c **** 		if (d != '%') {
+ 631              		.loc 1 126 18 is_stmt 0 view .LVU199
+ 632 0014 2C46     		mov	r4, r5
+ 633              	.LVL80:
+ 634              	.L58:
+ 126:Src/term_io.c **** 		if (d != '%') {
+ 635              		.loc 1 126 8 is_stmt 1 view .LVU200
+ 126:Src/term_io.c **** 		if (d != '%') {
+ 636              		.loc 1 126 18 is_stmt 0 view .LVU201
+ 637 0016 2546     		mov	r5, r4
+ 638              	.LVL81:
+ 126:Src/term_io.c **** 		if (d != '%') {
+ 639              		.loc 1 126 14 view .LVU202
+ 640 0018 15F8010B 		ldrb	r0, [r5], #1	@ zero_extendqisi2
+ 641              	.LVL82:
+ 126:Src/term_io.c **** 		if (d != '%') {
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s 			page 16
+
+
+ 642              		.loc 1 126 8 view .LVU203
+ 643 001c 0028     		cmp	r0, #0
+ 644 001e 66D0     		beq	.L57
+ 127:Src/term_io.c **** 		if (d != '%') {
+ 645              		.loc 1 127 3 is_stmt 1 view .LVU204
+ 127:Src/term_io.c **** 		if (d != '%') {
+ 646              		.loc 1 127 6 is_stmt 0 view .LVU205
+ 647 0020 2528     		cmp	r0, #37
+ 648 0022 F5D1     		bne	.L83
+ 129:Src/term_io.c **** 		}
+ 130:Src/term_io.c **** 		d = *str++; w = r = s = l = 0;
+ 649              		.loc 1 130 3 is_stmt 1 view .LVU206
+ 650              		.loc 1 130 11 is_stmt 0 view .LVU207
+ 651 0024 0234     		adds	r4, r4, #2
+ 652              	.LVL83:
+ 653              		.loc 1 130 7 view .LVU208
+ 654 0026 2B78     		ldrb	r3, [r5]	@ zero_extendqisi2
+ 655              	.LVL84:
+ 656              		.loc 1 130 15 is_stmt 1 view .LVU209
+ 131:Src/term_io.c **** 		if (d == '0') {
+ 657              		.loc 1 131 3 view .LVU210
+ 658              		.loc 1 131 6 is_stmt 0 view .LVU211
+ 659 0028 302B     		cmp	r3, #48
+ 660 002a 02D0     		beq	.L84
+ 130:Src/term_io.c **** 		if (d == '0') {
+ 661              		.loc 1 130 25 view .LVU212
+ 662 002c 0025     		movs	r5, #0
+ 663              	.LVL85:
+ 664              	.L61:
+ 130:Src/term_io.c **** 		if (d == '0') {
+ 665              		.loc 1 130 25 view .LVU213
+ 666 002e 0022     		movs	r2, #0
+ 667 0030 0DE0     		b	.L62
+ 668              	.LVL86:
+ 669              	.L84:
+ 132:Src/term_io.c **** 			d = *str++; s = 1;
+ 670              		.loc 1 132 4 is_stmt 1 view .LVU214
+ 671              		.loc 1 132 12 is_stmt 0 view .LVU215
+ 672 0032 AC1C     		adds	r4, r5, #2
+ 673              	.LVL87:
+ 674              		.loc 1 132 8 view .LVU216
+ 675 0034 6B78     		ldrb	r3, [r5, #1]	@ zero_extendqisi2
+ 676              	.LVL88:
+ 677              		.loc 1 132 16 is_stmt 1 view .LVU217
+ 678              		.loc 1 132 18 is_stmt 0 view .LVU218
+ 679 0036 0125     		movs	r5, #1
+ 680 0038 F9E7     		b	.L61
+ 681              	.LVL89:
+ 682              	.L63:
+ 133:Src/term_io.c **** 		}
+ 134:Src/term_io.c **** 		while ((d >= '0')&&(d <= '9')) {
+ 135:Src/term_io.c **** 			w += w * 10 + (d - '0');
+ 683              		.loc 1 135 4 is_stmt 1 view .LVU219
+ 684              		.loc 1 135 11 is_stmt 0 view .LVU220
+ 685 003a 02EB8200 		add	r0, r2, r2, lsl #2
+ 686 003e 4100     		lsls	r1, r0, #1
+ 687              		.loc 1 135 21 view .LVU221
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s 			page 17
+
+
+ 688 0040 303B     		subs	r3, r3, #48
+ 689              	.LVL90:
+ 690              		.loc 1 135 16 view .LVU222
+ 691 0042 0B44     		add	r3, r3, r1
+ 692              	.LVL91:
+ 693              		.loc 1 135 6 view .LVU223
+ 694 0044 1A44     		add	r2, r2, r3
+ 695              	.LVL92:
+ 136:Src/term_io.c **** 			d = *str++;
+ 696              		.loc 1 136 4 is_stmt 1 view .LVU224
+ 697              		.loc 1 136 12 is_stmt 0 view .LVU225
+ 698 0046 2146     		mov	r1, r4
+ 699              	.LVL93:
+ 700              		.loc 1 136 8 view .LVU226
+ 701 0048 11F8013B 		ldrb	r3, [r1], #1	@ zero_extendqisi2
+ 702              	.LVL94:
+ 703              		.loc 1 136 12 view .LVU227
+ 704 004c 0C46     		mov	r4, r1
+ 705              	.LVL95:
+ 706              	.L62:
+ 134:Src/term_io.c **** 			w += w * 10 + (d - '0');
+ 707              		.loc 1 134 9 is_stmt 1 view .LVU228
+ 134:Src/term_io.c **** 			w += w * 10 + (d - '0');
+ 708              		.loc 1 134 20 is_stmt 0 view .LVU229
+ 709 004e A3F13001 		sub	r1, r3, #48
+ 134:Src/term_io.c **** 			w += w * 10 + (d - '0');
+ 710              		.loc 1 134 9 view .LVU230
+ 711 0052 0929     		cmp	r1, #9
+ 712 0054 F1D9     		bls	.L63
+ 137:Src/term_io.c **** 		}
+ 138:Src/term_io.c **** 		if (s) w = -w;
+ 713              		.loc 1 138 3 is_stmt 1 view .LVU231
+ 714              		.loc 1 138 6 is_stmt 0 view .LVU232
+ 715 0056 05B1     		cbz	r5, .L64
+ 716              		.loc 1 138 10 is_stmt 1 discriminator 1 view .LVU233
+ 717              		.loc 1 138 12 is_stmt 0 discriminator 1 view .LVU234
+ 718 0058 5242     		rsbs	r2, r2, #0
+ 719              	.LVL96:
+ 720              	.L64:
+ 139:Src/term_io.c **** 		if (d == 'l') {
+ 721              		.loc 1 139 3 is_stmt 1 view .LVU235
+ 722              		.loc 1 139 6 is_stmt 0 view .LVU236
+ 723 005a 6C2B     		cmp	r3, #108
+ 724 005c 1ED0     		beq	.L85
+ 130:Src/term_io.c **** 		if (d == '0') {
+ 725              		.loc 1 130 29 view .LVU237
+ 726 005e 0020     		movs	r0, #0
+ 727              	.LVL97:
+ 728              	.L65:
+ 140:Src/term_io.c **** 			l = 1;
+ 141:Src/term_io.c **** 			d = *str++;
+ 142:Src/term_io.c **** 		}
+ 143:Src/term_io.c **** 		if (!d) break;
+ 729              		.loc 1 143 3 is_stmt 1 view .LVU238
+ 730              		.loc 1 143 6 is_stmt 0 view .LVU239
+ 731 0060 002B     		cmp	r3, #0
+ 732 0062 44D0     		beq	.L57
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s 			page 18
+
+
+ 144:Src/term_io.c **** 		if (d == 's') {
+ 733              		.loc 1 144 3 is_stmt 1 view .LVU240
+ 734              		.loc 1 144 6 is_stmt 0 view .LVU241
+ 735 0064 732B     		cmp	r3, #115
+ 736 0066 1FD0     		beq	.L86
+ 145:Src/term_io.c **** 			xputs(va_arg(arp, char*));
+ 146:Src/term_io.c **** 			continue;
+ 147:Src/term_io.c **** 		}
+ 148:Src/term_io.c **** 		if (d == 'c') {
+ 737              		.loc 1 148 3 is_stmt 1 view .LVU242
+ 738              		.loc 1 148 6 is_stmt 0 view .LVU243
+ 739 0068 632B     		cmp	r3, #99
+ 740 006a 24D0     		beq	.L87
+ 149:Src/term_io.c **** 			xputc((char)va_arg(arp, int));
+ 150:Src/term_io.c **** 			continue;
+ 151:Src/term_io.c **** 		}
+ 152:Src/term_io.c **** 		if (d == 'u') r = 10;
+ 741              		.loc 1 152 3 is_stmt 1 view .LVU244
+ 742              		.loc 1 152 6 is_stmt 0 view .LVU245
+ 743 006c 752B     		cmp	r3, #117
+ 744 006e 29D0     		beq	.L78
+ 130:Src/term_io.c **** 		if (d == '0') {
+ 745              		.loc 1 130 21 view .LVU246
+ 746 0070 0021     		movs	r1, #0
+ 747              	.L69:
+ 748              	.LVL98:
+ 153:Src/term_io.c **** 		if (d == 'd') r = -10;
+ 749              		.loc 1 153 3 is_stmt 1 view .LVU247
+ 750              		.loc 1 153 6 is_stmt 0 view .LVU248
+ 751 0072 642B     		cmp	r3, #100
+ 752 0074 28D0     		beq	.L88
+ 753              	.LVL99:
+ 754              	.L70:
+ 154:Src/term_io.c **** 		if (d == 'X' || d == 'x') r = 16; // 'x' added by mthomas in increase compatibility
+ 755              		.loc 1 154 3 is_stmt 1 view .LVU249
+ 756              		.loc 1 154 6 is_stmt 0 view .LVU250
+ 757 0076 782B     		cmp	r3, #120
+ 758 0078 18BF     		it	ne
+ 759 007a 582B     		cmpne	r3, #88
+ 760 007c 00D1     		bne	.L71
+ 761              		.loc 1 154 31 view .LVU251
+ 762 007e 1021     		movs	r1, #16
+ 763              	.LVL100:
+ 764              	.L71:
+ 155:Src/term_io.c **** 		if (d == 'b') r = 2;
+ 765              		.loc 1 155 3 is_stmt 1 view .LVU252
+ 766              		.loc 1 155 6 is_stmt 0 view .LVU253
+ 767 0080 622B     		cmp	r3, #98
+ 768 0082 24D0     		beq	.L81
+ 156:Src/term_io.c **** 		if (!r) break;
+ 769              		.loc 1 156 3 is_stmt 1 view .LVU254
+ 770              		.loc 1 156 6 is_stmt 0 view .LVU255
+ 771 0084 0029     		cmp	r1, #0
+ 772 0086 32D0     		beq	.L57
+ 773              	.LVL101:
+ 774              	.L72:
+ 157:Src/term_io.c **** 		if (l) {
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s 			page 19
+
+
+ 775              		.loc 1 157 3 is_stmt 1 view .LVU256
+ 776              		.loc 1 157 6 is_stmt 0 view .LVU257
+ 777 0088 18BB     		cbnz	r0, .L89
+ 158:Src/term_io.c **** 			xitoa((long)va_arg(arp, long), r, w);
+ 159:Src/term_io.c **** 		} else {
+ 160:Src/term_io.c **** 			if (r > 0)
+ 778              		.loc 1 160 4 is_stmt 1 view .LVU258
+ 779              		.loc 1 160 7 is_stmt 0 view .LVU259
+ 780 008a 0029     		cmp	r1, #0
+ 781 008c 28DD     		ble	.L74
+ 161:Src/term_io.c **** 				xitoa((unsigned long)va_arg(arp, int), r, w);
+ 782              		.loc 1 161 5 is_stmt 1 view .LVU260
+ 783              		.loc 1 161 26 is_stmt 0 view .LVU261
+ 784 008e 019B     		ldr	r3, [sp, #4]
+ 785              	.LVL102:
+ 786              		.loc 1 161 26 view .LVU262
+ 787 0090 181D     		adds	r0, r3, #4
+ 788              	.LVL103:
+ 789              		.loc 1 161 26 view .LVU263
+ 790 0092 0190     		str	r0, [sp, #4]
+ 791              		.loc 1 161 5 view .LVU264
+ 792 0094 1868     		ldr	r0, [r3]
+ 793 0096 FFF7FEFF 		bl	xitoa
+ 794              	.LVL104:
+ 795              		.loc 1 161 5 view .LVU265
+ 796 009a BCE7     		b	.L58
+ 797              	.LVL105:
+ 798              	.L85:
+ 140:Src/term_io.c **** 			d = *str++;
+ 799              		.loc 1 140 4 is_stmt 1 view .LVU266
+ 141:Src/term_io.c **** 		}
+ 800              		.loc 1 141 4 view .LVU267
+ 141:Src/term_io.c **** 		}
+ 801              		.loc 1 141 12 is_stmt 0 view .LVU268
+ 802 009c 2146     		mov	r1, r4
+ 803              	.LVL106:
+ 141:Src/term_io.c **** 		}
+ 804              		.loc 1 141 8 view .LVU269
+ 805 009e 11F8013B 		ldrb	r3, [r1], #1	@ zero_extendqisi2
+ 806              	.LVL107:
+ 141:Src/term_io.c **** 		}
+ 807              		.loc 1 141 12 view .LVU270
+ 808 00a2 0C46     		mov	r4, r1
+ 140:Src/term_io.c **** 			d = *str++;
+ 809              		.loc 1 140 6 view .LVU271
+ 810 00a4 0120     		movs	r0, #1
+ 811 00a6 DBE7     		b	.L65
+ 812              	.LVL108:
+ 813              	.L86:
+ 145:Src/term_io.c **** 			continue;
+ 814              		.loc 1 145 4 is_stmt 1 view .LVU272
+ 145:Src/term_io.c **** 			continue;
+ 815              		.loc 1 145 10 is_stmt 0 view .LVU273
+ 816 00a8 019B     		ldr	r3, [sp, #4]
+ 817              	.LVL109:
+ 145:Src/term_io.c **** 			continue;
+ 818              		.loc 1 145 10 view .LVU274
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s 			page 20
+
+
+ 819 00aa 1A1D     		adds	r2, r3, #4
+ 820              	.LVL110:
+ 145:Src/term_io.c **** 			continue;
+ 821              		.loc 1 145 10 view .LVU275
+ 822 00ac 0192     		str	r2, [sp, #4]
+ 145:Src/term_io.c **** 			continue;
+ 823              		.loc 1 145 4 view .LVU276
+ 824 00ae 1868     		ldr	r0, [r3]
+ 825              	.LVL111:
+ 145:Src/term_io.c **** 			continue;
+ 826              		.loc 1 145 4 view .LVU277
+ 827 00b0 FFF7FEFF 		bl	xputs
+ 828              	.LVL112:
+ 146:Src/term_io.c **** 		}
+ 829              		.loc 1 146 4 is_stmt 1 view .LVU278
+ 830 00b4 AFE7     		b	.L58
+ 831              	.LVL113:
+ 832              	.L87:
+ 149:Src/term_io.c **** 			continue;
+ 833              		.loc 1 149 4 view .LVU279
+ 149:Src/term_io.c **** 			continue;
+ 834              		.loc 1 149 16 is_stmt 0 view .LVU280
+ 835 00b6 019B     		ldr	r3, [sp, #4]
+ 836              	.LVL114:
+ 149:Src/term_io.c **** 			continue;
+ 837              		.loc 1 149 16 view .LVU281
+ 838 00b8 1A1D     		adds	r2, r3, #4
+ 839              	.LVL115:
+ 149:Src/term_io.c **** 			continue;
+ 840              		.loc 1 149 16 view .LVU282
+ 841 00ba 0192     		str	r2, [sp, #4]
+ 149:Src/term_io.c **** 			continue;
+ 842              		.loc 1 149 4 view .LVU283
+ 843 00bc 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 844              	.LVL116:
+ 149:Src/term_io.c **** 			continue;
+ 845              		.loc 1 149 4 view .LVU284
+ 846 00be FFF7FEFF 		bl	xputc
+ 847              	.LVL117:
+ 150:Src/term_io.c **** 		}
+ 848              		.loc 1 150 4 is_stmt 1 view .LVU285
+ 849 00c2 A8E7     		b	.L58
+ 850              	.LVL118:
+ 851              	.L78:
+ 152:Src/term_io.c **** 		if (d == 'd') r = -10;
+ 852              		.loc 1 152 19 is_stmt 0 view .LVU286
+ 853 00c4 0A21     		movs	r1, #10
+ 854 00c6 D4E7     		b	.L69
+ 855              	.LVL119:
+ 856              	.L88:
+ 153:Src/term_io.c **** 		if (d == 'X' || d == 'x') r = 16; // 'x' added by mthomas in increase compatibility
+ 857              		.loc 1 153 19 view .LVU287
+ 858 00c8 6FF00901 		mvn	r1, #9
+ 859              	.LVL120:
+ 153:Src/term_io.c **** 		if (d == 'X' || d == 'x') r = 16; // 'x' added by mthomas in increase compatibility
+ 860              		.loc 1 153 19 view .LVU288
+ 861 00cc D3E7     		b	.L70
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s 			page 21
+
+
+ 862              	.LVL121:
+ 863              	.L81:
+ 155:Src/term_io.c **** 		if (!r) break;
+ 864              		.loc 1 155 19 view .LVU289
+ 865 00ce 0221     		movs	r1, #2
+ 866              	.LVL122:
+ 155:Src/term_io.c **** 		if (!r) break;
+ 867              		.loc 1 155 19 view .LVU290
+ 868 00d0 DAE7     		b	.L72
+ 869              	.L89:
+ 158:Src/term_io.c **** 		} else {
+ 870              		.loc 1 158 4 is_stmt 1 view .LVU291
+ 871 00d2 019B     		ldr	r3, [sp, #4]
+ 872              	.LVL123:
+ 158:Src/term_io.c **** 		} else {
+ 873              		.loc 1 158 4 is_stmt 0 view .LVU292
+ 874 00d4 181D     		adds	r0, r3, #4
+ 875              	.LVL124:
+ 158:Src/term_io.c **** 		} else {
+ 876              		.loc 1 158 4 view .LVU293
+ 877 00d6 0190     		str	r0, [sp, #4]
+ 878 00d8 1868     		ldr	r0, [r3]
+ 879 00da FFF7FEFF 		bl	xitoa
+ 880              	.LVL125:
+ 158:Src/term_io.c **** 		} else {
+ 881              		.loc 1 158 4 view .LVU294
+ 882 00de 9AE7     		b	.L58
+ 883              	.LVL126:
+ 884              	.L74:
+ 162:Src/term_io.c **** 			else
+ 163:Src/term_io.c **** 				xitoa((long)va_arg(arp, int), r, w);
+ 885              		.loc 1 163 5 is_stmt 1 view .LVU295
+ 886              		.loc 1 163 17 is_stmt 0 view .LVU296
+ 887 00e0 019B     		ldr	r3, [sp, #4]
+ 888              	.LVL127:
+ 889              		.loc 1 163 17 view .LVU297
+ 890 00e2 181D     		adds	r0, r3, #4
+ 891              	.LVL128:
+ 892              		.loc 1 163 17 view .LVU298
+ 893 00e4 0190     		str	r0, [sp, #4]
+ 894              		.loc 1 163 5 view .LVU299
+ 895 00e6 1868     		ldr	r0, [r3]
+ 896 00e8 FFF7FEFF 		bl	xitoa
+ 897              	.LVL129:
+ 898              		.loc 1 163 5 view .LVU300
+ 899 00ec 93E7     		b	.L58
+ 900              	.LVL130:
+ 901              	.L57:
+ 164:Src/term_io.c **** 		}
+ 165:Src/term_io.c **** 	}
+ 166:Src/term_io.c **** 
+ 167:Src/term_io.c **** 	va_end(arp);
+ 168:Src/term_io.c **** }
+ 902              		.loc 1 168 1 view .LVU301
+ 903 00ee 03B0     		add	sp, sp, #12
+ 904              	.LCFI11:
+ 905              		.cfi_def_cfa_offset 28
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s 			page 22
+
+
+ 906              		@ sp needed
+ 907 00f0 BDE83040 		pop	{r4, r5, lr}
+ 908              	.LCFI12:
+ 909              		.cfi_restore 14
+ 910              		.cfi_restore 5
+ 911              		.cfi_restore 4
+ 912              		.cfi_def_cfa_offset 16
+ 913 00f4 04B0     		add	sp, sp, #16
+ 914              	.LCFI13:
+ 915              		.cfi_restore 3
+ 916              		.cfi_restore 2
+ 917              		.cfi_restore 1
+ 918              		.cfi_restore 0
+ 919              		.cfi_def_cfa_offset 0
+ 920 00f6 7047     		bx	lr
+ 921              		.cfi_endproc
+ 922              	.LFE142:
+ 924              		.section	.rodata.put_dump.str1.4,"aMS",%progbits,1
+ 925              		.align	2
+ 926              	.LC0:
+ 927 0000 2530386C 		.ascii	"%08lX \000"
+ 927      582000
+ 928 0007 00       		.align	2
+ 929              	.LC1:
+ 930 0008 20253032 		.ascii	" %02X\000"
+ 930      5800
+ 931              		.section	.text.put_dump,"ax",%progbits
+ 932              		.align	1
+ 933              		.global	put_dump
+ 934              		.syntax unified
+ 935              		.thumb
+ 936              		.thumb_func
+ 937              		.fpu fpv5-sp-d16
+ 939              	put_dump:
+ 940              	.LVL131:
+ 941              	.LFB143:
+ 169:Src/term_io.c **** 
+ 170:Src/term_io.c **** 
+ 171:Src/term_io.c **** 
+ 172:Src/term_io.c **** 
+ 173:Src/term_io.c **** void put_dump (const uint8_t *buff, uint32_t ofs, int cnt)
+ 174:Src/term_io.c **** {
+ 942              		.loc 1 174 1 is_stmt 1 view -0
+ 943              		.cfi_startproc
+ 944              		@ args = 0, pretend = 0, frame = 0
+ 945              		@ frame_needed = 0, uses_anonymous_args = 0
+ 946              		.loc 1 174 1 is_stmt 0 view .LVU303
+ 947 0000 70B5     		push	{r4, r5, r6, lr}
+ 948              	.LCFI14:
+ 949              		.cfi_def_cfa_offset 16
+ 950              		.cfi_offset 4, -16
+ 951              		.cfi_offset 5, -12
+ 952              		.cfi_offset 6, -8
+ 953              		.cfi_offset 14, -4
+ 954 0002 0646     		mov	r6, r0
+ 955 0004 1546     		mov	r5, r2
+ 175:Src/term_io.c **** 	uint8_t n;
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s 			page 23
+
+
+ 956              		.loc 1 175 2 is_stmt 1 view .LVU304
+ 176:Src/term_io.c **** 
+ 177:Src/term_io.c **** 
+ 178:Src/term_io.c **** 	xprintf("%08lX ", ofs);
+ 957              		.loc 1 178 2 view .LVU305
+ 958 0006 1348     		ldr	r0, .L100
+ 959              	.LVL132:
+ 960              		.loc 1 178 2 is_stmt 0 view .LVU306
+ 961 0008 FFF7FEFF 		bl	xprintf
+ 962              	.LVL133:
+ 179:Src/term_io.c **** 	for(n = 0; n < cnt; n++)
+ 963              		.loc 1 179 2 is_stmt 1 view .LVU307
+ 964              		.loc 1 179 8 is_stmt 0 view .LVU308
+ 965 000c 0024     		movs	r4, #0
+ 966              	.LVL134:
+ 967              	.L91:
+ 968              		.loc 1 179 13 is_stmt 1 discriminator 1 view .LVU309
+ 969              		.loc 1 179 2 is_stmt 0 discriminator 1 view .LVU310
+ 970 000e AC42     		cmp	r4, r5
+ 971 0010 06DA     		bge	.L98
+ 180:Src/term_io.c **** 		xprintf(" %02X", buff[n]);
+ 972              		.loc 1 180 3 is_stmt 1 discriminator 3 view .LVU311
+ 973 0012 315D     		ldrb	r1, [r6, r4]	@ zero_extendqisi2
+ 974 0014 1048     		ldr	r0, .L100+4
+ 975 0016 FFF7FEFF 		bl	xprintf
+ 976              	.LVL135:
+ 179:Src/term_io.c **** 	for(n = 0; n < cnt; n++)
+ 977              		.loc 1 179 22 discriminator 3 view .LVU312
+ 179:Src/term_io.c **** 	for(n = 0; n < cnt; n++)
+ 978              		.loc 1 179 23 is_stmt 0 discriminator 3 view .LVU313
+ 979 001a 0134     		adds	r4, r4, #1
+ 980              	.LVL136:
+ 179:Src/term_io.c **** 	for(n = 0; n < cnt; n++)
+ 981              		.loc 1 179 23 discriminator 3 view .LVU314
+ 982 001c E4B2     		uxtb	r4, r4
+ 983              	.LVL137:
+ 179:Src/term_io.c **** 	for(n = 0; n < cnt; n++)
+ 984              		.loc 1 179 23 discriminator 3 view .LVU315
+ 985 001e F6E7     		b	.L91
+ 986              	.L98:
+ 181:Src/term_io.c **** 	xputc(' ');
+ 987              		.loc 1 181 2 is_stmt 1 view .LVU316
+ 988 0020 2020     		movs	r0, #32
+ 989 0022 FFF7FEFF 		bl	xputc
+ 990              	.LVL138:
+ 182:Src/term_io.c **** 	for(n = 0; n < cnt; n++) {
+ 991              		.loc 1 182 2 view .LVU317
+ 992              		.loc 1 182 8 is_stmt 0 view .LVU318
+ 993 0026 0024     		movs	r4, #0
+ 994              		.loc 1 182 2 view .LVU319
+ 995 0028 03E0     		b	.L93
+ 996              	.LVL139:
+ 997              	.L94:
+ 183:Src/term_io.c **** 		if ((buff[n] < 0x20)||(buff[n] >= 0x7F))
+ 184:Src/term_io.c **** 			xputc('.');
+ 185:Src/term_io.c **** 		else
+ 186:Src/term_io.c **** 			xputc(buff[n]);
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s 			page 24
+
+
+ 998              		.loc 1 186 4 is_stmt 1 view .LVU320
+ 999 002a FFF7FEFF 		bl	xputc
+ 1000              	.LVL140:
+ 1001              	.L95:
+ 182:Src/term_io.c **** 	for(n = 0; n < cnt; n++) {
+ 1002              		.loc 1 182 22 discriminator 2 view .LVU321
+ 182:Src/term_io.c **** 	for(n = 0; n < cnt; n++) {
+ 1003              		.loc 1 182 23 is_stmt 0 discriminator 2 view .LVU322
+ 1004 002e 0134     		adds	r4, r4, #1
+ 1005              	.LVL141:
+ 182:Src/term_io.c **** 	for(n = 0; n < cnt; n++) {
+ 1006              		.loc 1 182 23 discriminator 2 view .LVU323
+ 1007 0030 E4B2     		uxtb	r4, r4
+ 1008              	.LVL142:
+ 1009              	.L93:
+ 182:Src/term_io.c **** 	for(n = 0; n < cnt; n++) {
+ 1010              		.loc 1 182 13 is_stmt 1 discriminator 1 view .LVU324
+ 182:Src/term_io.c **** 	for(n = 0; n < cnt; n++) {
+ 1011              		.loc 1 182 2 is_stmt 0 discriminator 1 view .LVU325
+ 1012 0032 AC42     		cmp	r4, r5
+ 1013 0034 09DA     		bge	.L99
+ 183:Src/term_io.c **** 		if ((buff[n] < 0x20)||(buff[n] >= 0x7F))
+ 1014              		.loc 1 183 3 is_stmt 1 view .LVU326
+ 183:Src/term_io.c **** 		if ((buff[n] < 0x20)||(buff[n] >= 0x7F))
+ 1015              		.loc 1 183 12 is_stmt 0 view .LVU327
+ 1016 0036 305D     		ldrb	r0, [r6, r4]	@ zero_extendqisi2
+ 183:Src/term_io.c **** 		if ((buff[n] < 0x20)||(buff[n] >= 0x7F))
+ 1017              		.loc 1 183 23 view .LVU328
+ 1018 0038 A0F12003 		sub	r3, r0, #32
+ 1019 003c DBB2     		uxtb	r3, r3
+ 183:Src/term_io.c **** 		if ((buff[n] < 0x20)||(buff[n] >= 0x7F))
+ 1020              		.loc 1 183 6 view .LVU329
+ 1021 003e 5E2B     		cmp	r3, #94
+ 1022 0040 F3D9     		bls	.L94
+ 184:Src/term_io.c **** 		else
+ 1023              		.loc 1 184 4 is_stmt 1 view .LVU330
+ 1024 0042 2E20     		movs	r0, #46
+ 1025 0044 FFF7FEFF 		bl	xputc
+ 1026              	.LVL143:
+ 1027 0048 F1E7     		b	.L95
+ 1028              	.L99:
+ 187:Src/term_io.c **** 	}
+ 188:Src/term_io.c **** 	xputc('\n');
+ 1029              		.loc 1 188 2 view .LVU331
+ 1030 004a 0A20     		movs	r0, #10
+ 1031 004c FFF7FEFF 		bl	xputc
+ 1032              	.LVL144:
+ 189:Src/term_io.c **** }
+ 1033              		.loc 1 189 1 is_stmt 0 view .LVU332
+ 1034 0050 70BD     		pop	{r4, r5, r6, pc}
+ 1035              	.LVL145:
+ 1036              	.L101:
+ 1037              		.loc 1 189 1 view .LVU333
+ 1038 0052 00BF     		.align	2
+ 1039              	.L100:
+ 1040 0054 00000000 		.word	.LC0
+ 1041 0058 08000000 		.word	.LC1
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s 			page 25
+
+
+ 1042              		.cfi_endproc
+ 1043              	.LFE143:
+ 1045              		.section	.text.get_line,"ax",%progbits
+ 1046              		.align	1
+ 1047              		.global	get_line
+ 1048              		.syntax unified
+ 1049              		.thumb
+ 1050              		.thumb_func
+ 1051              		.fpu fpv5-sp-d16
+ 1053              	get_line:
+ 1054              	.LVL146:
+ 1055              	.LFB144:
+ 190:Src/term_io.c **** 
+ 191:Src/term_io.c **** 
+ 192:Src/term_io.c **** 
+ 193:Src/term_io.c **** 
+ 194:Src/term_io.c **** void get_line (char *buff, int len)
+ 195:Src/term_io.c **** {
+ 1056              		.loc 1 195 1 is_stmt 1 view -0
+ 1057              		.cfi_startproc
+ 1058              		@ args = 0, pretend = 0, frame = 0
+ 1059              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1060              		.loc 1 195 1 is_stmt 0 view .LVU335
+ 1061 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 1062              	.LCFI15:
+ 1063              		.cfi_def_cfa_offset 24
+ 1064              		.cfi_offset 4, -24
+ 1065              		.cfi_offset 5, -20
+ 1066              		.cfi_offset 6, -16
+ 1067              		.cfi_offset 7, -12
+ 1068              		.cfi_offset 8, -8
+ 1069              		.cfi_offset 14, -4
+ 1070 0004 0746     		mov	r7, r0
+ 1071 0006 0E46     		mov	r6, r1
+ 196:Src/term_io.c **** 	char c;
+ 1072              		.loc 1 196 2 is_stmt 1 view .LVU336
+ 197:Src/term_io.c **** 	int idx = 0;
+ 1073              		.loc 1 197 2 view .LVU337
+ 1074              	.LVL147:
+ 1075              		.loc 1 197 6 is_stmt 0 view .LVU338
+ 1076 0008 0025     		movs	r5, #0
+ 1077 000a 10E0     		b	.L103
+ 1078              	.LVL148:
+ 1079              	.L108:
+ 198:Src/term_io.c **** 
+ 199:Src/term_io.c **** 	for (;;) {
+ 200:Src/term_io.c **** 		c = xgetc();
+ 201:Src/term_io.c **** 		if (c == '\r') break;
+ 202:Src/term_io.c **** 		if ((c == '\b') && idx) {
+ 203:Src/term_io.c **** 			idx--; xputc(c);
+ 1080              		.loc 1 203 4 is_stmt 1 view .LVU339
+ 1081              		.loc 1 203 7 is_stmt 0 view .LVU340
+ 1082 000c 013D     		subs	r5, r5, #1
+ 1083              	.LVL149:
+ 1084              		.loc 1 203 11 is_stmt 1 view .LVU341
+ 1085 000e FFF7FEFF 		bl	xputc
+ 1086              	.LVL150:
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s 			page 26
+
+
+ 204:Src/term_io.c **** 			xputc(' '); xputc(c); // added by mthomas for Eclipse Terminal plug-in
+ 1087              		.loc 1 204 4 view .LVU342
+ 1088 0012 2020     		movs	r0, #32
+ 1089 0014 FFF7FEFF 		bl	xputc
+ 1090              	.LVL151:
+ 1091              		.loc 1 204 16 view .LVU343
+ 1092 0018 2046     		mov	r0, r4
+ 1093 001a FFF7FEFF 		bl	xputc
+ 1094              	.LVL152:
+ 1095 001e 14E0     		b	.L105
+ 1096              	.L109:
+ 205:Src/term_io.c **** 		}
+ 206:Src/term_io.c **** 		if (((uint8_t)c >= ' ') && (idx < len - 1)) {
+ 207:Src/term_io.c **** 				buff[idx++] = c; xputc(c);
+ 1097              		.loc 1 207 5 view .LVU344
+ 1098              		.loc 1 207 13 is_stmt 0 view .LVU345
+ 1099 0020 05F10108 		add	r8, r5, #1
+ 1100              	.LVL153:
+ 1101              		.loc 1 207 17 view .LVU346
+ 1102 0024 7C55     		strb	r4, [r7, r5]
+ 1103              		.loc 1 207 22 is_stmt 1 view .LVU347
+ 1104 0026 2046     		mov	r0, r4
+ 1105 0028 FFF7FEFF 		bl	xputc
+ 1106              	.LVL154:
+ 1107              		.loc 1 207 13 is_stmt 0 view .LVU348
+ 1108 002c 4546     		mov	r5, r8
+ 1109              	.LVL155:
+ 1110              	.L103:
+ 199:Src/term_io.c **** 		c = xgetc();
+ 1111              		.loc 1 199 2 is_stmt 1 view .LVU349
+ 200:Src/term_io.c **** 		if (c == '\r') break;
+ 1112              		.loc 1 200 3 view .LVU350
+ 200:Src/term_io.c **** 		if (c == '\r') break;
+ 1113              		.loc 1 200 7 is_stmt 0 view .LVU351
+ 1114 002e FFF7FEFF 		bl	debug_waitkey
+ 1115              	.LVL156:
+ 1116 0032 0446     		mov	r4, r0
+ 1117              	.LVL157:
+ 201:Src/term_io.c **** 		if ((c == '\b') && idx) {
+ 1118              		.loc 1 201 3 is_stmt 1 view .LVU352
+ 201:Src/term_io.c **** 		if ((c == '\b') && idx) {
+ 1119              		.loc 1 201 6 is_stmt 0 view .LVU353
+ 1120 0034 0D28     		cmp	r0, #13
+ 1121 0036 0ED0     		beq	.L104
+ 202:Src/term_io.c **** 			idx--; xputc(c);
+ 1122              		.loc 1 202 3 is_stmt 1 view .LVU354
+ 202:Src/term_io.c **** 			idx--; xputc(c);
+ 1123              		.loc 1 202 19 is_stmt 0 view .LVU355
+ 1124 0038 0828     		cmp	r0, #8
+ 1125 003a 14BF     		ite	ne
+ 1126 003c 0023     		movne	r3, #0
+ 1127 003e 0123     		moveq	r3, #1
+ 1128 0040 002D     		cmp	r5, #0
+ 1129 0042 08BF     		it	eq
+ 1130 0044 0023     		moveq	r3, #0
+ 202:Src/term_io.c **** 			idx--; xputc(c);
+ 1131              		.loc 1 202 6 view .LVU356
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s 			page 27
+
+
+ 1132 0046 002B     		cmp	r3, #0
+ 1133 0048 E0D1     		bne	.L108
+ 1134              	.LVL158:
+ 1135              	.L105:
+ 206:Src/term_io.c **** 				buff[idx++] = c; xputc(c);
+ 1136              		.loc 1 206 3 is_stmt 1 view .LVU357
+ 206:Src/term_io.c **** 				buff[idx++] = c; xputc(c);
+ 1137              		.loc 1 206 6 is_stmt 0 view .LVU358
+ 1138 004a 1F2C     		cmp	r4, #31
+ 1139 004c EFD9     		bls	.L103
+ 206:Src/term_io.c **** 				buff[idx++] = c; xputc(c);
+ 1140              		.loc 1 206 41 discriminator 1 view .LVU359
+ 1141 004e 731E     		subs	r3, r6, #1
+ 206:Src/term_io.c **** 				buff[idx++] = c; xputc(c);
+ 1142              		.loc 1 206 27 discriminator 1 view .LVU360
+ 1143 0050 AB42     		cmp	r3, r5
+ 1144 0052 ECDD     		ble	.L103
+ 1145 0054 E4E7     		b	.L109
+ 1146              	.LVL159:
+ 1147              	.L104:
+ 208:Src/term_io.c **** 		}
+ 209:Src/term_io.c **** 	}
+ 210:Src/term_io.c **** 	buff[idx] = 0;
+ 1148              		.loc 1 210 2 is_stmt 1 view .LVU361
+ 1149              		.loc 1 210 12 is_stmt 0 view .LVU362
+ 1150 0056 0023     		movs	r3, #0
+ 1151 0058 7B55     		strb	r3, [r7, r5]
+ 211:Src/term_io.c **** 	xputc('\n');
+ 1152              		.loc 1 211 2 is_stmt 1 view .LVU363
+ 1153 005a 0A20     		movs	r0, #10
+ 1154              	.LVL160:
+ 1155              		.loc 1 211 2 is_stmt 0 view .LVU364
+ 1156 005c FFF7FEFF 		bl	xputc
+ 1157              	.LVL161:
+ 212:Src/term_io.c **** }
+ 1158              		.loc 1 212 1 view .LVU365
+ 1159 0060 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 1160              		.loc 1 212 1 view .LVU366
+ 1161              		.cfi_endproc
+ 1162              	.LFE144:
+ 1164              		.section	.text.get_line_r,"ax",%progbits
+ 1165              		.align	1
+ 1166              		.global	get_line_r
+ 1167              		.syntax unified
+ 1168              		.thumb
+ 1169              		.thumb_func
+ 1170              		.fpu fpv5-sp-d16
+ 1172              	get_line_r:
+ 1173              	.LVL162:
+ 1174              	.LFB145:
+ 213:Src/term_io.c **** 
+ 214:Src/term_io.c **** 
+ 215:Src/term_io.c **** // function added by mthomas:
+ 216:Src/term_io.c **** int get_line_r (char *buff, int len, int* idx)
+ 217:Src/term_io.c **** {
+ 1175              		.loc 1 217 1 is_stmt 1 view -0
+ 1176              		.cfi_startproc
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s 			page 28
+
+
+ 1177              		@ args = 0, pretend = 0, frame = 0
+ 1178              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1179              		.loc 1 217 1 is_stmt 0 view .LVU368
+ 1180 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 1181              	.LCFI16:
+ 1182              		.cfi_def_cfa_offset 24
+ 1183              		.cfi_offset 4, -24
+ 1184              		.cfi_offset 5, -20
+ 1185              		.cfi_offset 6, -16
+ 1186              		.cfi_offset 7, -12
+ 1187              		.cfi_offset 8, -8
+ 1188              		.cfi_offset 14, -4
+ 1189 0004 0646     		mov	r6, r0
+ 1190 0006 0F46     		mov	r7, r1
+ 1191 0008 1546     		mov	r5, r2
+ 218:Src/term_io.c **** 	char c;
+ 1192              		.loc 1 218 2 is_stmt 1 view .LVU369
+ 219:Src/term_io.c **** 	int retval = 0;
+ 1193              		.loc 1 219 2 view .LVU370
+ 1194              	.LVL163:
+ 220:Src/term_io.c **** 	int myidx;
+ 1195              		.loc 1 220 2 view .LVU371
+ 221:Src/term_io.c **** 
+ 222:Src/term_io.c **** 	if ( xavail() ) {
+ 1196              		.loc 1 222 2 view .LVU372
+ 1197              		.loc 1 222 7 is_stmt 0 view .LVU373
+ 1198 000a FFF7FEFF 		bl	debug_test
+ 1199              	.LVL164:
+ 1200              		.loc 1 222 5 view .LVU374
+ 1201 000e 08B9     		cbnz	r0, .L118
+ 1202              	.LVL165:
+ 1203              	.L110:
+ 223:Src/term_io.c **** 		myidx = *idx;
+ 224:Src/term_io.c **** 		c = xgetc();
+ 225:Src/term_io.c **** 		if (c == '\r') {
+ 226:Src/term_io.c **** 			buff[myidx] = 0;
+ 227:Src/term_io.c **** 			xputc('\n');
+ 228:Src/term_io.c **** 			retval = 1;
+ 229:Src/term_io.c **** 		} else {
+ 230:Src/term_io.c **** 			if ((c == '\b') && myidx) {
+ 231:Src/term_io.c **** 				myidx--; xputc(c);
+ 232:Src/term_io.c **** 				xputc(' '); xputc(c); // added by mthomas for Eclipse Terminal plug-in
+ 233:Src/term_io.c **** 			}
+ 234:Src/term_io.c **** 			if (((uint8_t)c >= ' ') && (myidx < len - 1)) {
+ 235:Src/term_io.c **** 					buff[myidx++] = c; xputc(c);
+ 236:Src/term_io.c **** 			}
+ 237:Src/term_io.c **** 		}
+ 238:Src/term_io.c **** 		*idx = myidx;
+ 239:Src/term_io.c **** 	}
+ 240:Src/term_io.c **** 
+ 241:Src/term_io.c **** 	return retval;
+ 242:Src/term_io.c **** }
+ 1204              		.loc 1 242 1 view .LVU375
+ 1205 0010 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 1206              	.LVL166:
+ 1207              	.L118:
+ 223:Src/term_io.c **** 		myidx = *idx;
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s 			page 29
+
+
+ 1208              		.loc 1 223 3 is_stmt 1 view .LVU376
+ 223:Src/term_io.c **** 		myidx = *idx;
+ 1209              		.loc 1 223 9 is_stmt 0 view .LVU377
+ 1210 0014 D5F80080 		ldr	r8, [r5]
+ 1211              	.LVL167:
+ 224:Src/term_io.c **** 		if (c == '\r') {
+ 1212              		.loc 1 224 3 is_stmt 1 view .LVU378
+ 224:Src/term_io.c **** 		if (c == '\r') {
+ 1213              		.loc 1 224 7 is_stmt 0 view .LVU379
+ 1214 0018 FFF7FEFF 		bl	debug_waitkey
+ 1215              	.LVL168:
+ 1216 001c 0446     		mov	r4, r0
+ 1217              	.LVL169:
+ 225:Src/term_io.c **** 			buff[myidx] = 0;
+ 1218              		.loc 1 225 3 is_stmt 1 view .LVU380
+ 225:Src/term_io.c **** 			buff[myidx] = 0;
+ 1219              		.loc 1 225 6 is_stmt 0 view .LVU381
+ 1220 001e 0D28     		cmp	r0, #13
+ 1221 0020 0FD0     		beq	.L119
+ 230:Src/term_io.c **** 				myidx--; xputc(c);
+ 1222              		.loc 1 230 4 is_stmt 1 view .LVU382
+ 230:Src/term_io.c **** 				myidx--; xputc(c);
+ 1223              		.loc 1 230 20 is_stmt 0 view .LVU383
+ 1224 0022 0828     		cmp	r0, #8
+ 1225 0024 14BF     		ite	ne
+ 1226 0026 0023     		movne	r3, #0
+ 1227 0028 0123     		moveq	r3, #1
+ 1228 002a B8F1000F 		cmp	r8, #0
+ 1229 002e 08BF     		it	eq
+ 1230 0030 0023     		moveq	r3, #0
+ 230:Src/term_io.c **** 				myidx--; xputc(c);
+ 1231              		.loc 1 230 7 view .LVU384
+ 1232 0032 73B9     		cbnz	r3, .L120
+ 1233              	.LVL170:
+ 1234              	.L114:
+ 234:Src/term_io.c **** 					buff[myidx++] = c; xputc(c);
+ 1235              		.loc 1 234 4 is_stmt 1 view .LVU385
+ 234:Src/term_io.c **** 					buff[myidx++] = c; xputc(c);
+ 1236              		.loc 1 234 7 is_stmt 0 view .LVU386
+ 1237 0034 1F2C     		cmp	r4, #31
+ 1238 0036 21D9     		bls	.L115
+ 234:Src/term_io.c **** 					buff[myidx++] = c; xputc(c);
+ 1239              		.loc 1 234 44 discriminator 1 view .LVU387
+ 1240 0038 791E     		subs	r1, r7, #1
+ 234:Src/term_io.c **** 					buff[myidx++] = c; xputc(c);
+ 1241              		.loc 1 234 28 discriminator 1 view .LVU388
+ 1242 003a 4145     		cmp	r1, r8
+ 1243 003c 14DC     		bgt	.L121
+ 219:Src/term_io.c **** 	int myidx;
+ 1244              		.loc 1 219 6 view .LVU389
+ 1245 003e 0020     		movs	r0, #0
+ 1246 0040 1DE0     		b	.L113
+ 1247              	.LVL171:
+ 1248              	.L119:
+ 226:Src/term_io.c **** 			xputc('\n');
+ 1249              		.loc 1 226 4 is_stmt 1 view .LVU390
+ 226:Src/term_io.c **** 			xputc('\n');
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s 			page 30
+
+
+ 1250              		.loc 1 226 16 is_stmt 0 view .LVU391
+ 1251 0042 0023     		movs	r3, #0
+ 1252 0044 06F80830 		strb	r3, [r6, r8]
+ 227:Src/term_io.c **** 			retval = 1;
+ 1253              		.loc 1 227 4 is_stmt 1 view .LVU392
+ 1254 0048 0A20     		movs	r0, #10
+ 1255              	.LVL172:
+ 227:Src/term_io.c **** 			retval = 1;
+ 1256              		.loc 1 227 4 is_stmt 0 view .LVU393
+ 1257 004a FFF7FEFF 		bl	xputc
+ 1258              	.LVL173:
+ 228:Src/term_io.c **** 		} else {
+ 1259              		.loc 1 228 4 is_stmt 1 view .LVU394
+ 228:Src/term_io.c **** 		} else {
+ 1260              		.loc 1 228 11 is_stmt 0 view .LVU395
+ 1261 004e 0120     		movs	r0, #1
+ 1262 0050 15E0     		b	.L113
+ 1263              	.LVL174:
+ 1264              	.L120:
+ 231:Src/term_io.c **** 				xputc(' '); xputc(c); // added by mthomas for Eclipse Terminal plug-in
+ 1265              		.loc 1 231 5 is_stmt 1 view .LVU396
+ 231:Src/term_io.c **** 				xputc(' '); xputc(c); // added by mthomas for Eclipse Terminal plug-in
+ 1266              		.loc 1 231 10 is_stmt 0 view .LVU397
+ 1267 0052 08F1FF38 		add	r8, r8, #-1
+ 1268              	.LVL175:
+ 231:Src/term_io.c **** 				xputc(' '); xputc(c); // added by mthomas for Eclipse Terminal plug-in
+ 1269              		.loc 1 231 14 is_stmt 1 view .LVU398
+ 1270 0056 FFF7FEFF 		bl	xputc
+ 1271              	.LVL176:
+ 232:Src/term_io.c **** 			}
+ 1272              		.loc 1 232 5 view .LVU399
+ 1273 005a 2020     		movs	r0, #32
+ 1274 005c FFF7FEFF 		bl	xputc
+ 1275              	.LVL177:
+ 232:Src/term_io.c **** 			}
+ 1276              		.loc 1 232 17 view .LVU400
+ 1277 0060 2046     		mov	r0, r4
+ 1278 0062 FFF7FEFF 		bl	xputc
+ 1279              	.LVL178:
+ 1280 0066 E5E7     		b	.L114
+ 1281              	.L121:
+ 235:Src/term_io.c **** 			}
+ 1282              		.loc 1 235 6 view .LVU401
+ 235:Src/term_io.c **** 			}
+ 1283              		.loc 1 235 16 is_stmt 0 view .LVU402
+ 1284 0068 08F10107 		add	r7, r8, #1
+ 1285              	.LVL179:
+ 235:Src/term_io.c **** 			}
+ 1286              		.loc 1 235 20 view .LVU403
+ 1287 006c 06F80840 		strb	r4, [r6, r8]
+ 235:Src/term_io.c **** 			}
+ 1288              		.loc 1 235 25 is_stmt 1 view .LVU404
+ 1289 0070 2046     		mov	r0, r4
+ 1290 0072 FFF7FEFF 		bl	xputc
+ 1291              	.LVL180:
+ 235:Src/term_io.c **** 			}
+ 1292              		.loc 1 235 16 is_stmt 0 view .LVU405
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s 			page 31
+
+
+ 1293 0076 B846     		mov	r8, r7
+ 219:Src/term_io.c **** 	int myidx;
+ 1294              		.loc 1 219 6 view .LVU406
+ 1295 0078 0020     		movs	r0, #0
+ 1296 007a 00E0     		b	.L113
+ 1297              	.LVL181:
+ 1298              	.L115:
+ 219:Src/term_io.c **** 	int myidx;
+ 1299              		.loc 1 219 6 view .LVU407
+ 1300 007c 0020     		movs	r0, #0
+ 1301              	.LVL182:
+ 1302              	.L113:
+ 238:Src/term_io.c **** 	}
+ 1303              		.loc 1 238 3 is_stmt 1 view .LVU408
+ 238:Src/term_io.c **** 	}
+ 1304              		.loc 1 238 8 is_stmt 0 view .LVU409
+ 1305 007e C5F80080 		str	r8, [r5]
+ 241:Src/term_io.c **** }
+ 1306              		.loc 1 241 2 is_stmt 1 view .LVU410
+ 241:Src/term_io.c **** }
+ 1307              		.loc 1 241 9 is_stmt 0 view .LVU411
+ 1308 0082 C5E7     		b	.L110
+ 1309              		.cfi_endproc
+ 1310              	.LFE145:
+ 1312              		.text
+ 1313              	.Letext0:
+ 1314              		.file 2 "c:\\program files (x86)\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi
+ 1315              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\
+ 1316              		.file 4 "c:\\program files (x86)\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\
+ 1317              		.file 5 "Drivers/CMSIS/Include/core_cm7.h"
+ 1318              		.file 6 "Drivers/CMSIS/Device/ST/STM32F7xx/Include/system_stm32f7xx.h"
+ 1319              		.file 7 "c:\\program files (x86)\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\
+ 1320              		.file 8 "c:\\program files (x86)\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\
+ 1321              		.file 9 "c:\\program files (x86)\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi
+ 1322              		.file 10 "c:\\program files (x86)\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include
+ 1323              		.file 11 "Inc/dbgu.h"
+ 1324              		.file 12 "<built-in>"
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s 			page 32
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 term_io.c
+C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s:18     .text.xatoi:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s:26     .text.xatoi:00000000 xatoi
+C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s:302    .text.xputc:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s:309    .text.xputc:00000000 xputc
+C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s:331    .text.xputs:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s:338    .text.xputs:00000000 xputs
+C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s:376    .text.xitoa:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s:383    .text.xitoa:00000000 xitoa
+C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s:585    .text.xprintf:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s:592    .text.xprintf:00000000 xprintf
+C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s:925    .rodata.put_dump.str1.4:00000000 $d
+C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s:932    .text.put_dump:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s:939    .text.put_dump:00000000 put_dump
+C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s:1040   .text.put_dump:00000054 $d
+C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s:1046   .text.get_line:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s:1053   .text.get_line:00000000 get_line
+C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s:1165   .text.get_line_r:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccXju2jT.s:1172   .text.get_line_r:00000000 get_line_r
+
+UNDEFINED SYMBOLS
+debug_chr
+debug_waitkey
+debug_test

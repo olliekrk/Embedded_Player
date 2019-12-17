@@ -8,12 +8,13 @@
 #include <ffconf.h>
 
 #define AUDIO_QUEUE_SIZE 30
-#define AUDIO_VOLUME_INIT 10
+#define AUDIO_VOLUME_INIT 40
 #define AUDIO_VOLUME_UNIT 5
 #define AUDIO_VOLUME_LIMIT 90
 
 extern osPoolId audioRequestsPool;
 extern osMessageQId audioRequestsQueue;
+extern int AudioQueueSize;
 
 typedef struct AudioRequest{
     int audioIndex;

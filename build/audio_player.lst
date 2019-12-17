@@ -1,0 +1,452 @@
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccpSfG2g.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"audio_player.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.AUDIO_P_ChangeFrequency,"ax",%progbits
+  18              		.align	1
+  19              		.global	AUDIO_P_ChangeFrequency
+  20              		.arch armv7e-m
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  24              		.fpu fpv5-sp-d16
+  26              	AUDIO_P_ChangeFrequency:
+  27              	.LVL0:
+  28              	.LFB143:
+  29              		.file 1 "Modules/audio_player.c"
+   1:Modules/audio_player.c **** //
+   2:Modules/audio_player.c **** // Created by olliekrk on 24.11.2019.
+   3:Modules/audio_player.c **** //
+   4:Modules/audio_player.c **** 
+   5:Modules/audio_player.c **** #include <term_io.h>
+   6:Modules/audio_player.c **** #include "audio_player.h"
+   7:Modules/audio_player.c **** #include "stm32746g_discovery_audio.h"
+   8:Modules/audio_player.c **** #include "audio_loader.h"
+   9:Modules/audio_player.c **** #include "controls.h"
+  10:Modules/audio_player.c **** 
+  11:Modules/audio_player.c **** osPoolId audioRequestsPool;
+  12:Modules/audio_player.c **** osMessageQId audioRequestsQueue;
+  13:Modules/audio_player.c **** 
+  14:Modules/audio_player.c **** int AUDIO_P_ChangeFrequency(int frequency) {
+  30              		.loc 1 14 44 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		.loc 1 14 44 is_stmt 0 view .LVU1
+  35 0000 10B5     		push	{r4, lr}
+  36              	.LCFI0:
+  37              		.cfi_def_cfa_offset 8
+  38              		.cfi_offset 4, -8
+  39              		.cfi_offset 14, -4
+  40 0002 0246     		mov	r2, r0
+  15:Modules/audio_player.c ****     int status = BSP_AUDIO_OUT_Init(OUTPUT_DEVICE_HEADPHONE1, APP_STATE.VOLUME, frequency);
+  41              		.loc 1 15 5 is_stmt 1 view .LVU2
+  42              		.loc 1 15 18 is_stmt 0 view .LVU3
+  43 0004 054B     		ldr	r3, .L3
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccpSfG2g.s 			page 2
+
+
+  44 0006 93F82010 		ldrb	r1, [r3, #32]	@ zero_extendqisi2
+  45 000a 0220     		movs	r0, #2
+  46              	.LVL1:
+  47              		.loc 1 15 18 view .LVU4
+  48 000c FFF7FEFF 		bl	BSP_AUDIO_OUT_Init
+  49              	.LVL2:
+  50              		.loc 1 15 18 view .LVU5
+  51 0010 0446     		mov	r4, r0
+  52              	.LVL3:
+  16:Modules/audio_player.c ****     BSP_AUDIO_OUT_SetAudioFrameSlot(CODEC_AUDIOFRAME_SLOT_02);
+  53              		.loc 1 16 5 is_stmt 1 view .LVU6
+  54 0012 0520     		movs	r0, #5
+  55              	.LVL4:
+  56              		.loc 1 16 5 is_stmt 0 view .LVU7
+  57 0014 FFF7FEFF 		bl	BSP_AUDIO_OUT_SetAudioFrameSlot
+  58              	.LVL5:
+  17:Modules/audio_player.c ****     return status;
+  59              		.loc 1 17 5 is_stmt 1 view .LVU8
+  18:Modules/audio_player.c **** }
+  60              		.loc 1 18 1 is_stmt 0 view .LVU9
+  61 0018 2046     		mov	r0, r4
+  62 001a 10BD     		pop	{r4, pc}
+  63              	.LVL6:
+  64              	.L4:
+  65              		.loc 1 18 1 view .LVU10
+  66              		.align	2
+  67              	.L3:
+  68 001c 00000000 		.word	APP_STATE
+  69              		.cfi_endproc
+  70              	.LFE143:
+  72              		.section	.text.AUDIO_P_VolumeUp,"ax",%progbits
+  73              		.align	1
+  74              		.global	AUDIO_P_VolumeUp
+  75              		.syntax unified
+  76              		.thumb
+  77              		.thumb_func
+  78              		.fpu fpv5-sp-d16
+  80              	AUDIO_P_VolumeUp:
+  81              	.LFB144:
+  19:Modules/audio_player.c **** 
+  20:Modules/audio_player.c **** void AUDIO_P_VolumeUp(){
+  82              		.loc 1 20 24 is_stmt 1 view -0
+  83              		.cfi_startproc
+  84              		@ args = 0, pretend = 0, frame = 0
+  85              		@ frame_needed = 0, uses_anonymous_args = 0
+  86 0000 08B5     		push	{r3, lr}
+  87              	.LCFI1:
+  88              		.cfi_def_cfa_offset 8
+  89              		.cfi_offset 3, -8
+  90              		.cfi_offset 14, -4
+  21:Modules/audio_player.c ****     if (APP_STATE.VOLUME < AUDIO_VOLUME_LIMIT) APP_STATE.VOLUME += AUDIO_VOLUME_UNIT;
+  91              		.loc 1 21 5 view .LVU12
+  92              		.loc 1 21 18 is_stmt 0 view .LVU13
+  93 0002 064B     		ldr	r3, .L8
+  94 0004 1B6A     		ldr	r3, [r3, #32]
+  95              		.loc 1 21 8 view .LVU14
+  96 0006 592B     		cmp	r3, #89
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccpSfG2g.s 			page 3
+
+
+  97 0008 02DC     		bgt	.L6
+  98              		.loc 1 21 48 is_stmt 1 discriminator 1 view .LVU15
+  99              		.loc 1 21 65 is_stmt 0 discriminator 1 view .LVU16
+ 100 000a 0533     		adds	r3, r3, #5
+ 101 000c 034A     		ldr	r2, .L8
+ 102 000e 1362     		str	r3, [r2, #32]
+ 103              	.L6:
+  22:Modules/audio_player.c ****     BSP_AUDIO_OUT_SetVolume(APP_STATE.VOLUME);
+ 104              		.loc 1 22 5 is_stmt 1 view .LVU17
+ 105 0010 024B     		ldr	r3, .L8
+ 106 0012 93F82000 		ldrb	r0, [r3, #32]	@ zero_extendqisi2
+ 107 0016 FFF7FEFF 		bl	BSP_AUDIO_OUT_SetVolume
+ 108              	.LVL7:
+  23:Modules/audio_player.c **** }
+ 109              		.loc 1 23 1 is_stmt 0 view .LVU18
+ 110 001a 08BD     		pop	{r3, pc}
+ 111              	.L9:
+ 112              		.align	2
+ 113              	.L8:
+ 114 001c 00000000 		.word	APP_STATE
+ 115              		.cfi_endproc
+ 116              	.LFE144:
+ 118              		.section	.text.AUDIO_P_VolumeDown,"ax",%progbits
+ 119              		.align	1
+ 120              		.global	AUDIO_P_VolumeDown
+ 121              		.syntax unified
+ 122              		.thumb
+ 123              		.thumb_func
+ 124              		.fpu fpv5-sp-d16
+ 126              	AUDIO_P_VolumeDown:
+ 127              	.LFB145:
+  24:Modules/audio_player.c **** 
+  25:Modules/audio_player.c **** void AUDIO_P_VolumeDown(){
+ 128              		.loc 1 25 26 is_stmt 1 view -0
+ 129              		.cfi_startproc
+ 130              		@ args = 0, pretend = 0, frame = 0
+ 131              		@ frame_needed = 0, uses_anonymous_args = 0
+ 132 0000 08B5     		push	{r3, lr}
+ 133              	.LCFI2:
+ 134              		.cfi_def_cfa_offset 8
+ 135              		.cfi_offset 3, -8
+ 136              		.cfi_offset 14, -4
+  26:Modules/audio_player.c ****     if (APP_STATE.VOLUME > 0) APP_STATE.VOLUME -= AUDIO_VOLUME_UNIT;
+ 137              		.loc 1 26 5 view .LVU20
+ 138              		.loc 1 26 18 is_stmt 0 view .LVU21
+ 139 0002 064B     		ldr	r3, .L13
+ 140 0004 1B6A     		ldr	r3, [r3, #32]
+ 141              		.loc 1 26 8 view .LVU22
+ 142 0006 002B     		cmp	r3, #0
+ 143 0008 02DD     		ble	.L11
+ 144              		.loc 1 26 31 is_stmt 1 discriminator 1 view .LVU23
+ 145              		.loc 1 26 48 is_stmt 0 discriminator 1 view .LVU24
+ 146 000a 053B     		subs	r3, r3, #5
+ 147 000c 034A     		ldr	r2, .L13
+ 148 000e 1362     		str	r3, [r2, #32]
+ 149              	.L11:
+  27:Modules/audio_player.c ****     BSP_AUDIO_OUT_SetVolume(APP_STATE.VOLUME);
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccpSfG2g.s 			page 4
+
+
+ 150              		.loc 1 27 5 is_stmt 1 view .LVU25
+ 151 0010 024B     		ldr	r3, .L13
+ 152 0012 93F82000 		ldrb	r0, [r3, #32]	@ zero_extendqisi2
+ 153 0016 FFF7FEFF 		bl	BSP_AUDIO_OUT_SetVolume
+ 154              	.LVL8:
+  28:Modules/audio_player.c **** }
+ 155              		.loc 1 28 1 is_stmt 0 view .LVU26
+ 156 001a 08BD     		pop	{r3, pc}
+ 157              	.L14:
+ 158              		.align	2
+ 159              	.L13:
+ 160 001c 00000000 		.word	APP_STATE
+ 161              		.cfi_endproc
+ 162              	.LFE145:
+ 164              		.section	.text.AUDIO_P_AddToQueue,"ax",%progbits
+ 165              		.align	1
+ 166              		.global	AUDIO_P_AddToQueue
+ 167              		.syntax unified
+ 168              		.thumb
+ 169              		.thumb_func
+ 170              		.fpu fpv5-sp-d16
+ 172              	AUDIO_P_AddToQueue:
+ 173              	.LVL9:
+ 174              	.LFB146:
+  29:Modules/audio_player.c **** 
+  30:Modules/audio_player.c **** void AUDIO_P_AddToQueue(int audioIndex) {
+ 175              		.loc 1 30 41 is_stmt 1 view -0
+ 176              		.cfi_startproc
+ 177              		@ args = 0, pretend = 0, frame = 0
+ 178              		@ frame_needed = 0, uses_anonymous_args = 0
+ 179              		.loc 1 30 41 is_stmt 0 view .LVU28
+ 180 0000 10B5     		push	{r4, lr}
+ 181              	.LCFI3:
+ 182              		.cfi_def_cfa_offset 8
+ 183              		.cfi_offset 4, -8
+ 184              		.cfi_offset 14, -4
+ 185 0002 0446     		mov	r4, r0
+  31:Modules/audio_player.c ****     AudioRequest *request;
+ 186              		.loc 1 31 5 is_stmt 1 view .LVU29
+  32:Modules/audio_player.c ****     request = osPoolAlloc(audioRequestsPool);
+ 187              		.loc 1 32 5 view .LVU30
+ 188              		.loc 1 32 15 is_stmt 0 view .LVU31
+ 189 0004 054B     		ldr	r3, .L17
+ 190 0006 1868     		ldr	r0, [r3]
+ 191              	.LVL10:
+ 192              		.loc 1 32 15 view .LVU32
+ 193 0008 FFF7FEFF 		bl	osPoolAlloc
+ 194              	.LVL11:
+ 195 000c 0146     		mov	r1, r0
+ 196              	.LVL12:
+  33:Modules/audio_player.c ****     request->audioIndex = audioIndex;
+ 197              		.loc 1 33 5 is_stmt 1 view .LVU33
+ 198              		.loc 1 33 25 is_stmt 0 view .LVU34
+ 199 000e 0460     		str	r4, [r0]
+  34:Modules/audio_player.c ****     osMessagePut(audioRequestsQueue, (uint32_t) request, 0);
+ 200              		.loc 1 34 5 is_stmt 1 view .LVU35
+ 201 0010 0022     		movs	r2, #0
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccpSfG2g.s 			page 5
+
+
+ 202 0012 034B     		ldr	r3, .L17+4
+ 203 0014 1868     		ldr	r0, [r3]
+ 204              	.LVL13:
+ 205              		.loc 1 34 5 is_stmt 0 view .LVU36
+ 206 0016 FFF7FEFF 		bl	osMessagePut
+ 207              	.LVL14:
+  35:Modules/audio_player.c **** }
+ 208              		.loc 1 35 1 view .LVU37
+ 209 001a 10BD     		pop	{r4, pc}
+ 210              	.LVL15:
+ 211              	.L18:
+ 212              		.loc 1 35 1 view .LVU38
+ 213              		.align	2
+ 214              	.L17:
+ 215 001c 00000000 		.word	audioRequestsPool
+ 216 0020 00000000 		.word	audioRequestsQueue
+ 217              		.cfi_endproc
+ 218              	.LFE146:
+ 220              		.section	.rodata.AUDIO_P_Play.str1.4,"aMS",%progbits,1
+ 221              		.align	2
+ 222              	.LC0:
+ 223 0000 506C6179 		.ascii	"Playing: %d\015\012\000"
+ 223      696E673A 
+ 223      2025640D 
+ 223      0A00
+ 224              		.section	.text.AUDIO_P_Play,"ax",%progbits
+ 225              		.align	1
+ 226              		.global	AUDIO_P_Play
+ 227              		.syntax unified
+ 228              		.thumb
+ 229              		.thumb_func
+ 230              		.fpu fpv5-sp-d16
+ 232              	AUDIO_P_Play:
+ 233              	.LVL16:
+ 234              	.LFB147:
+  36:Modules/audio_player.c **** 
+  37:Modules/audio_player.c **** void AUDIO_P_Play(int audioIndex) {
+ 235              		.loc 1 37 35 is_stmt 1 view -0
+ 236              		.cfi_startproc
+ 237              		@ args = 0, pretend = 0, frame = 0
+ 238              		@ frame_needed = 0, uses_anonymous_args = 0
+ 239              		.loc 1 37 35 is_stmt 0 view .LVU40
+ 240 0000 10B5     		push	{r4, lr}
+ 241              	.LCFI4:
+ 242              		.cfi_def_cfa_offset 8
+ 243              		.cfi_offset 4, -8
+ 244              		.cfi_offset 14, -4
+ 245 0002 0446     		mov	r4, r0
+  38:Modules/audio_player.c ****     APP_STATE.IS_PLAYING = 1;
+ 246              		.loc 1 38 5 is_stmt 1 view .LVU41
+ 247              		.loc 1 38 26 is_stmt 0 view .LVU42
+ 248 0004 0B4B     		ldr	r3, .L23
+ 249 0006 0122     		movs	r2, #1
+ 250 0008 DA60     		str	r2, [r3, #12]
+  39:Modules/audio_player.c ****     int frequency = APP_BUTTONS_STATE.configs[audioIndex].sampleRate;
+ 251              		.loc 1 39 5 is_stmt 1 view .LVU43
+ 252              		.loc 1 39 38 is_stmt 0 view .LVU44
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccpSfG2g.s 			page 6
+
+
+ 253 000a 0B4B     		ldr	r3, .L23+4
+ 254 000c 1B68     		ldr	r3, [r3]
+ 255              		.loc 1 39 46 view .LVU45
+ 256 000e 03EB0013 		add	r3, r3, r0, lsl #4
+ 257              	.LVL17:
+  40:Modules/audio_player.c ****     if (AUDIO_P_ChangeFrequency(frequency) == AUDIO_OK) {
+ 258              		.loc 1 40 5 is_stmt 1 view .LVU46
+ 259              		.loc 1 40 9 is_stmt 0 view .LVU47
+ 260 0012 D888     		ldrh	r0, [r3, #6]
+ 261              	.LVL18:
+ 262              		.loc 1 40 9 view .LVU48
+ 263 0014 FFF7FEFF 		bl	AUDIO_P_ChangeFrequency
+ 264              	.LVL19:
+ 265              		.loc 1 40 8 view .LVU49
+ 266 0018 00B1     		cbz	r0, .L22
+ 267              	.L19:
+  41:Modules/audio_player.c ****         xprintf("Playing: %d\r\n", audioIndex);
+  42:Modules/audio_player.c ****         BSP_AUDIO_OUT_Play(
+  43:Modules/audio_player.c ****                 (uint16_t *) &AUDIO_BUFFER[audioIndex * BUFFER_LIMIT_PER_BUTTON],
+  44:Modules/audio_player.c ****                 BUFFER_LIMIT_PER_BUTTON
+  45:Modules/audio_player.c ****         );
+  46:Modules/audio_player.c ****     }
+  47:Modules/audio_player.c **** }
+ 268              		.loc 1 47 1 view .LVU50
+ 269 001a 10BD     		pop	{r4, pc}
+ 270              	.LVL20:
+ 271              	.L22:
+  41:Modules/audio_player.c ****         xprintf("Playing: %d\r\n", audioIndex);
+ 272              		.loc 1 41 9 is_stmt 1 view .LVU51
+ 273 001c 2146     		mov	r1, r4
+ 274 001e 0748     		ldr	r0, .L23+8
+ 275 0020 FFF7FEFF 		bl	xprintf
+ 276              	.LVL21:
+  42:Modules/audio_player.c ****                 (uint16_t *) &AUDIO_BUFFER[audioIndex * BUFFER_LIMIT_PER_BUTTON],
+ 277              		.loc 1 42 9 view .LVU52
+ 278 0024 4FF40031 		mov	r1, #131072
+ 279 0028 0548     		ldr	r0, .L23+12
+ 280 002a 00EB4440 		add	r0, r0, r4, lsl #17
+ 281 002e FFF7FEFF 		bl	BSP_AUDIO_OUT_Play
+ 282              	.LVL22:
+ 283              		.loc 1 47 1 is_stmt 0 view .LVU53
+ 284 0032 F2E7     		b	.L19
+ 285              	.L24:
+ 286              		.align	2
+ 287              	.L23:
+ 288 0034 00000000 		.word	APP_STATE
+ 289 0038 00000000 		.word	APP_BUTTONS_STATE
+ 290 003c 00000000 		.word	.LC0
+ 291 0040 00000000 		.word	AUDIO_BUFFER
+ 292              		.cfi_endproc
+ 293              	.LFE147:
+ 295              		.section	.text.AUDIO_P_End,"ax",%progbits
+ 296              		.align	1
+ 297              		.global	AUDIO_P_End
+ 298              		.syntax unified
+ 299              		.thumb
+ 300              		.thumb_func
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccpSfG2g.s 			page 7
+
+
+ 301              		.fpu fpv5-sp-d16
+ 303              	AUDIO_P_End:
+ 304              	.LFB148:
+  48:Modules/audio_player.c **** 
+  49:Modules/audio_player.c **** void AUDIO_P_End(){
+ 305              		.loc 1 49 19 is_stmt 1 view -0
+ 306              		.cfi_startproc
+ 307              		@ args = 0, pretend = 0, frame = 0
+ 308              		@ frame_needed = 0, uses_anonymous_args = 0
+ 309              		@ link register save eliminated.
+  50:Modules/audio_player.c **** 	APP_STATE.IS_PLAYING = 0;
+ 310              		.loc 1 50 2 view .LVU55
+ 311              		.loc 1 50 23 is_stmt 0 view .LVU56
+ 312 0000 014B     		ldr	r3, .L26
+ 313 0002 0022     		movs	r2, #0
+ 314 0004 DA60     		str	r2, [r3, #12]
+  51:Modules/audio_player.c **** }
+ 315              		.loc 1 51 1 view .LVU57
+ 316 0006 7047     		bx	lr
+ 317              	.L27:
+ 318              		.align	2
+ 319              	.L26:
+ 320 0008 00000000 		.word	APP_STATE
+ 321              		.cfi_endproc
+ 322              	.LFE148:
+ 324              		.comm	audioRequestsQueue,4,4
+ 325              		.comm	audioRequestsPool,4,4
+ 326              		.text
+ 327              	.Letext0:
+ 328              		.file 2 "c:\\program files (x86)\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\
+ 329              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\
+ 330              		.file 4 "Drivers/CMSIS/Include/core_cm7.h"
+ 331              		.file 5 "Drivers/CMSIS/Device/ST/STM32F7xx/Include/system_stm32f7xx.h"
+ 332              		.file 6 "c:\\program files (x86)\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\
+ 333              		.file 7 "c:\\program files (x86)\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\
+ 334              		.file 8 "c:\\program files (x86)\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi
+ 335              		.file 9 "c:\\program files (x86)\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\
+ 336              		.file 10 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ 337              		.file 11 "Middlewares/Third_Party/FreeRTOS/Source/include/queue.h"
+ 338              		.file 12 "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h"
+ 339              		.file 13 "c:\\program files (x86)\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include
+ 340              		.file 14 "Middlewares/ST/STM32_USB_Host_Library/Core/Inc/usbh_def.h"
+ 341              		.file 15 "Middlewares/ST/STM32_USB_Host_Library/Core/Inc/usbh_ctlreq.h"
+ 342              		.file 16 "Middlewares/ST/STM32_USB_Host_Library/Class/MSC/Inc/usbh_msc.h"
+ 343              		.file 17 "Modules/audio_player.h"
+ 344              		.file 18 "Drivers/BSP/STM32746G-Discovery/../Components/wm8994/../Common/audio.h"
+ 345              		.file 19 "Drivers/BSP/STM32746G-Discovery/../Components/wm8994/wm8994.h"
+ 346              		.file 20 "Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_audio.h"
+ 347              		.file 21 "Modules/audio_loader.h"
+ 348              		.file 22 "Modules/controls.h"
+ 349              		.file 23 "Inc/term_io.h"
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccpSfG2g.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 audio_player.c
+C:\Users\Nina\AppData\Local\Temp\ccpSfG2g.s:18     .text.AUDIO_P_ChangeFrequency:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccpSfG2g.s:26     .text.AUDIO_P_ChangeFrequency:00000000 AUDIO_P_ChangeFrequency
+C:\Users\Nina\AppData\Local\Temp\ccpSfG2g.s:68     .text.AUDIO_P_ChangeFrequency:0000001c $d
+C:\Users\Nina\AppData\Local\Temp\ccpSfG2g.s:73     .text.AUDIO_P_VolumeUp:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccpSfG2g.s:80     .text.AUDIO_P_VolumeUp:00000000 AUDIO_P_VolumeUp
+C:\Users\Nina\AppData\Local\Temp\ccpSfG2g.s:114    .text.AUDIO_P_VolumeUp:0000001c $d
+C:\Users\Nina\AppData\Local\Temp\ccpSfG2g.s:119    .text.AUDIO_P_VolumeDown:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccpSfG2g.s:126    .text.AUDIO_P_VolumeDown:00000000 AUDIO_P_VolumeDown
+C:\Users\Nina\AppData\Local\Temp\ccpSfG2g.s:160    .text.AUDIO_P_VolumeDown:0000001c $d
+C:\Users\Nina\AppData\Local\Temp\ccpSfG2g.s:165    .text.AUDIO_P_AddToQueue:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccpSfG2g.s:172    .text.AUDIO_P_AddToQueue:00000000 AUDIO_P_AddToQueue
+C:\Users\Nina\AppData\Local\Temp\ccpSfG2g.s:215    .text.AUDIO_P_AddToQueue:0000001c $d
+                            *COM*:00000004 audioRequestsPool
+                            *COM*:00000004 audioRequestsQueue
+C:\Users\Nina\AppData\Local\Temp\ccpSfG2g.s:221    .rodata.AUDIO_P_Play.str1.4:00000000 $d
+C:\Users\Nina\AppData\Local\Temp\ccpSfG2g.s:225    .text.AUDIO_P_Play:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccpSfG2g.s:232    .text.AUDIO_P_Play:00000000 AUDIO_P_Play
+C:\Users\Nina\AppData\Local\Temp\ccpSfG2g.s:288    .text.AUDIO_P_Play:00000034 $d
+C:\Users\Nina\AppData\Local\Temp\ccpSfG2g.s:296    .text.AUDIO_P_End:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccpSfG2g.s:303    .text.AUDIO_P_End:00000000 AUDIO_P_End
+C:\Users\Nina\AppData\Local\Temp\ccpSfG2g.s:320    .text.AUDIO_P_End:00000008 $d
+
+UNDEFINED SYMBOLS
+BSP_AUDIO_OUT_Init
+BSP_AUDIO_OUT_SetAudioFrameSlot
+APP_STATE
+BSP_AUDIO_OUT_SetVolume
+osPoolAlloc
+osMessagePut
+xprintf
+BSP_AUDIO_OUT_Play
+APP_BUTTONS_STATE
+AUDIO_BUFFER

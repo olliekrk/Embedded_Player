@@ -1,0 +1,972 @@
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccROknMh.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"audio_loader.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.rodata.AUDIO_L_CreateAudioDirectory.str1.4,"aMS",%progbits,1
+  18              		.align	2
+  19              	.LC0:
+  20 0000 313A2F41 		.ascii	"1:/AudioDirectory\000"
+  20      7564696F 
+  20      44697265 
+  20      63746F72 
+  20      7900
+  21 0012 0000     		.align	2
+  22              	.LC1:
+  23 0014 41756469 		.ascii	"Audio directory already exists.\015\012\000"
+  23      6F206469 
+  23      72656374 
+  23      6F727920 
+  23      616C7265 
+  24              		.section	.text.AUDIO_L_CreateAudioDirectory,"ax",%progbits
+  25              		.align	1
+  26              		.global	AUDIO_L_CreateAudioDirectory
+  27              		.arch armv7e-m
+  28              		.syntax unified
+  29              		.thumb
+  30              		.thumb_func
+  31              		.fpu fpv5-sp-d16
+  33              	AUDIO_L_CreateAudioDirectory:
+  34              	.LFB143:
+  35              		.file 1 "Modules/audio_loader.c"
+   1:Modules/audio_loader.c **** //
+   2:Modules/audio_loader.c **** // Created by olliekrk on 24.10.2019.
+   3:Modules/audio_loader.c **** //
+   4:Modules/audio_loader.c **** 
+   5:Modules/audio_loader.c **** #include <ff.h>
+   6:Modules/audio_loader.c **** #include <term_io.h>
+   7:Modules/audio_loader.c **** #include "audio_loader.h"
+   8:Modules/audio_loader.c **** #include "controls.h"
+   9:Modules/audio_loader.c **** #include "gui.h"
+  10:Modules/audio_loader.c **** #include "audio_player.h"
+  11:Modules/audio_loader.c **** 
+  12:Modules/audio_loader.c **** uint8_t AUDIO_BUFFER[MASS_STORAGE_BUF_SIZE] __attribute__((section(".sdram"))) __attribute__((unuse
+  13:Modules/audio_loader.c **** 
+  14:Modules/audio_loader.c **** FRESULT AUDIO_L_CreateAudioDirectory(void) {
+  36              		.loc 1 14 44 view -0
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccROknMh.s 			page 2
+
+
+  37              		.cfi_startproc
+  38              		@ args = 0, pretend = 0, frame = 0
+  39              		@ frame_needed = 0, uses_anonymous_args = 0
+  40 0000 10B5     		push	{r4, lr}
+  41              	.LCFI0:
+  42              		.cfi_def_cfa_offset 8
+  43              		.cfi_offset 4, -8
+  44              		.cfi_offset 14, -4
+  15:Modules/audio_loader.c ****     FRESULT result = f_mkdir(AUDIO_DIRECTORY_PATH);
+  45              		.loc 1 15 5 view .LVU1
+  46              		.loc 1 15 22 is_stmt 0 view .LVU2
+  47 0002 0648     		ldr	r0, .L5
+  48 0004 FFF7FEFF 		bl	f_mkdir
+  49              	.LVL0:
+  50 0008 0446     		mov	r4, r0
+  51              	.LVL1:
+  16:Modules/audio_loader.c ****     if (result == FR_EXIST) {
+  52              		.loc 1 16 5 is_stmt 1 view .LVU3
+  53              		.loc 1 16 8 is_stmt 0 view .LVU4
+  54 000a 0828     		cmp	r0, #8
+  55 000c 01D0     		beq	.L4
+  56              	.LVL2:
+  57              	.L2:
+  17:Modules/audio_loader.c ****         xprintf("Audio directory already exists.\r\n");
+  18:Modules/audio_loader.c ****     }
+  19:Modules/audio_loader.c ****     return result;
+  58              		.loc 1 19 5 is_stmt 1 view .LVU5
+  20:Modules/audio_loader.c **** }
+  59              		.loc 1 20 1 is_stmt 0 view .LVU6
+  60 000e 2046     		mov	r0, r4
+  61 0010 10BD     		pop	{r4, pc}
+  62              	.LVL3:
+  63              	.L4:
+  17:Modules/audio_loader.c ****         xprintf("Audio directory already exists.\r\n");
+  64              		.loc 1 17 9 is_stmt 1 view .LVU7
+  65 0012 0348     		ldr	r0, .L5+4
+  66              	.LVL4:
+  17:Modules/audio_loader.c ****         xprintf("Audio directory already exists.\r\n");
+  67              		.loc 1 17 9 is_stmt 0 view .LVU8
+  68 0014 FFF7FEFF 		bl	xprintf
+  69              	.LVL5:
+  70 0018 F9E7     		b	.L2
+  71              	.L6:
+  72 001a 00BF     		.align	2
+  73              	.L5:
+  74 001c 00000000 		.word	.LC0
+  75 0020 14000000 		.word	.LC1
+  76              		.cfi_endproc
+  77              	.LFE143:
+  79              		.section	.rodata.AUDIO_L_ScanAudioDirectory.str1.4,"aMS",%progbits,1
+  80              		.align	2
+  81              	.LC2:
+  82 0000 2A2E7761 		.ascii	"*.wav\000"
+  82      7600
+  83 0006 0000     		.align	2
+  84              	.LC3:
+  85 0008 466F756E 		.ascii	"Found (%d) wav file: %s\015\012\000"
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccROknMh.s 			page 3
+
+
+  85      64202825 
+  85      64292077 
+  85      61762066 
+  85      696C653A 
+  86 0022 0000     		.align	2
+  87              	.LC4:
+  88 0024 456D7074 		.ascii	"Empty audio directory will be created.\015\012\000"
+  88      79206175 
+  88      64696F20 
+  88      64697265 
+  88      63746F72 
+  89 004d 000000   		.align	2
+  90              	.LC5:
+  91 0050 43726561 		.ascii	"Creation of audio directory has failed.\015\012\000"
+  91      74696F6E 
+  91      206F6620 
+  91      61756469 
+  91      6F206469 
+  92 007a 0000     		.align	2
+  93              	.LC6:
+  94 007c 466F756E 		.ascii	"Found zero WAV files.\000"
+  94      64207A65 
+  94      726F2057 
+  94      41562066 
+  94      696C6573 
+  95              		.section	.text.AUDIO_L_ScanAudioDirectory,"ax",%progbits
+  96              		.align	1
+  97              		.global	AUDIO_L_ScanAudioDirectory
+  98              		.syntax unified
+  99              		.thumb
+ 100              		.thumb_func
+ 101              		.fpu fpv5-sp-d16
+ 103              	AUDIO_L_ScanAudioDirectory:
+ 104              	.LFB144:
+  21:Modules/audio_loader.c **** 
+  22:Modules/audio_loader.c **** int AUDIO_L_ScanAudioDirectory() {
+ 105              		.loc 1 22 34 is_stmt 1 view -0
+ 106              		.cfi_startproc
+ 107              		@ args = 0, pretend = 0, frame = 336
+ 108              		@ frame_needed = 0, uses_anonymous_args = 0
+ 109 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 110              	.LCFI1:
+ 111              		.cfi_def_cfa_offset 20
+ 112              		.cfi_offset 4, -20
+ 113              		.cfi_offset 5, -16
+ 114              		.cfi_offset 6, -12
+ 115              		.cfi_offset 7, -8
+ 116              		.cfi_offset 14, -4
+ 117 0002 D5B0     		sub	sp, sp, #340
+ 118              	.LCFI2:
+ 119              		.cfi_def_cfa_offset 360
+  23:Modules/audio_loader.c ****     DIR audioDirectory;
+ 120              		.loc 1 23 5 view .LVU10
+  24:Modules/audio_loader.c ****     FRESULT result;
+ 121              		.loc 1 24 5 view .LVU11
+  25:Modules/audio_loader.c ****     FILINFO fileInfo;
+ 122              		.loc 1 25 5 view .LVU12
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccROknMh.s 			page 4
+
+
+  26:Modules/audio_loader.c ****     int count = 0;
+ 123              		.loc 1 26 5 view .LVU13
+ 124              	.LVL6:
+  27:Modules/audio_loader.c **** 
+  28:Modules/audio_loader.c ****     result = f_findfirst(&audioDirectory, &fileInfo, AUDIO_DIRECTORY_PATH, "*.wav");
+ 125              		.loc 1 28 5 view .LVU14
+ 126              		.loc 1 28 14 is_stmt 0 view .LVU15
+ 127 0004 2B4B     		ldr	r3, .L22
+ 128 0006 2C4A     		ldr	r2, .L22+4
+ 129 0008 6946     		mov	r1, sp
+ 130 000a 46A8     		add	r0, sp, #280
+ 131 000c FFF7FEFF 		bl	f_findfirst
+ 132              	.LVL7:
+  29:Modules/audio_loader.c ****     if (result == FR_OK) {
+ 133              		.loc 1 29 5 is_stmt 1 view .LVU16
+ 134              		.loc 1 29 8 is_stmt 0 view .LVU17
+ 135 0010 0346     		mov	r3, r0
+ 136 0012 28B1     		cbz	r0, .L14
+  30:Modules/audio_loader.c ****         while (result == FR_OK && strlen(fileInfo.fname) > 0 && count < AUDIO_FILES_LIMIT) {
+  31:Modules/audio_loader.c **** 			xprintf("Found (%d) wav file: %s\r\n", ++count, fileInfo.fname); 
+  32:Modules/audio_loader.c **** 		
+  33:Modules/audio_loader.c ****             APP_STATE.TRACKS[APP_STATE.TRACKS_COUNT] = malloc((strlen(fileInfo.fname) + 1) * sizeof
+  34:Modules/audio_loader.c ****             strcpy(APP_STATE.TRACKS[APP_STATE.TRACKS_COUNT], fileInfo.fname);
+  35:Modules/audio_loader.c ****             APP_STATE.TRACKS_COUNT++;
+  36:Modules/audio_loader.c ****             result = f_findnext(&audioDirectory, &fileInfo);
+  37:Modules/audio_loader.c ****         }
+  38:Modules/audio_loader.c ****         f_closedir(&audioDirectory);
+  39:Modules/audio_loader.c **** 
+  40:Modules/audio_loader.c ****         // Set first track
+  41:Modules/audio_loader.c ****         APP_STATE.SELECTED_TRACK_INDEX = 0;
+  42:Modules/audio_loader.c ****         APP_STATE.SELECTED_TRACK_NAME = APP_STATE.TRACKS[0];
+  43:Modules/audio_loader.c **** 
+  44:Modules/audio_loader.c ****     } else if (result == FR_NO_PATH) {
+ 137              		.loc 1 44 12 is_stmt 1 view .LVU18
+ 138              		.loc 1 44 15 is_stmt 0 view .LVU19
+ 139 0014 0528     		cmp	r0, #5
+ 140 0016 3AD0     		beq	.L19
+  45:Modules/audio_loader.c ****         xprintf("Empty audio directory will be created.\r\n");
+  46:Modules/audio_loader.c ****         result = AUDIO_L_CreateAudioDirectory();
+  47:Modules/audio_loader.c ****         if (result != FR_OK) {
+  48:Modules/audio_loader.c ****             xprintf("Creation of audio directory has failed.\r\n");
+  49:Modules/audio_loader.c ****             return -1;
+  50:Modules/audio_loader.c ****         }
+  51:Modules/audio_loader.c ****     } else if (result == FR_NO_FILE) {
+ 141              		.loc 1 51 12 is_stmt 1 view .LVU20
+ 142              		.loc 1 51 15 is_stmt 0 view .LVU21
+ 143 0018 0428     		cmp	r0, #4
+ 144 001a 46D0     		beq	.L20
+  26:Modules/audio_loader.c **** 
+ 145              		.loc 1 26 9 view .LVU22
+ 146 001c 0025     		movs	r5, #0
+ 147              	.LVL8:
+  26:Modules/audio_loader.c **** 
+ 148              		.loc 1 26 9 view .LVU23
+ 149 001e 33E0     		b	.L7
+ 150              	.LVL9:
+ 151              	.L14:
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccROknMh.s 			page 5
+
+
+  26:Modules/audio_loader.c **** 
+ 152              		.loc 1 26 9 view .LVU24
+ 153 0020 0025     		movs	r5, #0
+ 154              	.LVL10:
+ 155              	.L8:
+  30:Modules/audio_loader.c ****         while (result == FR_OK && strlen(fileInfo.fname) > 0 && count < AUDIO_FILES_LIMIT) {
+ 156              		.loc 1 30 15 is_stmt 1 view .LVU25
+ 157 0022 43BB     		cbnz	r3, .L10
+  30:Modules/audio_loader.c ****         while (result == FR_OK && strlen(fileInfo.fname) > 0 && count < AUDIO_FILES_LIMIT) {
+ 158              		.loc 1 30 58 is_stmt 0 discriminator 1 view .LVU26
+ 159 0024 9DF81630 		ldrb	r3, [sp, #22]	@ zero_extendqisi2
+ 160              	.LVL11:
+  30:Modules/audio_loader.c ****         while (result == FR_OK && strlen(fileInfo.fname) > 0 && count < AUDIO_FILES_LIMIT) {
+ 161              		.loc 1 30 32 discriminator 1 view .LVU27
+ 162 0028 2BB3     		cbz	r3, .L10
+  30:Modules/audio_loader.c ****         while (result == FR_OK && strlen(fileInfo.fname) > 0 && count < AUDIO_FILES_LIMIT) {
+ 163              		.loc 1 30 62 discriminator 2 view .LVU28
+ 164 002a 092D     		cmp	r5, #9
+ 165 002c 23DC     		bgt	.L10
+  31:Modules/audio_loader.c **** 		
+ 166              		.loc 1 31 4 is_stmt 1 view .LVU29
+ 167 002e 0135     		adds	r5, r5, #1
+ 168              	.LVL12:
+  31:Modules/audio_loader.c **** 		
+ 169              		.loc 1 31 4 is_stmt 0 view .LVU30
+ 170 0030 0DF11602 		add	r2, sp, #22
+ 171 0034 2946     		mov	r1, r5
+ 172 0036 2148     		ldr	r0, .L22+8
+ 173 0038 FFF7FEFF 		bl	xprintf
+ 174              	.LVL13:
+  33:Modules/audio_loader.c ****             strcpy(APP_STATE.TRACKS[APP_STATE.TRACKS_COUNT], fileInfo.fname);
+ 175              		.loc 1 33 13 is_stmt 1 view .LVU31
+  33:Modules/audio_loader.c ****             strcpy(APP_STATE.TRACKS[APP_STATE.TRACKS_COUNT], fileInfo.fname);
+ 176              		.loc 1 33 64 is_stmt 0 view .LVU32
+ 177 003c 0DF11600 		add	r0, sp, #22
+ 178 0040 FFF7FEFF 		bl	strlen
+ 179              	.LVL14:
+  33:Modules/audio_loader.c ****             strcpy(APP_STATE.TRACKS[APP_STATE.TRACKS_COUNT], fileInfo.fname);
+ 180              		.loc 1 33 22 view .LVU33
+ 181 0044 1E4C     		ldr	r4, .L22+12
+ 182 0046 2669     		ldr	r6, [r4, #16]
+  33:Modules/audio_loader.c ****             strcpy(APP_STATE.TRACKS[APP_STATE.TRACKS_COUNT], fileInfo.fname);
+ 183              		.loc 1 33 39 view .LVU34
+ 184 0048 6769     		ldr	r7, [r4, #20]
+  33:Modules/audio_loader.c ****             strcpy(APP_STATE.TRACKS[APP_STATE.TRACKS_COUNT], fileInfo.fname);
+ 185              		.loc 1 33 56 view .LVU35
+ 186 004a 0130     		adds	r0, r0, #1
+ 187 004c FFF7FEFF 		bl	malloc
+ 188              	.LVL15:
+  33:Modules/audio_loader.c ****             strcpy(APP_STATE.TRACKS[APP_STATE.TRACKS_COUNT], fileInfo.fname);
+ 189              		.loc 1 33 54 view .LVU36
+ 190 0050 46F82700 		str	r0, [r6, r7, lsl #2]
+  34:Modules/audio_loader.c ****             APP_STATE.TRACKS_COUNT++;
+ 191              		.loc 1 34 13 is_stmt 1 view .LVU37
+  34:Modules/audio_loader.c ****             APP_STATE.TRACKS_COUNT++;
+ 192              		.loc 1 34 29 is_stmt 0 view .LVU38
+ 193 0054 2369     		ldr	r3, [r4, #16]
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccROknMh.s 			page 6
+
+
+  34:Modules/audio_loader.c ****             APP_STATE.TRACKS_COUNT++;
+ 194              		.loc 1 34 46 view .LVU39
+ 195 0056 6269     		ldr	r2, [r4, #20]
+  34:Modules/audio_loader.c ****             APP_STATE.TRACKS_COUNT++;
+ 196              		.loc 1 34 13 view .LVU40
+ 197 0058 0DF11601 		add	r1, sp, #22
+ 198 005c 53F82200 		ldr	r0, [r3, r2, lsl #2]
+ 199 0060 FFF7FEFF 		bl	strcpy
+ 200              	.LVL16:
+  35:Modules/audio_loader.c ****             result = f_findnext(&audioDirectory, &fileInfo);
+ 201              		.loc 1 35 13 is_stmt 1 view .LVU41
+  35:Modules/audio_loader.c ****             result = f_findnext(&audioDirectory, &fileInfo);
+ 202              		.loc 1 35 22 is_stmt 0 view .LVU42
+ 203 0064 6369     		ldr	r3, [r4, #20]
+  35:Modules/audio_loader.c ****             result = f_findnext(&audioDirectory, &fileInfo);
+ 204              		.loc 1 35 35 view .LVU43
+ 205 0066 0133     		adds	r3, r3, #1
+ 206 0068 6361     		str	r3, [r4, #20]
+  36:Modules/audio_loader.c ****         }
+ 207              		.loc 1 36 13 is_stmt 1 view .LVU44
+  36:Modules/audio_loader.c ****         }
+ 208              		.loc 1 36 22 is_stmt 0 view .LVU45
+ 209 006a 6946     		mov	r1, sp
+ 210 006c 46A8     		add	r0, sp, #280
+ 211 006e FFF7FEFF 		bl	f_findnext
+ 212              	.LVL17:
+ 213 0072 0346     		mov	r3, r0
+ 214              	.LVL18:
+  36:Modules/audio_loader.c ****         }
+ 215              		.loc 1 36 22 view .LVU46
+ 216 0074 D5E7     		b	.L8
+ 217              	.LVL19:
+ 218              	.L10:
+  38:Modules/audio_loader.c **** 
+ 219              		.loc 1 38 9 is_stmt 1 view .LVU47
+ 220 0076 46A8     		add	r0, sp, #280
+ 221 0078 FFF7FEFF 		bl	f_closedir
+ 222              	.LVL20:
+  41:Modules/audio_loader.c ****         APP_STATE.SELECTED_TRACK_NAME = APP_STATE.TRACKS[0];
+ 223              		.loc 1 41 9 view .LVU48
+  41:Modules/audio_loader.c ****         APP_STATE.SELECTED_TRACK_NAME = APP_STATE.TRACKS[0];
+ 224              		.loc 1 41 40 is_stmt 0 view .LVU49
+ 225 007c 104B     		ldr	r3, .L22+12
+ 226 007e 0022     		movs	r2, #0
+ 227 0080 DA61     		str	r2, [r3, #28]
+  42:Modules/audio_loader.c **** 
+ 228              		.loc 1 42 9 is_stmt 1 view .LVU50
+  42:Modules/audio_loader.c **** 
+ 229              		.loc 1 42 50 is_stmt 0 view .LVU51
+ 230 0082 1A69     		ldr	r2, [r3, #16]
+  42:Modules/audio_loader.c **** 
+ 231              		.loc 1 42 57 view .LVU52
+ 232 0084 1268     		ldr	r2, [r2]
+  42:Modules/audio_loader.c **** 
+ 233              		.loc 1 42 39 view .LVU53
+ 234 0086 9A61     		str	r2, [r3, #24]
+ 235              	.LVL21:
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccROknMh.s 			page 7
+
+
+ 236              	.L7:
+  52:Modules/audio_loader.c ****         xprintf("Found zero WAV files.");
+  53:Modules/audio_loader.c ****     }
+  54:Modules/audio_loader.c **** 
+  55:Modules/audio_loader.c ****     return count;
+  56:Modules/audio_loader.c **** }
+ 237              		.loc 1 56 1 view .LVU54
+ 238 0088 2846     		mov	r0, r5
+ 239 008a 55B0     		add	sp, sp, #340
+ 240              	.LCFI3:
+ 241              		.cfi_remember_state
+ 242              		.cfi_def_cfa_offset 20
+ 243              		@ sp needed
+ 244 008c F0BD     		pop	{r4, r5, r6, r7, pc}
+ 245              	.LVL22:
+ 246              	.L19:
+ 247              	.LCFI4:
+ 248              		.cfi_restore_state
+  45:Modules/audio_loader.c ****         result = AUDIO_L_CreateAudioDirectory();
+ 249              		.loc 1 45 9 is_stmt 1 view .LVU55
+ 250 008e 0D48     		ldr	r0, .L22+16
+ 251              	.LVL23:
+  45:Modules/audio_loader.c ****         result = AUDIO_L_CreateAudioDirectory();
+ 252              		.loc 1 45 9 is_stmt 0 view .LVU56
+ 253 0090 FFF7FEFF 		bl	xprintf
+ 254              	.LVL24:
+  46:Modules/audio_loader.c ****         if (result != FR_OK) {
+ 255              		.loc 1 46 9 is_stmt 1 view .LVU57
+  46:Modules/audio_loader.c ****         if (result != FR_OK) {
+ 256              		.loc 1 46 18 is_stmt 0 view .LVU58
+ 257 0094 FFF7FEFF 		bl	AUDIO_L_CreateAudioDirectory
+ 258              	.LVL25:
+  47:Modules/audio_loader.c ****             xprintf("Creation of audio directory has failed.\r\n");
+ 259              		.loc 1 47 9 is_stmt 1 view .LVU59
+  47:Modules/audio_loader.c ****             xprintf("Creation of audio directory has failed.\r\n");
+ 260              		.loc 1 47 12 is_stmt 0 view .LVU60
+ 261 0098 08B9     		cbnz	r0, .L21
+  26:Modules/audio_loader.c **** 
+ 262              		.loc 1 26 9 view .LVU61
+ 263 009a 0025     		movs	r5, #0
+ 264 009c F4E7     		b	.L7
+ 265              	.L21:
+  48:Modules/audio_loader.c ****             return -1;
+ 266              		.loc 1 48 13 is_stmt 1 view .LVU62
+ 267 009e 0A48     		ldr	r0, .L22+20
+ 268              	.LVL26:
+  48:Modules/audio_loader.c ****             return -1;
+ 269              		.loc 1 48 13 is_stmt 0 view .LVU63
+ 270 00a0 FFF7FEFF 		bl	xprintf
+ 271              	.LVL27:
+  49:Modules/audio_loader.c ****         }
+ 272              		.loc 1 49 13 is_stmt 1 view .LVU64
+  49:Modules/audio_loader.c ****         }
+ 273              		.loc 1 49 20 is_stmt 0 view .LVU65
+ 274 00a4 4FF0FF35 		mov	r5, #-1
+ 275 00a8 EEE7     		b	.L7
+ 276              	.LVL28:
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccROknMh.s 			page 8
+
+
+ 277              	.L20:
+  52:Modules/audio_loader.c ****     }
+ 278              		.loc 1 52 9 is_stmt 1 view .LVU66
+ 279 00aa 0848     		ldr	r0, .L22+24
+ 280              	.LVL29:
+  52:Modules/audio_loader.c ****     }
+ 281              		.loc 1 52 9 is_stmt 0 view .LVU67
+ 282 00ac FFF7FEFF 		bl	xprintf
+ 283              	.LVL30:
+  26:Modules/audio_loader.c **** 
+ 284              		.loc 1 26 9 view .LVU68
+ 285 00b0 0025     		movs	r5, #0
+ 286 00b2 E9E7     		b	.L7
+ 287              	.L23:
+ 288              		.align	2
+ 289              	.L22:
+ 290 00b4 00000000 		.word	.LC2
+ 291 00b8 00000000 		.word	.LC0
+ 292 00bc 08000000 		.word	.LC3
+ 293 00c0 00000000 		.word	APP_STATE
+ 294 00c4 24000000 		.word	.LC4
+ 295 00c8 50000000 		.word	.LC5
+ 296 00cc 7C000000 		.word	.LC6
+ 297              		.cfi_endproc
+ 298              	.LFE144:
+ 300              		.section	.rodata.AUDIO_L_ResetState.str1.4,"aMS",%progbits,1
+ 301              		.align	2
+ 302              	.LC7:
+ 303 0000 00       		.ascii	"\000"
+ 304              		.section	.text.AUDIO_L_ResetState,"ax",%progbits
+ 305              		.align	1
+ 306              		.global	AUDIO_L_ResetState
+ 307              		.syntax unified
+ 308              		.thumb
+ 309              		.thumb_func
+ 310              		.fpu fpv5-sp-d16
+ 312              	AUDIO_L_ResetState:
+ 313              	.LFB146:
+  57:Modules/audio_loader.c **** 
+  58:Modules/audio_loader.c **** void AUDIO_L_PerformScan(void) {
+  59:Modules/audio_loader.c ****     FRESULT result = AUDIO_L_CreateAudioDirectory();
+  60:Modules/audio_loader.c ****     if (result == FR_OK || result == FR_EXIST) {
+  61:Modules/audio_loader.c ****         AUDIO_L_ResetState();
+  62:Modules/audio_loader.c ****         AUDIO_L_ScanAudioDirectory();
+  63:Modules/audio_loader.c ****     }
+  64:Modules/audio_loader.c **** }
+  65:Modules/audio_loader.c **** 
+  66:Modules/audio_loader.c **** void AUDIO_L_ResetState(void) {
+ 314              		.loc 1 66 31 is_stmt 1 view -0
+ 315              		.cfi_startproc
+ 316              		@ args = 0, pretend = 0, frame = 0
+ 317              		@ frame_needed = 0, uses_anonymous_args = 0
+ 318 0000 10B5     		push	{r4, lr}
+ 319              	.LCFI5:
+ 320              		.cfi_def_cfa_offset 8
+ 321              		.cfi_offset 4, -8
+ 322              		.cfi_offset 14, -4
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccROknMh.s 			page 9
+
+
+  67:Modules/audio_loader.c ****     free(APP_STATE.TRACKS);
+ 323              		.loc 1 67 5 view .LVU70
+ 324              		.loc 1 67 19 is_stmt 0 view .LVU71
+ 325 0002 094C     		ldr	r4, .L26
+ 326              		.loc 1 67 5 view .LVU72
+ 327 0004 2069     		ldr	r0, [r4, #16]
+ 328 0006 FFF7FEFF 		bl	free
+ 329              	.LVL31:
+  68:Modules/audio_loader.c ****     APP_STATE.TRACKS = malloc(AUDIO_FILES_LIMIT * sizeof(char *));
+ 330              		.loc 1 68 5 is_stmt 1 view .LVU73
+ 331              		.loc 1 68 24 is_stmt 0 view .LVU74
+ 332 000a 2820     		movs	r0, #40
+ 333 000c FFF7FEFF 		bl	malloc
+ 334              	.LVL32:
+ 335              		.loc 1 68 22 view .LVU75
+ 336 0010 2061     		str	r0, [r4, #16]
+  69:Modules/audio_loader.c ****     APP_STATE.TRACKS_COUNT = 0;
+ 337              		.loc 1 69 5 is_stmt 1 view .LVU76
+ 338              		.loc 1 69 28 is_stmt 0 view .LVU77
+ 339 0012 0023     		movs	r3, #0
+ 340 0014 6361     		str	r3, [r4, #20]
+  70:Modules/audio_loader.c ****     APP_STATE.SELECTED_TRACK_INDEX = -1;
+ 341              		.loc 1 70 5 is_stmt 1 view .LVU78
+ 342              		.loc 1 70 36 is_stmt 0 view .LVU79
+ 343 0016 4FF0FF32 		mov	r2, #-1
+ 344 001a E261     		str	r2, [r4, #28]
+  71:Modules/audio_loader.c ****     APP_STATE.SELECTED_TRACK_NAME = "";
+ 345              		.loc 1 71 5 is_stmt 1 view .LVU80
+ 346              		.loc 1 71 35 is_stmt 0 view .LVU81
+ 347 001c 034A     		ldr	r2, .L26+4
+ 348 001e A261     		str	r2, [r4, #24]
+  72:Modules/audio_loader.c **** 	APP_STATE.IS_PLAYING = 0;
+ 349              		.loc 1 72 2 is_stmt 1 view .LVU82
+ 350              		.loc 1 72 23 is_stmt 0 view .LVU83
+ 351 0020 E360     		str	r3, [r4, #12]
+  73:Modules/audio_loader.c **** 	APP_STATE.VOLUME = AUDIO_VOLUME_INIT;
+ 352              		.loc 1 73 2 is_stmt 1 view .LVU84
+ 353              		.loc 1 73 19 is_stmt 0 view .LVU85
+ 354 0022 0A23     		movs	r3, #10
+ 355 0024 2362     		str	r3, [r4, #32]
+  74:Modules/audio_loader.c **** }
+ 356              		.loc 1 74 1 view .LVU86
+ 357 0026 10BD     		pop	{r4, pc}
+ 358              	.L27:
+ 359              		.align	2
+ 360              	.L26:
+ 361 0028 00000000 		.word	APP_STATE
+ 362 002c 00000000 		.word	.LC7
+ 363              		.cfi_endproc
+ 364              	.LFE146:
+ 366              		.section	.text.AUDIO_L_PerformScan,"ax",%progbits
+ 367              		.align	1
+ 368              		.global	AUDIO_L_PerformScan
+ 369              		.syntax unified
+ 370              		.thumb
+ 371              		.thumb_func
+ 372              		.fpu fpv5-sp-d16
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccROknMh.s 			page 10
+
+
+ 374              	AUDIO_L_PerformScan:
+ 375              	.LFB145:
+  58:Modules/audio_loader.c ****     FRESULT result = AUDIO_L_CreateAudioDirectory();
+ 376              		.loc 1 58 32 is_stmt 1 view -0
+ 377              		.cfi_startproc
+ 378              		@ args = 0, pretend = 0, frame = 0
+ 379              		@ frame_needed = 0, uses_anonymous_args = 0
+ 380 0000 08B5     		push	{r3, lr}
+ 381              	.LCFI6:
+ 382              		.cfi_def_cfa_offset 8
+ 383              		.cfi_offset 3, -8
+ 384              		.cfi_offset 14, -4
+  59:Modules/audio_loader.c ****     if (result == FR_OK || result == FR_EXIST) {
+ 385              		.loc 1 59 5 view .LVU88
+  59:Modules/audio_loader.c ****     if (result == FR_OK || result == FR_EXIST) {
+ 386              		.loc 1 59 22 is_stmt 0 view .LVU89
+ 387 0002 FFF7FEFF 		bl	AUDIO_L_CreateAudioDirectory
+ 388              	.LVL33:
+  60:Modules/audio_loader.c ****         AUDIO_L_ResetState();
+ 389              		.loc 1 60 5 is_stmt 1 view .LVU90
+  60:Modules/audio_loader.c ****         AUDIO_L_ResetState();
+ 390              		.loc 1 60 35 is_stmt 0 view .LVU91
+ 391 0006 0828     		cmp	r0, #8
+ 392 0008 14BF     		ite	ne
+ 393 000a 0023     		movne	r3, #0
+ 394 000c 0123     		moveq	r3, #1
+  60:Modules/audio_loader.c ****         AUDIO_L_ResetState();
+ 395              		.loc 1 60 25 view .LVU92
+ 396 000e 0028     		cmp	r0, #0
+ 397 0010 08BF     		it	eq
+ 398 0012 0123     		moveq	r3, #1
+  60:Modules/audio_loader.c ****         AUDIO_L_ResetState();
+ 399              		.loc 1 60 8 view .LVU93
+ 400 0014 03B9     		cbnz	r3, .L31
+ 401              	.LVL34:
+ 402              	.L28:
+  64:Modules/audio_loader.c **** 
+ 403              		.loc 1 64 1 view .LVU94
+ 404 0016 08BD     		pop	{r3, pc}
+ 405              	.LVL35:
+ 406              	.L31:
+  61:Modules/audio_loader.c ****         AUDIO_L_ScanAudioDirectory();
+ 407              		.loc 1 61 9 is_stmt 1 view .LVU95
+ 408 0018 FFF7FEFF 		bl	AUDIO_L_ResetState
+ 409              	.LVL36:
+  62:Modules/audio_loader.c ****     }
+ 410              		.loc 1 62 9 view .LVU96
+ 411 001c FFF7FEFF 		bl	AUDIO_L_ScanAudioDirectory
+ 412              	.LVL37:
+  64:Modules/audio_loader.c **** 
+ 413              		.loc 1 64 1 is_stmt 0 view .LVU97
+ 414 0020 F9E7     		b	.L28
+ 415              		.cfi_endproc
+ 416              	.LFE145:
+ 418              		.section	.rodata.AUDIO_L_LoadFileUnderButton.str1.4,"aMS",%progbits,1
+ 419              		.align	2
+ 420              	.LC8:
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccROknMh.s 			page 11
+
+
+ 421 0000 25732F25 		.ascii	"%s/%s\000"
+ 421      7300
+ 422 0006 0000     		.align	2
+ 423              	.LC9:
+ 424 0008 53756363 		.ascii	"Successfully read audio file: %s of size %u bytes.\015"
+ 424      65737366 
+ 424      756C6C79 
+ 424      20726561 
+ 424      64206175 
+ 425 003b 0A00     		.ascii	"\012\000"
+ 426 003d 000000   		.align	2
+ 427              	.LC10:
+ 428 0040 53616D70 		.ascii	"Sample rate: %hu Channels: %u Total size: %lu\015\012"
+ 428      6C652072 
+ 428      6174653A 
+ 428      20256875 
+ 428      20436861 
+ 429 006f 00       		.ascii	"\000"
+ 430              		.align	2
+ 431              	.LC11:
+ 432 0070 416E2065 		.ascii	"An error has occurred when loading file onto buffer"
+ 432      72726F72 
+ 432      20686173 
+ 432      206F6363 
+ 432      75727265 
+ 433 00a3 2E0D0A00 		.ascii	".\015\012\000"
+ 434              		.section	.text.AUDIO_L_LoadFileUnderButton,"ax",%progbits
+ 435              		.align	1
+ 436              		.global	AUDIO_L_LoadFileUnderButton
+ 437              		.syntax unified
+ 438              		.thumb
+ 439              		.thumb_func
+ 440              		.fpu fpv5-sp-d16
+ 442              	AUDIO_L_LoadFileUnderButton:
+ 443              	.LVL38:
+ 444              	.LFB147:
+  75:Modules/audio_loader.c **** 
+  76:Modules/audio_loader.c **** void AUDIO_L_LoadFileUnderButton(char *fileName, int buttonNumber) {
+ 445              		.loc 1 76 68 is_stmt 1 view -0
+ 446              		.cfi_startproc
+ 447              		@ args = 0, pretend = 0, frame = 568
+ 448              		@ frame_needed = 0, uses_anonymous_args = 0
+ 449              		.loc 1 76 68 is_stmt 0 view .LVU99
+ 450 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 451              	.LCFI7:
+ 452              		.cfi_def_cfa_offset 36
+ 453              		.cfi_offset 4, -36
+ 454              		.cfi_offset 5, -32
+ 455              		.cfi_offset 6, -28
+ 456              		.cfi_offset 7, -24
+ 457              		.cfi_offset 8, -20
+ 458              		.cfi_offset 9, -16
+ 459              		.cfi_offset 10, -12
+ 460              		.cfi_offset 11, -8
+ 461              		.cfi_offset 14, -4
+ 462 0004 ADF50F7D 		sub	sp, sp, #572
+ 463              	.LCFI8:
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccROknMh.s 			page 12
+
+
+ 464              		.cfi_def_cfa_offset 608
+ 465 0008 0646     		mov	r6, r0
+ 466 000a 0D46     		mov	r5, r1
+  77:Modules/audio_loader.c ****     FIL file;
+ 467              		.loc 1 77 5 is_stmt 1 view .LVU100
+  78:Modules/audio_loader.c ****     UINT _bytesRead;
+ 468              		.loc 1 78 5 view .LVU101
+  79:Modules/audio_loader.c ****     char *filePath = malloc(1000 * sizeof(char));
+ 469              		.loc 1 79 5 view .LVU102
+ 470              		.loc 1 79 22 is_stmt 0 view .LVU103
+ 471 000c 4FF47A70 		mov	r0, #1000
+ 472              	.LVL39:
+ 473              		.loc 1 79 22 view .LVU104
+ 474 0010 FFF7FEFF 		bl	malloc
+ 475              	.LVL40:
+ 476              		.loc 1 79 22 view .LVU105
+ 477 0014 0446     		mov	r4, r0
+ 478              	.LVL41:
+  80:Modules/audio_loader.c **** 
+  81:Modules/audio_loader.c ****     if (sprintf(filePath, "%s/%s", AUDIO_DIRECTORY_PATH, fileName) > 0) {
+ 479              		.loc 1 81 5 is_stmt 1 view .LVU106
+ 480              		.loc 1 81 9 is_stmt 0 view .LVU107
+ 481 0016 3346     		mov	r3, r6
+ 482 0018 334A     		ldr	r2, .L36
+ 483 001a 3449     		ldr	r1, .L36+4
+ 484 001c FFF7FEFF 		bl	sprintf
+ 485              	.LVL42:
+ 486              		.loc 1 81 8 view .LVU108
+ 487 0020 0028     		cmp	r0, #0
+ 488 0022 56DD     		ble	.L33
+  82:Modules/audio_loader.c ****         if (f_open(&file, filePath, FA_READ) == FR_OK) {
+ 489              		.loc 1 82 9 is_stmt 1 view .LVU109
+ 490              		.loc 1 82 13 is_stmt 0 view .LVU110
+ 491 0024 0122     		movs	r2, #1
+ 492 0026 2146     		mov	r1, r4
+ 493 0028 02A8     		add	r0, sp, #8
+ 494 002a FFF7FEFF 		bl	f_open
+ 495              	.LVL43:
+ 496              		.loc 1 82 12 view .LVU111
+ 497 002e 0028     		cmp	r0, #0
+ 498 0030 52D1     		bne	.L34
+ 499              	.LBB2:
+  83:Modules/audio_loader.c **** 
+  84:Modules/audio_loader.c ****             ButtonState *state = &APP_BUTTONS_STATE.configs[buttonNumber];
+ 500              		.loc 1 84 13 is_stmt 1 view .LVU112
+ 501              		.loc 1 84 52 is_stmt 0 view .LVU113
+ 502 0032 DFF8C8A0 		ldr	r10, .L36+20
+ 503 0036 DAF80070 		ldr	r7, [r10]
+ 504              		.loc 1 84 60 view .LVU114
+ 505 003a 4FEA0519 		lsl	r9, r5, #4
+ 506              		.loc 1 84 26 view .LVU115
+ 507 003e 07EB0517 		add	r7, r7, r5, lsl #4
+ 508              	.LVL44:
+  85:Modules/audio_loader.c ****             state->size = f_size(&file);
+ 509              		.loc 1 85 13 is_stmt 1 view .LVU116
+ 510              		.loc 1 85 27 is_stmt 0 view .LVU117
+ 511 0042 059B     		ldr	r3, [sp, #20]
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccROknMh.s 			page 13
+
+
+ 512              		.loc 1 85 25 view .LVU118
+ 513 0044 BB60     		str	r3, [r7, #8]
+  86:Modules/audio_loader.c **** 
+  87:Modules/audio_loader.c ****             int initOffset = buttonNumber * BUFFER_LIMIT_PER_BUTTON;
+ 514              		.loc 1 87 13 is_stmt 1 view .LVU119
+ 515              		.loc 1 87 17 is_stmt 0 view .LVU120
+ 516 0046 6D04     		lsls	r5, r5, #17
+ 517              	.LVL45:
+  88:Modules/audio_loader.c **** 
+  89:Modules/audio_loader.c ****             // retrieve essential info about file and skip WAV header
+  90:Modules/audio_loader.c ****             f_lseek(&file, 22);
+ 518              		.loc 1 90 13 is_stmt 1 view .LVU121
+ 519 0048 1621     		movs	r1, #22
+ 520 004a 02A8     		add	r0, sp, #8
+ 521 004c FFF7FEFF 		bl	f_lseek
+ 522              	.LVL46:
+  91:Modules/audio_loader.c ****             f_read(&file, &AUDIO_BUFFER[initOffset], 4, &_bytesRead);
+ 523              		.loc 1 91 13 view .LVU122
+ 524              		.loc 1 91 27 is_stmt 0 view .LVU123
+ 525 0050 DFF8AC80 		ldr	r8, .L36+24
+ 526 0054 05EB080B 		add	fp, r5, r8
+ 527              		.loc 1 91 13 view .LVU124
+ 528 0058 01AB     		add	r3, sp, #4
+ 529 005a 0422     		movs	r2, #4
+ 530 005c 5946     		mov	r1, fp
+ 531 005e 02A8     		add	r0, sp, #8
+ 532 0060 FFF7FEFF 		bl	f_read
+ 533              	.LVL47:
+  92:Modules/audio_loader.c ****             state->channels = AUDIO_BUFFER[initOffset];
+ 534              		.loc 1 92 13 is_stmt 1 view .LVU125
+ 535              		.loc 1 92 43 is_stmt 0 view .LVU126
+ 536 0064 18F80530 		ldrb	r3, [r8, r5]	@ zero_extendqisi2
+ 537              		.loc 1 92 29 view .LVU127
+ 538 0068 3B71     		strb	r3, [r7, #4]
+  93:Modules/audio_loader.c ****             state->sampleRate= (AUDIO_BUFFER[initOffset + 3] << 8) + AUDIO_BUFFER[2];
+ 539              		.loc 1 93 13 is_stmt 1 view .LVU128
+ 540              		.loc 1 93 57 is_stmt 0 view .LVU129
+ 541 006a 0335     		adds	r5, r5, #3
+ 542              	.LVL48:
+ 543              		.loc 1 93 45 view .LVU130
+ 544 006c 18F80520 		ldrb	r2, [r8, r5]	@ zero_extendqisi2
+ 545              		.loc 1 93 82 view .LVU131
+ 546 0070 98F80230 		ldrb	r3, [r8, #2]	@ zero_extendqisi2
+ 547              		.loc 1 93 68 view .LVU132
+ 548 0074 03EB0223 		add	r3, r3, r2, lsl #8
+ 549              		.loc 1 93 30 view .LVU133
+ 550 0078 FB80     		strh	r3, [r7, #6]	@ movhi
+  94:Modules/audio_loader.c ****             f_lseek(&file, 44);
+ 551              		.loc 1 94 13 is_stmt 1 view .LVU134
+ 552 007a 2C21     		movs	r1, #44
+ 553 007c 02A8     		add	r0, sp, #8
+ 554 007e FFF7FEFF 		bl	f_lseek
+ 555              	.LVL49:
+  95:Modules/audio_loader.c **** 
+  96:Modules/audio_loader.c ****             // load onto buffer
+  97:Modules/audio_loader.c ****             f_read(&file,
+ 556              		.loc 1 97 13 view .LVU135
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccROknMh.s 			page 14
+
+
+ 557 0082 01AB     		add	r3, sp, #4
+ 558 0084 4FF40032 		mov	r2, #131072
+ 559 0088 5946     		mov	r1, fp
+ 560 008a 02A8     		add	r0, sp, #8
+ 561 008c FFF7FEFF 		bl	f_read
+ 562              	.LVL50:
+  98:Modules/audio_loader.c ****                    &AUDIO_BUFFER[buttonNumber * BUFFER_LIMIT_PER_BUTTON],
+  99:Modules/audio_loader.c ****                    BUFFER_LIMIT_PER_BUTTON,
+ 100:Modules/audio_loader.c ****                    &_bytesRead
+ 101:Modules/audio_loader.c ****             );
+ 102:Modules/audio_loader.c ****             f_close(&file);
+ 563              		.loc 1 102 13 view .LVU136
+ 564 0090 02A8     		add	r0, sp, #8
+ 565 0092 FFF7FEFF 		bl	f_close
+ 566              	.LVL51:
+ 103:Modules/audio_loader.c **** 
+ 104:Modules/audio_loader.c ****             // update app buttons state
+ 105:Modules/audio_loader.c ****             APP_BUTTONS_STATE.configs[buttonNumber].effectEnabled = effectInactive;
+ 567              		.loc 1 105 13 view .LVU137
+ 568              		.loc 1 105 30 is_stmt 0 view .LVU138
+ 569 0096 DAF80050 		ldr	r5, [r10]
+ 570              	.LVL52:
+ 571              		.loc 1 105 38 view .LVU139
+ 572 009a 05EB0903 		add	r3, r5, r9
+ 573              		.loc 1 105 67 view .LVU140
+ 574 009e 0022     		movs	r2, #0
+ 575 00a0 1A73     		strb	r2, [r3, #12]
+ 106:Modules/audio_loader.c **** 			APP_BUTTONS_STATE.configs[buttonNumber].trackName = malloc(TEXT_DISPLAYED_MAXLENGTH * sizeof(cha
+ 576              		.loc 1 106 4 is_stmt 1 view .LVU141
+ 577              		.loc 1 106 56 is_stmt 0 view .LVU142
+ 578 00a2 0B20     		movs	r0, #11
+ 579 00a4 FFF7FEFF 		bl	malloc
+ 580              	.LVL53:
+ 581              		.loc 1 106 54 view .LVU143
+ 582 00a8 45F80900 		str	r0, [r5, r9]
+ 107:Modules/audio_loader.c **** 			sprintf(APP_BUTTONS_STATE.configs[buttonNumber].trackName, "%s", fileName);
+ 583              		.loc 1 107 4 is_stmt 1 view .LVU144
+ 584              		.loc 1 107 29 is_stmt 0 view .LVU145
+ 585 00ac DAF80030 		ldr	r3, [r10]
+ 586              		.loc 1 107 4 view .LVU146
+ 587 00b0 3146     		mov	r1, r6
+ 588 00b2 53F80900 		ldr	r0, [r3, r9]
+ 589 00b6 FFF7FEFF 		bl	strcpy
+ 590              	.LVL54:
+ 108:Modules/audio_loader.c **** 
+ 109:Modules/audio_loader.c ****             xprintf("Successfully read audio file: %s of size %u bytes.\r\n", filePath, _bytesRead)
+ 591              		.loc 1 109 13 is_stmt 1 view .LVU147
+ 592 00ba 019A     		ldr	r2, [sp, #4]
+ 593 00bc 2146     		mov	r1, r4
+ 594 00be 0C48     		ldr	r0, .L36+8
+ 595 00c0 FFF7FEFF 		bl	xprintf
+ 596              	.LVL55:
+ 110:Modules/audio_loader.c ****             xprintf("Sample rate: %hu Channels: %u Total size: %lu\r\n", state->sampleRate, state->
+ 597              		.loc 1 110 13 view .LVU148
+ 598 00c4 BB68     		ldr	r3, [r7, #8]
+ 599 00c6 3A79     		ldrb	r2, [r7, #4]	@ zero_extendqisi2
+ 600 00c8 F988     		ldrh	r1, [r7, #6]
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccROknMh.s 			page 15
+
+
+ 601 00ca 0A48     		ldr	r0, .L36+12
+ 602 00cc FFF7FEFF 		bl	xprintf
+ 603              	.LVL56:
+ 604 00d0 02E0     		b	.L34
+ 605              	.LVL57:
+ 606              	.L33:
+ 607              		.loc 1 110 13 is_stmt 0 view .LVU149
+ 608              	.LBE2:
+ 111:Modules/audio_loader.c ****         }
+ 112:Modules/audio_loader.c ****     } else {
+ 113:Modules/audio_loader.c ****         xprintf("An error has occurred when loading file onto buffer.\r\n");
+ 609              		.loc 1 113 9 is_stmt 1 view .LVU150
+ 610 00d2 0948     		ldr	r0, .L36+16
+ 611 00d4 FFF7FEFF 		bl	xprintf
+ 612              	.LVL58:
+ 613              	.L34:
+ 114:Modules/audio_loader.c ****     }
+ 115:Modules/audio_loader.c **** 
+ 116:Modules/audio_loader.c ****     free(filePath);
+ 614              		.loc 1 116 5 view .LVU151
+ 615 00d8 2046     		mov	r0, r4
+ 616 00da FFF7FEFF 		bl	free
+ 617              	.LVL59:
+ 117:Modules/audio_loader.c **** }...
+ 618              		.loc 1 117 1 is_stmt 0 view .LVU152
+ 619 00de 0DF50F7D 		add	sp, sp, #572
+ 620              	.LCFI9:
+ 621              		.cfi_def_cfa_offset 36
+ 622              		@ sp needed
+ 623 00e2 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 624              	.LVL60:
+ 625              	.L37:
+ 626              		.loc 1 117 1 view .LVU153
+ 627 00e6 00BF     		.align	2
+ 628              	.L36:
+ 629 00e8 00000000 		.word	.LC0
+ 630 00ec 00000000 		.word	.LC8
+ 631 00f0 08000000 		.word	.LC9
+ 632 00f4 40000000 		.word	.LC10
+ 633 00f8 70000000 		.word	.LC11
+ 634 00fc 00000000 		.word	APP_BUTTONS_STATE
+ 635 0100 00000000 		.word	AUDIO_BUFFER
+ 636              		.cfi_endproc
+ 637              	.LFE147:
+ 639              		.global	AUDIO_BUFFER
+ 640              		.section	.sdram,"aw"
+ 641              		.align	2
+ 644              	AUDIO_BUFFER:
+ 645 0000 00000000 		.space	1048576
+ 645      00000000 
+ 645      00000000 
+ 645      00000000 
+ 645      00000000 
+ 646              		.text
+ 647              	.Letext0:
+ 648              		.file 2 "Middlewares/Third_Party/FatFs/src/integer.h"
+ 649              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccROknMh.s 			page 16
+
+
+ 650              		.file 4 "c:\\program files (x86)\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\
+ 651              		.file 5 "Drivers/CMSIS/Include/core_cm7.h"
+ 652              		.file 6 "Drivers/CMSIS/Device/ST/STM32F7xx/Include/system_stm32f7xx.h"
+ 653              		.file 7 "c:\\program files (x86)\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\
+ 654              		.file 8 "c:\\program files (x86)\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\
+ 655              		.file 9 "c:\\program files (x86)\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi
+ 656              		.file 10 "c:\\program files (x86)\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include
+ 657              		.file 11 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ 658              		.file 12 "Middlewares/Third_Party/FreeRTOS/Source/include/queue.h"
+ 659              		.file 13 "Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h"
+ 660              		.file 14 "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h"
+ 661              		.file 15 "c:\\program files (x86)\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include
+ 662              		.file 16 "Middlewares/ST/STM32_USB_Host_Library/Core/Inc/usbh_def.h"
+ 663              		.file 17 "Middlewares/ST/STM32_USB_Host_Library/Core/Inc/usbh_ctlreq.h"
+ 664              		.file 18 "Middlewares/ST/STM32_USB_Host_Library/Class/MSC/Inc/usbh_msc.h"
+ 665              		.file 19 "Middlewares/Third_Party/FatFs/src/ff.h"
+ 666              		.file 20 "Modules/audio_loader.h"
+ 667              		.file 21 "Modules/controls.h"
+ 668              		.file 22 "Drivers/BSP/STM32746G-Discovery/../Components/ft5336/../Common/ts.h"
+ 669              		.file 23 "Drivers/BSP/STM32746G-Discovery/../Components/ft5336/ft5336.h"
+ 670              		.file 24 "Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_ts.h"
+ 671              		.file 25 "Modules/audio_player.h"
+ 672              		.file 26 "Inc/term_io.h"
+ 673              		.file 27 "c:\\program files (x86)\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include
+ 674              		.file 28 "c:\\program files (x86)\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include
+ 675              		.file 29 "<built-in>"
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccROknMh.s 			page 17
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 audio_loader.c
+C:\Users\Nina\AppData\Local\Temp\ccROknMh.s:18     .rodata.AUDIO_L_CreateAudioDirectory.str1.4:00000000 $d
+C:\Users\Nina\AppData\Local\Temp\ccROknMh.s:25     .text.AUDIO_L_CreateAudioDirectory:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccROknMh.s:33     .text.AUDIO_L_CreateAudioDirectory:00000000 AUDIO_L_CreateAudioDirectory
+C:\Users\Nina\AppData\Local\Temp\ccROknMh.s:74     .text.AUDIO_L_CreateAudioDirectory:0000001c $d
+C:\Users\Nina\AppData\Local\Temp\ccROknMh.s:80     .rodata.AUDIO_L_ScanAudioDirectory.str1.4:00000000 $d
+C:\Users\Nina\AppData\Local\Temp\ccROknMh.s:96     .text.AUDIO_L_ScanAudioDirectory:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccROknMh.s:103    .text.AUDIO_L_ScanAudioDirectory:00000000 AUDIO_L_ScanAudioDirectory
+C:\Users\Nina\AppData\Local\Temp\ccROknMh.s:290    .text.AUDIO_L_ScanAudioDirectory:000000b4 $d
+C:\Users\Nina\AppData\Local\Temp\ccROknMh.s:301    .rodata.AUDIO_L_ResetState.str1.4:00000000 $d
+C:\Users\Nina\AppData\Local\Temp\ccROknMh.s:305    .text.AUDIO_L_ResetState:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccROknMh.s:312    .text.AUDIO_L_ResetState:00000000 AUDIO_L_ResetState
+C:\Users\Nina\AppData\Local\Temp\ccROknMh.s:361    .text.AUDIO_L_ResetState:00000028 $d
+C:\Users\Nina\AppData\Local\Temp\ccROknMh.s:367    .text.AUDIO_L_PerformScan:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccROknMh.s:374    .text.AUDIO_L_PerformScan:00000000 AUDIO_L_PerformScan
+C:\Users\Nina\AppData\Local\Temp\ccROknMh.s:419    .rodata.AUDIO_L_LoadFileUnderButton.str1.4:00000000 $d
+C:\Users\Nina\AppData\Local\Temp\ccROknMh.s:435    .text.AUDIO_L_LoadFileUnderButton:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccROknMh.s:442    .text.AUDIO_L_LoadFileUnderButton:00000000 AUDIO_L_LoadFileUnderButton
+C:\Users\Nina\AppData\Local\Temp\ccROknMh.s:629    .text.AUDIO_L_LoadFileUnderButton:000000e8 $d
+C:\Users\Nina\AppData\Local\Temp\ccROknMh.s:644    .sdram:00000000 AUDIO_BUFFER
+C:\Users\Nina\AppData\Local\Temp\ccROknMh.s:641    .sdram:00000000 $d
+
+UNDEFINED SYMBOLS
+f_mkdir
+xprintf
+f_findfirst
+strlen
+malloc
+strcpy
+f_findnext
+f_closedir
+APP_STATE
+free
+sprintf
+f_open
+f_lseek
+f_read
+f_close
+APP_BUTTONS_STATE

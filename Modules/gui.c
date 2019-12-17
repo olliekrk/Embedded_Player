@@ -153,7 +153,6 @@ void GUI_HighlightButton(int buttonNumber) {
     GUI_GetCoordsForButton(buttonNumber, &x, &y);
     GUI_GetSizeForButton(buttonNumber, &xSize, &ySize);
     GUI_GetColorsForButton(buttonNumber, &primaryColor, &accentColor);
-
     GUI_DrawButton(primaryColor, COLOR_HIGHLIGHTED, x, y, xSize, ySize, GUI_GetTextForButton(buttonNumber));
 }
 
@@ -170,6 +169,4 @@ void GUI_HandleTouch(TS_StateTypeDef *tsState, void (*handleButtonTouch)(int)) {
         y = tsState->touchY[i];
         (*handleButtonTouch)(GUI_GetButtonForCoords(x, y)); // callback function
     }
-
-    APP_STATE.IS_DIRTY = -1;
 }

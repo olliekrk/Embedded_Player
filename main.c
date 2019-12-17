@@ -14,7 +14,8 @@
   * All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
-  * modification, are permitted, provided that the following conditions are met:
+  * modification, are permitt
+  ed, provided that the following conditions are met:
   *
   * 1. Redistribution of source code must retain the above copyright notice, 
   *    this list of conditions and the following disclaimer.
@@ -161,8 +162,8 @@ int main(void) {
 
     /* Create the thread(s) */
     osThreadDef(defaultTask, StartDefaultTask, osPriorityLow, 1, ALL_THREADS_STACK_SIZE * 0.1);
-    osThreadDef(audioPlayerTask, StartAudioPlayerTask, osPriorityNormal, 1, ALL_THREADS_STACK_SIZE * 0.1);
-    osThreadDef(guiTask, StartGuiTask, osPriorityNormal, 1, ALL_THREADS_STACK_SIZE * 0.4);
+    osThreadDef(audioPlayerTask, StartAudioPlayerTask, osPriorityLow, 1, ALL_THREADS_STACK_SIZE * 0.1);
+    osThreadDef(guiTask, StartGuiTask, osPriorityHigh, 1, ALL_THREADS_STACK_SIZE * 0.4);
     osThreadDef(touchscreenTask, StartTouchscreenTask, osPriorityNormal, 1, ALL_THREADS_STACK_SIZE * 0.4);
 
     defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
@@ -193,6 +194,8 @@ void VolumeChangeRoutine() {
 void StartDefaultTask(void const *argument) {
     vTaskDelay(1000);
 
+	AUDIO_P_ChangeFrequency(AUDIO_FREQUENCY_44K);
+
     do {
         vTaskDelay(300);
     } while (Appli_state != APPLICATION_READY);
@@ -210,9 +213,8 @@ void StartAudioPlayerTask(void const *argument) {
     osEvent event;
 
     for (;;) {
-        vTaskDelay(300);
-        if (APP_STATE.IS_PLAYING == 0) {
-            event = osMessageGet(audioRequestsQueue, 0);
+        if (!APP_STATE.IS_PLAYING) {		
+            event = osMessageGet(audioRequestsQueue, osWaitForever);
             if (event.status == osEventMessage) {
                 request = event.value.p;
                 APP_STATE.IS_PLAYING = 1;
@@ -224,32 +226,35 @@ void StartAudioPlayerTask(void const *argument) {
                 BSP_AUDIO_OUT_Stop(CODEC_PDWN_SW);
             }
         }
+		vTaskDelay(300);
     }
 }
 
 void StartTouchscreenTask(void const *argument) {
     for (;;) {
-        vTaskDelay(100);
         BSP_TS_GetState(&TS_State);
         if (TS_State.touchDetected > 0) {
             APP_STATE.IS_DIRTY = 1;
-            GUI_HandleTouch(&TS_State, CON_HandleButtonTouched);
+            GUI_HandleTouch(&TS_State, CON_HandleButtonTouched);	
         }
+        vTaskDelay(100);
     }
 }
 
 void StartGuiTask(void const *argument) {
     for (;;) {
-        vTaskDelay(100);
         if (APP_STATE.IS_DIRTY == 1) {
             GUI_DrawAllButtons();
+			
+			if (APP_STATE.SELECTED_OPTION != -1)
+				GUI_HighlightButton(APP_STATE.SELECTED_OPTION);
+
+			if (APP_STATE.SELECTED_SOUND_BUTTON != -1)
+				GUI_HighlightButton(APP_STATE.SELECTED_SOUND_BUTTON);
+			
+			APP_STATE.IS_DIRTY = -1;
         }
-
-        if (APP_STATE.SELECTED_OPTION != -1)
-            GUI_HighlightButton(APP_STATE.SELECTED_OPTION);
-
-        if (APP_STATE.SELECTED_SOUND_BUTTON != -1)
-            GUI_HighlightButton(APP_STATE.SELECTED_SOUND_BUTTON);
+		vTaskDelay(100);
     }
 }
 

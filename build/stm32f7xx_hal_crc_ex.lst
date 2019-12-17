@@ -1,0 +1,507 @@
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccKnLHt2.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"stm32f7xx_hal_crc_ex.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.HAL_CRCEx_Polynomial_Set,"ax",%progbits
+  18              		.align	1
+  19              		.global	HAL_CRCEx_Polynomial_Set
+  20              		.arch armv7e-m
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  24              		.fpu fpv5-sp-d16
+  26              	HAL_CRCEx_Polynomial_Set:
+  27              	.LVL0:
+  28              	.LFB138:
+  29              		.file 1 "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c"
+   1:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** /**
+   2:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   ******************************************************************************
+   3:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   * @file    stm32f7xx_hal_crc_ex.c
+   4:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   * @author  MCD Application Team
+   5:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   * @brief   Extended CRC HAL module driver.
+   6:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   *    
+   7:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   *          This file provides firmware functions to manage the following 
+   8:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   *          functionalities of the CRC peripheral:
+   9:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   *           + Initialization/de-initialization functions
+  10:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   *         
+  11:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   @verbatim
+  12:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   ==============================================================================
+  13:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****                     ##### CRC specific features #####
+  14:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   ==============================================================================
+  15:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   [..] 
+  16:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   (#) Polynomial configuration.
+  17:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   (#) Input data reverse mode.
+  18:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   (#) Output data reverse mode.
+  19:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** 
+  20:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   @endverbatim
+  21:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   ******************************************************************************
+  22:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   * @attention
+  23:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   *
+  24:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   * <h2><center>&copy; COPYRIGHT(c) 2017 STMicroelectronics</center></h2>
+  25:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   *
+  26:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   * Redistribution and use in source and binary forms, with or without modification,
+  27:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   * are permitted provided that the following conditions are met:
+  28:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   *   1. Redistributions of source code must retain the above copyright notice,
+  29:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   *      this list of conditions and the following disclaimer.
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccKnLHt2.s 			page 2
+
+
+  30:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   *   2. Redistributions in binary form must reproduce the above copyright notice,
+  31:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   *      this list of conditions and the following disclaimer in the documentation
+  32:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   *      and/or other materials provided with the distribution.
+  33:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   *   3. Neither the name of STMicroelectronics nor the names of its contributors
+  34:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   *      may be used to endorse or promote products derived from this software
+  35:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   *      without specific prior written permission.
+  36:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   *
+  37:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  38:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  39:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+  40:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+  41:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+  42:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+  43:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+  44:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+  45:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  46:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  47:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   *
+  48:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   ******************************************************************************  
+  49:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   */
+  50:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** 
+  51:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** /* Includes ------------------------------------------------------------------*/
+  52:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** #include "stm32f7xx_hal.h"
+  53:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** 
+  54:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** /** @addtogroup STM32F7xx_HAL_Driver
+  55:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   * @{
+  56:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   */
+  57:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** 
+  58:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** /** @addtogroup CRCEx
+  59:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   * @brief CRC Extended HAL module driver
+  60:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   * @{
+  61:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   */
+  62:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** 
+  63:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** #ifdef HAL_CRC_MODULE_ENABLED
+  64:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** 
+  65:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** /* Private typedef -----------------------------------------------------------*/
+  66:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** /* Private define ------------------------------------------------------------*/
+  67:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** /* Private macro -------------------------------------------------------------*/
+  68:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** /* Private variables ---------------------------------------------------------*/
+  69:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** /* Private function prototypes -----------------------------------------------*/
+  70:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** /* Private functions ---------------------------------------------------------*/
+  71:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** 
+  72:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** /** @addtogroup CRCEx_Exported_Functions
+  73:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   * @{
+  74:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   */
+  75:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** 
+  76:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** /** @addtogroup CRCEx_Exported_Functions_Group1
+  77:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****  *  @brief    Extended CRC features functions
+  78:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****  *
+  79:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** @verbatim   
+  80:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****  ===============================================================================
+  81:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****             ##### CRC Extended features functions #####
+  82:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****  ===============================================================================  
+  83:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****     [..]
+  84:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** This subsection provides function allowing to:
+  85:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****       (+) Set CRC polynomial if different from default one.
+  86:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****  
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccKnLHt2.s 			page 3
+
+
+  87:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** @endverbatim
+  88:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   * @{
+  89:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   */
+  90:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** 
+  91:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** 
+  92:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** /**
+  93:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   * @brief  Initializes the CRC polynomial if different from default one.
+  94:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   * @param  hcrc CRC handle
+  95:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   * @param  Pol CRC generating polynomial (7, 8, 16 or 32-bit long)
+  96:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   *         This parameter is written in normal representation, e.g.
+  97:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   *         for a polynomial of degree 7, X^7 + X^6 + X^5 + X^2 + 1 is written 0x65 
+  98:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   *         for a polynomial of degree 16, X^16 + X^12 + X^5 + 1 is written 0x1021     
+  99:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   * @param  PolyLength CRC polynomial length 
+ 100:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   *         This parameter can be one of the following values:
+ 101:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   *          @arg CRC_POLYLENGTH_7B: 7-bit long CRC (generating polynomial of degree 7)
+ 102:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   *          @arg CRC_POLYLENGTH_8B: 8-bit long CRC (generating polynomial of degree 8)
+ 103:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   *          @arg CRC_POLYLENGTH_16B: 16-bit long CRC (generating polynomial of degree 16)
+ 104:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   *          @arg CRC_POLYLENGTH_32B: 32-bit long CRC (generating polynomial of degree 32)         
+ 105:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   * @retval HAL status
+ 106:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   */                                   
+ 107:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** HAL_StatusTypeDef HAL_CRCEx_Polynomial_Set(CRC_HandleTypeDef *hcrc, uint32_t Pol, uint32_t PolyLeng
+ 108:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** {
+  30              		.loc 1 108 1 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		@ link register save eliminated.
+  35              		.loc 1 108 1 is_stmt 0 view .LVU1
+  36 0000 10B4     		push	{r4}
+  37              	.LCFI0:
+  38              		.cfi_def_cfa_offset 4
+  39              		.cfi_offset 4, -4
+ 109:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   uint32_t msb = 31; /* polynomial degree is 32 at most, so msb is initialized to max value */
+  40              		.loc 1 109 3 is_stmt 1 view .LVU2
+  41              	.LVL1:
+ 110:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** 
+ 111:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   /* Check the parameters */
+ 112:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   assert_param(IS_CRC_POL_LENGTH(PolyLength));
+  42              		.loc 1 112 3 view .LVU3
+ 113:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   
+ 114:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   /* check polynomial definition vs polynomial size:
+ 115:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****    * polynomial length must be aligned with polynomial
+ 116:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****    * definition. HAL_ERROR is reported if Pol degree is 
+ 117:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****    * larger than that indicated by PolyLength.
+ 118:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****    * Look for MSB position: msb will contain the degree of
+ 119:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****    *  the second to the largest polynomial member. E.g., for
+ 120:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****    *  X^7 + X^6 + X^5 + X^2 + 1, msb = 6. */
+ 121:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   while (((Pol & ((uint32_t)(0x1) << msb)) == 0) && (msb-- > 0))
+  43              		.loc 1 121 3 view .LVU4
+ 109:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** 
+  44              		.loc 1 109 12 is_stmt 0 view .LVU5
+  45 0002 1F23     		movs	r3, #31
+  46              		.loc 1 121 9 view .LVU6
+  47 0004 00E0     		b	.L3
+  48              	.LVL2:
+  49              	.L9:
+  50              		.loc 1 121 57 view .LVU7
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccKnLHt2.s 			page 4
+
+
+  51 0006 2346     		mov	r3, r4
+  52              	.LVL3:
+  53              	.L3:
+ 122:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   {
+ 123:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   }
+  54              		.loc 1 123 3 is_stmt 1 discriminator 2 view .LVU8
+ 121:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   {
+  55              		.loc 1 121 9 discriminator 2 view .LVU9
+ 121:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   {
+  56              		.loc 1 121 44 is_stmt 0 discriminator 2 view .LVU10
+  57 0008 21FA03F4 		lsr	r4, r1, r3
+ 121:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   {
+  58              		.loc 1 121 9 discriminator 2 view .LVU11
+  59 000c 14F0010F 		tst	r4, #1
+  60 0010 03D1     		bne	.L2
+ 121:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   {
+  61              		.loc 1 121 57 discriminator 1 view .LVU12
+  62 0012 5C1E     		subs	r4, r3, #1
+  63              	.LVL4:
+ 121:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   {
+  64              		.loc 1 121 50 discriminator 1 view .LVU13
+  65 0014 002B     		cmp	r3, #0
+  66 0016 F6D1     		bne	.L9
+ 121:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   {
+  67              		.loc 1 121 57 view .LVU14
+  68 0018 2346     		mov	r3, r4
+  69              	.LVL5:
+  70              	.L2:
+ 124:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** 
+ 125:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   switch (PolyLength)
+  71              		.loc 1 125 3 is_stmt 1 view .LVU15
+  72 001a 102A     		cmp	r2, #16
+  73 001c 13D0     		beq	.L4
+  74              		.loc 1 125 3 is_stmt 0 view .LVU16
+  75 001e 182A     		cmp	r2, #24
+  76 0020 0DD0     		beq	.L5
+  77 0022 082A     		cmp	r2, #8
+  78 0024 13D0     		beq	.L14
+  79              	.L7:
+ 126:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   {
+ 127:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****     case CRC_POLYLENGTH_7B:
+ 128:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****       if (msb >= HAL_CRC_LENGTH_7B)
+ 129:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****       { 
+ 130:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****         return  HAL_ERROR;
+ 131:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****       }
+ 132:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****       break;
+ 133:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****     case CRC_POLYLENGTH_8B:
+ 134:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****       if (msb >= HAL_CRC_LENGTH_8B)
+ 135:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****       {
+ 136:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****         return  HAL_ERROR;
+ 137:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****       }
+ 138:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****       break;
+ 139:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****     case CRC_POLYLENGTH_16B:
+ 140:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****       if (msb >= HAL_CRC_LENGTH_16B)
+ 141:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****       {
+ 142:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****         return  HAL_ERROR;
+ 143:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****       }
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccKnLHt2.s 			page 5
+
+
+ 144:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****       break;
+ 145:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****     case CRC_POLYLENGTH_32B:
+ 146:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****       /* no polynomial definition vs. polynomial length issue possible */
+ 147:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****       break;
+ 148:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   default:
+ 149:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****       break;
+ 150:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   }
+ 151:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** 
+ 152:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   /* set generating polynomial */
+ 153:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   WRITE_REG(hcrc->Instance->POL, Pol);
+  80              		.loc 1 153 3 is_stmt 1 view .LVU17
+  81 0026 0368     		ldr	r3, [r0]
+  82              	.LVL6:
+  83              		.loc 1 153 3 is_stmt 0 view .LVU18
+  84 0028 5961     		str	r1, [r3, #20]
+ 154:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   
+ 155:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   /* set generating polynomial size */
+ 156:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   MODIFY_REG(hcrc->Instance->CR, CRC_CR_POLYSIZE, PolyLength);  
+  85              		.loc 1 156 3 is_stmt 1 view .LVU19
+  86 002a 0168     		ldr	r1, [r0]
+  87              	.LVL7:
+  88              		.loc 1 156 3 is_stmt 0 view .LVU20
+  89 002c 8B68     		ldr	r3, [r1, #8]
+  90              	.LVL8:
+  91              		.loc 1 156 3 view .LVU21
+  92 002e 23F01803 		bic	r3, r3, #24
+  93 0032 1A43     		orrs	r2, r2, r3
+  94              	.LVL9:
+  95              		.loc 1 156 3 view .LVU22
+  96 0034 8A60     		str	r2, [r1, #8]
+ 157:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   
+ 158:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   /* Return function status */
+ 159:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   return HAL_OK;
+  97              		.loc 1 159 3 is_stmt 1 view .LVU23
+  98              		.loc 1 159 10 is_stmt 0 view .LVU24
+  99 0036 0020     		movs	r0, #0
+ 100              	.LVL10:
+ 101              	.L8:
+ 160:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** }
+ 102              		.loc 1 160 1 view .LVU25
+ 103 0038 5DF8044B 		ldr	r4, [sp], #4
+ 104              	.LCFI1:
+ 105              		.cfi_remember_state
+ 106              		.cfi_restore 4
+ 107              		.cfi_def_cfa_offset 0
+ 108 003c 7047     		bx	lr
+ 109              	.LVL11:
+ 110              	.L5:
+ 111              	.LCFI2:
+ 112              		.cfi_restore_state
+ 128:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****       { 
+ 113              		.loc 1 128 7 is_stmt 1 view .LVU26
+ 128:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****       { 
+ 114              		.loc 1 128 10 is_stmt 0 view .LVU27
+ 115 003e 062B     		cmp	r3, #6
+ 116 0040 F1D9     		bls	.L7
+ 130:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****       }
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccKnLHt2.s 			page 6
+
+
+ 117              		.loc 1 130 17 view .LVU28
+ 118 0042 0120     		movs	r0, #1
+ 119              	.LVL12:
+ 130:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****       }
+ 120              		.loc 1 130 17 view .LVU29
+ 121 0044 F8E7     		b	.L8
+ 122              	.LVL13:
+ 123              	.L4:
+ 134:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****       {
+ 124              		.loc 1 134 7 is_stmt 1 view .LVU30
+ 134:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****       {
+ 125              		.loc 1 134 10 is_stmt 0 view .LVU31
+ 126 0046 072B     		cmp	r3, #7
+ 127 0048 EDD9     		bls	.L7
+ 136:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****       }
+ 128              		.loc 1 136 17 view .LVU32
+ 129 004a 0120     		movs	r0, #1
+ 130              	.LVL14:
+ 136:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****       }
+ 131              		.loc 1 136 17 view .LVU33
+ 132 004c F4E7     		b	.L8
+ 133              	.LVL15:
+ 134              	.L14:
+ 140:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****       {
+ 135              		.loc 1 140 7 is_stmt 1 view .LVU34
+ 140:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****       {
+ 136              		.loc 1 140 10 is_stmt 0 view .LVU35
+ 137 004e 0F2B     		cmp	r3, #15
+ 138 0050 E9D9     		bls	.L7
+ 142:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****       }
+ 139              		.loc 1 142 17 view .LVU36
+ 140 0052 0120     		movs	r0, #1
+ 141              	.LVL16:
+ 142:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****       }
+ 142              		.loc 1 142 17 view .LVU37
+ 143 0054 F0E7     		b	.L8
+ 144              		.cfi_endproc
+ 145              	.LFE138:
+ 147              		.section	.text.HAL_CRCEx_Input_Data_Reverse,"ax",%progbits
+ 148              		.align	1
+ 149              		.global	HAL_CRCEx_Input_Data_Reverse
+ 150              		.syntax unified
+ 151              		.thumb
+ 152              		.thumb_func
+ 153              		.fpu fpv5-sp-d16
+ 155              	HAL_CRCEx_Input_Data_Reverse:
+ 156              	.LVL17:
+ 157              	.LFB139:
+ 161:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** 
+ 162:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** /**
+ 163:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   * @brief  Set the Reverse Input data mode.
+ 164:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   * @param  hcrc CRC handle
+ 165:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   * @param  InputReverseMode Input Data inversion mode
+ 166:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   *         This parameter can be one of the following values:
+ 167:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   *          @arg CRC_INPUTDATA_INVERSION_NONE: no change in bit order (default value)
+ 168:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   *          @arg CRC_INPUTDATA_INVERSION_BYTE: Byte-wise bit reversal
+ 169:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   *          @arg CRC_INPUTDATA_INVERSION_HALFWORD: HalfWord-wise bit reversal
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccKnLHt2.s 			page 7
+
+
+ 170:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   *          @arg CRC_INPUTDATA_INVERSION_WORD: Word-wise bit reversal              
+ 171:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   * @retval HAL status
+ 172:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   */                                   
+ 173:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** HAL_StatusTypeDef HAL_CRCEx_Input_Data_Reverse(CRC_HandleTypeDef *hcrc, uint32_t InputReverseMode)
+ 174:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** {  
+ 158              		.loc 1 174 1 is_stmt 1 view -0
+ 159              		.cfi_startproc
+ 160              		@ args = 0, pretend = 0, frame = 0
+ 161              		@ frame_needed = 0, uses_anonymous_args = 0
+ 162              		@ link register save eliminated.
+ 175:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   /* Check the parameters */
+ 176:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   assert_param(IS_CRC_INPUTDATA_INVERSION_MODE(InputReverseMode));
+ 163              		.loc 1 176 3 view .LVU39
+ 177:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   
+ 178:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   /* Change CRC peripheral state */
+ 179:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   hcrc->State = HAL_CRC_STATE_BUSY;
+ 164              		.loc 1 179 3 view .LVU40
+ 165              		.loc 1 179 15 is_stmt 0 view .LVU41
+ 166 0000 0223     		movs	r3, #2
+ 167 0002 4377     		strb	r3, [r0, #29]
+ 180:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** 
+ 181:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   /* set input data inversion mode */
+ 182:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   MODIFY_REG(hcrc->Instance->CR, CRC_CR_REV_IN, InputReverseMode);    
+ 168              		.loc 1 182 3 is_stmt 1 view .LVU42
+ 169 0004 0268     		ldr	r2, [r0]
+ 170 0006 9368     		ldr	r3, [r2, #8]
+ 171 0008 23F06003 		bic	r3, r3, #96
+ 172 000c 0B43     		orrs	r3, r3, r1
+ 173 000e 9360     		str	r3, [r2, #8]
+ 183:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   /* Change CRC peripheral state */
+ 184:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   hcrc->State = HAL_CRC_STATE_READY;
+ 174              		.loc 1 184 3 view .LVU43
+ 175              		.loc 1 184 15 is_stmt 0 view .LVU44
+ 176 0010 0123     		movs	r3, #1
+ 177 0012 4377     		strb	r3, [r0, #29]
+ 185:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   
+ 186:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   /* Return function status */
+ 187:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   return HAL_OK;
+ 178              		.loc 1 187 3 is_stmt 1 view .LVU45
+ 188:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** }
+ 179              		.loc 1 188 1 is_stmt 0 view .LVU46
+ 180 0014 0020     		movs	r0, #0
+ 181              	.LVL18:
+ 182              		.loc 1 188 1 view .LVU47
+ 183 0016 7047     		bx	lr
+ 184              		.cfi_endproc
+ 185              	.LFE139:
+ 187              		.section	.text.HAL_CRCEx_Output_Data_Reverse,"ax",%progbits
+ 188              		.align	1
+ 189              		.global	HAL_CRCEx_Output_Data_Reverse
+ 190              		.syntax unified
+ 191              		.thumb
+ 192              		.thumb_func
+ 193              		.fpu fpv5-sp-d16
+ 195              	HAL_CRCEx_Output_Data_Reverse:
+ 196              	.LVL19:
+ 197              	.LFB140:
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccKnLHt2.s 			page 8
+
+
+ 189:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** 
+ 190:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** /**
+ 191:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   * @brief  Set the Reverse Output data mode.
+ 192:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   * @param  hcrc CRC handle
+ 193:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   * @param  OutputReverseMode Output Data inversion mode
+ 194:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   *         This parameter can be one of the following values:
+ 195:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   *          @arg CRC_OUTPUTDATA_INVERSION_DISABLE: no CRC inversion (default value)
+ 196:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   *          @arg CRC_OUTPUTDATA_INVERSION_ENABLE: bit-level inversion (e.g for a 8-bit CRC: 0xB5 b
+ 197:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   * @retval HAL status
+ 198:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   */                                   
+ 199:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** HAL_StatusTypeDef HAL_CRCEx_Output_Data_Reverse(CRC_HandleTypeDef *hcrc, uint32_t OutputReverseMode
+ 200:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** {
+ 198              		.loc 1 200 1 is_stmt 1 view -0
+ 199              		.cfi_startproc
+ 200              		@ args = 0, pretend = 0, frame = 0
+ 201              		@ frame_needed = 0, uses_anonymous_args = 0
+ 202              		@ link register save eliminated.
+ 201:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   /* Check the parameters */
+ 202:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   assert_param(IS_CRC_OUTPUTDATA_INVERSION_MODE(OutputReverseMode));
+ 203              		.loc 1 202 3 view .LVU49
+ 203:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   
+ 204:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   /* Change CRC peripheral state */
+ 205:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   hcrc->State = HAL_CRC_STATE_BUSY;
+ 204              		.loc 1 205 3 view .LVU50
+ 205              		.loc 1 205 15 is_stmt 0 view .LVU51
+ 206 0000 0223     		movs	r3, #2
+ 207 0002 4377     		strb	r3, [r0, #29]
+ 206:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** 
+ 207:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   /* set output data inversion mode */
+ 208:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   MODIFY_REG(hcrc->Instance->CR, CRC_CR_REV_OUT, OutputReverseMode); 
+ 208              		.loc 1 208 3 is_stmt 1 view .LVU52
+ 209 0004 0268     		ldr	r2, [r0]
+ 210 0006 9368     		ldr	r3, [r2, #8]
+ 211 0008 23F08003 		bic	r3, r3, #128
+ 212 000c 0B43     		orrs	r3, r3, r1
+ 213 000e 9360     		str	r3, [r2, #8]
+ 209:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****       
+ 210:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   /* Change CRC peripheral state */
+ 211:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   hcrc->State = HAL_CRC_STATE_READY;
+ 214              		.loc 1 211 3 view .LVU53
+ 215              		.loc 1 211 15 is_stmt 0 view .LVU54
+ 216 0010 0123     		movs	r3, #1
+ 217 0012 4377     		strb	r3, [r0, #29]
+ 212:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   
+ 213:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   /* Return function status */
+ 214:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c ****   return HAL_OK;
+ 218              		.loc 1 214 3 is_stmt 1 view .LVU55
+ 215:Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c **** }
+ 219              		.loc 1 215 1 is_stmt 0 view .LVU56
+ 220 0014 0020     		movs	r0, #0
+ 221              	.LVL20:
+ 222              		.loc 1 215 1 view .LVU57
+ 223 0016 7047     		bx	lr
+ 224              		.cfi_endproc
+ 225              	.LFE140:
+ 227              		.text
+ 228              	.Letext0:
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccKnLHt2.s 			page 9
+
+
+ 229              		.file 2 "c:\\program files (x86)\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\
+ 230              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\
+ 231              		.file 4 "Drivers/CMSIS/Include/core_cm7.h"
+ 232              		.file 5 "Drivers/CMSIS/Device/ST/STM32F7xx/Include/system_stm32f7xx.h"
+ 233              		.file 6 "Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f746xx.h"
+ 234              		.file 7 "c:\\program files (x86)\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\
+ 235              		.file 8 "c:\\program files (x86)\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include\
+ 236              		.file 9 "c:\\program files (x86)\\gnu tools arm embedded\\9 2019-q4-major\\lib\\gcc\\arm-none-eabi
+ 237              		.file 10 "c:\\program files (x86)\\gnu tools arm embedded\\9 2019-q4-major\\arm-none-eabi\\include
+ 238              		.file 11 "Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_def.h"
+ 239              		.file 12 "Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_crc.h"
+ARM GAS  C:\Users\Nina\AppData\Local\Temp\ccKnLHt2.s 			page 10
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32f7xx_hal_crc_ex.c
+C:\Users\Nina\AppData\Local\Temp\ccKnLHt2.s:18     .text.HAL_CRCEx_Polynomial_Set:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccKnLHt2.s:26     .text.HAL_CRCEx_Polynomial_Set:00000000 HAL_CRCEx_Polynomial_Set
+C:\Users\Nina\AppData\Local\Temp\ccKnLHt2.s:148    .text.HAL_CRCEx_Input_Data_Reverse:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccKnLHt2.s:155    .text.HAL_CRCEx_Input_Data_Reverse:00000000 HAL_CRCEx_Input_Data_Reverse
+C:\Users\Nina\AppData\Local\Temp\ccKnLHt2.s:188    .text.HAL_CRCEx_Output_Data_Reverse:00000000 $t
+C:\Users\Nina\AppData\Local\Temp\ccKnLHt2.s:195    .text.HAL_CRCEx_Output_Data_Reverse:00000000 HAL_CRCEx_Output_Data_Reverse
+
+NO UNDEFINED SYMBOLS
