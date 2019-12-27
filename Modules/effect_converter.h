@@ -17,6 +17,6 @@
  * - BAM bass manager module
  * */
 
-void costam_test();
+void EFFECTS_ApplyEqPreset();
 
 #endif //EMBEDDED_PLAYER_EFFECT_CONVERTER_H

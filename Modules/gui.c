@@ -99,7 +99,7 @@ char *GUI_GetTextForButton(int buttonNumber) {
     switch (buttonNumber) {
         case SELECTED_TRACK:
             text = APP_STATE.SELECTED_TRACK_NAME;
-            if (text == NULL) return "No tracks available";
+            if (text == NULL) return "Please wait";
             break;
         case EFFECT_1:
             return "Effect 1";

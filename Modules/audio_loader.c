@@ -82,6 +82,7 @@ void AUDIO_L_ResetState(void) {
 }
 
 void AUDIO_L_ToggleContinuousMode() {
+    AUDIO_P_End();
     PLAYER_STATE.continuousModeOn = !PLAYER_STATE.continuousModeOn;
 }
 
@@ -175,7 +176,6 @@ void AUDIO_L_UpdatePlayerBuffer() {
 
     if (bytesRead < PLAYER_BUFFER_SIZE / 2) {
         AUDIO_L_ResetPlayerBuffer();
-        AUDIO_P_End();
     }
 
 }
@@ -183,4 +183,5 @@ void AUDIO_L_UpdatePlayerBuffer() {
 void AUDIO_L_ResetPlayerBuffer() {
     f_close(&CURRENT_FILE);
     FILE_OFFSET = 0;
+    AUDIO_P_End();
 }

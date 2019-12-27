@@ -84,7 +84,6 @@ static void LCD_Initialize_Screen(void) {
 
     /* LCD Initialization */
     BSP_LCD_LayerDefaultInit(0, (unsigned int) lcd_image_bg);
-    //BSP_LCD_LayerDefaultInit(1, (unsigned int)lcd_image_bg+(LCD_X_SIZE*LCD_Y_SIZE*4));
     BSP_LCD_LayerDefaultInit(1, (unsigned int) lcd_image_fg);
 
     /* Enable the LCD */
@@ -163,8 +162,8 @@ int main(void) {
     /* Create the thread(s) */
     osThreadDef(defaultTask, StartDefaultTask, osPriorityLow, 1, ALL_THREADS_STACK_SIZE * 0.1);
     osThreadDef(audioPlayerTask, StartAudioPlayerTask, osPriorityLow, 1, ALL_THREADS_STACK_SIZE * 0.1);
-    osThreadDef(guiTask, StartGuiTask, osPriorityHigh, 1, ALL_THREADS_STACK_SIZE * 0.4);
     osThreadDef(touchscreenTask, StartTouchscreenTask, osPriorityNormal, 1, ALL_THREADS_STACK_SIZE * 0.4);
+    osThreadDef(guiTask, StartGuiTask, osPriorityHigh, 1, ALL_THREADS_STACK_SIZE * 0.4);
 
     defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
     audioPlayerTaskHandle = osThreadCreate(osThread(audioPlayerTask), NULL);
@@ -213,17 +212,17 @@ void StartDefaultTask(void const *argument) {
     AUDIO_L_PerformScan();
 
     for (;;) {
-        costam_test();
         ToggleContinuousModeRoutine();
         VolumeChangeRoutine();
-        vTaskDelay(1000);
+        vTaskDelay(500);
     }
 }
 
 void StartAudioPlayerTask(void const *argument) {
     for (;;) {
         AUDIO_P_PlayRoutine();
-        vTaskDelay(100);
+        int shortenDelay = APP_STATE.IS_PLAYING && PLAYER_STATE.continuousModeOn == 1;
+        vTaskDelay(shortenDelay ? 1 : 200);
     }
 }
 
@@ -1272,12 +1271,11 @@ static void MX_GPIO_Init(void) {
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
     GPIO_InitStruct.Alternate = GPIO_AF10_OTG_HS;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-
 }
 
 void BSP_AUDIO_OUT_TransferComplete_CallBack(void) {
     BUFFER_OFFSET = BUFFER_OFFSET_FULL;
-    if (!PLAYER_STATE.continuousModeOn) {
+    if (PLAYER_STATE.continuousModeOn == 0) {
         AUDIO_P_End();
     }
 }
