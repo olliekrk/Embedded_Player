@@ -22,6 +22,11 @@
 *.la
 *.lo
 
+!Middlewares/ST/STM32_Audio/Addons/BAM/Lib/BAM_32b_CM7_GCC.a
+!Middlewares/ST/STM32_Audio/Addons/GREQ/Lib/GrEq_32b_CM7_GCC.a
+!Middlewares/ST/STM32_Audio/Addons/SRC236/Lib/SRC236_32b_CM7_GCC.a
+!Middlewares/ST/STM32_Audio/Addons/SRC441/Lib/SRC441_32b_CM7_GCC.a
+
 # Shared objects (inc. Windows DLLs)
 *.dll
 *.so
