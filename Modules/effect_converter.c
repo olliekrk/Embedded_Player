@@ -3,9 +3,13 @@
 //
 
 #include "effect_converter.h"
-/*
+#include <term_io.h>
 #include "../Middlewares/ST/STM32_Audio/Addons/BAM/Inc/bam_glo.h"
 #include "../Middlewares/ST/STM32_Audio/Addons/GREQ/Inc/greq_glo.h"
 #include "../Middlewares/ST/STM32_Audio/Addons/SRC236/Inc/src236_glo.h"
 #include "../Middlewares/ST/STM32_Audio/Addons/SRC441/Inc/src441_glo.h"
-*/
+
+void costam_test() {
+    int32_t xd = greq_reset(NULL, NULL);
+    xprintf("%ld\r\n", xd);
+}
