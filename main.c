@@ -181,20 +181,22 @@ int main(void) {
 void VolumeChangeRoutine() {
     char input = inkey();
     switch (input) {
-        case 0:
-            return;
-        case 'q':
+        case '1':
+            AUDIO_P_VolumeUp();
+            break;
+        case '2':
             AUDIO_P_VolumeDown();
             break;
         default:
-            AUDIO_P_VolumeUp();
+            return;
     }
+    xprintf("Volume changed to: %d\r\n", APP_STATE.VOLUME);
 }
 
 void StartDefaultTask(void const *argument) {
     vTaskDelay(1000);
 
-	AUDIO_P_ChangeFrequency(AUDIO_FREQUENCY_44K);
+    AUDIO_P_ChangeFrequency(AUDIO_FREQUENCY_44K);
 
     do {
         vTaskDelay(300);
@@ -213,12 +215,11 @@ void StartAudioPlayerTask(void const *argument) {
     osEvent event;
 
     for (;;) {
-        if (!APP_STATE.IS_PLAYING) {		
+        if (!APP_STATE.IS_PLAYING) {
             event = osMessageGet(audioRequestsQueue, osWaitForever);
             if (event.status == osEventMessage) {
                 request = event.value.p;
                 APP_STATE.IS_PLAYING = 1;
-                AUDIO_P_VolumeUp();
                 AUDIO_P_Play(request->audioIndex);
                 osPoolFree(audioRequestsPool, request);
             } else {
@@ -226,7 +227,7 @@ void StartAudioPlayerTask(void const *argument) {
                 BSP_AUDIO_OUT_Stop(CODEC_PDWN_SW);
             }
         }
-		vTaskDelay(300);
+        vTaskDelay(300);
     }
 }
 
@@ -235,7 +236,7 @@ void StartTouchscreenTask(void const *argument) {
         BSP_TS_GetState(&TS_State);
         if (TS_State.touchDetected > 0) {
             APP_STATE.IS_DIRTY = 1;
-            GUI_HandleTouch(&TS_State, CON_HandleButtonTouched);	
+            GUI_HandleTouch(&TS_State, CON_HandleButtonTouched);
         }
         vTaskDelay(100);
     }
@@ -245,16 +246,16 @@ void StartGuiTask(void const *argument) {
     for (;;) {
         if (APP_STATE.IS_DIRTY == 1) {
             GUI_DrawAllButtons();
-			
-			if (APP_STATE.SELECTED_OPTION != -1)
-				GUI_HighlightButton(APP_STATE.SELECTED_OPTION);
 
-			if (APP_STATE.SELECTED_SOUND_BUTTON != -1)
-				GUI_HighlightButton(APP_STATE.SELECTED_SOUND_BUTTON);
-			
-			APP_STATE.IS_DIRTY = -1;
+            if (APP_STATE.SELECTED_OPTION != -1)
+                GUI_HighlightButton(APP_STATE.SELECTED_OPTION);
+
+            if (APP_STATE.SELECTED_SOUND_BUTTON != -1)
+                GUI_HighlightButton(APP_STATE.SELECTED_SOUND_BUTTON);
+
+            APP_STATE.IS_DIRTY = -1;
         }
-		vTaskDelay(100);
+        vTaskDelay(100);
     }
 }
 

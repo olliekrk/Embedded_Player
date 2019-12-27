@@ -65,6 +65,7 @@ void AUDIO_L_PerformScan(void) {
     if (result == FR_OK || result == FR_EXIST) {
         AUDIO_L_ResetState();
         AUDIO_L_ScanAudioDirectory();
+        APP_STATE.IS_DIRTY = 1; // to display recently loaded tracks
     }
 }
 
@@ -72,9 +73,10 @@ void AUDIO_L_ResetState(void) {
     free(APP_STATE.TRACKS);
     APP_STATE.TRACKS = malloc(AUDIO_FILES_LIMIT * sizeof(char *));
     APP_STATE.TRACKS_COUNT = 0;
-    APP_STATE.SELECTED_TRACK_INDEX = -1;
+    APP_STATE.SELECTED_TRACK_INDEX = 0;
     APP_STATE.SELECTED_TRACK_NAME = "";
     APP_STATE.IS_PLAYING = 0;
+    APP_STATE.IS_DIRTY = 1;
     APP_STATE.VOLUME = AUDIO_VOLUME_INIT;
 }
 
@@ -112,7 +114,6 @@ void AUDIO_L_LoadFileUnderButton(char *fileName, int buttonNumber) {
             sprintf(APP_BUTTONS_STATE.configs[buttonNumber].trackName, "%s", fileName);
 
             xprintf("Successfully read audio file: %s of size %u bytes.\r\n", filePath, _bytesRead);
-            xprintf("Hz: %hu Channels: %u Bytes: %lu\r\n", state->sampleRate, state->channels, state->size);
         }
     } else {
         xprintf("An error has occurred when loading file onto buffer.\r\n");

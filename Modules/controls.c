@@ -82,7 +82,7 @@ void CON_HandleOptionButtonTouched(OptionControl option) {
             }
             break;
         case BACK_TRACK:
-            if (APP_STATE.TRACKS_COUNT > 0 && APP_STATE.SELECTED_TRACK_INDEX - 1 > 0) {
+            if (APP_STATE.TRACKS_COUNT > 0 && APP_STATE.SELECTED_TRACK_INDEX - 1 >= 0) {
                 APP_STATE.SELECTED_TRACK_NAME = APP_STATE.TRACKS[--APP_STATE.SELECTED_TRACK_INDEX];
             }
             break;
@@ -99,8 +99,6 @@ void CON_ActivateOption() {
         switch (APP_STATE.SELECTED_OPTION) {
             case SELECTED_TRACK:
                 AUDIO_L_LoadFileUnderButton(APP_STATE.SELECTED_TRACK_NAME, APP_STATE.SELECTED_SOUND_BUTTON);
-                APP_STATE.SELECTED_SOUND_BUTTON = -1;
-                APP_STATE.SELECTED_OPTION = -1;
                 break;
             case EFFECT_1:
                 APP_BUTTONS_STATE.configs[APP_STATE.SELECTED_SOUND_BUTTON].effectEnabled = effectOne;
