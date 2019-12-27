@@ -193,6 +193,13 @@ void VolumeChangeRoutine() {
     xprintf("Volume changed to: %d\r\n", APP_STATE.VOLUME);
 }
 
+void ToggleContinuousModeRoutine() {
+    if (HAL_GPIO_ReadPin(GPIOI, GPIO_PIN_11)) {
+        AUDIO_L_ToggleContinuousMode();
+        xprintf("Continuous mode set to %d\r\n", PLAYER_STATE.continuousModeOn);
+    }
+}
+
 void StartDefaultTask(void const *argument) {
     vTaskDelay(1000);
 
@@ -206,6 +213,7 @@ void StartDefaultTask(void const *argument) {
     AUDIO_L_PerformScan();
 
     for (;;) {
+        ToggleContinuousModeRoutine();
         VolumeChangeRoutine();
         vTaskDelay(1000);
     }
@@ -1268,7 +1276,7 @@ static void MX_GPIO_Init(void) {
 
 void BSP_AUDIO_OUT_TransferComplete_CallBack(void) {
     BUFFER_OFFSET = BUFFER_OFFSET_FULL;
-    if (PLAYER_STATE.continuousModeOn == 0) {
+    if (!PLAYER_STATE.continuousModeOn) {
         AUDIO_P_End();
     }
 }

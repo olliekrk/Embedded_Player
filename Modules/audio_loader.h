@@ -15,7 +15,7 @@
 
 #define AUDIO_FILES_LIMIT 10
 
-#define PLAYER_BUFFER_SIZE 1024 * 128
+#define PLAYER_BUFFER_SIZE 1024 * 1024
 
 #define AUDIO_BUFFER_SIZE 1024 * 1024
 
@@ -50,6 +50,8 @@ void AUDIO_L_ResetState(void);
 void AUDIO_L_LoadFileUnderButton(char *, int);
 
 // CONTINUOUS PLAY
+
+void AUDIO_L_ToggleContinuousMode();
 
 void AUDIO_L_StartPlayingFromButton(int);
 

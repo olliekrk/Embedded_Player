@@ -14,7 +14,7 @@ int FILE_OFFSET = 0;
 BufferPos BUFFER_OFFSET = BUFFER_OFFSET_NONE;
 FIL CURRENT_FILE;
 
-uint8_t AUDIO_BUFFER[AUDIO_BUFFER_SIZE] __attribute__((section(".sdram"))) __attribute__((unused));
+uint8_t AUDIO_BUFFER[AUDIO_BUFFER_SIZE] __attribute__((section(".sdram")));
 uint8_t PLAYER_BUFFER[PLAYER_BUFFER_SIZE] __attribute__((section(".sdram")));
 
 FRESULT AUDIO_L_CreateAudioDirectory(void) {
@@ -79,6 +79,10 @@ void AUDIO_L_ResetState(void) {
     APP_STATE.IS_PLAYING = 0;
     APP_STATE.IS_DIRTY = 1;
     APP_STATE.VOLUME = AUDIO_VOLUME_INIT;
+}
+
+void AUDIO_L_ToggleContinuousMode() {
+    PLAYER_STATE.continuousModeOn = !PLAYER_STATE.continuousModeOn;
 }
 
 void AUDIO_L_LoadFileUnderButton(char *fileName, int buttonNumber) {
