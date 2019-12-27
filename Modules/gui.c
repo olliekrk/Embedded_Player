@@ -86,37 +86,39 @@ void GUI_GetColorsForButton(int buttonNumber, uint32_t *primaryOutput, uint32_t 
             *accentOutput = COLOR_ACCENT_OPTION;
             break;
         default:
-            *primaryOutput = COLOR_PRIMARY_DEFAULT;
+            // sound button case
+            *primaryOutput = APP_BUTTONS_STATE.configs[buttonNumber].size > 0 ? COLOR_PRIMARY_DEFAULT
+                                                                              : COLOR_PRIMARY_DEFAULT_DARK;
             *accentOutput = COLOR_ACCENT_DEFAULT;
     }
 }
 
 char *GUI_GetTextForButton(int buttonNumber) {
-	char *text;
-	
-	switch (buttonNumber) {
+    char *text;
+
+    switch (buttonNumber) {
         case SELECTED_TRACK:
-			text = APP_STATE.SELECTED_TRACK_NAME;
-			if (text == NULL) return "No tracks available";
-			break;
+            text = APP_STATE.SELECTED_TRACK_NAME;
+            if (text == NULL) return "No tracks available";
+            break;
         case EFFECT_1:
-			return "Effect 1";
+            return "Effect 1";
         case EFFECT_2:
-			return "Effect 2";
+            return "Effect 2";
         case NEXT_TRACK:
-			return "Next";
+            return "Next";
         case BACK_TRACK:
-			return "Back";
+            return "Back";
         default: {
-			text = APP_BUTTONS_STATE.configs[buttonNumber].trackName;
-			if (text == NULL) return "-";
-			break;
-		}
+            text = APP_BUTTONS_STATE.configs[buttonNumber].trackName;
+            if (text == NULL) return "-";
+            break;
+        }
     }
-	
-	char *textDisplayed = malloc(TEXT_DISPLAYED_MAXLENGTH * sizeof(char));
-	sprintf(textDisplayed, "%.*s...", TEXT_DISPLAYED_MAXLENGTH, text);
-	return textDisplayed;
+
+    char *textDisplayed = malloc(TEXT_DISPLAYED_MAXLENGTH * sizeof(char));
+    sprintf(textDisplayed, "%.*s...", TEXT_DISPLAYED_MAXLENGTH, text);
+    return textDisplayed;
 }
 
 void GUI_DrawTextAtCenter(uint32_t backgroundColor, int x, int y, char *text) {
@@ -136,15 +138,15 @@ void GUI_DrawButton(uint32_t backgroundColor, uint32_t frameColor, int x, int y,
 }
 
 void GUI_DrawAllButtons(void) {
-	int x, y, xSize, ySize;
-	uint32_t primaryColor, accentColor;
+    int x, y, xSize, ySize;
+    uint32_t primaryColor, accentColor;
 
-	for (int i = 0; i < NUMBER_OF_CONTROLS; i++) {
-		GUI_GetCoordsForButton(i, &x, &y);
-		GUI_GetSizeForButton(i, &xSize, &ySize);
-		GUI_GetColorsForButton(i, &primaryColor, &accentColor);
-		GUI_DrawButton(primaryColor, accentColor, x, y, xSize, ySize, GUI_GetTextForButton(i));
-	}
+    for (int i = 0; i < NUMBER_OF_CONTROLS; i++) {
+        GUI_GetCoordsForButton(i, &x, &y);
+        GUI_GetSizeForButton(i, &xSize, &ySize);
+        GUI_GetColorsForButton(i, &primaryColor, &accentColor);
+        GUI_DrawButton(primaryColor, accentColor, x, y, xSize, ySize, GUI_GetTextForButton(i));
+    }
 }
 
 void GUI_HighlightButton(int buttonNumber) {
@@ -155,7 +157,6 @@ void GUI_HighlightButton(int buttonNumber) {
     GUI_GetColorsForButton(buttonNumber, &primaryColor, &accentColor);
     GUI_DrawButton(primaryColor, COLOR_HIGHLIGHTED, x, y, xSize, ySize, GUI_GetTextForButton(buttonNumber));
 }
-
 
 void GUI_HandleTouch(TS_StateTypeDef *tsState, void (*handleButtonTouch)(int)) {
     int touchesDetected = tsState->touchDetected;
