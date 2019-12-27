@@ -10,11 +10,15 @@
 
 osPoolId audioRequestsPool;
 osMessageQId audioRequestsQueue;
-int AudioQueueSize = 0;
 
-int AUDIO_P_ChangeFrequency(int frequency) {
+AudioPlayerState PLAYER_STATE = {
+        0,
+        AUDIO_FREQUENCY_44K
+};
+
+int AUDIO_P_InitWithFrequency(int frequency) {
     int status = BSP_AUDIO_OUT_Init(OUTPUT_DEVICE_HEADPHONE1, APP_STATE.VOLUME, frequency);
-    BSP_AUDIO_OUT_SetAudioFrameSlot(CODEC_AUDIOFRAME_SLOT_02);
+    PLAYER_STATE.frequency = frequency;
     return status;
 }
 
@@ -33,24 +37,25 @@ void AUDIO_P_AddToQueue(int audioIndex) {
     request = osPoolAlloc(audioRequestsPool);
     request->audioIndex = audioIndex;
     osMessagePut(audioRequestsQueue, (uint32_t) request, 0);
-    AudioQueueSize++;
+    PLAYER_STATE.queueSize++;
 }
 
 void AUDIO_P_Play(int audioIndex) {
-    AudioQueueSize--;
-    int frequency = APP_BUTTONS_STATE.configs[audioIndex].sampleRate;
-    if (AUDIO_P_ChangeFrequency(frequency) == AUDIO_OK) {
-        xprintf("Playing: %d\r\n", audioIndex);
-        BSP_AUDIO_OUT_Play(
-                (uint16_t *) &AUDIO_BUFFER[audioIndex * BUFFER_LIMIT_PER_BUTTON],
-                BUFFER_LIMIT_PER_BUTTON
-        );
+    PLAYER_STATE.queueSize--;
+    ButtonState buttonState = APP_BUTTONS_STATE.configs[audioIndex];
+    int frequency = buttonState.sampleRate;
+    int size = buttonState.size;
+    if (size == 0) return;
+
+    if (PLAYER_STATE.frequency != frequency) {
+        AUDIO_P_InitWithFrequency(frequency);
     }
+
+    APP_STATE.IS_PLAYING = 1;
+    BSP_AUDIO_OUT_Play((uint16_t *) &AUDIO_BUFFER[audioIndex * BUFFER_LIMIT_PER_BUTTON], size);
 }
 
 void AUDIO_P_End() {
     APP_STATE.IS_PLAYING = 0;
-    if (AudioQueueSize == 0) {
-        BSP_AUDIO_OUT_Stop(CODEC_PDWN_SW);
-    }
+    BSP_AUDIO_OUT_Stop(CODEC_PDWN_SW); // necessary
 }

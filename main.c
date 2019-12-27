@@ -196,7 +196,8 @@ void VolumeChangeRoutine() {
 void StartDefaultTask(void const *argument) {
     vTaskDelay(1000);
 
-    AUDIO_P_ChangeFrequency(AUDIO_FREQUENCY_44K);
+    AUDIO_P_InitWithFrequency(PLAYER_STATE.frequency);
+    BSP_AUDIO_OUT_SetAudioFrameSlot(CODEC_AUDIOFRAME_SLOT_02);
 
     do {
         vTaskDelay(300);
@@ -219,12 +220,8 @@ void StartAudioPlayerTask(void const *argument) {
             event = osMessageGet(audioRequestsQueue, osWaitForever);
             if (event.status == osEventMessage) {
                 request = event.value.p;
-                APP_STATE.IS_PLAYING = 1;
                 AUDIO_P_Play(request->audioIndex);
                 osPoolFree(audioRequestsPool, request);
-            } else {
-                APP_STATE.VOLUME = AUDIO_VOLUME_INIT;
-                BSP_AUDIO_OUT_Stop(CODEC_PDWN_SW);
             }
         }
         vTaskDelay(300);

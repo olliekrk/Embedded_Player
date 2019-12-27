@@ -92,7 +92,7 @@ void CON_HandleOptionButtonTouched(OptionControl option) {
 }
 
 void CON_ActivateOption() {
-    if (APP_STATE.SELECTED_OPTION && APP_STATE.SELECTED_SOUND_BUTTON) {
+    if (APP_STATE.SELECTED_OPTION != -1 && APP_STATE.SELECTED_SOUND_BUTTON != -1) {
 
         // todo: apply selected options with selected button
 

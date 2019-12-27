@@ -6,6 +6,7 @@
 #define EMBEDDED_PLAYER_AUDIO_PLAYER_H
 
 #include <ffconf.h>
+#include "wm8994/wm8994.h"
 
 #define AUDIO_QUEUE_SIZE 30
 #define AUDIO_VOLUME_INIT 40
@@ -14,13 +15,19 @@
 
 extern osPoolId audioRequestsPool;
 extern osMessageQId audioRequestsQueue;
-extern int AudioQueueSize;
 
-typedef struct AudioRequest{
+typedef struct AudioRequest {
     int audioIndex;
 } AudioRequest;
 
-int AUDIO_P_ChangeFrequency(int);
+typedef struct AudioPlayerState {
+    int queueSize;
+    int frequency;
+} AudioPlayerState;
+
+extern AudioPlayerState PLAYER_STATE;
+
+int AUDIO_P_InitWithFrequency(int);
 
 void AUDIO_P_VolumeUp();
 
