@@ -9,7 +9,7 @@
 #include "wm8994/wm8994.h"
 
 #define AUDIO_QUEUE_SIZE 30
-#define AUDIO_VOLUME_INIT 40
+#define AUDIO_VOLUME_INIT 20
 #define AUDIO_VOLUME_UNIT 5
 #define AUDIO_VOLUME_LIMIT 90
 
@@ -23,6 +23,7 @@ typedef struct AudioRequest {
 typedef struct AudioPlayerState {
     int queueSize;
     int frequency;
+    int continuousModeOn;
 } AudioPlayerState;
 
 extern AudioPlayerState PLAYER_STATE;
@@ -38,5 +39,7 @@ void AUDIO_P_AddToQueue(int);
 void AUDIO_P_Play(int);
 
 void AUDIO_P_End();
+
+void AUDIO_P_PlayRoutine();
 
 #endif //EMBEDDED_PLAYER_AUDIO_PLAYER_H

@@ -26,6 +26,7 @@ void CON_Initialize_Buttons(void) {
     for (int i = 0; i < NUMBER_OF_SOUND_CONTROLS; ++i) {
         APP_BUTTONS_STATE.configs[i].effectEnabled = effectInactive;
         APP_BUTTONS_STATE.configs[i].trackName = NULL;
+        APP_BUTTONS_STATE.configs[i].trackPath = NULL;
         APP_BUTTONS_STATE.configs[i].size = 0;
         APP_BUTTONS_STATE.configs[i].sampleRate = 0;
         APP_BUTTONS_STATE.configs[i].channels = 0;
@@ -60,7 +61,7 @@ void CON_HandleSoundButtonTouched(SoundControl button) {
                 CON_ActivateOption();
             }
         default:
-            xprintf("Sound button touched is: %d\r\n", button);
+            return;
     }
 }
 
@@ -111,7 +112,7 @@ void CON_ActivateOption() {
         // Reset state
         APP_STATE.SELECTED_OPTION = -1;
         APP_STATE.SELECTED_SOUND_BUTTON = -1;
-		APP_STATE.IS_DIRTY = 1;
+        APP_STATE.IS_DIRTY = 1;
     }
 }
 

@@ -18,6 +18,7 @@ typedef enum SoundEffect {
 
 typedef struct ButtonState {
     char *trackName;
+    char *trackPath;
     uint8_t channels;
     uint16_t sampleRate; // 8k, 44.1k, etc.
     uint32_t size;

@@ -206,25 +206,15 @@ void StartDefaultTask(void const *argument) {
     AUDIO_L_PerformScan();
 
     for (;;) {
-        vTaskDelay(1000);
         VolumeChangeRoutine();
+        vTaskDelay(1000);
     }
 }
 
 void StartAudioPlayerTask(void const *argument) {
-    AudioRequest *request;
-    osEvent event;
-
     for (;;) {
-        if (!APP_STATE.IS_PLAYING) {
-            event = osMessageGet(audioRequestsQueue, osWaitForever);
-            if (event.status == osEventMessage) {
-                request = event.value.p;
-                AUDIO_P_Play(request->audioIndex);
-                osPoolFree(audioRequestsPool, request);
-            }
-        }
-        vTaskDelay(300);
+        AUDIO_P_PlayRoutine();
+        vTaskDelay(100);
     }
 }
 
@@ -1278,7 +1268,9 @@ static void MX_GPIO_Init(void) {
 
 void BSP_AUDIO_OUT_TransferComplete_CallBack(void) {
     BUFFER_OFFSET = BUFFER_OFFSET_FULL;
-    AUDIO_P_End();
+    if (PLAYER_STATE.continuousModeOn == 0) {
+        AUDIO_P_End();
+    }
 }
 
 void BSP_AUDIO_OUT_HalfTransfer_CallBack(void) {

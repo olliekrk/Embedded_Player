@@ -14,7 +14,8 @@ int FILE_OFFSET = 0;
 BufferPos BUFFER_OFFSET = BUFFER_OFFSET_NONE;
 FIL CURRENT_FILE;
 
-uint8_t AUDIO_BUFFER[MASS_STORAGE_BUF_SIZE] __attribute__((section(".sdram"))) __attribute__((unused));
+uint8_t AUDIO_BUFFER[AUDIO_BUFFER_SIZE] __attribute__((section(".sdram"))) __attribute__((unused));
+uint8_t PLAYER_BUFFER[PLAYER_BUFFER_SIZE] __attribute__((section(".sdram")));
 
 FRESULT AUDIO_L_CreateAudioDirectory(void) {
     FRESULT result = f_mkdir(AUDIO_DIRECTORY_PATH);
@@ -110,42 +111,51 @@ void AUDIO_L_LoadFileUnderButton(char *fileName, int buttonNumber) {
 
             // update app buttons state
             APP_BUTTONS_STATE.configs[buttonNumber].effectEnabled = effectInactive;
+            APP_BUTTONS_STATE.configs[buttonNumber].trackPath = filePath;
             APP_BUTTONS_STATE.configs[buttonNumber].trackName = malloc(TEXT_DISPLAYED_MAXLENGTH * sizeof(char));
             sprintf(APP_BUTTONS_STATE.configs[buttonNumber].trackName, "%s", fileName);
 
-            xprintf("Successfully read audio file: %s of size %u bytes.\r\n", filePath, _bytesRead);
+            xprintf("Successfully read audio file: %s.\r\n", filePath);
         }
     } else {
         xprintf("An error has occurred when loading file onto buffer.\r\n");
     }
-
-    free(filePath);
 }
 
-/* How to introduce this:
- * - add call to this inside audioPlayerTask loop (in else {})
- * - make APP_BUTTONS_STATE hold also full file name + shortened for display
- * - taking message from queue must:
- * -    call ...UpdateCurrentFile inside audioPlayerTask loop (in if {})
- * -    set APP_STATE.IS_PLAYING to 1
- * -    reinitialize BSP with correct frequency
- * -    change buffer reference and buffer size in AUDIO_P_Play()
- */
-void AUDIO_L_UpdateBuffer() {
+void AUDIO_L_StartPlayingFromButton(int buttonNumber) {
+    ButtonState buttonState = APP_BUTTONS_STATE.configs[buttonNumber];
+    AUDIO_L_StartPlayingFromFile(buttonState.trackPath);
+}
+
+void AUDIO_L_StartPlayingFromFile(const char *filePath) {
+    int bytesRead;
+
+    if (f_open(&CURRENT_FILE, filePath, FA_READ) == FR_OK) {
+        f_lseek(&CURRENT_FILE, WAV_HEADER_LENGTH); // skip the header
+        f_read(&CURRENT_FILE, &PLAYER_BUFFER[0], PLAYER_BUFFER_SIZE, (void *) &bytesRead);
+
+        FILE_OFFSET = WAV_HEADER_LENGTH + bytesRead;
+        BUFFER_OFFSET = BUFFER_OFFSET_NONE;
+    }
+}
+
+void AUDIO_L_UpdatePlayerBuffer() {
     uint32_t bytesRead;
     FRESULT result;
 
     switch (BUFFER_OFFSET) {
         case BUFFER_OFFSET_HALF:
+            BUFFER_OFFSET = BUFFER_OFFSET_NONE;
             result = f_read(&CURRENT_FILE,
-                            &AUDIO_BUFFER[0],
-                            AUDIO_OUT_BUFFER_SIZE / 2,
+                            &PLAYER_BUFFER[0],
+                            PLAYER_BUFFER_SIZE / 2,
                             (void *) &bytesRead);
             break;
         case BUFFER_OFFSET_FULL:
+            BUFFER_OFFSET = BUFFER_OFFSET_NONE;
             result = f_read(&CURRENT_FILE,
-                            &AUDIO_BUFFER[AUDIO_OUT_BUFFER_SIZE / 2],
-                            AUDIO_OUT_BUFFER_SIZE / 2,
+                            &PLAYER_BUFFER[PLAYER_BUFFER_SIZE / 2],
+                            PLAYER_BUFFER_SIZE / 2,
                             (void *) &bytesRead);
             break;
         default:
@@ -153,41 +163,20 @@ void AUDIO_L_UpdateBuffer() {
     }
 
     if (result == FR_OK) {
-        BUFFER_OFFSET = BUFFER_OFFSET_NONE;
         FILE_OFFSET += bytesRead;
     } else {
-        xprintf("Stop on error!\r\n");
         BSP_AUDIO_OUT_Stop(CODEC_PDWN_SW);
-        AUDIO_L_ResetBuffer();
+        AUDIO_L_ResetPlayerBuffer();
     }
 
-    if (bytesRead < AUDIO_OUT_BUFFER_SIZE / 2 && FILE_OFFSET) {
-        xprintf("Stop ok.\r\n");
-        AUDIO_L_ResetBuffer();
+    if (bytesRead < PLAYER_BUFFER_SIZE / 2) {
+        AUDIO_L_ResetPlayerBuffer();
+        AUDIO_P_End();
     }
 
 }
 
-void AUDIO_L_ResetBuffer() {
+void AUDIO_L_ResetPlayerBuffer() {
     f_close(&CURRENT_FILE);
-    BUFFER_OFFSET = BUFFER_OFFSET_NONE;
     FILE_OFFSET = 0;
-    APP_STATE.IS_PLAYING = 0;
-}
-
-void AUDIO_L_UpdateCurrentFile(const char *fileName) {
-    char *filePath = malloc(1000 * sizeof(char));
-    int bytesRead;
-
-    if (sprintf(filePath, "%s/%s", AUDIO_DIRECTORY_PATH, fileName) > 0) {
-        if (f_open(&CURRENT_FILE, filePath, FA_READ) == FR_OK) {
-            f_lseek(&CURRENT_FILE, WAV_HEADER_LENGTH); // skip the header
-            f_read(&CURRENT_FILE, &AUDIO_BUFFER[0], AUDIO_OUT_BUFFER_SIZE, (void *) &bytesRead);
-
-            FILE_OFFSET = WAV_HEADER_LENGTH + bytesRead;
-            BUFFER_OFFSET = BUFFER_OFFSET_NONE;
-        }
-    }
-
-    free(filePath);
 }
