@@ -161,9 +161,9 @@ int main(void) {
 
     /* Create the thread(s) */
     osThreadDef(defaultTask, StartDefaultTask, osPriorityLow, 1, ALL_THREADS_STACK_SIZE * 0.1);
-    osThreadDef(audioPlayerTask, StartAudioPlayerTask, osPriorityLow, 1, ALL_THREADS_STACK_SIZE * 0.1);
-    osThreadDef(touchscreenTask, StartTouchscreenTask, osPriorityNormal, 1, ALL_THREADS_STACK_SIZE * 0.4);
-    osThreadDef(guiTask, StartGuiTask, osPriorityHigh, 1, ALL_THREADS_STACK_SIZE * 0.4);
+    osThreadDef(audioPlayerTask, StartAudioPlayerTask, osPriorityNormal, 1, ALL_THREADS_STACK_SIZE * 0.3);
+    osThreadDef(touchscreenTask, StartTouchscreenTask, osPriorityNormal, 1, ALL_THREADS_STACK_SIZE * 0.3);
+    osThreadDef(guiTask, StartGuiTask, osPriorityHigh, 1, ALL_THREADS_STACK_SIZE * 0.3);
 
     defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
     audioPlayerTaskHandle = osThreadCreate(osThread(audioPlayerTask), NULL);
@@ -200,8 +200,6 @@ void ToggleContinuousModeRoutine() {
 }
 
 void StartDefaultTask(void const *argument) {
-    vTaskDelay(1000);
-
     AUDIO_P_InitWithFrequency(PLAYER_STATE.frequency);
     BSP_AUDIO_OUT_SetAudioFrameSlot(CODEC_AUDIOFRAME_SLOT_02);
 
@@ -221,8 +219,8 @@ void StartDefaultTask(void const *argument) {
 void StartAudioPlayerTask(void const *argument) {
     for (;;) {
         AUDIO_P_PlayRoutine();
-        int shortenDelay = APP_STATE.IS_PLAYING && PLAYER_STATE.continuousModeOn == 1;
-        vTaskDelay(shortenDelay ? 1 : 200);
+        int shortenDelay = APP_STATE.IS_PLAYING && PLAYER_STATE.continuousModeOn;
+        vTaskDelay(shortenDelay ? 1 : 100);
     }
 }
 
@@ -1275,7 +1273,7 @@ static void MX_GPIO_Init(void) {
 
 void BSP_AUDIO_OUT_TransferComplete_CallBack(void) {
     BUFFER_OFFSET = BUFFER_OFFSET_FULL;
-    if (PLAYER_STATE.continuousModeOn == 0) {
+    if (!PLAYER_STATE.continuousModeOn) {
         AUDIO_P_End();
     }
 }

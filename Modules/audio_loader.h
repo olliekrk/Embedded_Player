@@ -36,7 +36,6 @@ extern BufferPos BUFFER_OFFSET;
 extern FIL CURRENT_FILE;
 
 extern uint8_t PLAYER_BUFFER[PLAYER_BUFFER_SIZE] __attribute__((section(".sdram")));
-
 extern uint8_t AUDIO_BUFFER[AUDIO_BUFFER_SIZE] __attribute__((section(".sdram")));
 
 FRESULT AUDIO_L_CreateAudioDirectory(void);

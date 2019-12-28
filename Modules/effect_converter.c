@@ -2,6 +2,7 @@
 // Created by olliekrk on 24.11.2019.
 //
 
+/*
 #include "effect_converter.h"
 #include <term_io.h>
 #include "../Middlewares/ST/STM32_Audio/Addons/BAM/Inc/bam_glo.h"
@@ -12,3 +13,4 @@
 void EFFECTS_ApplyEqPreset() {
     greq_reset(NULL, NULL);
 }
+ */

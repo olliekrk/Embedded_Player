@@ -287,11 +287,11 @@ C_INCLUDES =  \
 -IMiddlewares/Third_Party/LwIP/src/include/posix/sys \
 -IMiddlewares/Third_Party/LwIP/system/arch \
 -IDrivers/CMSIS/Include \
--IMiddlewares/ST/STM32_Audio/Addons/BAM/Inc \
--IMiddlewares/ST/STM32_Audio/Addons/GREQ/Inc \
--IMiddlewares/ST/STM32_Audio/Addons/SRC441/Inc \
--IMiddlewares/ST/STM32_Audio/Addons/SRC236/Inc \
--IMiddlewares/ST/STM32_Audio/Addons/Common/Inc
+#-IMiddlewares/ST/STM32_Audio/Addons/BAM/Inc \
+#-IMiddlewares/ST/STM32_Audio/Addons/GREQ/Inc \
+#-IMiddlewares/ST/STM32_Audio/Addons/SRC441/Inc \
+#-IMiddlewares/ST/STM32_Audio/Addons/SRC236/Inc \
+#-IMiddlewares/ST/STM32_Audio/Addons/Common/Inc
 
 # compile gcc flags
 ASFLAGS = $(MCU) $(AS_DEFS) $(AS_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-sections
@@ -320,7 +320,8 @@ STATIC_LIBS = Middlewares/ST/STM32_Audio/Addons/BAM/Lib/BAM_32b_CM7_GCC.a \
 			  Middlewares/ST/STM32_Audio/Addons/GREQ/Lib/GrEq_32b_CM7_GCC.a \
 			  Middlewares/ST/STM32_Audio/Addons/SRC236/Lib/SRC236_32b_CM7_GCC.a \
 			  Middlewares/ST/STM32_Audio/Addons/SRC441/Lib/SRC441_32b_CM7_GCC.a
-LDFLAGS = $(MCU) -specs=nano.specs -T$(LDSCRIPT) $(LIBDIR) $(LIBS) -Wl,-Map=$(BUILD_DIR)/$(TARGET).map,--cref -Wl,--gc-sections $(STATIC_LIBS)
+#LDFLAGS = $(MCU) -specs=nano.specs -T$(LDSCRIPT) $(LIBDIR) $(LIBS) -Wl,-Map=$(BUILD_DIR)/$(TARGET).map,--cref -Wl,--gc-sections $(STATIC_LIBS)
+LDFLAGS = $(MCU) -specs=nano.specs -T$(LDSCRIPT) $(LIBDIR) $(LIBS) -Wl,-Map=$(BUILD_DIR)/$(TARGET).map,--cref -Wl,--gc-sections
 
 # default action: build all
 all: $(BUILD_DIR)/$(TARGET).elf $(BUILD_DIR)/$(TARGET).hex $(BUILD_DIR)/$(TARGET).bin

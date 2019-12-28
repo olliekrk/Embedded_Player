@@ -53,7 +53,7 @@ void AUDIO_P_Play(int audioIndex) {
     }
 
     APP_STATE.IS_PLAYING = 1;
-    if (PLAYER_STATE.continuousModeOn == 1) {
+    if (PLAYER_STATE.continuousModeOn) {
         BSP_AUDIO_OUT_Play((uint16_t *) &PLAYER_BUFFER[0], PLAYER_BUFFER_SIZE);
     } else {
         BSP_AUDIO_OUT_Play((uint16_t *) &AUDIO_BUFFER[audioIndex * BUFFER_LIMIT_PER_BUTTON], BUFFER_LIMIT_PER_BUTTON);
@@ -74,14 +74,14 @@ void AUDIO_P_PlayRoutine() {
         if (event.status == osEventMessage) {
             request = event.value.p;
 
-            if (PLAYER_STATE.continuousModeOn == 1) {
+            if (PLAYER_STATE.continuousModeOn) {
                 AUDIO_L_StartPlayingFromButton(request->audioIndex);
             }
 
             AUDIO_P_Play(request->audioIndex);
             osPoolFree(audioRequestsPool, request);
         }
-    } else if (PLAYER_STATE.continuousModeOn == 1) {
+    } else if (PLAYER_STATE.continuousModeOn) {
         AUDIO_L_UpdatePlayerBuffer();
     }
 }
