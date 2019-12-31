@@ -16,6 +16,11 @@ AppControlsState APP_STATE = {
         0,
         NULL,
         0,
+        NULL,
+        NULL,
+        0,
+        NULL,
+        0,
         AUDIO_VOLUME_INIT
 };
 

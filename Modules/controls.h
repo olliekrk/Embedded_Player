@@ -35,6 +35,13 @@ typedef struct AppControlsState {
     int IS_DIRTY;
 	int IS_PLAYING;
 
+    char **DIRECTORIES;
+    int DIR_COUNT;
+    char **SELECTED_DIR_NAME;
+    int SELECTED_DIR_INDEX;
+    char ** SELECTED_DIR_PATH;
+
+
     char **TRACKS;
     int TRACKS_COUNT;
     char *SELECTED_TRACK_NAME;

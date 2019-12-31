@@ -28,26 +28,28 @@ FRESULT AUDIO_L_CreateAudioDirectory(void) {
 int AUDIO_L_ScanAudioDirectory() {
     DIR audioDirectory;
     FRESULT result;
+    FRESULT result2;
     FILINFO fileInfo;
-    int count = 0;
-
-    result = f_findfirst(&audioDirectory, &fileInfo, AUDIO_DIRECTORY_PATH, "*.wav");
-    if (result == FR_OK) {
-        while (result == FR_OK && strlen(fileInfo.fname) > 0 && count < AUDIO_FILES_LIMIT) {
-            xprintf("Found (%d) wav file: %s\r\n", ++count, fileInfo.fname);
-
-            APP_STATE.TRACKS[APP_STATE.TRACKS_COUNT] = malloc((strlen(fileInfo.fname) + 1) * sizeof(char));
-            strcpy(APP_STATE.TRACKS[APP_STATE.TRACKS_COUNT], fileInfo.fname);
-            APP_STATE.TRACKS_COUNT++;
-            result = f_findnext(&audioDirectory, &fileInfo);
+    int dir_count = 0;
+ 
+    result2 = f_opendir(&audioDirectory, AUDIO_DIRECTORY_PATH);
+    if (result2 == FR_OK)
+    {
+        result2 = f_readdir(&audioDirectory, &fileInfo);
+        while (result2 == FR_OK && strlen(fileInfo.fname) > 0 && dir_count < AUDIO_DIRECTORIES_LIMIT)
+        {   if (fileInfo.fattrib & AM_DIR)
+            {   xprintf("Found (%d) directory %s\r\n",++dir_count, fileInfo.fname);
+                APP_STATE.DIRECTORIES[APP_STATE.DIR_COUNT] = malloc((strlen(fileInfo.fname)+1)*sizeof(char));
+                strcpy(APP_STATE.DIRECTORIES[APP_STATE.DIR_COUNT], fileInfo.fname);
+                APP_STATE.DIR_COUNT++;  }
+            result2 = f_readdir(&audioDirectory, &fileInfo);
         }
         f_closedir(&audioDirectory);
-
-        // Set first track
-        APP_STATE.SELECTED_TRACK_INDEX = 0;
-        APP_STATE.SELECTED_TRACK_NAME = APP_STATE.TRACKS[0];
-
-    } else if (result == FR_NO_PATH) {
+        APP_STATE.SELECTED_DIR_INDEX = 0;
+        APP_STATE.SELECTED_DIR_NAME = APP_STATE.DIRECTORIES[0];
+        APP_STATE.SELECTED_DIR_PATH = strcat(AUDIO_DIRECTORY_PATH, strcat("/", APP_STATE.SELECTED_DIR_NAME));
+    }
+    else if (result == FR_NO_PATH) {
         xprintf("Empty audio directory will be created.\r\n");
         result = AUDIO_L_CreateAudioDirectory();
         if (result != FR_OK) {
@@ -58,18 +60,42 @@ int AUDIO_L_ScanAudioDirectory() {
         xprintf("Found zero WAV files.");
     }
 
-    return count;
+    return dir_count;
 }
+
+int AUDIO_L_ScanDirectory(int dir_count) {
+    DIR audioDirectory;
+    FRESULT result;
+    FILINFO fileInfo;
+    int count = 0;
+
+    result = f_findfirst(&audioDirectory, &fileInfo, APP_STATE.SELECTED_DIR_PATH, "*.wav");
+    if (result == FR_OK) {
+        while (result == FR_OK && strlen(fileInfo.fname) > 0 && count < AUDIO_FILES_LIMIT) {
+            xprintf("Found (%d) wav file: %s\r\n", ++count, fileInfo.fname);
+            APP_STATE.TRACKS[APP_STATE.TRACKS_COUNT] = malloc((strlen(fileInfo.fname) + 1) * sizeof(char));
+            strcpy(APP_STATE.TRACKS[APP_STATE.TRACKS_COUNT], fileInfo.fname);
+            APP_STATE.TRACKS_COUNT++;
+            result = f_findnext(&audioDirectory, &fileInfo);
+        }
+    f_closedir(&audioDirectory);
+    }
+    APP_STATE.SELECTED_TRACK_INDEX = 0;
+    APP_STATE.SELECTED_TRACK_NAME = APP_STATE.TRACKS[0];
+    }
+
 
 void AUDIO_L_PerformScan(void) {
     FRESULT result = AUDIO_L_CreateAudioDirectory();
     if (result == FR_OK || result == FR_EXIST) {
         AUDIO_L_ResetState();
         AUDIO_L_ScanAudioDirectory();
+        AUDIO_L_ScanDirectory(0);
         APP_STATE.IS_DIRTY = 1; // to display recently loaded tracks
     }
 }
 
+//resetowanie tez directory? - Nina
 void AUDIO_L_ResetState(void) {
     free(APP_STATE.TRACKS);
     APP_STATE.TRACKS = malloc(AUDIO_FILES_LIMIT * sizeof(char *));

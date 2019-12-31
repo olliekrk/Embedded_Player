@@ -15,6 +15,8 @@
 
 #define AUDIO_FILES_LIMIT 10
 
+#define AUDIO_DIRECTORIES_LIMIT 6
+
 #define PLAYER_BUFFER_SIZE (1024 * 8)
 
 #define AUDIO_BUFFER_SIZE (1024 * 1024)
@@ -41,6 +43,8 @@ extern uint8_t AUDIO_BUFFER[AUDIO_BUFFER_SIZE] __attribute__((section(".sdram"))
 FRESULT AUDIO_L_CreateAudioDirectory(void);
 
 int AUDIO_L_ScanAudioDirectory(void);
+
+int AUDIO_L_ScanDirectory(int);
 
 void AUDIO_L_PerformScan(void);
 
