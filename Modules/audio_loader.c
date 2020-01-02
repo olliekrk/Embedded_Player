@@ -28,26 +28,29 @@ FRESULT AUDIO_L_CreateAudioDirectory(void) {
 int AUDIO_L_ScanAudioDirectory() {
     DIR audioDirectory;
     FRESULT result;
-    FRESULT result2;
     FILINFO fileInfo;
     int dir_count = 0;
  
-    result2 = f_opendir(&audioDirectory, AUDIO_DIRECTORY_PATH);
-    if (result2 == FR_OK)
+    result = f_opendir(&audioDirectory, AUDIO_DIRECTORY_PATH);
+    if (result == FR_OK)
     {
-        result2 = f_readdir(&audioDirectory, &fileInfo);
-        while (result2 == FR_OK && strlen(fileInfo.fname) > 0 && dir_count < AUDIO_DIRECTORIES_LIMIT)
+        result = f_readdir(&audioDirectory, &fileInfo);
+        while (result == FR_OK && strlen(fileInfo.fname) > 0 && dir_count < AUDIO_DIRECTORIES_LIMIT)
         {   if (fileInfo.fattrib & AM_DIR)
             {   xprintf("Found (%d) directory %s\r\n",++dir_count, fileInfo.fname);
                 APP_STATE.DIRECTORIES[APP_STATE.DIR_COUNT] = malloc((strlen(fileInfo.fname)+1)*sizeof(char));
                 strcpy(APP_STATE.DIRECTORIES[APP_STATE.DIR_COUNT], fileInfo.fname);
                 APP_STATE.DIR_COUNT++;  }
-            result2 = f_readdir(&audioDirectory, &fileInfo);
+            result = f_readdir(&audioDirectory, &fileInfo);
         }
         f_closedir(&audioDirectory);
         APP_STATE.SELECTED_DIR_INDEX = 0;
-        APP_STATE.SELECTED_DIR_NAME = APP_STATE.DIRECTORIES[0];
-        APP_STATE.SELECTED_DIR_PATH = strcat(AUDIO_DIRECTORY_PATH, strcat("/", APP_STATE.SELECTED_DIR_NAME));
+        APP_STATE.SELECTED_DIR_NAME = APP_STATE.DIRECTORIES[APP_STATE.SELECTED_DIR_INDEX];
+        char path[30] = AUDIO_DIRECTORY_PATH;
+        strcat(path, "/");
+        strcat(path, APP_STATE.SELECTED_DIR_NAME);
+        strcpy(APP_STATE.SELECTED_DIR_PATH, path);
+        //xprintf ("Selected dir is: %s\r\n", APP_STATE.SELECTED_DIR_PATH);
     }
     else if (result == FR_NO_PATH) {
         xprintf("Empty audio directory will be created.\r\n");
@@ -57,18 +60,20 @@ int AUDIO_L_ScanAudioDirectory() {
             return -1;
         }
     } else if (result == FR_NO_FILE) {
-        xprintf("Found zero WAV files.");
+        xprintf("Found zero directories.");
     }
 
     return dir_count;
 }
 
-int AUDIO_L_ScanDirectory(int dir_count) {
+int AUDIO_L_ScanDirectory() {
+    xprintf("Scanning directory... \r\n");
     DIR audioDirectory;
     FRESULT result;
     FILINFO fileInfo;
     int count = 0;
 
+    xprintf(APP_STATE.SELECTED_DIR_PATH);
     result = f_findfirst(&audioDirectory, &fileInfo, APP_STATE.SELECTED_DIR_PATH, "*.wav");
     if (result == FR_OK) {
         while (result == FR_OK && strlen(fileInfo.fname) > 0 && count < AUDIO_FILES_LIMIT) {
@@ -79,9 +84,15 @@ int AUDIO_L_ScanDirectory(int dir_count) {
             result = f_findnext(&audioDirectory, &fileInfo);
         }
     f_closedir(&audioDirectory);
-    }
     APP_STATE.SELECTED_TRACK_INDEX = 0;
     APP_STATE.SELECTED_TRACK_NAME = APP_STATE.TRACKS[0];
+    }
+    else if (result == FR_NO_PATH) {
+        xprintf("There is no such directory.\r\n");    }
+    else if (result == FR_NO_FILE) {
+        xprintf("Found zero WAV files in this directory.");
+    }
+    return count;
     }
 
 
@@ -90,13 +101,17 @@ void AUDIO_L_PerformScan(void) {
     if (result == FR_OK || result == FR_EXIST) {
         AUDIO_L_ResetState();
         AUDIO_L_ScanAudioDirectory();
-        AUDIO_L_ScanDirectory(0);
+        AUDIO_L_ScanDirectory();
         APP_STATE.IS_DIRTY = 1; // to display recently loaded tracks
     }
 }
 
-//resetowanie tez directory? - Nina
 void AUDIO_L_ResetState(void) {
+    free(APP_STATE.DIRECTORIES);
+    APP_STATE.DIRECTORIES = malloc (AUDIO_DIRECTORIES_LIMIT * sizeof(char*));
+    APP_STATE.DIR_COUNT = 0;
+    APP_STATE.SELECTED_DIR_INDEX = 0;
+    APP_STATE.SELECTED_DIR_NAME = "";
     free(APP_STATE.TRACKS);
     APP_STATE.TRACKS = malloc(AUDIO_FILES_LIMIT * sizeof(char *));
     APP_STATE.TRACKS_COUNT = 0;
@@ -117,7 +132,7 @@ void AUDIO_L_LoadFileUnderButton(char *fileName, int buttonNumber) {
     UINT _bytesRead;
     char *filePath = malloc(1000 * sizeof(char));
 
-    if (sprintf(filePath, "%s/%s", AUDIO_DIRECTORY_PATH, fileName) > 0) {
+    if (sprintf(filePath, "%s/%s", APP_STATE.SELECTED_DIR_PATH, fileName) > 0) {
         if (f_open(&file, filePath, FA_READ) == FR_OK) {
 
             ButtonState *state = &APP_BUTTONS_STATE.configs[buttonNumber];

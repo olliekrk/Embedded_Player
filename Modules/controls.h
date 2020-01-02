@@ -37,9 +37,9 @@ typedef struct AppControlsState {
 
     char **DIRECTORIES;
     int DIR_COUNT;
-    char **SELECTED_DIR_NAME;
+    char *SELECTED_DIR_NAME;
     int SELECTED_DIR_INDEX;
-    char ** SELECTED_DIR_PATH;
+    char *SELECTED_DIR_PATH;
 
 
     char **TRACKS;

@@ -44,7 +44,7 @@ FRESULT AUDIO_L_CreateAudioDirectory(void);
 
 int AUDIO_L_ScanAudioDirectory(void);
 
-int AUDIO_L_ScanDirectory(int);
+int AUDIO_L_ScanDirectory(void);
 
 void AUDIO_L_PerformScan(void);
 

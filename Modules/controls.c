@@ -97,7 +97,7 @@ void CON_HandleOptionButtonTouched(OptionControl option) {
     }
 }
 
-void CON_ActivateOption() {
+void CON_ActivateOption() { //tu dorzucic opcje zmiany folderu - Nina
     if (APP_STATE.SELECTED_OPTION != -1 && APP_STATE.SELECTED_SOUND_BUTTON != -1) {
 
         // todo: apply selected options with selected button
@@ -106,12 +106,12 @@ void CON_ActivateOption() {
             case SELECTED_TRACK:
                 AUDIO_L_LoadFileUnderButton(APP_STATE.SELECTED_TRACK_NAME, APP_STATE.SELECTED_SOUND_BUTTON);
                 break;
-            case EFFECT_1:
+           /* case EFFECT_1:
                 APP_BUTTONS_STATE.configs[APP_STATE.SELECTED_SOUND_BUTTON].effectEnabled = effectOne;
                 break;
             case EFFECT_2:
                 APP_BUTTONS_STATE.configs[APP_STATE.SELECTED_SOUND_BUTTON].effectEnabled = effectTwo;
-                break;
+                break;*/
         }
 
         // Reset state
