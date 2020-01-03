@@ -44,13 +44,13 @@ int AUDIO_L_ScanAudioDirectory() {
             result = f_readdir(&audioDirectory, &fileInfo);
         }
         f_closedir(&audioDirectory);
-        APP_STATE.SELECTED_DIR_INDEX = 0;
+        char *dirPath = malloc(200 * sizeof(char));
+        APP_STATE.SELECTED_DIR_INDEX = 2;
         APP_STATE.SELECTED_DIR_NAME = APP_STATE.DIRECTORIES[APP_STATE.SELECTED_DIR_INDEX];
-        char path[30] = AUDIO_DIRECTORY_PATH;
-        strcat(path, "/");
-        strcat(path, APP_STATE.SELECTED_DIR_NAME);
-        strcpy(APP_STATE.SELECTED_DIR_PATH, path);
-        //xprintf ("Selected dir is: %s\r\n", APP_STATE.SELECTED_DIR_PATH);
+        sprintf(dirPath, "%s/%s", AUDIO_DIRECTORY_PATH, APP_STATE.SELECTED_DIR_NAME);
+        APP_STATE.SELECTED_DIR_PATH = dirPath;
+        xprintf ("Selected dir is: %s\r\n", APP_STATE.SELECTED_DIR_PATH);
+        free(dirPath);
     }
     else if (result == FR_NO_PATH) {
         xprintf("Empty audio directory will be created.\r\n");
@@ -69,19 +69,29 @@ int AUDIO_L_ScanAudioDirectory() {
 int AUDIO_L_ScanDirectory() {
     xprintf("Scanning directory... \r\n");
     DIR audioDirectory;
+    DIR directory;
     FRESULT result;
     FILINFO fileInfo;
     int count = 0;
 
-    xprintf(APP_STATE.SELECTED_DIR_PATH);
-    result = f_findfirst(&audioDirectory, &fileInfo, APP_STATE.SELECTED_DIR_PATH, "*.wav");
+    result = f_opendir(&audioDirectory, AUDIO_DIRECTORY_PATH);
     if (result == FR_OK) {
-        while (result == FR_OK && strlen(fileInfo.fname) > 0 && count < AUDIO_FILES_LIMIT) {
-            xprintf("Found (%d) wav file: %s\r\n", ++count, fileInfo.fname);
-            APP_STATE.TRACKS[APP_STATE.TRACKS_COUNT] = malloc((strlen(fileInfo.fname) + 1) * sizeof(char));
-            strcpy(APP_STATE.TRACKS[APP_STATE.TRACKS_COUNT], fileInfo.fname);
-            APP_STATE.TRACKS_COUNT++;
-            result = f_findnext(&audioDirectory, &fileInfo);
+        xprintf("audio directory opened: %s\r\n", AUDIO_DIRECTORY_PATH);
+        result = f_opendir(&directory, APP_STATE.SELECTED_DIR_PATH);
+        xprintf("Selected directory is %s\r\n", APP_STATE.SELECTED_DIR_PATH );
+        xprintf("result is: %d", result);
+        if (result == FR_OK)
+        {       xprintf("opened directory\r\n");
+                result = f_findfirst(&directory, &fileInfo, APP_STATE.SELECTED_DIR_PATH, "*.wav");
+                while (result == FR_OK && strlen(fileInfo.fname) > 0 && count < AUDIO_FILES_LIMIT) {
+                    xprintf("count: %d \r\n", count);
+                    xprintf("Found (%d) wav file: %s\r\n", ++count, fileInfo.fname);
+                    APP_STATE.TRACKS[APP_STATE.TRACKS_COUNT] = malloc((strlen(fileInfo.fname) + 1) * sizeof(char));
+                    strcpy(APP_STATE.TRACKS[APP_STATE.TRACKS_COUNT], fileInfo.fname);
+                    APP_STATE.TRACKS_COUNT++;
+                    result = f_findnext(&directory, &fileInfo); 
+                }
+            f_closedir(&directory);
         }
     f_closedir(&audioDirectory);
     APP_STATE.SELECTED_TRACK_INDEX = 0;
@@ -104,6 +114,17 @@ void AUDIO_L_PerformScan(void) {
         AUDIO_L_ScanDirectory();
         APP_STATE.IS_DIRTY = 1; // to display recently loaded tracks
     }
+}
+
+void AUDIO_L_ResetDirectory(void){
+    APP_STATE.SELECTED_DIR_NAME = "";
+    free(APP_STATE.TRACKS);
+    APP_STATE.TRACKS = malloc(AUDIO_FILES_LIMIT * sizeof(char *));
+    APP_STATE.TRACKS_COUNT = 0;
+    APP_STATE.SELECTED_TRACK_INDEX = 0;
+    APP_STATE.SELECTED_TRACK_NAME = "";
+    APP_STATE.IS_PLAYING = 0;
+    APP_STATE.IS_DIRTY = 1;
 }
 
 void AUDIO_L_ResetState(void) {
@@ -156,7 +177,7 @@ void AUDIO_L_LoadFileUnderButton(char *fileName, int buttonNumber) {
             f_close(&file);
 
             // update app buttons state
-            APP_BUTTONS_STATE.configs[buttonNumber].effectEnabled = effectInactive;
+            APP_BUTTONS_STATE.configs[buttonNumber].chosenDirectoryNumber = APP_STATE.SELECTED_DIR_INDEX;
             APP_BUTTONS_STATE.configs[buttonNumber].trackPath = filePath;
             APP_BUTTONS_STATE.configs[buttonNumber].trackName = malloc(TEXT_DISPLAYED_MAXLENGTH * sizeof(char));
             sprintf(APP_BUTTONS_STATE.configs[buttonNumber].trackName, "%s", fileName);

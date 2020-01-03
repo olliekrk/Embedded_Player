@@ -50,6 +50,8 @@ void AUDIO_L_PerformScan(void);
 
 void AUDIO_L_ResetState(void);
 
+void AUDIO_L_ResetDirectory(void);
+
 void AUDIO_L_LoadFileUnderButton(char *, int);
 
 // CONTINUOUS PLAY

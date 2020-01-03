@@ -10,11 +10,10 @@
 #define NUMBER_OF_SOUND_CONTROLS 8
 #define NUMBER_OF_CONTROLS 13
 
-typedef enum SoundEffect {
-    effectInactive = 0,
-    effectOne = 1,
-    effectTwo = 2
-} SoundEffect;
+typedef enum ChosenDirectory {
+    directoryOne = 0,
+    directoryTwo = 1
+} ChosenDirectory;
 
 typedef struct ButtonState {
     char *trackName;
@@ -22,7 +21,7 @@ typedef struct ButtonState {
     uint8_t channels;
     uint16_t sampleRate; // 8k, 44.1k, etc.
     uint32_t size;
-    SoundEffect effectEnabled;
+    ChosenDirectory chosenDirectoryNumber;
 } ButtonState;
 
 typedef struct AppButtonsState {
@@ -65,8 +64,8 @@ typedef enum OptionControl {
     NEXT_TRACK = 8,
     BACK_TRACK = 9,
     SELECTED_TRACK = 10,
-    EFFECT_1 = 11,
-    EFFECT_2 = 12
+    DIRECTORY_1 = 11,
+    DIRECTORY_2 = 12
 } OptionControl;
 
 extern AppControlsState APP_STATE;
@@ -79,7 +78,7 @@ void CON_HandleButtonTouched(int);
 
 void CON_HandleSoundButtonTouched(SoundControl);
 
-void CON_HandleOptionButtonTouched(OptionControl);
+void CON_HandleOptionButtonTouched(OptionControl); 
 
 void CON_ActivateOption();
 

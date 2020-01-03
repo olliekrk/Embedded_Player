@@ -30,7 +30,7 @@ int GUI_GetButtonForCoords(int x, int y) {
         if (column == 0) {
             return rowUpperSection ? NEXT_TRACK : BACK_TRACK;
         } else if (column == 3) {
-            return rowUpperSection ? EFFECT_1 : EFFECT_2;
+            return rowUpperSection ? DIRECTORY_1 : DIRECTORY_2;
         } else {
             return SELECTED_TRACK;
         }
@@ -53,7 +53,7 @@ int GUI_GetCoordsForButton(int buttonNumber, int *xOutput, int *yOutput) {
         *yOutput = GUI_margin + 2 * GUI_GetYButtonSize();
     } else {
         *xOutput = GUI_margin + 3 * GUI_GetXButtonSize();
-        *yOutput = GUI_margin + (buttonNumber == EFFECT_1 ? 2 : 2.5) * GUI_GetYButtonSize();
+        *yOutput = GUI_margin + (buttonNumber == DIRECTORY_1 ? 2 : 2.5) * GUI_GetYButtonSize();
     }
 
     return 0;
@@ -78,8 +78,8 @@ void GUI_GetColorsForButton(int buttonNumber, uint32_t *primaryOutput, uint32_t 
             *primaryOutput = COLOR_PRIMARY_SELECTED;
             *accentOutput = COLOR_ACCENT_SELECTED;
             break;
-        case EFFECT_1:
-        case EFFECT_2:
+        case DIRECTORY_1:
+        case DIRECTORY_2:
         case NEXT_TRACK:
         case BACK_TRACK:
             *primaryOutput = COLOR_PRIMARY_OPTION;
@@ -95,16 +95,29 @@ void GUI_GetColorsForButton(int buttonNumber, uint32_t *primaryOutput, uint32_t 
 
 char *GUI_GetTextForButton(int buttonNumber) {
     char *text;
-
+    char *textDisplayed = malloc(TEXT_DISPLAYED_MAXLENGTH * sizeof(char));
+//bez breakow?
     switch (buttonNumber) {
         case SELECTED_TRACK:
             text = APP_STATE.SELECTED_TRACK_NAME;
             if (text == NULL) return "Please wait";
+            sprintf(textDisplayed, "%.*s...", TEXT_DISPLAYED_MAXLENGTH, text);
+            return textDisplayed;
             break;
-        case EFFECT_1:
-            return "Effect 1";
-        case EFFECT_2:
-            return "Effect 2";
+        case DIRECTORY_1:
+            /*text =  APP_STATE.SELECTED_DIR_NAME;
+            if (text == NULL) return "...";
+            sprintf(textDisplayed, "%.*s...", 8, text);
+            return textDisplayed;*/
+            return "Dir1";
+            break;
+        case DIRECTORY_2:
+            return "Dir2";
+            /*text = APP_STATE.DIRECTORIES[1];
+            if (text == NULL) return "...";
+            sprintf(textDisplayed, "%.*s...", 8, text);
+            return textDisplayed;*/
+            break;
         case NEXT_TRACK:
             return "Next";
         case BACK_TRACK:
@@ -116,9 +129,6 @@ char *GUI_GetTextForButton(int buttonNumber) {
         }
     }
 
-    char *textDisplayed = malloc(TEXT_DISPLAYED_MAXLENGTH * sizeof(char));
-    sprintf(textDisplayed, "%.*s...", TEXT_DISPLAYED_MAXLENGTH, text);
-    return textDisplayed;
 }
 
 void GUI_DrawTextAtCenter(uint32_t backgroundColor, int x, int y, char *text) {
