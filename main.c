@@ -212,7 +212,7 @@ void StartDefaultTask(void const *argument) {
     for (;;) {
         ToggleContinuousModeRoutine();
         VolumeChangeRoutine();
-        vTaskDelay(500);
+        vTaskDelay(1500);
     }
 }
 
