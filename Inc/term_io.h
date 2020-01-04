@@ -11,6 +11,8 @@
 #define xgetc() (char)debug_waitkey()
 #define xavail() debug_test()
 
+#define XPRINTF_DISABLED 1
+
 int xatoi (char**, long*);
 void xputc (char);
 void xputs (const char*);

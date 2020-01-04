@@ -17,7 +17,6 @@ AppControlsState APP_STATE = {
         NULL,
         0,
         NULL,
-        NULL,
         0,
         NULL,
         0,
@@ -29,7 +28,6 @@ AppButtonsState APP_BUTTONS_STATE;
 void CON_Initialize_Buttons(void) {
     APP_BUTTONS_STATE.configs = malloc(NUMBER_OF_SOUND_CONTROLS * sizeof(ButtonState));
     for (int i = 0; i < NUMBER_OF_SOUND_CONTROLS; ++i) {
-        APP_BUTTONS_STATE.configs[i].effectEnabled = effectInactive;
         APP_BUTTONS_STATE.configs[i].trackName = NULL;
         APP_BUTTONS_STATE.configs[i].trackPath = NULL;
         APP_BUTTONS_STATE.configs[i].size = 0;
@@ -78,9 +76,17 @@ void CON_HandleOptionButtonTouched(OptionControl option) {
 
     switch (option) {
         case SELECTED_TRACK:
-        case EFFECT_1:
-        case EFFECT_2:
             APP_STATE.SELECTED_OPTION = option;
+            break;
+        case NEXT_DIRECTORY:
+            if (APP_STATE.DIR_COUNT > 0 && APP_STATE.SELECTED_DIR_INDEX + 1 < APP_STATE.DIR_COUNT) {
+                AUDIO_L_ChangeDirectory(APP_STATE.SELECTED_DIR_INDEX + 1);
+            }
+            break;
+        case BACK_DIRECTORY:
+            if (APP_STATE.DIR_COUNT > 0 && APP_STATE.SELECTED_DIR_INDEX - 1 >= 0) {
+                AUDIO_L_ChangeDirectory(APP_STATE.SELECTED_DIR_INDEX - 1);
+            }
             break;
         case NEXT_TRACK:
             if (APP_STATE.TRACKS_COUNT > 0 && APP_STATE.SELECTED_TRACK_INDEX + 1 < APP_STATE.TRACKS_COUNT) {
@@ -97,21 +103,12 @@ void CON_HandleOptionButtonTouched(OptionControl option) {
     }
 }
 
-void CON_ActivateOption() { //tu dorzucic opcje zmiany folderu - Nina
+void CON_ActivateOption() {
     if (APP_STATE.SELECTED_OPTION != -1 && APP_STATE.SELECTED_SOUND_BUTTON != -1) {
-
-        // todo: apply selected options with selected button
-
         switch (APP_STATE.SELECTED_OPTION) {
             case SELECTED_TRACK:
                 AUDIO_L_LoadFileUnderButton(APP_STATE.SELECTED_TRACK_NAME, APP_STATE.SELECTED_SOUND_BUTTON);
                 break;
-           /* case EFFECT_1:
-                APP_BUTTONS_STATE.configs[APP_STATE.SELECTED_SOUND_BUTTON].effectEnabled = effectOne;
-                break;
-            case EFFECT_2:
-                APP_BUTTONS_STATE.configs[APP_STATE.SELECTED_SOUND_BUTTON].effectEnabled = effectTwo;
-                break;*/
         }
 
         // Reset state

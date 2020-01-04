@@ -30,7 +30,7 @@ int GUI_GetButtonForCoords(int x, int y) {
         if (column == 0) {
             return rowUpperSection ? NEXT_TRACK : BACK_TRACK;
         } else if (column == 3) {
-            return rowUpperSection ? EFFECT_1 : EFFECT_2;
+            return rowUpperSection ? NEXT_DIRECTORY : BACK_DIRECTORY;
         } else {
             return SELECTED_TRACK;
         }
@@ -53,7 +53,7 @@ int GUI_GetCoordsForButton(int buttonNumber, int *xOutput, int *yOutput) {
         *yOutput = GUI_margin + 2 * GUI_GetYButtonSize();
     } else {
         *xOutput = GUI_margin + 3 * GUI_GetXButtonSize();
-        *yOutput = GUI_margin + (buttonNumber == EFFECT_1 ? 2 : 2.5) * GUI_GetYButtonSize();
+        *yOutput = GUI_margin + (buttonNumber == NEXT_DIRECTORY ? 2 : 2.5) * GUI_GetYButtonSize();
     }
 
     return 0;
@@ -74,16 +74,19 @@ void GUI_GetSizeForButton(int buttonNumber, int *xSizeOutput, int *ySizeOutput) 
 
 void GUI_GetColorsForButton(int buttonNumber, uint32_t *primaryOutput, uint32_t *accentOutput) {
     switch (buttonNumber) {
-        case SELECTED_TRACK:
-            *primaryOutput = COLOR_PRIMARY_SELECTED;
-            *accentOutput = COLOR_ACCENT_SELECTED;
-            break;
-        case EFFECT_1:
-        case EFFECT_2:
         case NEXT_TRACK:
         case BACK_TRACK:
             *primaryOutput = COLOR_PRIMARY_OPTION;
             *accentOutput = COLOR_ACCENT_OPTION;
+            break;
+        case SELECTED_TRACK:
+            *primaryOutput = COLOR_PRIMARY_SELECTED;
+            *accentOutput = COLOR_ACCENT_SELECTED;
+            break;
+        case NEXT_DIRECTORY:
+        case BACK_DIRECTORY:
+            *primaryOutput = COLOR_SECONDARY_OPTION;
+            *accentOutput = COLOR_SECONDARY_ACCENT;
             break;
         default:
             // sound button case
@@ -101,19 +104,23 @@ char *GUI_GetTextForButton(int buttonNumber) {
             text = APP_STATE.SELECTED_TRACK_NAME;
             if (text == NULL) return "Please wait";
             break;
-        case EFFECT_1:
-            return "Effect 1";
-        case EFFECT_2:
-            return "Effect 2";
+        case NEXT_DIRECTORY:
+            text = APP_STATE.SELECTED_DIR_NAME;
+            if (text == NULL) return "-";
+            break;
+        case BACK_DIRECTORY:
+            text = (APP_STATE.SELECTED_DIR_INDEX - 1) >= 0 ?
+                   APP_STATE.DIRECTORIES[APP_STATE.SELECTED_DIR_INDEX - 1] : NULL;
+            if (text == NULL) return "-";
+            break;
         case NEXT_TRACK:
             return "Next";
         case BACK_TRACK:
             return "Back";
-        default: {
+        default:
             text = APP_BUTTONS_STATE.configs[buttonNumber].trackName;
             if (text == NULL) return "-";
             break;
-        }
     }
 
     char *textDisplayed = malloc(TEXT_DISPLAYED_MAXLENGTH * sizeof(char));
