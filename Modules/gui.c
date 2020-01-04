@@ -30,7 +30,7 @@ int GUI_GetButtonForCoords(int x, int y) {
         if (column == 0) {
             return rowUpperSection ? NEXT_TRACK : BACK_TRACK;
         } else if (column == 3) {
-            return rowUpperSection ? DIRECTORY_1 : DIRECTORY_2;
+            return rowUpperSection ? NEXT_DIRECTORY : BACK_DIRECTORY;
         } else {
             return SELECTED_TRACK;
         }
@@ -53,7 +53,7 @@ int GUI_GetCoordsForButton(int buttonNumber, int *xOutput, int *yOutput) {
         *yOutput = GUI_margin + 2 * GUI_GetYButtonSize();
     } else {
         *xOutput = GUI_margin + 3 * GUI_GetXButtonSize();
-        *yOutput = GUI_margin + (buttonNumber == DIRECTORY_1 ? 2 : 2.5) * GUI_GetYButtonSize();
+        *yOutput = GUI_margin + (buttonNumber == NEXT_DIRECTORY ? 2 : 2.5) * GUI_GetYButtonSize();
     }
 
     return 0;
@@ -78,8 +78,8 @@ void GUI_GetColorsForButton(int buttonNumber, uint32_t *primaryOutput, uint32_t 
             *primaryOutput = COLOR_PRIMARY_SELECTED;
             *accentOutput = COLOR_ACCENT_SELECTED;
             break;
-        case DIRECTORY_1:
-        case DIRECTORY_2:
+        case NEXT_DIRECTORY:
+        case BACK_DIRECTORY:
         case NEXT_TRACK:
         case BACK_TRACK:
             *primaryOutput = COLOR_PRIMARY_OPTION;
@@ -95,40 +95,34 @@ void GUI_GetColorsForButton(int buttonNumber, uint32_t *primaryOutput, uint32_t 
 
 char *GUI_GetTextForButton(int buttonNumber) {
     char *text;
-    char *textDisplayed = malloc(TEXT_DISPLAYED_MAXLENGTH * sizeof(char));
-//bez breakow?
+
     switch (buttonNumber) {
         case SELECTED_TRACK:
             text = APP_STATE.SELECTED_TRACK_NAME;
             if (text == NULL) return "Please wait";
-            sprintf(textDisplayed, "%.*s...", TEXT_DISPLAYED_MAXLENGTH, text);
-            return textDisplayed;
             break;
-        case DIRECTORY_1:
-            /*text =  APP_STATE.SELECTED_DIR_NAME;
-            if (text == NULL) return "...";
-            sprintf(textDisplayed, "%.*s...", 8, text);
-            return textDisplayed;*/
-            return "Dir1";
+        case NEXT_DIRECTORY:
+            text = APP_STATE.SELECTED_DIR_NAME;
+            if (text == NULL) return "-";
             break;
-        case DIRECTORY_2:
-            return "Dir2";
-            /*text = APP_STATE.DIRECTORIES[1];
-            if (text == NULL) return "...";
-            sprintf(textDisplayed, "%.*s...", 8, text);
-            return textDisplayed;*/
+        case BACK_DIRECTORY:
+            text = (APP_STATE.SELECTED_DIR_INDEX - 1) >= 0 ?
+                   APP_STATE.DIRECTORIES[APP_STATE.SELECTED_DIR_INDEX - 1] : NULL;
+            if (text == NULL) return "-";
             break;
         case NEXT_TRACK:
             return "Next";
         case BACK_TRACK:
             return "Back";
-        default: {
+        default:
             text = APP_BUTTONS_STATE.configs[buttonNumber].trackName;
             if (text == NULL) return "-";
             break;
-        }
     }
 
+    char *textDisplayed = malloc(TEXT_DISPLAYED_MAXLENGTH * sizeof(char));
+    sprintf(textDisplayed, "%.*s...", TEXT_DISPLAYED_MAXLENGTH, text);
+    return textDisplayed;
 }
 
 void GUI_DrawTextAtCenter(uint32_t backgroundColor, int x, int y, char *text) {
@@ -136,6 +130,7 @@ void GUI_DrawTextAtCenter(uint32_t backgroundColor, int x, int y, char *text) {
     BSP_LCD_SetBackColor(backgroundColor);
     BSP_LCD_SetFont(&Font12);
     BSP_LCD_DisplayStringAt(x + GUI_margin, y + GUI_margin, (uint8_t *) text, LEFT_MODE);
+//    free(text); // todo: check if safe
 }
 
 void GUI_DrawButton(uint32_t backgroundColor, uint32_t frameColor, int x, int y, int xSize, int ySize, char *text) {

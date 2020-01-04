@@ -207,7 +207,7 @@ void StartDefaultTask(void const *argument) {
         vTaskDelay(300);
     } while (Appli_state != APPLICATION_READY);
 
-    AUDIO_L_PerformScan();
+    AUDIO_L_InitialScan();
 
     for (;;) {
         ToggleContinuousModeRoutine();

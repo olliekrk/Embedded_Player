@@ -42,17 +42,25 @@ extern uint8_t AUDIO_BUFFER[AUDIO_BUFFER_SIZE] __attribute__((section(".sdram"))
 
 FRESULT AUDIO_L_CreateAudioDirectory(void);
 
-int AUDIO_L_ScanAudioDirectory(void);
+void AUDIO_L_SearchForDirectories(void);
 
-int AUDIO_L_ScanDirectory(void);
+void AUDIO_L_SearchForTracksInCurrentDir(void);
 
-void AUDIO_L_PerformScan(void);
+void AUDIO_L_ChangeDirectory(int);
 
-void AUDIO_L_ResetState(void);
-
-void AUDIO_L_ResetDirectory(void);
+void AUDIO_L_InitialScan(void);
 
 void AUDIO_L_LoadFileUnderButton(char *, int);
+
+// RESET STATE
+
+void AUDIO_L_ResetAll(void);
+
+void AUDIO_L_ResetTracksData(void);
+
+void AUDIO_L_ResetDirectoriesData(void);
+
+void AUDIO_L_ResetPlayerState(void);
 
 // CONTINUOUS PLAY
 
