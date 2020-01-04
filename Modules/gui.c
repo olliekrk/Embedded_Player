@@ -74,16 +74,19 @@ void GUI_GetSizeForButton(int buttonNumber, int *xSizeOutput, int *ySizeOutput) 
 
 void GUI_GetColorsForButton(int buttonNumber, uint32_t *primaryOutput, uint32_t *accentOutput) {
     switch (buttonNumber) {
+        case NEXT_TRACK:
+        case BACK_TRACK:
+            *primaryOutput = COLOR_PRIMARY_OPTION;
+            *accentOutput = COLOR_ACCENT_OPTION;
+            break;
         case SELECTED_TRACK:
             *primaryOutput = COLOR_PRIMARY_SELECTED;
             *accentOutput = COLOR_ACCENT_SELECTED;
             break;
         case NEXT_DIRECTORY:
         case BACK_DIRECTORY:
-        case NEXT_TRACK:
-        case BACK_TRACK:
-            *primaryOutput = COLOR_PRIMARY_OPTION;
-            *accentOutput = COLOR_ACCENT_OPTION;
+            *primaryOutput = COLOR_SECONDARY_OPTION;
+            *accentOutput = COLOR_SECONDARY_ACCENT;
             break;
         default:
             // sound button case
@@ -130,7 +133,6 @@ void GUI_DrawTextAtCenter(uint32_t backgroundColor, int x, int y, char *text) {
     BSP_LCD_SetBackColor(backgroundColor);
     BSP_LCD_SetFont(&Font12);
     BSP_LCD_DisplayStringAt(x + GUI_margin, y + GUI_margin, (uint8_t *) text, LEFT_MODE);
-//    free(text); // todo: check if safe
 }
 
 void GUI_DrawButton(uint32_t backgroundColor, uint32_t frameColor, int x, int y, int xSize, int ySize, char *text) {

@@ -117,6 +117,8 @@ void xitoa (long val, int radix, int len)
 
 void xprintf (const char* str, ...)
 {
+    if (XPRINTF_DISABLED) return;
+
 	va_list arp;
 	int d, r, w, s, l;
 
