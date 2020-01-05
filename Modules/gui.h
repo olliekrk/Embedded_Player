@@ -12,7 +12,7 @@
 #define GUI_margin 4
 #define GUI_max_touches 6
 
-#define TEXT_DISPLAYED_MAXLENGTH 11
+#define TEXT_DISPLAYED_MAXLENGTH 15
 
 // UTIL
 uint32_t GUI_GetXButtonSize(void);
@@ -27,12 +27,12 @@ void GUI_GetSizeForButton(int, int *, int *);
 
 void GUI_GetColorsForButton(int, uint32_t *, uint32_t *);
 
-char *GUI_GetTextForButton(int);
+const char *GUI_GetTextForButton(int);
 
 // DISPLAY
 void GUI_DrawTextAtCenter(uint32_t, int, int, char *);
 
-void GUI_DrawButton(uint32_t, uint32_t, int, int, int, int, char *);
+void GUI_DrawButton(uint32_t, uint32_t, int, int, int, int, const char *);
 
 void GUI_DrawAllButtons(void);
 

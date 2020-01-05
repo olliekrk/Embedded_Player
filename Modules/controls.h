@@ -27,6 +27,7 @@ typedef struct AppControlsState {
     int SELECTED_OPTION;
     int IS_DIRTY;
     int IS_PLAYING;
+    int LOADER_BUSY;
 
     char **DIRECTORIES;
     int DIR_COUNT;

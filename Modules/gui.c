@@ -96,36 +96,34 @@ void GUI_GetColorsForButton(int buttonNumber, uint32_t *primaryOutput, uint32_t 
     }
 }
 
-char *GUI_GetTextForButton(int buttonNumber) {
+const char *GUI_GetTextForButton(int buttonNumber) {
     char *text;
 
     switch (buttonNumber) {
         case SELECTED_TRACK:
             text = APP_STATE.SELECTED_TRACK_NAME;
-            if (text == NULL) return "Please wait";
+            if (text == NULL) return "Please wait.";
             break;
         case NEXT_DIRECTORY:
             text = APP_STATE.SELECTED_DIR_NAME;
-            if (text == NULL) return "-";
+            if (text == NULL) return "- Empty -";
             break;
         case BACK_DIRECTORY:
             text = (APP_STATE.SELECTED_DIR_INDEX - 1) >= 0 ?
                    APP_STATE.DIRECTORIES[APP_STATE.SELECTED_DIR_INDEX - 1] : NULL;
-            if (text == NULL) return "-";
+            if (text == NULL) return "- Empty -";
             break;
         case NEXT_TRACK:
             return "Next";
         case BACK_TRACK:
-            return "Back";
+            return "Previous";
         default:
             text = APP_BUTTONS_STATE.configs[buttonNumber].trackName;
             if (text == NULL) return "-";
             break;
     }
 
-    char *textDisplayed = malloc(TEXT_DISPLAYED_MAXLENGTH * sizeof(char));
-    sprintf(textDisplayed, "%.*s...", TEXT_DISPLAYED_MAXLENGTH, text);
-    return textDisplayed;
+    return text;
 }
 
 void GUI_DrawTextAtCenter(uint32_t backgroundColor, int x, int y, char *text) {
@@ -135,13 +133,19 @@ void GUI_DrawTextAtCenter(uint32_t backgroundColor, int x, int y, char *text) {
     BSP_LCD_DisplayStringAt(x + GUI_margin, y + GUI_margin, (uint8_t *) text, LEFT_MODE);
 }
 
-void GUI_DrawButton(uint32_t backgroundColor, uint32_t frameColor, int x, int y, int xSize, int ySize, char *text) {
-    BSP_LCD_SetTextColor(backgroundColor);
+void GUI_DrawButton(uint32_t buttonColor, uint32_t frameColor, int x, int y, int xSize, int ySize, const char *text) {
+    BSP_LCD_SetTextColor(buttonColor);
     BSP_LCD_FillRect(x, y, xSize, ySize);
     BSP_LCD_SetTextColor(frameColor);
     BSP_LCD_DrawRect(x, y, xSize, ySize);
 
-    GUI_DrawTextAtCenter(backgroundColor, x, y, text);
+    // trim too long text
+    char *textDisplayed = malloc(TEXT_DISPLAYED_MAXLENGTH * sizeof(char));
+    strlen(text) > TEXT_DISPLAYED_MAXLENGTH ?
+    sprintf(textDisplayed, "%.*s...", TEXT_DISPLAYED_MAXLENGTH - 3, text) :
+    sprintf(textDisplayed, "%s", text);
+    GUI_DrawTextAtCenter(buttonColor, x, y, textDisplayed);
+    free(textDisplayed);
 }
 
 void GUI_DrawAllButtons(void) {

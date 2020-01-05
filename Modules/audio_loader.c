@@ -48,7 +48,7 @@ void AUDIO_L_SearchForDirectories() {
             }
             result = f_readdir(&audioDirectory, &fileInfo);
         }
-        result = f_closedir(&audioDirectory);
+        f_closedir(&audioDirectory);
 
         // Set default selected directory
         APP_STATE.SELECTED_DIR_INDEX = 0;
@@ -69,7 +69,7 @@ void AUDIO_L_SearchForTracksInCurrentDir() {
     FRESULT result;
     FILINFO fileInfo;
 
-    char *dirPath = malloc(1000 * sizeof(char));
+    char *dirPath = malloc(100 * sizeof(char));
     sprintf(dirPath, "%s/%s", AUDIO_DIRECTORY_PATH, APP_STATE.SELECTED_DIR_NAME);
     result = f_opendir(&directory, dirPath);
 
@@ -84,8 +84,7 @@ void AUDIO_L_SearchForTracksInCurrentDir() {
             APP_STATE.TRACKS_COUNT++;
             result = f_findnext(&directory, &fileInfo);
         }
-        result = f_closedir(&directory);
-        free(dirPath);
+        f_closedir(&directory);
 
         // Set default selected track
         APP_STATE.SELECTED_TRACK_INDEX = 0;
@@ -98,13 +97,16 @@ void AUDIO_L_SearchForTracksInCurrentDir() {
     else
         xprintf("Directory '%s' scan has failed with code %d.\r\n", APP_STATE.SELECTED_DIR_NAME, result);
 
+    free(dirPath);
 }
 
 void AUDIO_L_ChangeDirectory(int dirIndex) {
+    APP_STATE.LOADER_BUSY = 1;
     AUDIO_L_ResetTracksData();
     APP_STATE.SELECTED_DIR_INDEX = dirIndex;
     APP_STATE.SELECTED_DIR_NAME = APP_STATE.DIRECTORIES[dirIndex];
     AUDIO_L_SearchForTracksInCurrentDir();
+    APP_STATE.LOADER_BUSY = 0;
 }
 
 void AUDIO_L_InitialScan(void) {
@@ -139,6 +141,7 @@ void AUDIO_L_ResetDirectoriesData(void) {
     APP_STATE.DIR_COUNT = 0;
     APP_STATE.SELECTED_DIR_INDEX = 0;
     APP_STATE.SELECTED_DIR_NAME = "";
+    APP_STATE.LOADER_BUSY = 0;
     APP_STATE.IS_DIRTY = 1; // to refresh view
 }
 
@@ -157,7 +160,7 @@ void AUDIO_L_LoadFileUnderButton(char *fileName, int buttonNumber) {
     FRESULT result;
     UINT _bytesRead;
 
-    char *filePath = malloc(1000 * sizeof(char));
+    char *filePath = malloc(200 * sizeof(char));
     if (sprintf(filePath, "%s/%s/%s", AUDIO_DIRECTORY_PATH, APP_STATE.SELECTED_DIR_NAME, fileName) > 0) {
         result = f_open(&file, filePath, FA_READ);
         if (result == FR_OK) {
@@ -181,11 +184,12 @@ void AUDIO_L_LoadFileUnderButton(char *fileName, int buttonNumber) {
             );
             f_close(&file);
 
-            // update app buttons state
+            // free previously allocated memory and update app buttons state
+            free(state->trackPath);
             free(state->trackName);
+            state->trackPath = filePath;
             state->trackName = malloc(TEXT_DISPLAYED_MAXLENGTH * sizeof(char));
             sprintf(state->trackName, "%s", fileName);
-            state->trackPath = filePath;
             xprintf("Successfully read audio file: %s.\r\n", filePath);
         } else {
             xprintf("An error has occurred when loading file onto buffer: %d.\r\n", result);

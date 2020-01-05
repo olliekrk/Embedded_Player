@@ -9,7 +9,7 @@
 #include "wm8994/wm8994.h"
 
 #define AUDIO_QUEUE_SIZE 30
-#define AUDIO_VOLUME_INIT 15
+#define AUDIO_VOLUME_INIT 60
 #define AUDIO_VOLUME_UNIT 5
 #define AUDIO_VOLUME_LIMIT 90
 
