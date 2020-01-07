@@ -8,7 +8,7 @@
 #include <stdbool.h>
 
 #define NUMBER_OF_SOUND_CONTROLS 8
-#define NUMBER_OF_CONTROLS 13
+#define NUMBER_OF_CONTROLS 15
 
 typedef struct ButtonState {
     char *trackName;
@@ -55,9 +55,11 @@ typedef enum SoundControl {
 typedef enum OptionControl {
     NEXT_TRACK = 8,
     BACK_TRACK = 9,
-    SELECTED_TRACK = 10,
-    NEXT_DIRECTORY = 11,
-    BACK_DIRECTORY = 12
+    NEXT_DIRECTORY = 10,
+    BACK_DIRECTORY = 11,
+    VOLUME_UP = 12,
+    VOLUME_DOWN = 13,
+    SELECTED_TRACK = 14,
 } OptionControl;
 
 extern AppControlsState APP_STATE;

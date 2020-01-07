@@ -11,7 +11,7 @@
 #define AUDIO_QUEUE_SIZE 30
 #define AUDIO_VOLUME_INIT 60
 #define AUDIO_VOLUME_UNIT 5
-#define AUDIO_VOLUME_LIMIT 90
+#define AUDIO_VOLUME_LIMIT 100
 
 extern osPoolId audioRequestsPool;
 extern osMessageQId audioRequestsQueue;

@@ -31,8 +31,10 @@ int GUI_GetButtonForCoords(int x, int y) {
             return rowUpperSection ? NEXT_TRACK : BACK_TRACK;
         } else if (column == 3) {
             return rowUpperSection ? NEXT_DIRECTORY : BACK_DIRECTORY;
-        } else {
+        } else if (rowUpperSection) {
             return SELECTED_TRACK;
+        } else {
+            return column == 1 ? VOLUME_UP : VOLUME_DOWN;
         }
     }
 }
@@ -51,6 +53,9 @@ int GUI_GetCoordsForButton(int buttonNumber, int *xOutput, int *yOutput) {
     } else if (buttonNumber == SELECTED_TRACK) {
         *xOutput = GUI_margin + GUI_GetXButtonSize();
         *yOutput = GUI_margin + 2 * GUI_GetYButtonSize();
+    } else if (buttonNumber == VOLUME_UP || buttonNumber == VOLUME_DOWN) {
+        *xOutput = GUI_margin + (buttonNumber == VOLUME_UP ? 1 : 2) * GUI_GetXButtonSize();
+        *yOutput = GUI_margin + (int) (2.5 * GUI_GetYButtonSize());
     } else {
         *xOutput = GUI_margin + 3 * GUI_GetXButtonSize();
         *yOutput = GUI_margin + (buttonNumber == NEXT_DIRECTORY ? 2 : 2.5) * GUI_GetYButtonSize();
@@ -65,7 +70,7 @@ void GUI_GetSizeForButton(int buttonNumber, int *xSizeOutput, int *ySizeOutput) 
         *ySizeOutput = GUI_GetYButtonSize();
     } else if (buttonNumber == SELECTED_TRACK) {
         *xSizeOutput = (int) (2 * GUI_GetXButtonSize());
-        *ySizeOutput = GUI_GetYButtonSize();
+        *ySizeOutput = (int) (0.5 * GUI_GetYButtonSize());
     } else {
         *xSizeOutput = GUI_GetXButtonSize();
         *ySizeOutput = (int) (0.5 * GUI_GetYButtonSize());
@@ -76,6 +81,8 @@ void GUI_GetColorsForButton(int buttonNumber, uint32_t *primaryOutput, uint32_t 
     switch (buttonNumber) {
         case NEXT_TRACK:
         case BACK_TRACK:
+        case NEXT_DIRECTORY:
+        case BACK_DIRECTORY:
             *primaryOutput = COLOR_PRIMARY_OPTION;
             *accentOutput = COLOR_ACCENT_OPTION;
             break;
@@ -83,8 +90,8 @@ void GUI_GetColorsForButton(int buttonNumber, uint32_t *primaryOutput, uint32_t 
             *primaryOutput = COLOR_PRIMARY_SELECTED;
             *accentOutput = COLOR_ACCENT_SELECTED;
             break;
-        case NEXT_DIRECTORY:
-        case BACK_DIRECTORY:
+        case VOLUME_UP:
+        case VOLUME_DOWN:
             *primaryOutput = COLOR_SECONDARY_OPTION;
             *accentOutput = COLOR_SECONDARY_ACCENT;
             break;
@@ -113,6 +120,10 @@ const char *GUI_GetTextForButton(int buttonNumber) {
                    APP_STATE.DIRECTORIES[APP_STATE.SELECTED_DIR_INDEX - 1] : NULL;
             if (text == NULL) return "- Empty -";
             break;
+        case VOLUME_UP:
+            return "Too quiet?";
+        case VOLUME_DOWN:
+            return "Too loud?";
         case NEXT_TRACK:
             return "Next";
         case BACK_TRACK:

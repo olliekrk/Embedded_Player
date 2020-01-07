@@ -98,6 +98,12 @@ void CON_HandleOptionButtonTouched(OptionControl option) {
                 APP_STATE.SELECTED_TRACK_NAME = APP_STATE.TRACKS[--APP_STATE.SELECTED_TRACK_INDEX];
             }
             break;
+        case VOLUME_UP:
+            AUDIO_P_VolumeUp();
+            break;
+        case VOLUME_DOWN:
+            AUDIO_P_VolumeDown();
+            break;
         default:
             xprintf("Option button touched is: %d\r\n", option);
     }

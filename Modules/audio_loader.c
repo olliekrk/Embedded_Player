@@ -149,7 +149,6 @@ void AUDIO_L_ResetDirectoriesData(void) {
 
 void AUDIO_L_ResetPlayerState() {
     AUDIO_P_End();
-    APP_STATE.VOLUME = AUDIO_VOLUME_INIT;
 }
 
 void AUDIO_L_ToggleContinuousMode() {
