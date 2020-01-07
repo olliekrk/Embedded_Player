@@ -249,6 +249,7 @@ void StartGuiTask(void const *argument) {
             if (APP_STATE.SELECTED_SOUND_BUTTON != -1)
                 GUI_HighlightButton(APP_STATE.SELECTED_SOUND_BUTTON);
 
+            GUI_DrawAllIcons();
             APP_STATE.IS_DIRTY = -1;
         }
         vTaskDelay(100);

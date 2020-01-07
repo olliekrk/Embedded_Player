@@ -93,7 +93,7 @@ void GUI_GetColorsForButton(int buttonNumber, uint32_t *primaryOutput, uint32_t 
         case VOLUME_UP:
         case VOLUME_DOWN:
             *primaryOutput = COLOR_SECONDARY_OPTION;
-            *accentOutput = COLOR_SECONDARY_ACCENT;
+            *accentOutput = COLOR_ACCENT_OPTION;
             break;
         default:
             // sound button case
@@ -159,7 +159,7 @@ void GUI_DrawButton(uint32_t buttonColor, uint32_t frameColor, int x, int y, int
     free(textDisplayed);
 }
 
-void GUI_DrawAllButtons(void) {
+void GUI_DrawAllButtons() {
     int x, y, xSize, ySize;
     uint32_t primaryColor, accentColor;
 
@@ -192,4 +192,43 @@ void GUI_HandleTouch(TS_StateTypeDef *tsState, void (*handleButtonTouch)(int)) {
         y = tsState->touchY[i];
         (*handleButtonTouch)(GUI_GetButtonForCoords(x, y)); // callback function
     }
+}
+
+void GUI_DrawIconOnButtonCentered(int buttonNumber) {
+    int xButton, yButton, xButtonSize, yButtonSize;
+    uint32_t primaryColor, accentColor;
+    GUI_GetCoordsForButton(buttonNumber, &xButton, &yButton);
+    GUI_GetSizeForButton(buttonNumber, &xButtonSize, &yButtonSize);
+    GUI_GetColorsForButton(buttonNumber, &primaryColor, &accentColor);
+
+    BSP_LCD_SetTextColor(accentColor);
+    double circleRadius = 0.1 * (xButtonSize < yButtonSize ? xButtonSize : yButtonSize);
+    BSP_LCD_FillCircle(xButton + 0.5 * xButtonSize, yButton + 0.5 * yButtonSize, circleRadius);
+}
+
+pPoint getArrowUpForCoordsAndSize(int xCenter, int yCenter, int aSize) {
+    pPoint points = malloc(3 * sizeof(Point));
+    points[0].X = xCenter;
+    points[1].X = xCenter - (0.5 * aSize);
+    points[2].X = xCenter + (0.5 * aSize);
+    points[0].Y = yCenter - (0.5 * aSize);
+    points[1].Y = yCenter + (0.5 * aSize);
+    points[2].Y = yCenter + (0.5 * aSize);
+    return points;
+}
+
+pPoint getArrowDownForCoordsAndSize(int xCenter, int yCenter, int aSize) {
+    pPoint points = getArrowUpForCoordsAndSize(xCenter, yCenter, aSize);
+    points[0].Y += aSize;
+    points[1].Y -= aSize;
+    points[2].Y -= aSize;
+    return points;
+}
+
+void GUI_DrawAllIcons() {
+    GUI_DrawIconOnButtonCentered(VOLUME_UP);
+    GUI_DrawIconOnButtonCentered(VOLUME_DOWN);
+//    pPoint points = getArrowDownForCoordsAndSize(100, 100, 20);
+//    BSP_LCD_FillPolygon(points, 3);
+//    free(points);
 }
