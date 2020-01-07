@@ -14,6 +14,8 @@ int FILE_OFFSET = 0;
 BufferPos BUFFER_OFFSET = BUFFER_OFFSET_NONE;
 FIL CURRENT_FILE;
 
+osMutexId loaderMutexId;
+
 uint8_t AUDIO_BUFFER[AUDIO_BUFFER_SIZE] __attribute__((section(".sdram")));
 uint8_t PLAYER_BUFFER[PLAYER_BUFFER_SIZE] __attribute__((section(".sdram")));
 
@@ -101,12 +103,13 @@ void AUDIO_L_SearchForTracksInCurrentDir() {
 }
 
 void AUDIO_L_ChangeDirectory(int dirIndex) {
-    APP_STATE.LOADER_BUSY = 1;
-    AUDIO_L_ResetTracksData();
-    APP_STATE.SELECTED_DIR_INDEX = dirIndex;
-    APP_STATE.SELECTED_DIR_NAME = APP_STATE.DIRECTORIES[dirIndex];
-    AUDIO_L_SearchForTracksInCurrentDir();
-    APP_STATE.LOADER_BUSY = 0;
+    if (osMutexWait(loaderMutexId, 0) == osOK) {
+        AUDIO_L_ResetTracksData();
+        APP_STATE.SELECTED_DIR_INDEX = dirIndex;
+        APP_STATE.SELECTED_DIR_NAME = APP_STATE.DIRECTORIES[dirIndex];
+        AUDIO_L_SearchForTracksInCurrentDir();
+        osMutexRelease(loaderMutexId);
+    }
 }
 
 void AUDIO_L_InitialScan(void) {
@@ -141,7 +144,6 @@ void AUDIO_L_ResetDirectoriesData(void) {
     APP_STATE.DIR_COUNT = 0;
     APP_STATE.SELECTED_DIR_INDEX = 0;
     APP_STATE.SELECTED_DIR_NAME = "";
-    APP_STATE.LOADER_BUSY = 0;
     APP_STATE.IS_DIRTY = 1; // to refresh view
 }
 

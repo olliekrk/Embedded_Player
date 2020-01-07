@@ -40,6 +40,8 @@ extern FIL CURRENT_FILE;
 extern uint8_t PLAYER_BUFFER[PLAYER_BUFFER_SIZE] __attribute__((section(".sdram")));
 extern uint8_t AUDIO_BUFFER[AUDIO_BUFFER_SIZE] __attribute__((section(".sdram")));
 
+extern osMutexId loaderMutexId;
+
 FRESULT AUDIO_L_CreateAudioDirectory(void);
 
 void AUDIO_L_SearchForDirectories(void);

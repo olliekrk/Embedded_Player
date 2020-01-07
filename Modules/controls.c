@@ -12,7 +12,6 @@ AppControlsState APP_STATE = {
         -1,
         1,
         0,
-        0,
         NULL,
         0,
         NULL,
@@ -74,8 +73,6 @@ void CON_HandleOptionButtonTouched(OptionControl option) {
         APP_STATE.SELECTED_OPTION = -1;
         return;
     }
-
-    if (APP_STATE.LOADER_BUSY) return; // do not interrupt directories scan
 
     switch (option) {
         case SELECTED_TRACK:

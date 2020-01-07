@@ -159,9 +159,12 @@ int main(void) {
     osMessageQDef(audioRequestsQueue, AUDIO_QUEUE_SIZE, AudioRequest);
     audioRequestsQueue = osMessageCreate(osMessageQ(audioRequestsQueue), NULL);
 
+    osMutexDef(loaderMutex);
+    loaderMutexId = osMutexCreate(osMutex(loaderMutex));
+
     /* Create the thread(s) */
     osThreadDef(defaultTask, StartDefaultTask, osPriorityLow, 1, ALL_THREADS_STACK_SIZE * 0.1);
-    osThreadDef(audioPlayerTask, StartAudioPlayerTask, osPriorityHigh, 1, ALL_THREADS_STACK_SIZE * 0.3);
+    osThreadDef(audioPlayerTask, StartAudioPlayerTask, osPriorityAboveNormal, 1, ALL_THREADS_STACK_SIZE * 0.3);
     osThreadDef(touchscreenTask, StartTouchscreenTask, osPriorityNormal, 1, ALL_THREADS_STACK_SIZE * 0.3);
     osThreadDef(guiTask, StartGuiTask, osPriorityHigh, 1, ALL_THREADS_STACK_SIZE * 0.3);
 
