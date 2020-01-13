@@ -36,7 +36,7 @@ void GUI_DrawButton(uint32_t, uint32_t, int, int, int, int, const char *);
 
 void GUI_DrawAllButtons(void);
 
-void GUI_DrawIconOnButtonCentered(int);
+void GUI_DrawDotOnButtonCentered(int);
 
 void GUI_DrawAllIcons(void);
 

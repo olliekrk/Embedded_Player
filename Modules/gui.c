@@ -125,9 +125,9 @@ const char *GUI_GetTextForButton(int buttonNumber) {
         case VOLUME_DOWN:
             return "Too loud?";
         case NEXT_TRACK:
-            return "Next";
+            return "Next track";
         case BACK_TRACK:
-            return "Previous";
+            return "Previous track";
         default:
             text = APP_BUTTONS_STATE.configs[buttonNumber].trackName;
             if (text == NULL) return "-";
@@ -194,7 +194,7 @@ void GUI_HandleTouch(TS_StateTypeDef *tsState, void (*handleButtonTouch)(int)) {
     }
 }
 
-void GUI_DrawIconOnButtonCentered(int buttonNumber) {
+void GUI_DrawDotOnButtonCentered(int buttonNumber) {
     int xButton, yButton, xButtonSize, yButtonSize;
     uint32_t primaryColor, accentColor;
     GUI_GetCoordsForButton(buttonNumber, &xButton, &yButton);
@@ -225,10 +225,71 @@ pPoint getArrowDownForCoordsAndSize(int xCenter, int yCenter, int aSize) {
     return points;
 }
 
+pPoint getMinusForCoordsAndSize(int xCenter, int yCenter, int aSize) {
+    pPoint points = malloc(4 * sizeof(Point));
+    points[0].X = xCenter - aSize;
+    points[1].X = xCenter + aSize;
+    points[2].X = xCenter + aSize;
+    points[3].X = xCenter - aSize;
+    points[0].Y = yCenter - (0.2 * aSize);
+    points[1].Y = yCenter - (0.2 * aSize);
+    points[2].Y = yCenter + (0.2 * aSize);
+    points[3].Y = yCenter + (0.2 * aSize);
+    return points;
+}
+
+pPoint getPipeForCoordsAndSize(int xCenter, int yCenter, int aSize) {
+    pPoint points = malloc(4 * sizeof(Point));
+    points[0].X = xCenter - (0.2 * aSize);
+    points[1].X = xCenter - (0.2 * aSize);
+    points[2].X = xCenter + (0.2 * aSize);
+    points[3].X = xCenter + (0.2 * aSize);
+    points[0].Y = yCenter - aSize;
+    points[1].Y = yCenter + aSize;
+    points[2].Y = yCenter + aSize;
+    points[3].Y = yCenter - aSize;
+    return points;
+}
+
 void GUI_DrawAllIcons() {
-    GUI_DrawIconOnButtonCentered(VOLUME_UP);
-    GUI_DrawIconOnButtonCentered(VOLUME_DOWN);
-//    pPoint points = getArrowDownForCoordsAndSize(100, 100, 20);
-//    BSP_LCD_FillPolygon(points, 3);
-//    free(points);
+    BSP_LCD_SetTextColor(COLOR_ACCENT_DEFAULT);
+    pPoint points;
+    int iconSize = 8;
+    int xCenter, yCenter;
+
+    xCenter = GUI_margin + (int) (0.5 * GUI_GetXButtonSize());
+    yCenter = GUI_margin + (int) (2.25 * GUI_GetYButtonSize());
+    points = getArrowUpForCoordsAndSize(xCenter, yCenter, iconSize);
+    BSP_LCD_FillPolygon(points, 3);
+    free(points);
+
+    yCenter = GUI_margin + (int) (2.75 * GUI_GetYButtonSize());
+    points = getArrowDownForCoordsAndSize(xCenter, yCenter, iconSize);
+    BSP_LCD_FillPolygon(points, 3);
+    free(points);
+
+    xCenter += (int) (3 * GUI_GetXButtonSize());
+    yCenter = GUI_margin + (int) (2.25 * GUI_GetYButtonSize());
+    points = getArrowUpForCoordsAndSize(xCenter, yCenter, iconSize);
+    BSP_LCD_FillPolygon(points, 3);
+    free(points);
+
+    yCenter = GUI_margin + (int) (2.75 * GUI_GetYButtonSize());
+    points = getArrowDownForCoordsAndSize(xCenter, yCenter, iconSize);
+    BSP_LCD_FillPolygon(points, 3);
+    free(points);
+
+    xCenter = GUI_margin + (int) (1.5 * GUI_GetXButtonSize());
+    yCenter = GUI_margin + (int) (2.75 * GUI_GetYButtonSize());
+    points = getMinusForCoordsAndSize(xCenter, yCenter, iconSize / 2);
+    BSP_LCD_FillPolygon(points, 4);
+    free(points);
+    points = getPipeForCoordsAndSize(xCenter, yCenter, iconSize / 2);
+    BSP_LCD_FillPolygon(points, 4);
+    free(points);
+
+    xCenter += GUI_GetXButtonSize();
+    points = getMinusForCoordsAndSize(xCenter, yCenter, iconSize / 2);
+    BSP_LCD_FillPolygon(points, 4);
+    free(points);
 }
