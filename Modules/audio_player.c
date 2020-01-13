@@ -73,12 +73,15 @@ void AUDIO_P_PlayRoutine() {
         event = osMessageGet(audioRequestsQueue, osWaitForever);
         if (event.status == osEventMessage) {
             request = event.value.p;
+            if (osMutexWait(loaderMutexId, 0) == osOK) {
+                if (PLAYER_STATE.continuousModeOn) {
+                    AUDIO_L_StartPlayingFromButton(request->audioIndex);
+                }
 
-            if (PLAYER_STATE.continuousModeOn) {
-                AUDIO_L_StartPlayingFromButton(request->audioIndex);
+                AUDIO_P_Play(request->audioIndex);
+                osMutexRelease(loaderMutexId);
             }
 
-            AUDIO_P_Play(request->audioIndex);
             osPoolFree(audioRequestsPool, request);
         }
     } else if (PLAYER_STATE.continuousModeOn) {
