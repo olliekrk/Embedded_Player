@@ -43,7 +43,6 @@
 #include "Modules/controls.h"
 #include "Modules/audio_loader.h"
 #include "Modules/audio_player.h"
-#include "Modules/effect_converter.h"
 
 ADC_HandleTypeDef hadc3;
 
